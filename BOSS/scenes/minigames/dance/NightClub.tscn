@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="ImageTexture" id=1]
+size = Vector2( 1024, 600 )
+
+[node name="NightClub" type="Node"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 511.945, 299.813 )
+texture = SubResource( 1 )
