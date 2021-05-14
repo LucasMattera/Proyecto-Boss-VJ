@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/textures/cannon.png" type="Texture" id=1]
+[ext_resource path="res://Entities/shop/Shop.gd" type="Script" id=2]
+[ext_resource path="res://Menu.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 131.152, 75.1104 )
+
+[node name="Shop" type="Node2D"]
+position = Vector2( 138.843, 16.6612 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 7.44315, 8.468 )
+texture = ExtResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
+
+[node name="Menu" parent="." instance=ExtResource( 3 )]
+visible = false
+margin_left = -624.026
+margin_top = -367.477
+margin_right = -624.026
+margin_bottom = -367.477
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

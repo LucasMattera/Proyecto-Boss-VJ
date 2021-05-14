@@ -6,6 +6,10 @@ onready var camera = $Camera2D
 export (int) var zoomInLimit = 9
 export (int) var zoomOutLimit = 1
 
+
+func initialize():
+	pass
+	
 func get_input():
 	velocity = Vector2()
 	if Input.is_action_pressed('move_right'):
@@ -26,6 +30,15 @@ func get_input():
 		camera.zoom.x -= 0.2
 		camera.zoom.y -= 0.2
 		
+		
+func get_camera_position():
+	return camera.get_global_position()
+	
+func is_player():
+	return true
+	
+func add_shop(shop):
+	print(shop)
 
 func _physics_process(delta):
 	get_input()
