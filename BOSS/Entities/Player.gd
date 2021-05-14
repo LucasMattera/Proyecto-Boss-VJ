@@ -53,9 +53,29 @@ func buy(shop):
 		print('plata restante: ')
 		print(self.money)
 	else:
-		print('no tenes plata ')
+		print('no te alcanza... ')
 
 func _physics_process(delta):
 	get_input()
 	velocity = move_and_slide(velocity)
-	
+
+func _ready():
+	# Create a timer node
+	var timer = Timer.new()
+	# Set timer interval
+	timer.set_wait_time(1.0)
+	# Set it as repeat
+	timer.set_one_shot(false)
+	# Connect its timeout signal to the function you want to repeat
+	timer.connect("timeout", self, "recollect_money")
+	# Add to the tree as child of the current node
+	add_child(timer)
+	timer.start()
+
+
+func recollect_money():
+	print('Ganancia por locales :')
+	print(self.shops.size())
+	self.money += self.shops.size()
+	print('dinero actual: ' )
+	print(self.money)
