@@ -63,7 +63,7 @@ func _ready():
 	# Create a timer node
 	var timer = Timer.new()
 	# Set timer interval
-	timer.set_wait_time(1.0)
+	timer.set_wait_time(1.5)
 	# Set it as repeat
 	timer.set_one_shot(false)
 	# Connect its timeout signal to the function you want to repeat
