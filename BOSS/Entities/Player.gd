@@ -6,6 +6,7 @@ onready var camera = $Camera2D
 export (int) var zoomInLimit = 9
 export (int) var zoomOutLimit = 1
 export (int) var money = 500
+export (String) var player_name = "player 1"
 var shops = []
 
 
@@ -34,6 +35,7 @@ func get_input():
 	if (Input.is_action_just_pressed("work_hard")):
 		print("se trabaja")
 		self.money += 20
+		actualizeMoney(self.money)
 		print("ganaste 20 pesos")
 		
 func get_camera_position():
@@ -46,6 +48,7 @@ func buy(shop):
 	if(money >= 100):
 		self.shops.append(shop)
 		self.money -= 100
+		actualizeMoney(self.money)
 		print('compraste ')
 		print(shop)
 		print('tus locales son ')
@@ -77,5 +80,9 @@ func recollect_money():
 	print('Ganancia por locales :')
 	print(self.shops.size())
 	self.money += self.shops.size()
+	actualizeMoney(self.money)
 	print('dinero actual: ' )
 	print(self.money)
+	
+func actualizeMoney(value):
+	get_parent().doActualize(value)
