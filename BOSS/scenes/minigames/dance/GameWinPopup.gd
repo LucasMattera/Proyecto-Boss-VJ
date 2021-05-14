@@ -13,4 +13,7 @@ func win_game():
 	get_tree().paused = true
 
 func _on_Exit_pressed():
+	hide()
+	set_process_input(false)
+	get_tree().paused = false
 	emit_signal("winner_exit")

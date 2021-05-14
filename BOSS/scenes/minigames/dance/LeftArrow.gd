@@ -19,10 +19,6 @@ func verify_if_is_correct(direction):
 	else:
 		danceMinigame.lose_life()
 
-func _on_Timer_timeout():
-	print("timeout")
-	move_down()
-
 func move_down():
 	pass
 

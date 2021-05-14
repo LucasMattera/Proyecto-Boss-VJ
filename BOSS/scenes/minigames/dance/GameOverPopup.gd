@@ -14,9 +14,13 @@ func game_over():
 	get_tree().paused = true
 
 func _on_Exit_pressed():
-	print("loser_exit")
+	get_tree().paused = false
+	hide()
+	set_process_input(false)
 	emit_signal("exit")
-
+	
 func _on_Retry_pressed():
-	print("loser_retry")
+	get_tree().paused = false
+	hide()
+	set_process_input(false)
 	emit_signal("retry")

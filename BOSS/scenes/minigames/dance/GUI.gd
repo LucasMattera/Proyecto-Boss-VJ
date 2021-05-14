@@ -23,7 +23,6 @@ func _on_Ring_area_exited(arrow):
 	emit_signal("arrow_out_of_ring", arrow)
 
 func _on_ScreenLimit_area_entered(arrow):
-	print("delete")
 	arrow.screen_limit_reached()
 	emit_signal("arrow_out_of_screen")
 
