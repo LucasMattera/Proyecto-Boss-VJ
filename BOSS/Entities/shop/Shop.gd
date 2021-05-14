@@ -6,6 +6,9 @@ onready var menu = $Menu
 func initialize(player ):
 	self.player = player
 	
+func get_name():
+	return self.shop_name
+	
 func _ready():
 	pass # Replace with function body.
 
