@@ -8,14 +8,12 @@ func initialize(player):
 func _ready():
 	pass
 	
-func set_player(player):
-	self.player = player
-	print(player.get_camera_position())
-	var vector = Vector2(player.get_camera_position().x - 500, player.get_camera_position().y -300)
+func set_player():
+	var vector = Vector2(Player.position.x , Player.position.y )
 	self.set_global_position(vector)
 	
 func _on_Buy_pressed():
-	self.player.buy("shop1")
+	Player.buy("shop1")
 	self.hide()
 
 

@@ -2,13 +2,30 @@ extends KinematicBody2D
 
 export (int) var speed = 400
 var velocity:Vector2 = Vector2.ZERO
-onready var camera = $Camera2D
+var camera
+var can_move = true
 export (int) var zoomInLimit = 9
 export (int) var zoomOutLimit = 1
 export (int) var money = 500
 export (String) var player_name = "player 1"
 var shops = []
 
+func _ready():
+	camera = Camera2D.new()
+	camera.current = true
+	camera.zoom.x = 1.5
+	camera.zoom.y = 1.5
+	# Create a timer node
+	var timer = Timer.new()
+	# Set timer interval
+	timer.set_wait_time(1.5)
+	# Set it as repeat
+	timer.set_one_shot(false)
+	# Connect its timeout signal to the function you want to repeat
+	timer.connect("timeout", self, "recollect_money")
+	# Add to the tree as child of the current node
+	add_child(timer)
+	timer.start()
 
 func initialize():
 	pass
@@ -26,10 +43,10 @@ func get_input():
 	velocity = velocity.normalized() * speed
 	if Input.is_action_pressed('run'):
 		velocity = velocity * 2
-	if Input.is_action_pressed("zoom-out") and camera.zoom.x <= zoomInLimit:
+	if Input.is_action_pressed("zoom-out") :
 		camera.zoom.x += 0.2
 		camera.zoom.y += 0.2
-	if Input.is_action_pressed("zoom-in") and camera.zoom.x >= zoomOutLimit:
+	if Input.is_action_pressed("zoom-in") :
 		camera.zoom.x -= 0.2
 		camera.zoom.y -= 0.2
 	if (Input.is_action_just_pressed("work_hard")):
@@ -37,10 +54,10 @@ func get_input():
 		self.money += 20
 		actualizeMoney(self.money)
 		print("ganaste 20 pesos")
-		
+
 func get_camera_position():
 	return camera.get_global_position()
-	
+		
 func is_player():
 	return true
 	
@@ -59,22 +76,9 @@ func buy(shop):
 		print('no te alcanza... ')
 
 func _physics_process(delta):
-	get_input()
-	velocity = move_and_slide(velocity)
-
-func _ready():
-	# Create a timer node
-	var timer = Timer.new()
-	# Set timer interval
-	timer.set_wait_time(1.5)
-	# Set it as repeat
-	timer.set_one_shot(false)
-	# Connect its timeout signal to the function you want to repeat
-	timer.connect("timeout", self, "recollect_money")
-	# Add to the tree as child of the current node
-	add_child(timer)
-	timer.start()
-
+	if(can_move):
+		get_input()
+		velocity = move_and_slide(velocity)
 
 func recollect_money():
 	print('Ganancia por locales :')
@@ -85,4 +89,18 @@ func recollect_money():
 	print(self.money)
 	
 func actualizeMoney(value):
-	get_parent().doActualize(value)
+	self.money = value
+	GameServer.save_game()
+	print("guardado")
+
+func save():
+	var save_dict = {
+		"filename" : get_filename(),
+		"parent" : get_parent().get_path(),
+		"pos_x" : position.x, # Vector2 is not supported by JSON
+		"pos_y" : position.y,
+		"money": money,
+		"player_name": player_name,
+		"shops": shops
+	}
+	return save_dict

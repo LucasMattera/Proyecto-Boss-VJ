@@ -7,14 +7,18 @@ onready var GUI = $GUI
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print("entre al main")
 	player.initialize()
-	shop.initialize(player)
-	GUI.initialize(player)
-	
+	shop.initialize(Player)
+	GUI.initialize()
+	#GameServer.save_game()
+	#var loaded_player = GameServer.load_game()
+	player.money = Player.money
+	player.player_name = Player.player_name
+	player.position.x = Player.position.x 
+	player.position.y = Player.position.y 
+	player.shops = Player.shops
 
-func doActualize(value):
-	GUI.actualizeMoney(value)
+# Note: This can be called from anywhere inside the tree. This function
+# is path independent.
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
