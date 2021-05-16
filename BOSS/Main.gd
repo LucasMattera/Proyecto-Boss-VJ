@@ -1,6 +1,5 @@
 extends Node
 
-
 onready var player = $Player
 onready var shop = $Shop
 onready var GUI = $GUI
@@ -10,11 +9,6 @@ func _ready():
 	player.initialize()
 	shop.initialize(player)
 	GUI.initialize(player)
-	
 
 func doActualize(value):
 	GUI.actualizeMoney(value)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
