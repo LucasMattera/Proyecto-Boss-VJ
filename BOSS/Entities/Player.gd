@@ -84,3 +84,6 @@ func recollect_money():
 	emit_signal("player_stats_changed", self)
 	print('dinero actual: ' )
 	print(self.money)
+	
+func actualizeMoney(value):
+	get_parent().doActualize(value)
