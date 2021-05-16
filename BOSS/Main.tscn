@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Entities/Map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Entities/Player.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://assets/textures/turret.png" type="Texture" id=7]
 [ext_resource path="res://Main.gd" type="Script" id=8]
 [ext_resource path="res://scenes/street/DanceMinigame.gd" type="Script" id=9]
+[ext_resource path="res://GUI.tscn" type="PackedScene" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -164,6 +165,9 @@ texture = ExtResource( 7 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DanceMinigame"]
 position = Vector2( 2.1189, -19.0703 )
 shape = SubResource( 8 )
+
+[node name="GUI" parent="." instance=ExtResource( 10 )]
+[connection signal="player_stats_changed" from="Player" to="GUI" method="_on_Player_player_stats_changed"]
 [connection signal="body_entered" from="DanceMinigame" to="DanceMinigame" method="_on_DanceMinigame_body_entered"]
 
 [editable path="Shop"]
