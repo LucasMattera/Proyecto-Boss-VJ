@@ -2,7 +2,6 @@ extends KinematicBody2D
 
 export (int) var speed = 400
 var velocity:Vector2 = Vector2.ZERO
-onready var camera = $Camera2D
 var can_move = true
 export (int) var zoomInLimit = 9
 export (int) var zoomOutLimit = 1
@@ -11,10 +10,6 @@ export (String) var player_name = "player 1"
 var shops = []
 
 func _ready():
-	#camera = Camera2D.new()
-	#camera.current = true
-	#camera.zoom.x = 1.5
-	#camera.zoom.y = 1.5
 	# Create a timer node
 	var timer = Timer.new()
 	# Set timer interval
@@ -49,8 +44,6 @@ func get_input():
 		actualizeMoney(self.money)
 		print("ganaste 20 pesos")
 
-func get_camera_position():
-	return camera.get_global_position()
 		
 func is_player():
 	return true
