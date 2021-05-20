@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 export (int) var speed = 400
 var velocity:Vector2 = Vector2.ZERO
-var camera
+onready var camera = $Camera2D
 var can_move = true
 export (int) var zoomInLimit = 9
 export (int) var zoomOutLimit = 1
@@ -11,10 +11,10 @@ export (String) var player_name = "player 1"
 var shops = []
 
 func _ready():
-	camera = Camera2D.new()
-	camera.current = true
-	camera.zoom.x = 1.5
-	camera.zoom.y = 1.5
+	#camera = Camera2D.new()
+	#camera.current = true
+	#camera.zoom.x = 1.5
+	#camera.zoom.y = 1.5
 	# Create a timer node
 	var timer = Timer.new()
 	# Set timer interval
@@ -43,12 +43,6 @@ func get_input():
 	velocity = velocity.normalized() * speed
 	if Input.is_action_pressed('run'):
 		velocity = velocity * 2
-	if Input.is_action_pressed("zoom-out") :
-		camera.zoom.x += 0.2
-		camera.zoom.y += 0.2
-	if Input.is_action_pressed("zoom-in") :
-		camera.zoom.x -= 0.2
-		camera.zoom.y -= 0.2
 	if (Input.is_action_just_pressed("work_hard")):
 		print("se trabaja")
 		self.money += 20
