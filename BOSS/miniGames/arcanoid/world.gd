@@ -15,7 +15,6 @@ func initialize(player_Gral):
 func _ready():
 	pass # Replace with function body.
 
-
 func gameOver():
 	ball.queue_free()
 	player.queue_free()
