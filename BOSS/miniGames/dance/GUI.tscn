@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://assets/fonts/Schrödinger.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/textures/nightclub/circle.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://miniGames/dance/GameWinPopup.gd" type="Script" id=7]
 [ext_resource path="res://miniGames/dance/GUI.gd" type="Script" id=8]
 [ext_resource path="res://miniGames/dance/GameOverPopup.gd" type="Script" id=9]
+[ext_resource path="res://miniGames/dance/GameReadyPopup.gd" type="Script" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -175,7 +176,7 @@ __meta__ = {
 [node name="ColorRect" type="ColorRect" parent="GameOverPopup"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.0117647, 0.0117647, 0.0117647, 1 )
+color = Color( 0.490196, 0, 0, 1 )
 
 [node name="Label" type="Label" parent="GameOverPopup/ColorRect"]
 margin_left = 10.0
@@ -200,7 +201,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -107.5
 margin_top = 36.0
-margin_right = -2.49998
+margin_right = -2.49997
 margin_bottom = 59.0
 rect_scale = Vector2( 2, 2 )
 custom_fonts/font = SubResource( 6 )
@@ -247,7 +248,7 @@ __meta__ = {
 [node name="ColorRect" type="ColorRect" parent="GameWinPopup"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0.309804, 0.964706, 1 )
+color = Color( 0, 0.490196, 0, 1 )
 
 [node name="Label" type="Label" parent="GameWinPopup/ColorRect"]
 margin_left = 10.0
@@ -283,6 +284,79 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="GameReadyPopup" type="Popup" parent="."]
+pause_mode = 2
+visible = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -287.5
+margin_top = -164.0
+margin_right = 287.5
+margin_bottom = 164.0
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="GameReadyPopup"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0.490196, 1 )
+
+[node name="Label" type="Label" parent="GameReadyPopup/ColorRect"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 585.0
+margin_bottom = 168.0
+custom_fonts/font = SubResource( 5 )
+text = "STREET DANCER
+
+Acierta los movimientos 
+en el momento adecuado 
+y gana puntos!"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Begin" type="Button" parent="GameReadyPopup/ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -107.5
+margin_top = 36.0
+margin_right = -2.49997
+margin_bottom = 59.0
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.921569, 1, 0, 1 )
+text = "Empezar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="Button" parent="GameReadyPopup/ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -107.5
+margin_top = 96.0
+margin_right = -2.49997
+margin_bottom = 119.0
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.886275, 0.988235, 0, 1 )
+text = "Irme"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ScreenLimit" type="Area2D" parent="."]
 position = Vector2( 200, 660 )
 
@@ -298,6 +372,9 @@ layer = 0
 [connection signal="retry" from="GameOverPopup" to="." method="_on_GameOverPopup_retry"]
 [connection signal="pressed" from="GameOverPopup/ColorRect/Retry" to="GameOverPopup" method="_on_Retry_pressed"]
 [connection signal="pressed" from="GameOverPopup/ColorRect/Exit" to="GameOverPopup" method="_on_Exit_pressed"]
-[connection signal="winner_exit" from="GameWinPopup" to="." method="_on_GameWinPopup_winner_exit"]
+[connection signal="player_exit" from="GameWinPopup" to="." method="_on_GameWinPopup_player_exit"]
 [connection signal="pressed" from="GameWinPopup/ColorRect/Exit" to="GameWinPopup" method="_on_Exit_pressed"]
+[connection signal="player_exit" from="GameReadyPopup" to="." method="_on_GameReadyPopup_player_exit"]
+[connection signal="pressed" from="GameReadyPopup/ColorRect/Begin" to="GameReadyPopup" method="_on_Begin_pressed"]
+[connection signal="pressed" from="GameReadyPopup/ColorRect/Exit" to="GameReadyPopup" method="_on_Exit_pressed"]
 [connection signal="area_entered" from="ScreenLimit" to="." method="_on_ScreenLimit_area_entered"]

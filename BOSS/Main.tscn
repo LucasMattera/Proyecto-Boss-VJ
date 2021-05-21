@@ -247,6 +247,7 @@ texture = SubResource( 6 )
 position = Vector2( 184, -80 )
 shape = SubResource( 7 )
 
+<<<<<<< HEAD
 [node name="Node" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node"]
@@ -254,9 +255,14 @@ polygon = PoolVector2Array( -1952, -152, -2112, -152, -2104, -280, -2104, -800, 
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( -1856, -240 )
+=======
+[node name="dance" type="Area2D" parent="Mini_games_areas"]
+position = Vector2( -1776, -224 )
+>>>>>>> 1d50073ab4c5539f80dfbdd50df41da5706ea753
 gravity_vec = Vector2( 0, 0 )
 script = ExtResource( 10 )
 
+<<<<<<< HEAD
 [node name="Sprite" type="Sprite" parent="Area2D"]
 position = Vector2( 128, -232 )
 scale = Vector2( 4.67925, 2.97248 )
@@ -267,5 +273,15 @@ position = Vector2( 104, -120 )
 shape = SubResource( 9 )
 [connection signal="body_entered" from="Mini_games_areas/Arcanoid_area/arcanoid" to="Mini_games_areas/Arcanoid_area/arcanoid" method="_on_arcanoid_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_DanceMinigame_body_entered"]
+=======
+[node name="Sprite" type="Sprite" parent="Mini_games_areas/dance"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mini_games_areas/dance"]
+shape = SubResource( 9 )
+
+[node name="Node" type="Node" parent="."]
+[connection signal="body_entered" from="Mini_games_areas/arcanoid" to="Mini_games_areas/arcanoid" method="_on_arcanoid_body_entered"]
+[connection signal="body_entered" from="Mini_games_areas/dance" to="Mini_games_areas/dance" method="_on_DanceMinigame_body_entered"]
+>>>>>>> 1d50073ab4c5539f80dfbdd50df41da5706ea753
 
 [editable path="Shop"]
