@@ -205,9 +205,7 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mini_games_areas/arcanoid"]
 shape = SubResource( 8 )
 
-[node name="Node" type="Node" parent="."]
-
-[node name="Area2D" type="Area2D" parent="."]
+[node name="dance" type="Area2D" parent="Mini_games_areas"]
 position = Vector2( -1776, -224 )
 gravity_vec = Vector2( 0, 0 )
 script = ExtResource( 10 )
@@ -215,11 +213,13 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="Area2D"]
+[node name="Sprite" type="Sprite" parent="Mini_games_areas/dance"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mini_games_areas/dance"]
 shape = SubResource( 9 )
+
+[node name="Node" type="Node" parent="."]
 [connection signal="body_entered" from="Mini_games_areas/arcanoid" to="Mini_games_areas/arcanoid" method="_on_arcanoid_body_entered"]
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_DanceMinigame_body_entered"]
+[connection signal="body_entered" from="Mini_games_areas/dance" to="Mini_games_areas/dance" method="_on_DanceMinigame_body_entered"]
 
 [editable path="Shop"]
