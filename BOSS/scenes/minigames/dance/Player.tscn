@@ -1,0 +1,42 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assets/textures/dance/idle3.png" type="Texture" id=1]
+[ext_resource path="res://assets/textures/dance/idle2.png" type="Texture" id=2]
+[ext_resource path="res://assets/textures/dance/idle1.png" type="Texture" id=3]
+[ext_resource path="res://assets/textures/dance/left2.png" type="Texture" id=4]
+[ext_resource path="res://assets/textures/dance/left1.png" type="Texture" id=5]
+[ext_resource path="res://assets/textures/dance/right1.png" type="Texture" id=6]
+[ext_resource path="res://assets/textures/dance/right2.png" type="Texture" id=7]
+[ext_resource path="res://scenes/minigames/dance/Player.gd" type="Script" id=8]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "left",
+"speed": 7.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "right",
+"speed": 7.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "idle",
+"speed": 3.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+
+[node name="Player" type="KinematicBody2D"]
+script = ExtResource( 8 )
+
+[node name="AnimatedBody" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "idle"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+[connection signal="animation_finished" from="AnimatedBody" to="." method="_on_AnimatedBody_animation_finished"]

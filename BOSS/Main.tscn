@@ -1,4 +1,6 @@
+
 [gd_scene load_steps=20 format=2]
+
 
 [ext_resource path="res://Entities/Map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Entities/Player.tscn" type="PackedScene" id=2]
@@ -6,10 +8,12 @@
 [ext_resource path="res://assets/textures/background.png" type="Texture" id=4]
 [ext_resource path="res://assets/textures/gray_square.png" type="Texture" id=5]
 [ext_resource path="res://Entities/shop/Shop.tscn" type="PackedScene" id=6]
-[ext_resource path="res://GUI.gd" type="Script" id=7]
+[ext_resource path="res://assets/textures/turret.png" type="Texture" id=7]
 [ext_resource path="res://Main.gd" type="Script" id=8]
 [ext_resource path="res://arcanoid.gd" type="Script" id=9]
 [ext_resource path="res://miniGames/street/DanceMinigame.gd" type="Script" id=10]
+[ext_resource path="res://GUI.tscn" type="PackedScene" id=10]
+
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -127,6 +131,7 @@ extents = Vector2( 144, 48 )
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 120, 64 )
 
+
 [node name="Main" type="Node"]
 script = ExtResource( 8 )
 
@@ -169,12 +174,15 @@ anchor_left = -4.851
 anchor_top = -3.691
 anchor_right = 4.4
 anchor_bottom = 5.952
-margin_left = -76.7769
-margin_top = 112.985
-margin_right = -76.8008
-margin_bottom = 113.185
+margin_left = -3.97314
+margin_top = 2.04042
+margin_right = -3.99707
+margin_bottom = 2.24035
 texture = ExtResource( 5 )
 expand = true
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1.49805, -2.92041 )
 
 [node name="Map2" type="TileMap" parent="."]
 tile_set = SubResource( 7 )
