@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/textures/player.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1, 256 )
@@ -15,7 +17,26 @@ position = Vector2( 0, 256 )
 scale = Vector2( 4, 1 )
 shape = SubResource( 1 )
 
+[node name="TextureRect" type="TextureRect" parent="left_wall"]
+margin_left = -8.0
+margin_bottom = 520.0
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="right_wall2" type="StaticBody2D" parent="."]
+
+[node name="TextureRect2" type="TextureRect" parent="right_wall2"]
+margin_left = 288.0
+margin_right = 296.0
+margin_bottom = 520.0
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="col_bord_right" type="CollisionShape2D" parent="right_wall2"]
 position = Vector2( 288, 256 )
@@ -28,8 +49,28 @@ shape = SubResource( 1 )
 position = Vector2( 144, 1 )
 shape = SubResource( 2 )
 
+[node name="TextureRect" type="TextureRect" parent="top_wall"]
+margin_left = -8.0
+margin_top = -8.0
+margin_right = 296.0
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="bottom_wall" type="StaticBody2D" parent="."]
 
 [node name="col_bottom" type="CollisionShape2D" parent="bottom_wall"]
 position = Vector2( 141.794, 518 )
 shape = SubResource( 2 )
+
+[node name="TextureRect2" type="TextureRect" parent="bottom_wall"]
+margin_top = 512.0
+margin_right = 296.0
+margin_bottom = 520.0
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

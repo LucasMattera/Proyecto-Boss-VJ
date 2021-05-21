@@ -1,8 +1,21 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://miniGames/arcanoid/tittle/Blue Button 1.png" type="Texture" id=1]
+[ext_resource path="res://assets/fonts/Schrödinger.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://miniGames/arcanoid/tittle/Tittle.gd" type="Script" id=5]
 [ext_resource path="res://miniGames/arcanoid/enviroment/background.jpg" type="Texture" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 60
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 33
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 33
+font_data = ExtResource( 2 )
 
 [node name="Tittle" type="Node"]
 script = ExtResource( 5 )
@@ -14,6 +27,20 @@ margin_right = 2634.93
 margin_bottom = 1784.33
 rect_rotation = 90.0
 texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 74.1453
+margin_top = 27.0004
+margin_right = 896.145
+margin_bottom = 129.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "ARCANOID"
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -38,10 +65,11 @@ anchor_left = 0.141
 anchor_top = -1.273
 anchor_right = 0.936
 anchor_bottom = -0.727
-margin_left = 110.998
-margin_top = 179.309
-margin_right = -137.997
-margin_bottom = 145.261
+margin_left = 85.7711
+margin_top = 167.536
+margin_right = -101.224
+margin_bottom = 144.206
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.0156863, 0.0156863, 0.0156863, 1 )
 text = "START"
 __meta__ = {
@@ -64,10 +92,11 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="quit"]
-margin_left = 181.0
-margin_top = 34.0
-margin_right = 234.0
-margin_bottom = 52.0
+margin_left = 154.091
+margin_top = 23.9092
+margin_right = 221.091
+margin_bottom = 57.9092
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.027451, 0.027451, 0.027451, 1 )
 text = "EXIT"
 [connection signal="pressed" from="start" to="." method="_on_start_pressed"]
