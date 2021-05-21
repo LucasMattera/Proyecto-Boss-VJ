@@ -13,7 +13,7 @@ func set_player():
 	self.set_global_position(vector)
 	
 func _on_Buy_pressed():
-	Player.buy("shop1")
+	player.buy("shop1")
 	self.hide()
 
 
