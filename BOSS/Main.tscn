@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Entities/Map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Entities/Player.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://miniGames/street/DanceMinigame.gd" type="Script" id=10]
 [ext_resource path="res://assets/textures/d9xkdox-e16fa13c-f62d-4f9e-a3f7-c0460c6219df-640x640.png" type="Texture" id=11]
 [ext_resource path="res://assets/textures/Spritesheet_2.png" type="Texture" id=12]
+[ext_resource path="res://arcanoid/assets/fonts/advanced_pixel-7.ttf" type="DynamicFontData" id=13]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -56,6 +57,11 @@ extents = Vector2( 56, 136 )
 flags = 4
 atlas = ExtResource( 12 )
 region = Rect2( 287.954, 26.2028, 135.285, 125.264 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 60
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 13 )
 
 [sub_resource type="AtlasTexture" id=12]
 flags = 4
@@ -107,10 +113,10 @@ anchor_left = -4.851
 anchor_top = -3.691
 anchor_right = 4.4
 anchor_bottom = 5.952
-margin_left = -88.5767
-margin_top = -73.3999
-margin_right = -88.6006
-margin_bottom = -73.2002
+margin_left = -88.5757
+margin_top = -81.3999
+margin_right = -88.5996
+margin_bottom = -81.2002
 texture = ExtResource( 5 )
 expand = true
 
@@ -204,6 +210,25 @@ texture = SubResource( 13 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Mini_games_areas/Node/StaticBody2D"]
 polygon = PoolVector2Array( 456, 16, 448, -296, 584, -296, 584, 16, 800, 16, 800, -784, 224, -784, 232, 16 )
 
+[node name="Label" type="Label" parent="Mini_games_areas/Node"]
+anchor_left = 0.359
+anchor_top = -0.733
+anchor_right = 0.648
+anchor_bottom = -0.533
+margin_left = -7.61603
+margin_top = -0.199982
+margin_right = 8.448
+margin_bottom = 5.80002
+custom_fonts/font = SubResource( 14 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 0.976471, 0.976471, 1 )
+custom_colors/font_color_shadow = Color( 0.776471, 0.854902, 0.0705882, 1 )
+text = "ARCANOID"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="dance" type="Node" parent="."]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="dance"]
@@ -224,6 +249,25 @@ texture = SubResource( 12 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dance/Area2D"]
 position = Vector2( 200, -72 )
 shape = SubResource( 9 )
+
+[node name="Label2" type="Label" parent="dance"]
+anchor_left = 0.359
+anchor_top = -0.733
+anchor_right = 0.648
+anchor_bottom = -0.533
+margin_left = -2263.62
+margin_top = 135.8
+margin_right = -2167.55
+margin_bottom = 119.8
+custom_fonts/font = SubResource( 14 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 0.976471, 0.976471, 1 )
+custom_colors/font_color_shadow = Color( 0.776471, 0.854902, 0.0705882, 1 )
+text = "DANCE"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Player" parent="." groups=[
 "Persist",
