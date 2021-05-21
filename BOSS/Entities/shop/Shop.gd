@@ -3,7 +3,7 @@ extends Node2D
 var player 
 onready var menu = $Menu
 
-func initialize(player ):
+func initialize(player):
 	self.player = player
 	
 func get_name():
@@ -19,9 +19,7 @@ func _ready():
 
 
 func _on_Area2D_body_entered(body):
-	if(body.has_method("is_player") && body.is_player()):
+	if body.name == "Player":
+		menu.initialize(body)
 		menu.show()
-		menu.set_player(body)
-		
-		
 	

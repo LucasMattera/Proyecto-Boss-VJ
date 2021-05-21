@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/background.ogg-8f59877b161412f42a0b4037ef33cf67.oggstr"
+
+[deps]
+
+source_file="res://miniGames/arcanoid/assets/audio/background.ogg"
+dest_files=[ "res://.import/background.ogg-8f59877b161412f42a0b4037ef33cf67.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

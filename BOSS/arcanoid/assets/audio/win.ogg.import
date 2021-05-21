@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/win.ogg-62c3a932feff64a532ae3fbca465852b.oggstr"
+
+[deps]
+
+source_file="res://arcanoid/assets/audio/win.ogg"
+dest_files=[ "res://.import/win.ogg-62c3a932feff64a532ae3fbca465852b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,380 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://assets/fonts/Schrödinger.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/textures/nightclub/circle.png" type="Texture" id=2]
+[ext_resource path="res://miniGames/dance/ScorePoints.gd" type="Script" id=3]
+[ext_resource path="res://miniGames/dance/LifePoints.gd" type="Script" id=4]
+[ext_resource path="res://miniGames/dance/Ring.gd" type="Script" id=5]
+[ext_resource path="res://miniGames/dance/ArrowSpawner.tscn" type="PackedScene" id=6]
+[ext_resource path="res://miniGames/dance/GameWinPopup.gd" type="Script" id=7]
+[ext_resource path="res://miniGames/dance/GUI.gd" type="Script" id=8]
+[ext_resource path="res://miniGames/dance/GameOverPopup.gd" type="Script" id=9]
+[ext_resource path="res://miniGames/dance/GameReadyPopup.gd" type="Script" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="CircleShape2D" id=2]
+
+[sub_resource type="DynamicFont" id=3]
+size = 64
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 64
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=7]
+font_data = ExtResource( 1 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 86.0186, 10 )
+
+[node name="GUI" type="CanvasLayer"]
+script = ExtResource( 8 )
+
+[node name="Instructions" type="Label" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -528.0
+margin_top = -72.0
+margin_right = -15.0
+custom_fonts/font = SubResource( 1 )
+text = "Izquierda \"A / flecha izquierda\"
+Derecha: \"D / flecha derecha\""
+align = 2
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ring" type="Area2D" parent="."]
+position = Vector2( 200, 450 )
+collision_layer = 2147483649
+script = ExtResource( 5 )
+
+[node name="Circle" type="Sprite" parent="Ring"]
+position = Vector2( 7.62939e-06, 7.62939e-06 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ring"]
+scale = Vector2( 7, 7 )
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Score" type="ColorRect" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -640.0
+margin_top = 10.0
+margin_bottom = 74.0
+color = Color( 1, 1, 1, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreLabel" type="Label" parent="Score"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -310.0
+margin_right = -25.0
+margin_bottom = 65.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "PUNTAJE:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScorePoints" type="Label" parent="Score"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -20.0
+margin_right = 320.0
+margin_bottom = 65.0
+rect_min_size = Vector2( 300, 60 )
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "0"
+valign = 1
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lives" type="ColorRect" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -640.0
+margin_top = 90.0
+margin_right = -257.0
+margin_bottom = 154.0
+color = Color( 1, 1, 1, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LivesLabel" type="Label" parent="Lives"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -181.5
+margin_right = 2.5
+margin_bottom = 65.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "VIDAS:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LifePoints" type="Label" parent="Lives"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -154.36
+margin_top = 1.5874
+margin_right = 145.64
+margin_bottom = 66.5874
+rect_min_size = Vector2( 300, 30 )
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "3"
+align = 2
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameOverPopup" type="Popup" parent="."]
+pause_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -287.5
+margin_top = -164.0
+margin_right = 287.5
+margin_bottom = 164.0
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="GameOverPopup"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.490196, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="GameOverPopup/ColorRect"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 585.0
+margin_bottom = 168.0
+custom_fonts/font = SubResource( 5 )
+text = "GAME OVER
+Tenes menos ritmo que
+desfile de rengos.
+
+Volver a intentar?"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Retry" type="Button" parent="GameOverPopup/ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -107.5
+margin_top = 36.0
+margin_right = -2.49997
+margin_bottom = 59.0
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.921569, 1, 0, 1 )
+text = "Reintentar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="Button" parent="GameOverPopup/ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -107.5
+margin_top = 96.0
+margin_right = -2.49997
+margin_bottom = 119.0
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.886275, 0.988235, 0, 1 )
+text = "Irme"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameWinPopup" type="Popup" parent="."]
+pause_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -287.5
+margin_top = -164.0
+margin_right = 287.5
+margin_bottom = 164.0
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="GameWinPopup"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0.490196, 0, 1 )
+
+[node name="Label" type="Label" parent="GameWinPopup/ColorRect"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 585.0
+margin_bottom = 168.0
+custom_fonts/font = SubResource( 5 )
+text = "GAME WIN
+
+Rompiste tarima!
+Estas al nivel 
+del Fichi de Quilmes."
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="Button" parent="GameWinPopup/ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -107.5
+margin_top = 96.0
+margin_right = -2.49997
+margin_bottom = 119.0
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.886275, 0.988235, 0, 1 )
+text = "Irme"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameReadyPopup" type="Popup" parent="."]
+pause_mode = 2
+visible = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -287.5
+margin_top = -164.0
+margin_right = 287.5
+margin_bottom = 164.0
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="GameReadyPopup"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0.490196, 1 )
+
+[node name="Label" type="Label" parent="GameReadyPopup/ColorRect"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 585.0
+margin_bottom = 168.0
+custom_fonts/font = SubResource( 5 )
+text = "STREET DANCER
+
+Acierta los movimientos 
+en el momento adecuado 
+y gana puntos!"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Begin" type="Button" parent="GameReadyPopup/ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -107.5
+margin_top = 36.0
+margin_right = -2.49997
+margin_bottom = 59.0
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.921569, 1, 0, 1 )
+text = "Empezar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="Button" parent="GameReadyPopup/ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -107.5
+margin_top = 96.0
+margin_right = -2.49997
+margin_bottom = 119.0
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.886275, 0.988235, 0, 1 )
+text = "Irme"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScreenLimit" type="Area2D" parent="."]
+position = Vector2( 200, 660 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScreenLimit"]
+shape = SubResource( 8 )
+
+[node name="ArrowSpawner" parent="." instance=ExtResource( 6 )]
+layer = 0
+[connection signal="area_entered" from="Ring" to="." method="_on_Ring_area_entered"]
+[connection signal="area_entered" from="Ring" to="Ring" method="_on_Ring_area_entered"]
+[connection signal="area_exited" from="Ring" to="." method="_on_Ring_area_exited"]
+[connection signal="exit" from="GameOverPopup" to="." method="_on_GameOverPopup_exit"]
+[connection signal="retry" from="GameOverPopup" to="." method="_on_GameOverPopup_retry"]
+[connection signal="pressed" from="GameOverPopup/ColorRect/Retry" to="GameOverPopup" method="_on_Retry_pressed"]
+[connection signal="pressed" from="GameOverPopup/ColorRect/Exit" to="GameOverPopup" method="_on_Exit_pressed"]
+[connection signal="player_exit" from="GameWinPopup" to="." method="_on_GameWinPopup_player_exit"]
+[connection signal="pressed" from="GameWinPopup/ColorRect/Exit" to="GameWinPopup" method="_on_Exit_pressed"]
+[connection signal="player_exit" from="GameReadyPopup" to="." method="_on_GameReadyPopup_player_exit"]
+[connection signal="pressed" from="GameReadyPopup/ColorRect/Begin" to="GameReadyPopup" method="_on_Begin_pressed"]
+[connection signal="pressed" from="GameReadyPopup/ColorRect/Exit" to="GameReadyPopup" method="_on_Exit_pressed"]
+[connection signal="area_entered" from="ScreenLimit" to="." method="_on_ScreenLimit_area_entered"]
