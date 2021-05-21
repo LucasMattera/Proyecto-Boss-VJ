@@ -25,10 +25,15 @@ func _physics_process(delta):
 			if body.get_parent().get_child_count() == 1 :
 				print("Stage Complete")
 				win_s.play()
+				Player.money += 1000
 				yield(win_s, "finished")
 				queue_free()
 		elif body.get_name() == "bottom_wall" :
 			print("Game Over")
+			if Player.money <= 1000:
+				Player.money = 0
+			else: 
+				Player.money -= 1000
 			var retry_scene = load("res://miniGames/arcanoid/tittle/Retry.tscn")
 			get_parent().gameOver()
 			get_parent().add_child(retry_scene.instance())

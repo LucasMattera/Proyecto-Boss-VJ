@@ -208,7 +208,7 @@ texture = SubResource( 13 )
 [node name="StaticBody2D" type="StaticBody2D" parent="Mini_games_areas/Node"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Mini_games_areas/Node/StaticBody2D"]
-polygon = PoolVector2Array( 456, 16, 448, -296, 584, -296, 584, 16, 800, 16, 800, -784, 224, -784, 232, 16 )
+polygon = PoolVector2Array( 448, 8, 448, -296, 584, -296, 584, 8, 800, 8, 800, -784, 224, -784, 232, 8 )
 
 [node name="Label" type="Label" parent="Mini_games_areas/Node"]
 anchor_left = 0.359
