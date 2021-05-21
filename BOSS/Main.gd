@@ -1,6 +1,5 @@
 extends Node
 
-
 onready var player = $Player
 onready var shop = $Shop
 onready var GUI = $GUI

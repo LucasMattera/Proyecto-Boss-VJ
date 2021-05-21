@@ -6,7 +6,7 @@
 [ext_resource path="res://assets/textures/background.png" type="Texture" id=4]
 [ext_resource path="res://assets/textures/gray_square.png" type="Texture" id=5]
 [ext_resource path="res://Entities/shop/Shop.tscn" type="PackedScene" id=6]
-[ext_resource path="res://GUI.gd" type="Script" id=7]
+[ext_resource path="res://assets/textures/turret.png" type="Texture" id=7]
 [ext_resource path="res://Main.gd" type="Script" id=8]
 [ext_resource path="res://arcanoid.gd" type="Script" id=9]
 [ext_resource path="res://miniGames/street/DanceMinigame.gd" type="Script" id=10]
@@ -169,12 +169,15 @@ anchor_left = -4.851
 anchor_top = -3.691
 anchor_right = 4.4
 anchor_bottom = 5.952
-margin_left = -76.7769
-margin_top = 112.985
-margin_right = -76.8008
-margin_bottom = 113.185
+margin_left = -3.97314
+margin_top = 2.04042
+margin_right = -3.99707
+margin_bottom = 2.24035
 texture = ExtResource( 5 )
 expand = true
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1.49805, -2.92041 )
 
 [node name="Map2" type="TileMap" parent="."]
 tile_set = SubResource( 7 )

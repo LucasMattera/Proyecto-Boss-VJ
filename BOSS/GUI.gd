@@ -1,4 +1,5 @@
-extends CanvasLayer
+extends Node
+
 onready var Canvas_name = $Name
 onready var Canvas_Money = $Money
 
