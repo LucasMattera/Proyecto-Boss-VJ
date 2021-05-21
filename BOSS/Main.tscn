@@ -1,37 +1,20 @@
-
-[gd_scene load_steps=20 format=2]
-
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Entities/Map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Entities/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/textures/floor.png" type="Texture" id=3]
-[ext_resource path="res://assets/textures/background.png" type="Texture" id=4]
+[ext_resource path="res://assets/textures/roguelikeCity_magenta.png" type="Texture" id=4]
 [ext_resource path="res://assets/textures/gray_square.png" type="Texture" id=5]
 [ext_resource path="res://Entities/shop/Shop.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/textures/turret.png" type="Texture" id=7]
+[ext_resource path="res://GUI.gd" type="Script" id=7]
 [ext_resource path="res://Main.gd" type="Script" id=8]
 [ext_resource path="res://arcanoid.gd" type="Script" id=9]
 [ext_resource path="res://miniGames/street/DanceMinigame.gd" type="Script" id=10]
-[ext_resource path="res://GUI.tscn" type="PackedScene" id=10]
-
+[ext_resource path="res://assets/textures/d9xkdox-e16fa13c-f62d-4f9e-a3f7-c0460c6219df-640x640.png" type="Texture" id=11]
+[ext_resource path="res://assets/textures/Spritesheet_2.png" type="Texture" id=12]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=2]
-points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
-
-[sub_resource type="ConvexPolygonShape2D" id=3]
-points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
-
-[sub_resource type="ConvexPolygonShape2D" id=4]
-points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
-
-[sub_resource type="ConvexPolygonShape2D" id=5]
-points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
-
-[sub_resource type="ConvexPolygonShape2D" id=6]
-points = PoolVector2Array( 800, 608, 0, 608, 0, 0, 800, 0 )
 
 [sub_resource type="TileSet" id=7]
 0/name = "floor.png 0"
@@ -55,82 +38,32 @@ points = PoolVector2Array( 800, 608, 0, 608, 0, 0, 800, 0 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
-1/name = "background.png 1"
-1/texture = ExtResource( 4 )
-1/tex_offset = Vector2( 0, 0 )
-1/modulate = Color( 1, 1, 1, 1 )
-1/region = Rect2( 0, 0, 64, 64 )
-1/tile_mode = 1
-1/autotile/bitmask_mode = 0
-1/autotile/bitmask_flags = [ Vector2( 0, 0 ), 260, Vector2( 0, 1 ), 4, Vector2( 1, 0 ), 64, Vector2( 1, 1 ), 1 ]
-1/autotile/icon_coordinate = Vector2( 0, 0 )
-1/autotile/tile_size = Vector2( 32, 32 )
-1/autotile/spacing = 0
-1/autotile/occluder_map = [  ]
-1/autotile/navpoly_map = [  ]
-1/autotile/priority_map = [  ]
-1/autotile/z_index_map = [  ]
-1/occluder_offset = Vector2( 0, 0 )
-1/navigation_offset = Vector2( 0, 0 )
-1/shape_offset = Vector2( 0, 0 )
-1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-1/shape = SubResource( 2 )
-1/shape_one_way = false
-1/shape_one_way_margin = 1.0
-1/shapes = [ {
-"autotile_coord": Vector2( 1, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 2 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-}, {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 3 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-}, {
-"autotile_coord": Vector2( 0, 1 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 4 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-}, {
-"autotile_coord": Vector2( 1, 1 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 5 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-1/z_index = 0
-2/name = "background.png 2"
-2/texture = ExtResource( 4 )
-2/tex_offset = Vector2( 0, 0 )
-2/modulate = Color( 1, 1, 1, 1 )
-2/region = Rect2( 0, 0, 800, 608 )
-2/tile_mode = 0
-2/occluder_offset = Vector2( 0, 0 )
-2/navigation_offset = Vector2( 0, 0 )
-2/shape_offset = Vector2( 0, 0 )
-2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-2/shape = SubResource( 6 )
-2/shape_one_way = false
-2/shape_one_way_margin = 1.0
-2/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 6 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-2/z_index = 0
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 239.589, 325.449, 13.1543, 28.5663 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( -0.702637, 221.211, 200.422, 175.369 )
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 144, 48 )
+extents = Vector2( 56, 136 )
+
+[sub_resource type="AtlasTexture" id=13]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 287.954, 26.2028, 135.285, 125.264 )
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 360.758, 181.344, 161.813, 223.388 )
 
 [sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 120, 64 )
-
+extents = Vector2( 256, 64 )
 
 [node name="Main" type="Node"]
 script = ExtResource( 8 )
@@ -174,15 +107,12 @@ anchor_left = -4.851
 anchor_top = -3.691
 anchor_right = 4.4
 anchor_bottom = 5.952
-margin_left = -3.97314
-margin_top = 2.04042
-margin_right = -3.99707
-margin_bottom = 2.24035
+margin_left = -88.5767
+margin_top = -73.3999
+margin_right = -88.6006
+margin_bottom = -73.2002
 texture = ExtResource( 5 )
 expand = true
-
-[node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1.49805, -2.92041 )
 
 [node name="Map2" type="TileMap" parent="."]
 tile_set = SubResource( 7 )
@@ -192,42 +122,115 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="Street_H" type="Node" parent="."]
+
+[node name="spr_street_H" type="Sprite" parent="Street_H"]
+position = Vector2( -216, 184 )
+scale = Vector2( 726.769, 12 )
+texture = SubResource( 10 )
+
+[node name="spr_street_H2" type="Sprite" parent="Street_H"]
+position = Vector2( -232, 2000 )
+scale = Vector2( 726.769, 12 )
+texture = SubResource( 10 )
+
+[node name="spr_street_H3" type="Sprite" parent="Street_H"]
+position = Vector2( -208, -1744 )
+scale = Vector2( 726.769, 12 )
+texture = SubResource( 10 )
+
+[node name="Street_V" type="Node" parent="."]
+
+[node name="spr_street_V" type="Sprite" parent="Street_V"]
+position = Vector2( -3168, 886.097 )
+rotation = 1.5708
+scale = Vector2( 400.719, 12 )
+texture = SubResource( 10 )
+
+[node name="spr_street_V2" type="Sprite" parent="Street_V"]
+position = Vector2( -1088, 888 )
+rotation = 1.5708
+scale = Vector2( 400.719, 12 )
+texture = SubResource( 10 )
+
+[node name="spr_street_V3" type="Sprite" parent="Street_V"]
+position = Vector2( 968, 904 )
+rotation = 1.5708
+scale = Vector2( 400.719, 12 )
+texture = SubResource( 10 )
+
+[node name="spr_street_V4" type="Sprite" parent="Street_V"]
+position = Vector2( 2920, 896 )
+rotation = 1.5708
+scale = Vector2( 400.719, 12 )
+texture = SubResource( 10 )
+
+[node name="Shop" parent="." instance=ExtResource( 6 )]
+position = Vector2( -1776, 440 )
+
+[node name="Sprite" parent="Shop" index="0"]
+position = Vector2( 64.0002, 272 )
+rotation = 3.14159
+scale = Vector2( 4.65137, 4.12417 )
+texture = SubResource( 11 )
+
+[node name="CollisionShape2D" parent="Shop/Area2D" index="0"]
+position = Vector2( 248, -3.05176e-05 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Shop"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shop/StaticBody2D"]
+polygon = PoolVector2Array( 152, -80, 152, 80, 328, 80, 344, 80, 344, -80, 512, -80, 520, 624, -400, 632, -400, -88 )
+
+[node name="Mini_games_areas" type="Node" parent="."]
+
+[node name="Node" type="Node" parent="Mini_games_areas"]
+
+[node name="arcanoid" type="Area2D" parent="Mini_games_areas/Node"]
+position = Vector2( 576, -56 )
+script = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mini_games_areas/Node/arcanoid"]
+position = Vector2( -64, -112 )
+shape = SubResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Mini_games_areas/Node/arcanoid"]
+position = Vector2( -64, -332.75 )
+scale = Vector2( 4.26667, 6.324 )
+texture = SubResource( 13 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Mini_games_areas/Node"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Mini_games_areas/Node/StaticBody2D"]
+polygon = PoolVector2Array( 456, 16, 448, -296, 584, -296, 584, 16, 800, 16, 800, -784, 224, -784, 232, 16 )
+
+[node name="dance" type="Node" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="dance"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="dance/StaticBody2D"]
+polygon = PoolVector2Array( -1960, -64, -2168, -64, -2168, -768, -1264, -760, -1256, -72, -1440, -72, -1440, -336, -1960, -344 )
+
+[node name="Area2D" type="Area2D" parent="dance"]
+position = Vector2( -1904, -192 )
+gravity_vec = Vector2( 0, 0 )
+script = ExtResource( 10 )
+
+[node name="Sprite" type="Sprite" parent="dance/Area2D"]
+position = Vector2( 196, -164 )
+scale = Vector2( 5.81366, 3.47982 )
+texture = SubResource( 12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dance/Area2D"]
+position = Vector2( 200, -72 )
+shape = SubResource( 9 )
+
 [node name="Player" parent="." groups=[
 "Persist",
 "player",
 ] instance=ExtResource( 2 )]
 player_name = "Gustavo"
-
-[node name="Shop" parent="." instance=ExtResource( 6 )]
-position = Vector2( -1777.4, 253.762 )
-
-[node name="Mini_games_areas" type="Node" parent="."]
-
-[node name="arcanoid" type="Area2D" parent="Mini_games_areas"]
-position = Vector2( 400, -248 )
-script = ExtResource( 9 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mini_games_areas/arcanoid"]
-shape = SubResource( 8 )
-
-[node name="Node" type="Node" parent="."]
-
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2( -1776, -224 )
-gravity_vec = Vector2( 0, 0 )
-script = ExtResource( 10 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Area2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 9 )
-[connection signal="body_entered" from="Mini_games_areas/arcanoid" to="Mini_games_areas/arcanoid" method="_on_arcanoid_body_entered"]
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_DanceMinigame_body_entered"]
+[connection signal="body_entered" from="Mini_games_areas/Node/arcanoid" to="Mini_games_areas/Node/arcanoid" method="_on_arcanoid_body_entered"]
+[connection signal="body_entered" from="dance/Area2D" to="dance/Area2D" method="_on_DanceMinigame_body_entered"]
 
 [editable path="Shop"]
