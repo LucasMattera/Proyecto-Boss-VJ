@@ -4,10 +4,8 @@ var minigame
 signal arrow_in_ring
 signal arrow_out_of_ring
 signal arrow_out_of_screen
-signal loser_exit
 signal loser_retry
-signal discount_arrow
-signal winner_exit
+signal player_exit
 
 func set_minigame(minigame):
 	minigame = minigame
@@ -29,14 +27,14 @@ func _on_ScreenLimit_area_entered(arrow):
 func _on_DanceMinigame_game_over():
 	$GameOverPopup.game_over()
 
-func _on_GameOverPopup_exit():
-	emit_signal("loser_exit")
-
 func _on_GameOverPopup_retry():
 	emit_signal("loser_retry")
 
 func _on_DanceMinigame_win_game():
 	$GameWinPopup.win_game()
 
-func _on_GameWinPopup_winner_exit():
-	emit_signal("winner_exit")
+func _on_GameWinPopup_player_exit():
+	emit_signal("player_exit")
+
+func _on_GameReadyPopup_player_exit():
+	emit_signal("player_exit")

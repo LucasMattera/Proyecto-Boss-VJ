@@ -22,6 +22,5 @@ z_index = 1
 [connection signal="arrow_in_ring" from="GUI" to="." method="_on_GUI_arrow_in_ring"]
 [connection signal="arrow_out_of_ring" from="GUI" to="." method="_on_GUI_arrow_out_of_ring"]
 [connection signal="arrow_out_of_screen" from="GUI" to="." method="_on_GUI_arrow_out_of_screen"]
-[connection signal="loser_exit" from="GUI" to="." method="_on_GUI_loser_exit"]
 [connection signal="loser_retry" from="GUI" to="." method="_on_GUI_loser_retry"]
-[connection signal="winner_exit" from="GUI" to="." method="_on_GUI_winner_exit"]
+[connection signal="player_exit" from="GUI" to="." method="_on_GUI_player_exit"]
