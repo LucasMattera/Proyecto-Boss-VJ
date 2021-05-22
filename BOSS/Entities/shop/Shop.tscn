@@ -5,7 +5,7 @@
 [ext_resource path="res://Menu.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 131.152, 75.1104 )
+extents = Vector2( 76.5095, 84.3943 )
 
 [node name="Shop" type="Node2D"]
 position = Vector2( 138.843, 16.6612 )
@@ -13,6 +13,7 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
+shop_name = "Shop1"
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 7.44315, 8.468 )

@@ -2,8 +2,10 @@ extends Node2D
 
 var player 
 onready var menu = $Menu
+export (String) var shop_name = "shop"
 
 func initialize(player):
+	menu.set_shop_name(shop_name)
 	self.player = player
 	
 func get_name():

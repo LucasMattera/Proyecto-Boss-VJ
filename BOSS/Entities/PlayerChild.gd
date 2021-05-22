@@ -61,8 +61,7 @@ func is_player():
 	return true
 	
 func buy(shop):
-	if(money >= 100):
-		self.shops.append(shop)
+	if(money >= 100) && !shops.has(shop):
 		Player.shops.append(shop)
 		self.money -= 100
 		Player.money -= 100
@@ -74,7 +73,7 @@ func buy(shop):
 		print('plata restante: ')
 		print(self.money)
 	else:
-		print('no te alcanza... ')
+		print('no te alcanza...')
 
 func _physics_process(delta):
 	if(can_move):
