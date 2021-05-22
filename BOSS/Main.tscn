@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Entities/Map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Entities/Player.tscn" type="PackedScene" id=2]
@@ -41,7 +41,6 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 0/z_index = 0
 
 [sub_resource type="AtlasTexture" id=3]
-flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 239.589, 325.449, 13.1543, 28.5663 )
 
@@ -49,7 +48,6 @@ region = Rect2( 239.589, 325.449, 13.1543, 28.5663 )
 extents = Vector2( 56, 136 )
 
 [sub_resource type="AtlasTexture" id=5]
-flags = 4
 atlas = ExtResource( 12 )
 region = Rect2( 287.954, 26.2028, 135.285, 125.264 )
 
@@ -59,22 +57,23 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 13 )
 
 [sub_resource type="AtlasTexture" id=7]
-flags = 4
-atlas = ExtResource( 11 )
-region = Rect2( 360.758, 181.344, 161.813, 223.388 )
+atlas = ExtResource( 12 )
+region = Rect2( 5.52087, -4.96092, 134.153, 177.866 )
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 256, 64 )
+extents = Vector2( 144, 112 )
 
-[sub_resource type="AtlasTexture" id=10]
-flags = 4
+[sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 11 )
 region = Rect2( 320.22, 17.7828, 201.954, 142.949 )
 
-[sub_resource type="AtlasTexture" id=9]
-flags = 4
+[sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 11 )
 region = Rect2( -0.702637, 221.211, 200.422, 175.369 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 11 )
+region = Rect2( -0.51741, 402.879, 201.607, 195.146 )
 
 [node name="Main" type="Node"]
 script = ExtResource( 8 )
@@ -109,6 +108,19 @@ margin_bottom = -0.089325
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "$ Money"
 align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Shops" type="Label" parent="GUI"]
+anchor_left = 0.156
+anchor_top = 0.013
+anchor_right = 0.32
+anchor_bottom = 0.053
+margin_left = 0.255997
+margin_top = 0.2
+margin_right = 0.319977
+margin_bottom = 0.199999
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -222,7 +234,8 @@ __meta__ = {
 [node name="StaticBody2D" type="StaticBody2D" parent="dance"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="dance/StaticBody2D"]
-polygon = PoolVector2Array( -1960, -64, -2168, -64, -2168, -768, -1264, -760, -1256, -72, -1440, -72, -1440, -336, -1960, -344 )
+position = Vector2( 8, 8 )
+polygon = PoolVector2Array( -1816, -16, -2048, -16, -2056, -664, -1272, -656, -1288, -16, -1520, -8, -1520, -320, -1824, -328 )
 
 [node name="Area2D" type="Area2D" parent="dance"]
 position = Vector2( -1904, -192 )
@@ -230,12 +243,12 @@ gravity_vec = Vector2( 0, 0 )
 script = ExtResource( 10 )
 
 [node name="Sprite" type="Sprite" parent="dance/Area2D"]
-position = Vector2( 196, -164 )
-scale = Vector2( 5.81366, 3.47982 )
+position = Vector2( 232, -164 )
+scale = Vector2( 6.56716, 4.11299 )
 texture = SubResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dance/Area2D"]
-position = Vector2( 200, -72 )
+position = Vector2( 240, 40 )
 shape = SubResource( 8 )
 
 [node name="Label2" type="Label" parent="dance"]
@@ -243,10 +256,10 @@ anchor_left = 0.359
 anchor_top = -0.733
 anchor_right = 0.648
 anchor_bottom = -0.533
-margin_left = -2263.62
-margin_top = 135.8
-margin_right = -2167.55
-margin_bottom = 119.8
+margin_left = -2223.62
+margin_top = -240.2
+margin_right = -2119.55
+margin_bottom = -256.2
 custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 0.976471, 0.976471, 1 )
@@ -260,13 +273,13 @@ __meta__ = {
 [node name="Shops" type="Node" parent="."]
 
 [node name="Shop2" parent="Shops" instance=ExtResource( 6 )]
-position = Vector2( 266.062, 32.6089 )
-shop_name = "Shop2"
+position = Vector2( 264, 24 )
+shop_name = "cafe"
 
 [node name="Sprite" parent="Shops/Shop2" index="0"]
 position = Vector2( -388.627, -307.406 )
 scale = Vector2( 3.57621, 4.13834 )
-texture = SubResource( 10 )
+texture = SubResource( 9 )
 
 [node name="CollisionShape2D" parent="Shops/Shop2/Area2D" index="0"]
 position = Vector2( -549.013, -106.924 )
@@ -278,12 +291,13 @@ polygon = PoolVector2Array( -461.48, -25.5962, -49.345, -19.3831, -43.132, -583.
 
 [node name="Shop" parent="Shops" instance=ExtResource( 6 )]
 position = Vector2( -1777.87, 440 )
+shop_name = "heladeria"
 
 [node name="Sprite" parent="Shops/Shop" index="0"]
 position = Vector2( 64.0002, 272 )
 rotation = 3.14159
 scale = Vector2( 4.65137, 4.12417 )
-texture = SubResource( 9 )
+texture = SubResource( 10 )
 
 [node name="CollisionShape2D" parent="Shops/Shop/Area2D" index="0"]
 position = Vector2( 248, -3.05176e-05 )
@@ -291,6 +305,27 @@ position = Vector2( 248, -3.05176e-05 )
 [node name="StaticBody2D" type="StaticBody2D" parent="Shops/Shop"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shops/Shop/StaticBody2D"]
+polygon = PoolVector2Array( 152, -80, 152, 80, 328, 80, 344, 80, 344, -80, 512, -80, 520, 624, -400, 632, -400, -88 )
+
+[node name="Shop3" parent="Shops" instance=ExtResource( 6 )]
+position = Vector2( -848, -1064 )
+rotation = 4.71239
+shop_name = "heladeria2"
+
+[node name="Sprite" parent="Shops/Shop3" index="0"]
+position = Vector2( -778.337, 157.863 )
+rotation = 3.14159
+scale = Vector2( 2.8864, 2.27932 )
+texture = SubResource( 11 )
+
+[node name="CollisionShape2D" parent="Shops/Shop3/Area2D" index="0"]
+position = Vector2( -664, -7.99997 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Shops/Shop3"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shops/Shop3/StaticBody2D"]
+position = Vector2( -815.403, -12.8452 )
+scale = Vector2( 0.621612, 0.60267 )
 polygon = PoolVector2Array( 152, -80, 152, 80, 328, 80, 344, 80, 344, -80, 512, -80, 520, 624, -400, 632, -400, -88 )
 
 [node name="Player" parent="." groups=[
@@ -305,3 +340,5 @@ player_name = "Gustavo"
 [editable path="Shops/Shop2"]
 
 [editable path="Shops/Shop"]
+
+[editable path="Shops/Shop3"]

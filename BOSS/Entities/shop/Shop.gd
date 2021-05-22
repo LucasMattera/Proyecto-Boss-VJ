@@ -21,7 +21,18 @@ func _ready():
 
 
 func _on_Area2D_body_entered(body):
-	if body.name == "Player":
-		menu.initialize(body)
-		menu.show()
+	if body.is_in_group("player"):
+		var tengo_el_shop = false
+		for shop in body.shops:
+			print(String(shop))
+			print(self.shop_name)
+			if String(shop) == shop_name:
+				tengo_el_shop = true
+		if ! tengo_el_shop || body.shops.empty():
+			menu.initialize(body)
+			menu.show()
+			tengo_el_shop = false
+		else:
+			print("YA TENES ESTE SHOP")
+		
 	
