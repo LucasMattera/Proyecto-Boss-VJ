@@ -25,13 +25,24 @@ anchor_left = 0.09
 anchor_top = 0.017
 anchor_right = 0.158
 anchor_bottom = 0.06
-margin_left = -0.160004
-margin_top = -0.289326
-margin_right = 0.207993
-margin_bottom = -0.089325
+margin_left = -4.16
+margin_top = -2.2
+margin_right = -3.79201
+margin_bottom = -2.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "$ Money"
 align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Shops" type="Label" parent="."]
+margin_left = 192.0
+margin_top = 8.0
+margin_right = 248.0
+margin_bottom = 22.0
+custom_colors/font_color = Color( 0.0196078, 0.0196078, 0.0196078, 1 )
+text = "SHOPS: "
 __meta__ = {
 "_edit_use_anchors_": false
 }

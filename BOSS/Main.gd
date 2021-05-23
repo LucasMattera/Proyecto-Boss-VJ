@@ -10,6 +10,7 @@ func _ready():
 		shop.initialize(player)
 	print("entre al main")
 	player.initialize()
+	print(player.position)
 	#shop.initialize(player)
 	GUI.initialize()
 	#GameServer.save_game()

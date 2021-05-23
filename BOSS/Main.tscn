@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Entities/Map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Entities/Player.tscn" type="PackedScene" id=2]
@@ -13,6 +13,8 @@
 [ext_resource path="res://assets/textures/d9xkdox-e16fa13c-f62d-4f9e-a3f7-c0460c6219df-640x640.png" type="Texture" id=11]
 [ext_resource path="res://assets/textures/Spritesheet_2.png" type="Texture" id=12]
 [ext_resource path="res://arcanoid/assets/fonts/advanced_pixel-7.ttf" type="DynamicFontData" id=13]
+[ext_resource path="res://assets/textures/d0c05af2bcc41b3078962cc2fc0430bb.png" type="Texture" id=14]
+[ext_resource path="res://miniGames/Collect_money/Area2D_Collect_Money.gd" type="Script" id=15]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -61,7 +63,14 @@ atlas = ExtResource( 12 )
 region = Rect2( 5.52087, -4.96092, 134.153, 177.866 )
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 144, 112 )
+extents = Vector2( 104, 96 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 14 )
+region = Rect2( 1298.22, 10.0874, 229.095, 372.595 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 40, 72 )
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 11 )
@@ -130,10 +139,10 @@ anchor_left = -4.851
 anchor_top = -3.691
 anchor_right = 4.4
 anchor_bottom = 5.952
-margin_left = -88.5757
-margin_top = -81.3999
-margin_right = -88.5996
-margin_bottom = -81.2002
+margin_left = -168.577
+margin_top = -17.3999
+margin_right = -168.601
+margin_bottom = -17.2002
 texture = ExtResource( 5 )
 expand = true
 
@@ -148,77 +157,88 @@ __meta__ = {
 [node name="Street_H" type="Node" parent="."]
 
 [node name="spr_street_H" type="Sprite" parent="Street_H"]
-position = Vector2( -216, 184 )
+position = Vector2( -328, 184 )
 scale = Vector2( 726.769, 12 )
 texture = SubResource( 3 )
 
 [node name="spr_street_H2" type="Sprite" parent="Street_H"]
-position = Vector2( -232, 2000 )
+position = Vector2( -312, 1248 )
+scale = Vector2( 726.769, 12 )
+texture = SubResource( 3 )
+
+[node name="spr_street_H4" type="Sprite" parent="Street_H"]
+position = Vector2( -312, 2376 )
 scale = Vector2( 726.769, 12 )
 texture = SubResource( 3 )
 
 [node name="spr_street_H3" type="Sprite" parent="Street_H"]
-position = Vector2( -208, -1744 )
+position = Vector2( -328, -968 )
 scale = Vector2( 726.769, 12 )
 texture = SubResource( 3 )
 
 [node name="Street_V" type="Node" parent="."]
 
 [node name="spr_street_V" type="Sprite" parent="Street_V"]
-position = Vector2( -3168, 886.097 )
+position = Vector2( -3168, 809.988 )
 rotation = 1.5708
-scale = Vector2( 400.719, 12 )
+scale = Vector2( 412.428, 12 )
 texture = SubResource( 3 )
 
 [node name="spr_street_V2" type="Sprite" parent="Street_V"]
-position = Vector2( -1088, 888 )
+position = Vector2( -1088, 776.864 )
 rotation = 1.5708
-scale = Vector2( 400.719, 12 )
+scale = Vector2( 415.355, 12 )
 texture = SubResource( 3 )
 
 [node name="spr_street_V3" type="Sprite" parent="Street_V"]
-position = Vector2( 968, 904 )
+position = Vector2( 968, 818.377 )
 rotation = 1.5708
-scale = Vector2( 400.719, 12 )
+scale = Vector2( 413.892, 12 )
 texture = SubResource( 3 )
 
 [node name="spr_street_V4" type="Sprite" parent="Street_V"]
-position = Vector2( 2920, 896 )
+position = Vector2( 2920, 800.864 )
 rotation = 1.5708
-scale = Vector2( 400.719, 12 )
+scale = Vector2( 415.355, 12 )
 texture = SubResource( 3 )
 
 [node name="Mini_games_areas" type="Node" parent="."]
 
-[node name="Node" type="Node" parent="Mini_games_areas"]
+[node name="Arcanoid" type="Node" parent="Mini_games_areas"]
 
-[node name="arcanoid" type="Area2D" parent="Mini_games_areas/Node"]
+[node name="arcanoid" type="Area2D" parent="Mini_games_areas/Arcanoid"]
 position = Vector2( 576, -56 )
 script = ExtResource( 9 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mini_games_areas/Node/arcanoid"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mini_games_areas/Arcanoid/arcanoid"]
 position = Vector2( -64, -112 )
 shape = SubResource( 4 )
 
-[node name="Sprite" type="Sprite" parent="Mini_games_areas/Node/arcanoid"]
-position = Vector2( -64, -332.75 )
-scale = Vector2( 4.26667, 6.324 )
+[node name="Sprite" type="Sprite" parent="Mini_games_areas/Arcanoid/arcanoid"]
+position = Vector2( -144, -336.75 )
+scale = Vector2( 5.45185, 6.388 )
 texture = SubResource( 5 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Mini_games_areas/Node"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Mini_games_areas/Arcanoid"]
+position = Vector2( 440, -456 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Mini_games_areas/Node/StaticBody2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Mini_games_areas/Arcanoid/StaticBody2D"]
+position = Vector2( -640, 440 )
+scale = Vector2( 1.24132, 1 )
 polygon = PoolVector2Array( 448, 8, 448, -296, 584, -296, 584, 8, 800, 8, 800, -784, 224, -784, 232, 8 )
 
-[node name="Label" type="Label" parent="Mini_games_areas/Node"]
+[node name="Label" type="Label" parent="Mini_games_areas/Arcanoid"]
 anchor_left = 0.359
 anchor_top = -0.733
 anchor_right = 0.648
 anchor_bottom = -0.533
-margin_left = -7.61603
-margin_top = -0.199982
-margin_right = 8.448
-margin_bottom = 5.80002
+margin_left = -103.616
+margin_top = -16.2
+margin_right = -87.5519
+margin_bottom = -10.2
 custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 0.976471, 0.976471, 1 )
@@ -229,68 +249,82 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="dance" type="Node" parent="."]
+[node name="dance" type="Node" parent="Mini_games_areas"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="dance"]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="dance/StaticBody2D"]
-position = Vector2( 8, 8 )
-polygon = PoolVector2Array( -1816, -16, -2048, -16, -2056, -664, -1272, -656, -1288, -16, -1520, -8, -1520, -320, -1824, -328 )
-
-[node name="Area2D" type="Area2D" parent="dance"]
+[node name="Area2D" type="Area2D" parent="Mini_games_areas/dance"]
 position = Vector2( -1904, -192 )
 gravity_vec = Vector2( 0, 0 )
 script = ExtResource( 10 )
 
-[node name="Sprite" type="Sprite" parent="dance/Area2D"]
-position = Vector2( 232, -164 )
-scale = Vector2( 6.56716, 4.11299 )
+[node name="Sprite" type="Sprite" parent="Mini_games_areas/dance/Area2D"]
+position = Vector2( 232, -236 )
+scale = Vector2( 6.56716, 4.92655 )
 texture = SubResource( 7 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="dance/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mini_games_areas/dance/Area2D"]
 position = Vector2( 240, 40 )
 shape = SubResource( 8 )
 
-[node name="Label2" type="Label" parent="dance"]
-anchor_left = 0.359
-anchor_top = -0.733
-anchor_right = 0.648
-anchor_bottom = -0.533
-margin_left = -2223.62
-margin_top = -240.2
-margin_right = -2119.55
-margin_bottom = -256.2
-custom_fonts/font = SubResource( 6 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 1, 0.976471, 0.976471, 1 )
-custom_colors/font_color_shadow = Color( 0.776471, 0.854902, 0.0705882, 1 )
-text = "DANCE"
-align = 1
+[node name="StaticBody2D" type="StaticBody2D" parent="Mini_games_areas/dance"]
+position = Vector2( -1680, -552 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Mini_games_areas/dance/StaticBody2D"]
+position = Vector2( 1688, 557.268 )
+scale = Vector2( 1, 1.15854 )
+polygon = PoolVector2Array( -1816, -16, -2048, -16, -2056, -664, -1272, -656, -1288, -16, -1520, -8, -1520, -320, -1824, -328 )
+
+[node name="Collect_Money" type="Node" parent="Mini_games_areas"]
+
+[node name="Area2D_Collect_Money" type="Area2D" parent="Mini_games_areas/Collect_Money"]
+position = Vector2( -2568, 696 )
+script = ExtResource( 15 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_group_": true
 }
+
+[node name="Sprite" type="Sprite" parent="Mini_games_areas/Collect_Money/Area2D_Collect_Money"]
+position = Vector2( -8.00024, 8 )
+scale = Vector2( 3.66812, 1.89247 )
+texture = SubResource( 12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mini_games_areas/Collect_Money/Area2D_Collect_Money"]
+position = Vector2( -8, 264 )
+shape = SubResource( 13 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Mini_games_areas/Collect_Money"]
+position = Vector2( -2632, 640 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Mini_games_areas/Collect_Money/StaticBody2D"]
+position = Vector2( 2624, -640 )
+polygon = PoolVector2Array( -2648, 1040, -2992, 1048, -2984, 352, -2184, 360, -2168, 1048, -2496, 1048, -2496, 856, -2648, 856 )
 
 [node name="Shops" type="Node" parent="."]
 
 [node name="Shop2" parent="Shops" instance=ExtResource( 6 )]
-position = Vector2( 264, 24 )
+position = Vector2( -80, 16 )
 shop_name = "cafe"
 
 [node name="Sprite" parent="Shops/Shop2" index="0"]
-position = Vector2( -388.627, -307.406 )
-scale = Vector2( 3.57621, 4.13834 )
+position = Vector2( -344, -418.792 )
+scale = Vector2( 4.93532, 5.70716 )
 texture = SubResource( 9 )
 
 [node name="CollisionShape2D" parent="Shops/Shop2/Area2D" index="0"]
-position = Vector2( -549.013, -106.924 )
+position = Vector2( -552, -160 )
 
 [node name="RigidBody2D" type="StaticBody2D" parent="Shops/Shop2"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shops/Shop2/RigidBody2D"]
+position = Vector2( 168.942, 6.00761 )
+scale = Vector2( 1.30276, 1.29974 )
 polygon = PoolVector2Array( -461.48, -25.5962, -49.345, -19.3831, -43.132, -583.738, -757.637, -595.129, -747.282, -24.5606, -627.162, -22.4896, -628.197, -208.882, -461.48, -206.811 )
 
 [node name="Shop" parent="Shops" instance=ExtResource( 6 )]
-position = Vector2( -1777.87, 440 )
+position = Vector2( -1648, 984 )
+rotation = 3.14159
 shop_name = "heladeria"
 
 [node name="Sprite" parent="Shops/Shop" index="0"]
@@ -302,30 +336,44 @@ texture = SubResource( 10 )
 [node name="CollisionShape2D" parent="Shops/Shop/Area2D" index="0"]
 position = Vector2( 248, -3.05176e-05 )
 
+[node name="Menu" parent="Shops/Shop" index="2"]
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 0.0
+margin_bottom = 0.0
+rect_rotation = 180.0
+
 [node name="StaticBody2D" type="StaticBody2D" parent="Shops/Shop"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shops/Shop/StaticBody2D"]
 polygon = PoolVector2Array( 152, -80, 152, 80, 328, 80, 344, 80, 344, -80, 512, -80, 520, 624, -400, 632, -400, -88 )
 
 [node name="Shop3" parent="Shops" instance=ExtResource( 6 )]
-position = Vector2( -848, -1064 )
-rotation = 4.71239
+position = Vector2( -3120, -64 )
+rotation = 3.14159
 shop_name = "heladeria2"
 
 [node name="Sprite" parent="Shops/Shop3" index="0"]
-position = Vector2( -778.337, 157.863 )
+position = Vector2( -592.614, 344.741 )
 rotation = 3.14159
-scale = Vector2( 2.8864, 2.27932 )
+scale = Vector2( 4.73439, 4.19602 )
 texture = SubResource( 11 )
 
 [node name="CollisionShape2D" parent="Shops/Shop3/Area2D" index="0"]
-position = Vector2( -664, -7.99997 )
+position = Vector2( -400, 48 )
+
+[node name="Menu" parent="Shops/Shop3" index="2"]
+margin_left = -524.026
+margin_top = 8.523
+margin_right = -524.026
+margin_bottom = 8.523
+rect_rotation = 180.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Shops/Shop3"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shops/Shop3/StaticBody2D"]
-position = Vector2( -815.403, -12.8452 )
-scale = Vector2( 0.621612, 0.60267 )
+position = Vector2( -634.638, 40.0241 )
+scale = Vector2( 0.968856, 1.07944 )
 polygon = PoolVector2Array( 152, -80, 152, 80, 328, 80, 344, 80, 344, -80, 512, -80, 520, 624, -400, 632, -400, -88 )
 
 [node name="Player" parent="." groups=[
@@ -334,8 +382,9 @@ polygon = PoolVector2Array( 152, -80, 152, 80, 328, 80, 344, 80, 344, -80, 512, 
 ] instance=ExtResource( 2 )]
 position = Vector2( 965.099, 182.25 )
 player_name = "Gustavo"
-[connection signal="body_entered" from="Mini_games_areas/Node/arcanoid" to="Mini_games_areas/Node/arcanoid" method="_on_arcanoid_body_entered"]
-[connection signal="body_entered" from="dance/Area2D" to="dance/Area2D" method="_on_DanceMinigame_body_entered"]
+[connection signal="body_entered" from="Mini_games_areas/Arcanoid/arcanoid" to="Mini_games_areas/Arcanoid/arcanoid" method="_on_arcanoid_body_entered"]
+[connection signal="body_entered" from="Mini_games_areas/dance/Area2D" to="Mini_games_areas/dance/Area2D" method="_on_DanceMinigame_body_entered"]
+[connection signal="body_entered" from="Mini_games_areas/Collect_Money/Area2D_Collect_Money" to="Mini_games_areas/Collect_Money/Area2D_Collect_Money" method="_on_Area2D_Collect_Money_body_entered"]
 
 [editable path="Shops/Shop2"]
 
