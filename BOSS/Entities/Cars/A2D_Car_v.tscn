@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/textures/roguelikeCity_magenta.png" type="Texture" id=1]
+[ext_resource path="res://A2D_Car_v.gd" type="Script" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 566.64, 373.811, 22.9207, 33.1619 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 63.6622, 79.0382 )
+
+[node name="A2D_Car_v" type="Area2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 56, 92 )
+scale = Vector2( 6.09091, 6.57576 )
+texture = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 64, 104 )
+shape = SubResource( 2 )
+[connection signal="body_entered" from="." to="." method="_on_A2D_Car_v_body_entered"]
