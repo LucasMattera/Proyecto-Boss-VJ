@@ -4,6 +4,8 @@ onready var player = $Player
 onready var shops = $Shops
 onready var GUI = $GUI
 onready var atropellado = $Label
+onready var car_spawner_h = $Car_Spawner_H
+onready var car_spawner_v = $Car_Spawner_V
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,6 +17,9 @@ func _ready():
 	print(player.position)
 	#shop.initialize(player)
 	GUI.initialize()
+	car_spawner_h.initialize()
+	car_spawner_v.initialize()
+	
 	#GameServer.save_game()
 	#var loaded_player = GameServer.load_game()
 
@@ -40,3 +45,9 @@ func atropellado():
 	player.get_parent().atropellado.hide()
 	player.can_move = true
 
+
+
+func _on_Area2D_body_entered(body):
+	if body.is_in_group("player"):
+		GameServer.save_game()
+		print("Game Saved")

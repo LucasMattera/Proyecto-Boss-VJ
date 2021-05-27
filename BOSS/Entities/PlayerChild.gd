@@ -26,7 +26,7 @@ func _ready():
 func initialize():
 	shops = Player.shops
 	money = Player.money
-	player_name = Player.player_name
+	Player.player_name = player_name 
 	position = Player.position
 	animation.animation = "idle"
 	

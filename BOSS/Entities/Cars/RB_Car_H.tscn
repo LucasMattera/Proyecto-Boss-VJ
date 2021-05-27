@@ -1,24 +1,51 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://assets/textures/roguelikeCity_magenta.png" type="Texture" id=1]
+[ext_resource path="res://assets/textures/tD+SKW.png" type="Texture" id=1]
 [ext_resource path="res://RB_Car_H.gd" type="Script" id=2]
 
 [sub_resource type="AtlasTexture" id=1]
+flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 581, 413.741, 43.1215, 29.1259 )
+region = Rect2( 234.451, 377.66, 17.3583, 28.3015 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 138.044, 47.2526 )
+extents = Vector2( 106.052, 47.2526 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 294.583, 380.997, 17.0802, 25.0245 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 264.347, 377.263, 16.6999, 25.5012 )
 
 [node name="RB_Car_H" type="Area2D"]
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 140.901, -70.6478 )
-scale = Vector2( 7.55352, 5.87227 )
+[node name="yellow" type="Sprite" parent="."]
+position = Vector2( 130.583, -67.473 )
+rotation = 1.5708
+scale = Vector2( 7.18001, 7.74313 )
 texture = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 136.575, -57.2891 )
 shape = SubResource( 2 )
+
+[node name="green" type="Sprite" parent="."]
+position = Vector2( 127.786, -63.496 )
+rotation = 1.5708
+scale = Vector2( 7.25621, 8.87351 )
+texture = SubResource( 3 )
+
+[node name="red" type="Sprite" parent="."]
+position = Vector2( 127.786, -68.2582 )
+rotation = 1.5708
+scale = Vector2( 7.25039, 9.0005 )
+texture = SubResource( 4 )
 [connection signal="body_entered" from="." to="." method="_on_RB_Car_H_body_entered"]
