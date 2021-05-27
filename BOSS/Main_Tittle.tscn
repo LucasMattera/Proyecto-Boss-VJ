@@ -10,7 +10,7 @@ outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 size = 60
 outline_size = 2
 outline_color = Color( 0.0313726, 0.054902, 0.368627, 1 )
@@ -57,7 +57,7 @@ margin_left = 192.0
 margin_top = 72.0
 margin_right = 836.0
 margin_bottom = 218.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "WELCOME TO QUILMESPOLY"
 align = 1

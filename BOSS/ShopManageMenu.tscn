@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://ShopManageMenu.gd" type="Script" id=1]
+
+[node name="ShopManageMenu" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="AddEmployee" type="MenuButton" parent="."]
+margin_left = 324.894
+margin_top = 56.347
+margin_right = 676.894
+margin_bottom = 156.347
+text = "Contratar empleado"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Upgrade" type="MenuButton" parent="."]
+margin_left = 384.659
+margin_top = 213.358
+margin_right = 635.659
+margin_bottom = 301.358
+text = "Mejorar local"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="MenuButton" parent="."]
+margin_left = 379.91
+margin_top = 393.903
+margin_right = 627.91
+margin_bottom = 486.903
+text = "Salir"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="AddEmployee" to="." method="_on_AddEmployee_pressed"]
+[connection signal="pressed" from="Upgrade" to="." method="_on_Upgrade_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]

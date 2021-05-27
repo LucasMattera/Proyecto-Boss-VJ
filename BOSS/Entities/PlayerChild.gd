@@ -83,8 +83,9 @@ func _physics_process(delta):
 func recollect_money():
 	print('Ganancia por locales :')
 	print(self.shops.size())
-	self.money += self.shops.size()
-	Player.money += Player.shops.size()
+	for shop in self.shops:
+		self.money += shop.earnings
+	Player.money = self.money
 	actualizeMoney(self.money)
 	print('dinero actual: ' )
 	print(self.money)
