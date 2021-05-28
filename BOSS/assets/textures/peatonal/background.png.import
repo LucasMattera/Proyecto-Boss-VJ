@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/left_arrow.png-865a09cd1183cac0bd6e766a041ae5c0.stex"
+path="res://.import/background.png-413cc9a0e5f858713970fe2563e57828.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/nightclub/left_arrow.png"
-dest_files=[ "res://.import/left_arrow.png-865a09cd1183cac0bd6e766a041ae5c0.stex" ]
+source_file="res://assets/textures/peatonal/background.png"
+dest_files=[ "res://.import/background.png-413cc9a0e5f858713970fe2563e57828.stex" ]
 
 [params]
 
@@ -21,7 +21,7 @@ compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
-flags/mipmaps=false
+flags/mipmaps=true
 flags/anisotropic=false
 flags/srgb=2
 process/fix_alpha_border=true

@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://assets/fonts/Schrödinger.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://assets/textures/nightclub/circle.png" type="Texture" id=2]
+[ext_resource path="res://assets/textures/peatonal/circle.png" type="Texture" id=2]
 [ext_resource path="res://miniGames/dance/ScorePoints.gd" type="Script" id=3]
 [ext_resource path="res://miniGames/dance/LifePoints.gd" type="Script" id=4]
 [ext_resource path="res://miniGames/dance/Ring.gd" type="Script" id=5]
@@ -11,55 +11,38 @@
 [ext_resource path="res://miniGames/dance/GameOverPopup.gd" type="Script" id=9]
 [ext_resource path="res://miniGames/dance/GameReadyPopup.gd" type="Script" id=10]
 
-[sub_resource type="DynamicFont" id=1]
-size = 32
-font_data = ExtResource( 1 )
+[sub_resource type="CircleShape2D" id=1]
 
-[sub_resource type="CircleShape2D" id=2]
-
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 size = 64
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=3]
 size = 64
 outline_color = Color( 0, 0, 0, 1 )
 use_filter = true
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=4]
 size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=6]
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=7]
-font_data = ExtResource( 1 )
-
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 86.0186, 10 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 32
+font_data = ExtResource( 1 )
 
 [node name="GUI" type="CanvasLayer"]
 script = ExtResource( 8 )
-
-[node name="Instructions" type="Label" parent="."]
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -528.0
-margin_top = -72.0
-margin_right = -15.0
-custom_fonts/font = SubResource( 1 )
-text = "Izquierda \"A / flecha izquierda\"
-Derecha: \"D / flecha derecha\""
-align = 2
-valign = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Ring" type="Area2D" parent="."]
 position = Vector2( 200, 450 )
@@ -73,27 +56,26 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ring"]
 scale = Vector2( 7, 7 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 one_way_collision = true
 
 [node name="Score" type="ColorRect" parent="."]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -640.0
+margin_left = 370.0
 margin_top = 10.0
-margin_bottom = 74.0
-color = Color( 1, 1, 1, 0 )
+margin_right = 931.0
+margin_bottom = 79.3454
+rect_scale = Vector2( 0.5, 0.5 )
+color = Color( 0.0470588, 0.392157, 0.0196078, 0.509804 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ScoreLabel" type="Label" parent="Score"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -310.0
-margin_right = -25.0
+anchor_left = 0.054
+anchor_right = 0.054
+margin_right = 285.0
 margin_bottom = 65.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "PUNTAJE:"
 __meta__ = {
@@ -101,13 +83,12 @@ __meta__ = {
 }
 
 [node name="ScorePoints" type="Label" parent="Score"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -20.0
-margin_right = 320.0
+anchor_left = 0.521
+anchor_right = 0.532
+margin_left = 29.719
+margin_right = 264.548
 margin_bottom = 65.0
-rect_min_size = Vector2( 300, 60 )
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "0"
 valign = 1
@@ -117,24 +98,21 @@ __meta__ = {
 }
 
 [node name="Lives" type="ColorRect" parent="."]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -640.0
-margin_top = 90.0
-margin_right = -257.0
-margin_bottom = 154.0
-color = Color( 1, 1, 1, 0 )
+margin_left = 405.0
+margin_top = 50.0
+margin_right = 788.0
+margin_bottom = 114.0
+rect_scale = Vector2( 0.5, 0.5 )
+color = Color( 0.458824, 0.0117647, 0.0117647, 0.509804 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="LivesLabel" type="Label" parent="Lives"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -181.5
-margin_right = 2.5
+margin_left = 18.8775
+margin_right = 223.878
 margin_bottom = 65.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "VIDAS:"
 __meta__ = {
@@ -142,17 +120,13 @@ __meta__ = {
 }
 
 [node name="LifePoints" type="Label" parent="Lives"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -154.36
-margin_top = 1.5874
-margin_right = 145.64
-margin_bottom = 66.5874
-rect_min_size = Vector2( 300, 30 )
-custom_fonts/font = SubResource( 4 )
+margin_left = 208.0
+margin_right = 374.0
+margin_bottom = 65.0
+rect_min_size = Vector2( 0, 30 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "3"
-align = 2
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -176,14 +150,17 @@ __meta__ = {
 [node name="ColorRect" type="ColorRect" parent="GameOverPopup"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.490196, 0, 0, 1 )
+color = Color( 0.490196, 0, 0, 0.705882 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label" type="Label" parent="GameOverPopup/ColorRect"]
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 585.0
 margin_bottom = 168.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 4 )
 text = "GAME OVER
 Tenes menos ritmo que
 desfile de rengos.
@@ -204,7 +181,7 @@ margin_top = 36.0
 margin_right = -2.49997
 margin_bottom = 59.0
 rect_scale = Vector2( 2, 2 )
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.921569, 1, 0, 1 )
 text = "Reintentar"
@@ -222,7 +199,7 @@ margin_top = 96.0
 margin_right = -2.49997
 margin_bottom = 119.0
 rect_scale = Vector2( 2, 2 )
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.886275, 0.988235, 0, 1 )
 text = "Irme"
@@ -248,14 +225,14 @@ __meta__ = {
 [node name="ColorRect" type="ColorRect" parent="GameWinPopup"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0.490196, 0, 1 )
+color = Color( 0, 0.490196, 0, 0.509804 )
 
 [node name="Label" type="Label" parent="GameWinPopup/ColorRect"]
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 585.0
 margin_bottom = 168.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 4 )
 text = "GAME WIN
 
 Rompiste tarima!
@@ -276,7 +253,7 @@ margin_top = 96.0
 margin_right = -2.49997
 margin_bottom = 119.0
 rect_scale = Vector2( 2, 2 )
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.886275, 0.988235, 0, 1 )
 text = "Irme"
@@ -286,7 +263,6 @@ __meta__ = {
 
 [node name="GameReadyPopup" type="Popup" parent="."]
 pause_mode = 2
-visible = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -303,14 +279,14 @@ __meta__ = {
 [node name="ColorRect" type="ColorRect" parent="GameReadyPopup"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0.490196, 1 )
+color = Color( 0, 0, 0.490196, 0.509804 )
 
 [node name="Label" type="Label" parent="GameReadyPopup/ColorRect"]
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 585.0
 margin_bottom = 168.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 4 )
 text = "STREET DANCER
 
 Acierta los movimientos 
@@ -331,7 +307,7 @@ margin_top = 36.0
 margin_right = -2.49997
 margin_bottom = 59.0
 rect_scale = Vector2( 2, 2 )
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.921569, 1, 0, 1 )
 text = "Empezar"
@@ -349,7 +325,7 @@ margin_top = 96.0
 margin_right = -2.49997
 margin_bottom = 119.0
 rect_scale = Vector2( 2, 2 )
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.886275, 0.988235, 0, 1 )
 text = "Irme"
@@ -361,12 +337,36 @@ __meta__ = {
 position = Vector2( 200, 660 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ScreenLimit"]
-shape = SubResource( 8 )
+shape = SubResource( 7 )
 
 [node name="ArrowSpawner" parent="." instance=ExtResource( 6 )]
 layer = 0
-[connection signal="area_entered" from="Ring" to="." method="_on_Ring_area_entered"]
+
+[node name="Instructions" type="ColorRect" parent="."]
+margin_left = 473.0
+margin_top = 500.0
+margin_right = 1013.0
+margin_bottom = 575.0
+color = Color( 0.00392157, 0.0980392, 0.619608, 0.509804 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InstructionsLabel" type="Label" parent="Instructions"]
+anchor_left = 0.011
+anchor_right = 0.032
+margin_right = 513.0
+margin_bottom = 72.0
+custom_fonts/font = SubResource( 8 )
+text = "Izquierda \"A / flecha izquierda\"
+Derecha: \"D / flecha derecha\""
+align = 2
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="area_entered" from="Ring" to="Ring" method="_on_Ring_area_entered"]
+[connection signal="area_entered" from="Ring" to="." method="_on_Ring_area_entered"]
 [connection signal="area_exited" from="Ring" to="." method="_on_Ring_area_exited"]
 [connection signal="exit" from="GameOverPopup" to="." method="_on_GameOverPopup_exit"]
 [connection signal="retry" from="GameOverPopup" to="." method="_on_GameOverPopup_retry"]

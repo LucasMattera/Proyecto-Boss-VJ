@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/circle.png-96d3c066e0af3a0099c5a8877ac174cf.stex"
+path="res://.import/left_arrow.png-ce9623f4fd482ebb44714edacd5cfc59.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/nightclub/circle.png"
-dest_files=[ "res://.import/circle.png-96d3c066e0af3a0099c5a8877ac174cf.stex" ]
+source_file="res://assets/textures/peatonal/left_arrow.png"
+dest_files=[ "res://.import/left_arrow.png-ce9623f4fd482ebb44714edacd5cfc59.stex" ]
 
 [params]
 

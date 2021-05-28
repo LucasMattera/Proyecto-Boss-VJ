@@ -17,6 +17,7 @@ func _ready():
 	life_remaining = 3
 	$GUI.set_minigame(self)
 
+
 func _input(event):
 	if Input.is_action_just_pressed("move_left"):
 		

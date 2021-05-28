@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/nightclub_background.png-734b84dc2382bf7476f8c23faf99082b.stex"
+path="res://.import/foreground_1.png-cef9769eafcb76a0ed2872b75a9fb079.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/nightclub/nightclub_background.png"
-dest_files=[ "res://.import/nightclub_background.png-734b84dc2382bf7476f8c23faf99082b.stex" ]
+source_file="res://assets/textures/peatonal/foreground_1.png"
+dest_files=[ "res://.import/foreground_1.png-cef9769eafcb76a0ed2872b75a9fb079.stex" ]
 
 [params]
 
