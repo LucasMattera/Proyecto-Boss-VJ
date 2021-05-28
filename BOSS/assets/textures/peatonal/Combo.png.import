@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/peatonal.png-72362a81fd2d41d2cc71a822cd42d0fd.stex"
+path="res://.import/Combo.png-d655076ca0126d09cb37ba801d2ed2ef.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/peatonal/peatonal.png"
-dest_files=[ "res://.import/peatonal.png-72362a81fd2d41d2cc71a822cd42d0fd.stex" ]
+source_file="res://assets/textures/peatonal/Combo.png"
+dest_files=[ "res://.import/Combo.png-d655076ca0126d09cb37ba801d2ed2ef.stex" ]
 
 [params]
 
