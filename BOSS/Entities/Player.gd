@@ -10,24 +10,41 @@ export (String) var player_name = "Player"
 var shops = []
 
 func buy(shop):
-	var shop_name = shop.shop_name
-	var shop_value = shop.value
-	if (!Player.shops.has(shop) && Player.money >= shop_value):
-		Player.shops.append(shop)
+	var shop_to_add = shop.duplicate() 
+	shop_to_add.shop_name = shop.shop_name
+	shop_to_add.shop = shop
+	shop_to_add.earnings = shop.earnings
+	shop_to_add.value = shop.value
+	var shop_name = shop_to_add.shop_name
+	var shop_value = shop_to_add.value
+	if (!Player.has_shop(shop_name) && Player.money >= shop_value):
+		Player.shops.append(shop_to_add)
 		Player.money -= shop_value
 		print("compraste ")
 	else: 
 		print("no compraste")
 		
+func find_shop(shop_name):
+	var shop_to_return
+	print("shops :", shops)
+	for shop in Player.shops:
+		if shop.shop_name == shop_name:
+			shop_to_return = shop
+	return shop_to_return
+		
 func add_employee(shop_name):
-	pass
+	var shop_to_add = find_shop(shop_name)
+	print("shop name :" , shop_name)
+	shop_to_add.earnings += shop_to_add.earnings / 2
 	
 func upgrade_shop(shop_name):
-	pass
+	var shop_to_add = find_shop(shop_name)
+	print("shop name :" , shop_name)
+	shop_to_add.earnings += shop_to_add.earnings / 4
 
-func has_shop(shop):
+func has_shop(shop_name):
 	var has_shop = false
-	for shop in self.shops:
-		if shop.shop_name == shop.shop_name:
+	for shop in Player.shops:
+		if shop.shop_name == shop_name:
 			has_shop = true
 	return has_shop

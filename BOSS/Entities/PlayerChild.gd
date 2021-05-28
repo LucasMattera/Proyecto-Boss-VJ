@@ -27,7 +27,8 @@ func initialize():
 	shops = Player.shops
 	money = Player.money
 	Player.player_name = player_name 
-	position = Player.position
+	position.x = Player.position.x
+	position.y = Player.position.y
 	animation.animation = "idle"
 	
 func get_input():
@@ -59,21 +60,6 @@ func get_input():
 		
 func is_player():
 	return true
-	
-func buy(shop):
-	if(money >= 100) && !shops.has(shop):
-		Player.shops.append(shop)
-		self.money -= 100
-		Player.money -= 100
-		actualizeMoney(self.money)
-		print('compraste ')
-		print(shop)
-		print('tus locales son ')
-		print(self.shops)
-		print('plata restante: ')
-		print(self.money)
-	else:
-		print('no te alcanza...')
 
 func _physics_process(delta):
 	if(can_move):

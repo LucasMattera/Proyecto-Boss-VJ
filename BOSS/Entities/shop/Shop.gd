@@ -4,7 +4,7 @@ var player
 onready var menu = $Menu
 onready var value = 100
 export (String) var shop_name = "shop"
-var earnings = 10
+export (int) var earnings = 10
 
 func initialize(player):
 	menu.set_shop_name(shop_name)
@@ -18,9 +18,12 @@ func _ready():
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("player"):
-		ShopState.add_shop(self)
-		ShopState.current = self.shop_name				
-		if(Player.has_shop(self)):
+		if(Player.has_shop(self.shop_name)):
 			get_tree().change_scene("res://ShopManageMenu.tscn")
 		else:
+			ShopState.initialize(self)	
 			get_tree().change_scene("res://ShopMenuBuy.tscn")
+	Player.can_move = false
+	Player.position.y = self.position.y + 100
+	Player.position.x = self.position.x 
+	GameServer.save_game()

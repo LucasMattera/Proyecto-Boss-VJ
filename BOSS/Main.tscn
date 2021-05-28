@@ -334,7 +334,7 @@ __meta__ = {
 position = Vector2( 160, 23 )
 scale = Vector2( 0.375, 0.375 )
 frames = SubResource( 4 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="Background" parent="." instance=ExtResource( 1 )]
@@ -507,6 +507,7 @@ polygon = PoolVector2Array( -2648, 1040, -2992, 1048, -2984, 352, -2184, 360, -2
 [node name="Shop2" parent="Shops" instance=ExtResource( 6 )]
 position = Vector2( -80, -120 )
 shop_name = "cafe"
+earnings = 100
 
 [node name="Sprite" parent="Shops/Shop2" index="0"]
 position = Vector2( -364, -350.792 )
@@ -527,6 +528,7 @@ polygon = PoolVector2Array( -461.48, -25.5962, -49.345, -19.3831, -43.132, -583.
 position = Vector2( -1648, 984 )
 rotation = 3.14159
 shop_name = "heladeria"
+earnings = 200
 
 [node name="Sprite" parent="Shops/Shop" index="0"]
 position = Vector2( 64.0003, 327.499 )
@@ -555,6 +557,7 @@ polygon = PoolVector2Array( 152, -80, 152, 80, 328, 80, 344, 80, 344, -80, 512, 
 position = Vector2( -3120, -48 )
 rotation = 3.14159
 shop_name = "muebleria"
+earnings = 500
 
 [node name="Sprite" parent="Shops/Shop3" index="0"]
 position = Vector2( -592.614, 423.785 )
