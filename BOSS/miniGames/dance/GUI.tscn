@@ -365,8 +365,8 @@ valign = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="area_entered" from="Ring" to="Ring" method="_on_Ring_area_entered"]
 [connection signal="area_entered" from="Ring" to="." method="_on_Ring_area_entered"]
+[connection signal="area_entered" from="Ring" to="Ring" method="_on_Ring_area_entered"]
 [connection signal="area_exited" from="Ring" to="." method="_on_Ring_area_exited"]
 [connection signal="exit" from="GameOverPopup" to="." method="_on_GameOverPopup_exit"]
 [connection signal="retry" from="GameOverPopup" to="." method="_on_GameOverPopup_retry"]

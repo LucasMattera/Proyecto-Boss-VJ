@@ -38,3 +38,6 @@ func _on_GameWinPopup_player_exit():
 
 func _on_GameReadyPopup_player_exit():
 	emit_signal("player_exit")
+
+func _on_GameOverPopup_exit():
+	emit_signal("player_exit")

@@ -37,7 +37,7 @@ func _input(event):
 func obtain_points():
 	score += 1000
 	emit_signal("player_stats_changed", self)
-	if score >= 1000:
+	if score >= score_winner:
 		Player.money += 1000
 		win_game()
 

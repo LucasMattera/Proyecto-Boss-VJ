@@ -19,6 +19,7 @@ position = Vector2( 520, 384 )
 scale = Vector2( 0.5, 0.5 )
 z_index = 1
 [connection signal="game_over" from="." to="GUI" method="_on_DanceMinigame_game_over"]
+[connection signal="player_stats_changed" from="." to="GUI" method="_on_DanceMinigame_player_stats_changed"]
 [connection signal="win_game" from="." to="GUI" method="_on_DanceMinigame_win_game"]
 [connection signal="arrow_in_ring" from="GUI" to="." method="_on_GUI_arrow_in_ring"]
 [connection signal="arrow_out_of_ring" from="GUI" to="." method="_on_GUI_arrow_out_of_ring"]
