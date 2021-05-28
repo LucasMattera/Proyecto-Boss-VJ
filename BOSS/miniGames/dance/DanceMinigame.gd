@@ -54,6 +54,7 @@ func game_over():
 	emit_signal("game_over")
 
 func win_game():
+	$GUI.set_process(false)
 	emit_signal("win_game")
 
 func _on_GUI_arrow_in_ring(arrow):
@@ -80,5 +81,9 @@ func reset():
 
 func _on_SFX_finished():
 	var sfxName = $Audio/SFX.stream.resource_path.get_file().get_basename()
-	if sfxName == "game_over":
+	var musicName = $Audio/Music.stream.resource_path.get_file().get_basename()
+	if sfxName == "cheers" || musicName == "game_over":
 		$GUI.set_process(true)
+	
+func _on_GUI_last_arrow_out():
+	game_over()

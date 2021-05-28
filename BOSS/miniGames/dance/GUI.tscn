@@ -242,8 +242,6 @@ margin_right = 585.0
 margin_bottom = 168.0
 custom_fonts/font = SubResource( 12 )
 text = "GAME OVER
-Tenes menos ritmo que
-desfile de rengos.
 
 Volver a intentar?"
 align = 1
@@ -477,7 +475,7 @@ position = Vector2( 92, -25 )
 scale = Vector2( 6, 2 )
 frames = SubResource( 21 )
 animation = "idle"
-frame = 1
+frame = 2
 playing = true
 [connection signal="area_entered" from="Ring" to="." method="_on_Ring_area_entered"]
 [connection signal="area_entered" from="Ring" to="Ring" method="_on_Ring_area_entered"]
@@ -493,3 +491,5 @@ playing = true
 [connection signal="pressed" from="GameReadyPopup/ColorRect/Begin" to="GameReadyPopup" method="_on_Begin_pressed"]
 [connection signal="pressed" from="GameReadyPopup/ColorRect/Exit" to="GameReadyPopup" method="_on_Exit_pressed"]
 [connection signal="area_entered" from="ScreenLimit" to="." method="_on_ScreenLimit_area_entered"]
+[connection signal="last_arrow" from="ArrowSpawner" to="." method="_on_ArrowSpawner_last_arrow"]
+[connection signal="last_arrow" from="ArrowSpawner" to="GameOverPopup" method="_on_ArrowSpawner_last_arrow"]

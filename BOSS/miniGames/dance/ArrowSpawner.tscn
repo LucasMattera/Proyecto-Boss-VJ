@@ -1,38 +1,56 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://miniGames/dance/LeftArrow.tscn" type="PackedScene" id=1]
 [ext_resource path="res://miniGames/dance/RightArrow.tscn" type="PackedScene" id=2]
+[ext_resource path="res://miniGames/dance/ArrowSpawner.gd" type="Script" id=3]
 
 [node name="ArrowSpawner" type="CanvasLayer"]
+script = ExtResource( 3 )
 
 [node name="RightArrow" parent="." instance=ExtResource( 2 )]
+speed = 100
 
 [node name="RightArrow2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 200, -600 )
+speed = 100
 
 [node name="RightArrow3" parent="." instance=ExtResource( 2 )]
 position = Vector2( 200, -400 )
+speed = 100
 
 [node name="RightArrow4" parent="." instance=ExtResource( 2 )]
 position = Vector2( 200, -1200 )
+speed = 100
 
 [node name="RightArrow5" parent="." instance=ExtResource( 2 )]
 position = Vector2( 200, -1600 )
+speed = 100
+
+[node name="RightArrow6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 200, -2200 )
+speed = 100
 
 [node name="LeftArrow" parent="." instance=ExtResource( 1 )]
 position = Vector2( 200, -200 )
+speed = 100
 
 [node name="LeftArrow2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 200, -800 )
+speed = 100
 
 [node name="LeftArrow3" parent="." instance=ExtResource( 1 )]
 position = Vector2( 200, -1400 )
+speed = 100
 
 [node name="LeftArrow4" parent="." instance=ExtResource( 1 )]
 position = Vector2( 200, -1000 )
+speed = 100
 
 [node name="LeftArrow5" parent="." instance=ExtResource( 1 )]
 position = Vector2( 200, -2000 )
+speed = 100
 
 [node name="LeftArrow6" parent="." instance=ExtResource( 1 )]
 position = Vector2( 200, -1800 )
+speed = 100
+[connection signal="tree_exited" from="RightArrow6" to="." method="_on_RightArrow6_tree_exited"]

@@ -14,6 +14,7 @@ signal arrow_out_of_ring
 signal arrow_out_of_screen
 signal loser_retry
 signal player_exit
+signal last_arrow_out
 
 func set_minigame(minigame):
 	minigame = minigame
@@ -34,14 +35,15 @@ func _on_ScreenLimit_area_entered(arrow):
 
 func _on_DanceMinigame_game_over():
 	game_over.game_over()
-	if arrow_spawner != null:
-		arrow_spawner.call_deferred('free')
+	free_arrows()
 
 func _on_GameOverPopup_retry():
 	emit_signal("loser_retry")
 
 func _on_DanceMinigame_win_game():
 	game_win.win_game()
+	arrow_spawner.stop()
+	#stop_arrows()
 
 func _on_GameWinPopup_player_exit():
 	emit_signal("player_exit")
@@ -58,3 +60,10 @@ func _on_DanceMinigame_fail():
 func _on_DanceMinigame_success():
 	ring.success()
 	combo.success()
+
+func _on_ArrowSpawner_last_arrow():
+	emit_signal("last_arrow_out")
+
+func free_arrows():
+	if arrow_spawner != null:
+		arrow_spawner.call_deferred('free')
