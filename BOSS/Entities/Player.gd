@@ -10,9 +10,9 @@ export (String) var player_name = "Player"
 var shops = []
 
 func buy(shop):
-	var shop_to_add = shop.duplicate() 
+	var shop_to_add = {} 
 	shop_to_add.shop_name = shop.shop_name
-	shop_to_add.shop = shop
+	#shop_to_add.shop = shop
 	shop_to_add.earnings = shop.earnings
 	shop_to_add.value = shop.value
 	var shop_name = shop_to_add.shop_name

@@ -15,7 +15,6 @@ func upgrade_shop():
 	Player.upgrade_shop(self.shop_name)
 
 func add_employee():
-	earnings += earnings % 2
 	Player.add_employee(self.shop_name)
 
 
