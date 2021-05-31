@@ -10,7 +10,6 @@ func _ready():
 func win_game():
 	set_process_input(true)
 	popup_centered()
-	get_tree().paused = true
 
 func _on_Exit_pressed():
 	set_process_input(false)

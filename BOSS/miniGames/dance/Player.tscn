@@ -9,7 +9,6 @@
 [ext_resource path="res://assets/textures/dance/right2.png" type="Texture" id=7]
 [ext_resource path="res://miniGames/dance/Player.gd" type="Script" id=8]
 
-
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 3 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 4 ) ],

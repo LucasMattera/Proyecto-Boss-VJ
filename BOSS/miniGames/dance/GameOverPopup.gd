@@ -11,7 +11,6 @@ func _ready():
 func game_over():
 	set_process_input(true)
 	popup_centered()
-	get_tree().paused = true
 
 func _on_Exit_pressed():
 	get_tree().paused = false
