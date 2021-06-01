@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/exit.png-a52843e3109f9b4c7f18f73b252ba604.stex"
+path="res://.import/upgrade.png-dd2a38ab5eedc8b103caffc0fc02f517.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/shops/exit.png"
-dest_files=[ "res://.import/exit.png-a52843e3109f9b4c7f18f73b252ba604.stex" ]
+source_file="res://assets/textures/shops/icons/upgrade.png"
+dest_files=[ "res://.import/upgrade.png-dd2a38ab5eedc8b103caffc0fc02f517.stex" ]
 
 [params]
 
