@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Peatonal.png-f7d626cd6ef1c71c50b8732d18e5b270.stex"
+path="res://.import/heladeria.png-7411ef5877dd1242170b59c2dba3ffdf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/peatonal/Peatonal.png"
-dest_files=[ "res://.import/Peatonal.png-f7d626cd6ef1c71c50b8732d18e5b270.stex" ]
+source_file="res://assets/textures/shops/heladeria.png"
+dest_files=[ "res://.import/heladeria.png-7411ef5877dd1242170b59c2dba3ffdf.stex" ]
 
 [params]
 

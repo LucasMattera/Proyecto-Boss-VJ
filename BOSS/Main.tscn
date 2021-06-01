@@ -334,7 +334,7 @@ __meta__ = {
 position = Vector2( 160, 23 )
 scale = Vector2( 0.375, 0.375 )
 frames = SubResource( 4 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="Background" parent="." instance=ExtResource( 1 )]

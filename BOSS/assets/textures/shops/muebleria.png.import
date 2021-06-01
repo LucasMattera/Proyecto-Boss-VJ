@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Peatonal.png-f7d626cd6ef1c71c50b8732d18e5b270.stex"
+path="res://.import/muebleria.png-2caa6aae1dca1a93bf31d83031451643.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/peatonal/Peatonal.png"
-dest_files=[ "res://.import/Peatonal.png-f7d626cd6ef1c71c50b8732d18e5b270.stex" ]
+source_file="res://assets/textures/shops/muebleria.png"
+dest_files=[ "res://.import/muebleria.png-2caa6aae1dca1a93bf31d83031451643.stex" ]
 
 [params]
 
