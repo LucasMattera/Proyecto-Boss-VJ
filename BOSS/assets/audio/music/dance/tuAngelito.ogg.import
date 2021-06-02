@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/tuAngelito.ogg-2630a78b2c4a1f7f8c1cc2ec4f5b3c0b.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/music/dance/tuAngelito.ogg"
+dest_files=[ "res://.import/tuAngelito.ogg-2630a78b2c4a1f7f8c1cc2ec4f5b3c0b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

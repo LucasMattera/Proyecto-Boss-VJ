@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://miniGames/arcanoid/tittle/buttonRetry.tscn" type="PackedScene" id=1]
 [ext_resource path="res://miniGames/arcanoid/tittle/main_tittle.tscn" type="PackedScene" id=2]
 [ext_resource path="res://miniGames/arcanoid/tittle/Retry.gd" type="Script" id=3]
 [ext_resource path="res://miniGames/arcanoid/tittle/buttonQuit.tscn" type="PackedScene" id=4]
 [ext_resource path="res://miniGames/arcanoid/assets/audio/lose.ogg" type="AudioStream" id=5]
+[ext_resource path="res://arcanoid/assets/fonts/advanced_pixel-7.ttf" type="DynamicFontData" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 6 )
 
 [node name="Retry" type="Node"]
 script = ExtResource( 3 )
@@ -35,46 +40,60 @@ margin_bottom = 350.0
 [node name="main_tittle" parent="tittleMargin/menu" instance=ExtResource( 2 )]
 anchor_right = 0.0
 margin_right = 978.0
+margin_bottom = 140.0
 
-[node name="text" parent="tittleMargin/menu/main_tittle" index="1"]
+[node name="text" parent="tittleMargin/menu/main_tittle" index="0"]
 margin_right = 978.0
+margin_bottom = 140.0
 alignment = 1
 
 [node name="MyArcanoid" parent="tittleMargin/menu/main_tittle/text" index="0"]
-margin_top = 28.0
-margin_right = 910.0
-margin_bottom = 30.0
-text = "GAME OVER"
+margin_right = 978.0
+margin_bottom = 105.0
+custom_fonts/font = SubResource( 1 )
+text = "GAME OVER 
+Acabas de Perder $ 1000"
+align = 1
+valign = 1
 
 [node name="by" parent="tittleMargin/menu/main_tittle/text" index="1"]
-margin_top = 34.0
-margin_right = 910.0
-margin_bottom = 36.0
+margin_top = 109.0
+margin_right = 978.0
+margin_bottom = 140.0
+custom_colors/font_color = Color( 0.988235, 0.988235, 0.988235, 1 )
 text = ""
+align = 1
+valign = 1
 
 [node name="buttonRetry" parent="tittleMargin/menu" instance=ExtResource( 1 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 68.0
+margin_top = 144.0
 margin_right = 978.0
-margin_bottom = 132.0
+margin_bottom = 208.0
 
 [node name="button" parent="tittleMargin/menu/buttonRetry" index="0"]
 margin_left = 457.0
 margin_right = 521.0
 margin_bottom = 64.0
 
+[node name="Label" parent="tittleMargin/menu/buttonRetry/button" index="0"]
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+
 [node name="buttonQuit" parent="tittleMargin/menu" instance=ExtResource( 4 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 136.0
+margin_top = 212.0
 margin_right = 978.0
-margin_bottom = 200.0
+margin_bottom = 276.0
 
 [node name="button" parent="tittleMargin/menu/buttonQuit" index="0"]
 margin_left = 457.0
 margin_right = 521.0
 margin_bottom = 64.0
+
+[node name="Label" parent="tittleMargin/menu/buttonQuit/button" index="0"]
+custom_colors/font_color = Color( 0.996078, 0.996078, 0.996078, 1 )
 
 [node name="lose" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )

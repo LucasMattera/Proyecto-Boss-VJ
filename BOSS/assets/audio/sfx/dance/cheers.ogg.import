@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/cheers.ogg-ff3e6a35e6d0be85e65b85e41f406752.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/sfx/dance/cheers.ogg"
+dest_files=[ "res://.import/cheers.ogg-ff3e6a35e6d0be85e65b85e41f406752.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

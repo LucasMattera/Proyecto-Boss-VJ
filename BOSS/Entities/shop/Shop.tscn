@@ -30,4 +30,6 @@ margin_left = -624.026
 margin_top = -367.477
 margin_right = -624.026
 margin_bottom = -367.477
+
+[node name="Exit" type="Position2D" parent="."]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

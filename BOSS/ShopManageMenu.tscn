@@ -1,0 +1,295 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://ShopManageMenu.gd" type="Script" id=1]
+[ext_resource path="res://assets/textures/shops/icons/upgrade.png" type="Texture" id=2]
+[ext_resource path="res://Done.gd" type="Script" id=3]
+[ext_resource path="res://ConfirmUpgrade.gd" type="Script" id=4]
+[ext_resource path="res://assets/textures/shops/icons/hire.png" type="Texture" id=6]
+[ext_resource path="res://assets/textures/shops/example.jpg" type="Texture" id=8]
+[ext_resource path="res://assets/fonts/Schrödinger.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://assets/textures/shops/icons/exit.png" type="Texture" id=10]
+
+[sub_resource type="DynamicFontData" id=7]
+font_path = "res://assets/fonts/Schrödinger.ttf"
+
+[sub_resource type="DynamicFont" id=8]
+size = 54
+font_data = SubResource( 7 )
+
+[sub_resource type="DynamicFontData" id=5]
+font_path = "res://assets/fonts/Schrödinger.ttf"
+
+[sub_resource type="DynamicFont" id=6]
+size = 34
+font_data = SubResource( 5 )
+
+[sub_resource type="DynamicFontData" id=9]
+font_path = "res://assets/fonts/Schrödinger.ttf"
+
+[sub_resource type="DynamicFont" id=1]
+size = 25
+font_data = SubResource( 9 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 32
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 36
+font_data = ExtResource( 9 )
+
+[node name="ShopMenuManage" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="ShopName" type="Label" parent="."]
+margin_left = 473.889
+margin_top = 41.1059
+margin_right = 581.889
+margin_bottom = 78.1059
+text = "Shop_name"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BGContainer" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Sprite" parent="BGContainer"]
+position = Vector2( 512, 300 )
+z_index = -1
+texture = ExtResource( 8 )
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="ExitRect" type="ColorRect" parent="GUI"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 615.0
+margin_top = -150.0
+margin_right = 1015.0
+margin_bottom = -30.0
+rect_min_size = Vector2( 400, 120 )
+color = Color( 1, 1, 1, 0.482353 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExitIcon" type="Sprite" parent="GUI/ExitRect"]
+position = Vector2( 338.292, 57.8025 )
+scale = Vector2( 0.227424, 0.216984 )
+texture = ExtResource( 10 )
+
+[node name="ExitButton" type="Button" parent="GUI/ExitRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Salir"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UpgradeRect" type="ColorRect" parent="GUI"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = -150.0
+margin_right = 410.0
+margin_bottom = -30.0
+rect_min_size = Vector2( 400, 120 )
+color = Color( 1, 1, 1, 0.482353 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UpgradeIcon" type="Sprite" parent="GUI/UpgradeRect"]
+position = Vector2( 57.0175, 59.6902 )
+scale = Vector2( 0.227424, 0.216984 )
+texture = ExtResource( 2 )
+
+[node name="Upgrade" type="Button" parent="GUI/UpgradeRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 126.0
+margin_right = -5.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Mejorar Local"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HireRect" type="ColorRect" parent="GUI"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = -350.0
+margin_right = 410.0
+margin_bottom = -230.0
+rect_min_size = Vector2( 400, 120 )
+color = Color( 1, 1, 1, 0.482353 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HireIcon" type="Sprite" parent="GUI/HireRect"]
+position = Vector2( 57.0175, 59.6902 )
+scale = Vector2( 0.227424, 0.216984 )
+texture = ExtResource( 6 )
+
+[node name="Hire" type="Button" parent="GUI/HireRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 118.0
+margin_right = -2.0
+margin_bottom = -2.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Contratar Empleado"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Confirm" type="Popup" parent="GUI"]
+pause_mode = 2
+margin_left = 272.0
+margin_top = 188.0
+margin_right = 818.0
+margin_bottom = 498.0
+popup_exclusive = true
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="GUI/Confirm"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="GUI/Confirm/ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+color = Color( 0.196078, 0.298039, 0.545098, 1 )
+
+[node name="ConfirmLabel" type="Label" parent="GUI/Confirm/ColorRect/ColorRect"]
+margin_left = 38.0
+margin_top = 18.0
+margin_right = 500.0
+margin_bottom = 186.0
+custom_fonts/font = SubResource( 4 )
+text = "CONFIRMAR COMPRA
+Dinero actual: $xxxx
+Requerido: -$xxxx
+Restante: $xxxx"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="YesButton" type="Button" parent="GUI/Confirm/ColorRect/ColorRect"]
+margin_left = 38.0
+margin_top = 186.0
+margin_right = 246.0
+margin_bottom = 239.0
+custom_fonts/font = SubResource( 3 )
+text = "Aceptar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NoButton" type="Button" parent="GUI/Confirm/ColorRect/ColorRect"]
+margin_left = 294.0
+margin_top = 186.0
+margin_right = 502.0
+margin_bottom = 239.0
+custom_fonts/font = SubResource( 3 )
+text = "Cancelar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Done" type="Popup" parent="GUI"]
+pause_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -200.0
+margin_top = -94.0
+margin_right = 200.0
+margin_bottom = 94.0
+popup_exclusive = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="GUI/Done"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="GUI/Done/ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+color = Color( 0.054902, 0.305882, 0, 1 )
+
+[node name="DoneLabel" type="Label" parent="GUI/Done/ColorRect/ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -192.0
+margin_top = -76.0
+margin_right = 192.0
+margin_bottom = -4.0
+custom_fonts/font = SubResource( 4 )
+text = "CAMBIO REALIZADO!"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DoneButton" type="Button" parent="GUI/Done/ColorRect/ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -83.0
+margin_top = 1.00001
+margin_right = 83.0
+margin_bottom = 44.0
+custom_fonts/font = SubResource( 3 )
+text = "Aceptar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="confirmHire" from="." to="GUI/Confirm" method="_on_ShopMenuManage_confirmHire"]
+[connection signal="confirmUpgrade" from="." to="GUI/Confirm" method="_on_ShopMenuManage_confirmUpgrade"]
+[connection signal="pressed" from="GUI/ExitRect/ExitButton" to="." method="_on_ExitButton_pressed"]
+[connection signal="pressed" from="GUI/UpgradeRect/Upgrade" to="." method="_on_Upgrade_pressed"]
+[connection signal="pressed" from="GUI/HireRect/Hire" to="." method="_on_Hire_pressed"]
+[connection signal="done" from="GUI/Confirm" to="GUI/Done" method="_on_Confirm_done"]
+[connection signal="pressed" from="GUI/Confirm/ColorRect/ColorRect/YesButton" to="GUI/Confirm" method="_on_YesButton_pressed"]
+[connection signal="pressed" from="GUI/Confirm/ColorRect/ColorRect/NoButton" to="GUI/Confirm" method="_on_NoButton_pressed"]
+[connection signal="pressed" from="GUI/Done/ColorRect/ColorRect/DoneButton" to="GUI/Done" method="_on_DoneButton_pressed"]
