@@ -10,11 +10,17 @@ func initialize(shop):
 	self.shop_name = shop.shop_name
 	self.value = shop.value
 	self.earnings = shop.earnings
-	
+
 func upgrade_shop():
 	Player.upgrade_shop(self.shop_name)
+	earnings = earningWithNewUpgrade()
 
 func add_employee():
 	Player.add_employee(self.shop_name)
+	earnings = earningWithNewEmployee()
 
+func earningWithNewUpgrade():
+	return earnings + (earnings / 4)
 
+func earningWithNewEmployee():
+	return earnings + (earnings / 2)

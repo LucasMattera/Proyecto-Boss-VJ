@@ -35,12 +35,12 @@ func find_shop(shop_name):
 func add_employee(shop_name):
 	var shop_to_add = find_shop(shop_name)
 	print("shop name :" , shop_name)
-	shop_to_add.earnings += shop_to_add.earnings / 2
-	
+	#shop_to_add.earnings += shop_to_add.earnings / 2 (Es responsabilidad del shop_state)
+
 func upgrade_shop(shop_name):
 	var shop_to_add = find_shop(shop_name)
 	print("shop name :" , shop_name)
-	shop_to_add.earnings += shop_to_add.earnings / 4
+	#shop_to_add.earnings += shop_to_add.earnings / 4 (Es responsabilidad del shop_state)
 
 func has_shop(shop_name):
 	var has_shop = false

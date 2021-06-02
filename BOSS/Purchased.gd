@@ -12,4 +12,4 @@ func _on_ShopMenuBuy_purchased():
 func _on_PurchasedButton_pressed():
 	set_process_input(false)
 	hide()
-	get_tree().change_scene("res://Main.tscn")
+	get_tree().change_scene("res://ShopManageMenu.tscn")
