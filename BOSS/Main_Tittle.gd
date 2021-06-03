@@ -20,3 +20,7 @@ func _on_Load_Game_pressed():
 	
 	
 	get_tree().change_scene("res://Main.tscn") # Replace with function body.
+
+
+func _on_Instructions_pressed():
+	get_tree().change_scene("res://Instructions.tscn")

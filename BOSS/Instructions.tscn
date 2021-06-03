@@ -1,0 +1,161 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://assets/fonts/Schrödinger.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/instructions/keys-arrow-wsad-mouse.png" type="Texture" id=2]
+[ext_resource path="res://assets/instructions/Keyboard keys (transparent).png" type="Texture" id=3]
+[ext_resource path="res://assets/textures/BackMain.png" type="Texture" id=4]
+[ext_resource path="res://ShaderTransitionout.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Instructions.gd" type="Script" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 46
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( -4, -11, 99, 143 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 95.2448, 26.621, 160.736, 34.1185 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( -0.172546, 64.4844, 33.0658, 32.1003 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 50
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[node name="Instructions" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1024.0
+margin_bottom = 600.0
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShaderTransitionout" parent="TextureRect" instance=ExtResource( 5 )]
+
+[node name="Label" type="Label" parent="."]
+margin_left = 115.984
+margin_top = 54.6614
+margin_right = 311.984
+margin_bottom = 141.661
+custom_fonts/font = SubResource( 1 )
+text = "MOVIMIENTO"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 527.298
+margin_top = 162.97
+margin_right = 769.298
+margin_bottom = 249.97
+custom_fonts/font = SubResource( 1 )
+text = "CORRER"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="."]
+margin_left = 529.877
+margin_top = 254.516
+margin_right = 771.877
+margin_bottom = 341.516
+custom_fonts/font = SubResource( 1 )
+text = "TRABAJAR"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="."]
+margin_left = 531.167
+margin_top = 346.492
+margin_right = 773.167
+margin_bottom = 433.492
+custom_fonts/font = SubResource( 1 )
+text = "PAUSA"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 649.937
+margin_top = 57.9684
+margin_right = 910.937
+margin_bottom = 154.968
+custom_fonts/font = SubResource( 1 )
+text = "ACCIONES"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 228.181, 264.227 )
+scale = Vector2( 2.25598, 1.61514 )
+texture = SubResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 879.324, 190.812 )
+scale = Vector2( 1.21082, 1.05836 )
+texture = SubResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 879.324, 274.479 )
+scale = Vector2( 1.98207, 2.15744 )
+texture = SubResource( 4 )
+
+[node name="Key" type="Label" parent="Sprite3"]
+margin_left = -4.09775
+margin_top = -6.81706
+margin_right = 35.9023
+margin_bottom = 7.18294
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Y"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite4" type="Sprite" parent="."]
+position = Vector2( 881.309, 371.043 )
+scale = Vector2( 1.98207, 2.15744 )
+texture = SubResource( 4 )
+
+[node name="Key" type="Label" parent="Sprite4"]
+anchor_bottom = 0.038
+margin_left = -4.0
+margin_top = -7.0
+margin_right = 41.0
+margin_bottom = 7.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "P"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuButton" type="MenuButton" parent="."]
+margin_left = 312.31
+margin_top = 449.017
+margin_right = 567.31
+margin_bottom = 530.017
+custom_fonts/font = SubResource( 5 )
+text = "VOLVER"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="MenuButton" to="." method="_on_MenuButton_pressed"]
