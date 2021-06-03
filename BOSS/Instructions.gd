@@ -1,20 +1,32 @@
 extends Node2D
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+onready var volverMain = $VolverMain
+onready var salir = $Salir
+onready var volverInGame = $VolverInGame
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	if (GameServer.is_paused):
+		pause()
+	else:
+		instruction() 
 
+func pause():
+	volverMain.hide()
+	volverInGame.show()
+	salir.show()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
+func instruction():
+	volverMain.show()
+	volverInGame.hide()
+	salir.hide()
+	
 
 func _on_MenuButton_pressed():
 	get_tree().change_scene("res://Main_Tittle.tscn")
+
+
+func _on_VolverInGame_pressed():
+	get_tree().change_scene("res://Main.tscn")

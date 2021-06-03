@@ -50,6 +50,9 @@ func get_input():
 	velocity = velocity.normalized() * speed
 	if Input.is_action_pressed('run'):
 		velocity = velocity * 2
+	if (Input.is_action_just_pressed("pause")):
+		GameServer.is_paused = true
+		get_tree().change_scene("res://Instructions.tscn")
 	if (Input.is_action_just_pressed("work_hard")):
 		print("se trabaja")
 		self.money += 20

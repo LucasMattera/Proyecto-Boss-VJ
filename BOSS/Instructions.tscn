@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/fonts/Schrödinger.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/instructions/keys-arrow-wsad-mouse.png" type="Texture" id=2]
@@ -31,6 +31,12 @@ region = Rect2( -0.172546, 64.4844, 33.0658, 32.1003 )
 [sub_resource type="DynamicFont" id=5]
 size = 50
 outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 50
+outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
@@ -148,14 +154,40 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MenuButton" type="MenuButton" parent="."]
-margin_left = 312.31
-margin_top = 449.017
-margin_right = 567.31
-margin_bottom = 530.017
+[node name="VolverMain" type="MenuButton" parent="."]
+margin_left = 407.793
+margin_top = 455.648
+margin_right = 662.793
+margin_bottom = 536.648
 custom_fonts/font = SubResource( 5 )
 text = "VOLVER"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="MenuButton" to="." method="_on_MenuButton_pressed"]
+
+[node name="Salir" type="MenuButton" parent="."]
+visible = false
+margin_left = 698.219
+margin_top = 459.626
+margin_right = 953.219
+margin_bottom = 540.626
+custom_fonts/font = SubResource( 5 )
+text = "SALIR"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VolverInGame" type="MenuButton" parent="."]
+visible = false
+margin_left = 68.9597
+margin_top = 457.521
+margin_right = 340.96
+margin_bottom = 550.521
+custom_fonts/font = SubResource( 6 )
+text = "VOLVER"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="VolverMain" to="." method="_on_MenuButton_pressed"]
+[connection signal="pressed" from="Salir" to="." method="_on_MenuButton_pressed"]
+[connection signal="pressed" from="VolverInGame" to="." method="_on_VolverInGame_pressed"]

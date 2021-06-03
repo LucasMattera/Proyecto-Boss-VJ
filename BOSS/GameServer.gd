@@ -1,6 +1,7 @@
 extends Node
 
 var recaudacion = 0 
+var is_paused = false
 
 func save_game():
 	var save_game = File.new()

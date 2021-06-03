@@ -23,4 +23,7 @@ func _on_Load_Game_pressed():
 
 
 func _on_Instructions_pressed():
+	GameServer.is_paused = false
 	get_tree().change_scene("res://Instructions.tscn")
+
+	
