@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/mario-coin-fx-8-bit_F_major.wav-5a2097788d47dddd5c23e058bbca131e.sample"
+
+[deps]
+
+source_file="res://miniGames/Collect_money/sounds/mario-coin-fx-8-bit_F_major.wav"
+dest_files=[ "res://.import/mario-coin-fx-8-bit_F_major.wav-5a2097788d47dddd5c23e058bbca131e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

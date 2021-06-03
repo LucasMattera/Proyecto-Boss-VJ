@@ -3,6 +3,8 @@ onready var moneySpawner = $Money_Spawner
 onready var player = $Player
 onready var exitButton = $ExitButton
 onready var resumeButton = $ResumeButton
+onready var coinIn = $Player/coinIn
+onready var coinOut = $Player/coinUut
 
 	
 func _ready():
@@ -20,7 +22,12 @@ func _physics_process(delta):
 func _on_Area2D_body_entered(body):
 	print(body.name)
 	if body.is_in_group("coin"):
-		Player.money += body.get_parent().get_value()
+		var value = body.get_parent().get_value()
+		if value > 0:
+			coinIn.playing = true
+		else:
+			coinOut.playing = true
+		Player.money += value
 		body.get_parent().queue_free()
 	pass # Replace with function body.
 

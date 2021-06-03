@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/retro-16-bit-fx-zap_E_minor.wav-0e5daa3afe1731ef20e9bd4e328d5b01.sample"
+
+[deps]
+
+source_file="res://miniGames/Collect_money/sounds/retro-16-bit-fx-zap_E_minor.wav"
+dest_files=[ "res://.import/retro-16-bit-fx-zap_E_minor.wav-0e5daa3afe1731ef20e9bd4e328d5b01.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
