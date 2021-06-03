@@ -1,8 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://arcanoid/assets/fonts/advanced_pixel-7.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/textures/BackMain.png" type="Texture" id=2]
 [ext_resource path="res://Main_Tittle.gd" type="Script" id=3]
+[ext_resource path="res://transition.shader" type="Shader" id=5]
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 5 )
+shader_param/progress = 1.0
+shader_param/diamondPixelSize = 10.0
 
 [sub_resource type="DynamicFont" id=1]
 size = 45
@@ -20,8 +26,11 @@ font_data = ExtResource( 1 )
 script = ExtResource( 3 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_right = 1024.0
-margin_bottom = 596.0
+material = SubResource( 3 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1029.0
+margin_bottom = 609.0
 texture = ExtResource( 2 )
 expand = true
 __meta__ = {

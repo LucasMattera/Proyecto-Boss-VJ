@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://Entities/Map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Entities/Player.tscn" type="PackedScene" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://miniGames/Collect_money/Coin/coin_4.png" type="Texture" id=21]
 [ext_resource path="res://miniGames/Collect_money/Coin/coin_1.png" type="Texture" id=22]
 [ext_resource path="res://assets/textures/trees.png" type="Texture" id=23]
+[ext_resource path="res://ShaderTransitionout.tscn" type="PackedScene" id=24]
 
 [sub_resource type="DynamicFont" id=1]
 size = 25
@@ -200,7 +201,6 @@ points = PoolVector2Array( 440, 72, 0, 72, 0, 0, 440, 0 )
 9/z_index = 0
 
 [sub_resource type="AtlasTexture" id=7]
-flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 220.611, 322.942, 16.7246, 16.2513 )
 
@@ -208,7 +208,6 @@ region = Rect2( 220.611, 322.942, 16.7246, 16.2513 )
 extents = Vector2( 48, 48 )
 
 [sub_resource type="AtlasTexture" id=9]
-flags = 4
 atlas = ExtResource( 12 )
 region = Rect2( 287.954, 26.2028, 135.285, 125.264 )
 
@@ -218,7 +217,6 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 13 )
 
 [sub_resource type="AtlasTexture" id=11]
-flags = 4
 atlas = ExtResource( 12 )
 region = Rect2( 5.52087, -4.96092, 134.153, 177.866 )
 
@@ -226,7 +224,6 @@ region = Rect2( 5.52087, -4.96092, 134.153, 177.866 )
 extents = Vector2( 104, 96 )
 
 [sub_resource type="AtlasTexture" id=13]
-flags = 4
 atlas = ExtResource( 14 )
 region = Rect2( 1298.22, 10.0874, 229.095, 372.595 )
 
@@ -234,22 +231,18 @@ region = Rect2( 1298.22, 10.0874, 229.095, 372.595 )
 extents = Vector2( 40, 72 )
 
 [sub_resource type="AtlasTexture" id=15]
-flags = 4
 atlas = ExtResource( 11 )
 region = Rect2( 320.22, 17.7828, 201.954, 142.949 )
 
 [sub_resource type="AtlasTexture" id=16]
-flags = 4
 atlas = ExtResource( 11 )
 region = Rect2( -0.702637, 221.211, 200.422, 175.369 )
 
 [sub_resource type="AtlasTexture" id=17]
-flags = 4
 atlas = ExtResource( 11 )
 region = Rect2( -0.51741, 402.879, 201.607, 195.146 )
 
 [sub_resource type="AtlasTexture" id=18]
-flags = 4
 atlas = ExtResource( 14 )
 region = Rect2( 220.799, 409.069, 250.523, 390.426 )
 
@@ -269,7 +262,6 @@ outline_color = Color( 0.992157, 0.0352941, 0.0352941, 1 )
 font_data = ExtResource( 18 )
 
 [sub_resource type="AtlasTexture" id=22]
-flags = 4
 atlas = ExtResource( 11 )
 region = Rect2( 0, 17.6072, 281.08, 180.993 )
 
@@ -334,8 +326,10 @@ __meta__ = {
 position = Vector2( 160, 23 )
 scale = Vector2( 0.375, 0.375 )
 frames = SubResource( 4 )
-frame = 3
+frame = 2
 playing = true
+
+[node name="ShaderTransitionout" parent="GUI" instance=ExtResource( 24 )]
 
 [node name="Background" parent="." instance=ExtResource( 1 )]
 anchor_left = -4.851
@@ -358,13 +352,13 @@ tile_data = PoolIntArray( -851995, 3, 0, -851994, 4, 0, -851993, 4, 0, -851992, 
 [node name="Street_H" type="Node" parent="."]
 
 [node name="spr_street_H" type="Sprite" parent="Street_H"]
-position = Vector2( -400, 136 )
-scale = Vector2( 608, 23 )
+position = Vector2( -400, 125 )
+scale = Vector2( 608, 21.5 )
 texture = SubResource( 7 )
 
 [node name="spr_street_H2" type="Sprite" parent="Street_H"]
-position = Vector2( -396, 1256 )
-scale = Vector2( 608.5, 21 )
+position = Vector2( -396, 1216 )
+scale = Vector2( 608.5, 22 )
 texture = SubResource( 7 )
 
 [node name="spr_street_H4" type="Sprite" parent="Street_H"]
@@ -373,8 +367,8 @@ scale = Vector2( 608.5, 23.5 )
 texture = SubResource( 7 )
 
 [node name="spr_street_H3" type="Sprite" parent="Street_H"]
-position = Vector2( -376, -964 )
-scale = Vector2( 606, 24.5 )
+position = Vector2( -376, -980 )
+scale = Vector2( 606, 22.5 )
 texture = SubResource( 7 )
 
 [node name="Street_V" type="Node" parent="."]

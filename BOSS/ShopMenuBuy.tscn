@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://ShopMenuBuy.gd" type="Script" id=1]
 [ext_resource path="res://assets/textures/shops/example.jpg" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://CannotBuy.gd" type="Script" id=7]
 [ext_resource path="res://Purchased.gd" type="Script" id=8]
 [ext_resource path="res://ConfirmBuy.gd" type="Script" id=9]
+[ext_resource path="res://ShaderTransitionout.tscn" type="PackedScene" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -334,6 +335,8 @@ text = "Aceptar"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ShaderTransitionout" parent="GUI" instance=ExtResource( 10 )]
 [connection signal="confirm" from="." to="GUI/Confirm" method="_on_ShopMenuBuy_confirm"]
 [connection signal="not_enough_cash" from="." to="GUI/CannotBuy" method="_on_ShopMenuBuy_not_enough_cash"]
 [connection signal="purchased" from="." to="GUI/Purchased" method="_on_ShopMenuBuy_purchased"]

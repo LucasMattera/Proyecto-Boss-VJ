@@ -1,40 +1,41 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://ShopManageMenu.gd" type="Script" id=1]
 [ext_resource path="res://assets/textures/shops/icons/upgrade.png" type="Texture" id=2]
 [ext_resource path="res://Done.gd" type="Script" id=3]
 [ext_resource path="res://ConfirmUpgrade.gd" type="Script" id=4]
+[ext_resource path="res://ShaderTransitionout.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/textures/shops/icons/hire.png" type="Texture" id=6]
 [ext_resource path="res://assets/textures/shops/example.jpg" type="Texture" id=8]
 [ext_resource path="res://assets/fonts/Schrödinger.ttf" type="DynamicFontData" id=9]
 [ext_resource path="res://assets/textures/shops/icons/exit.png" type="Texture" id=10]
 
-[sub_resource type="DynamicFontData" id=7]
+[sub_resource type="DynamicFontData" id=1]
 font_path = "res://assets/fonts/Schrödinger.ttf"
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=2]
 size = 54
-font_data = SubResource( 7 )
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://assets/fonts/Schrödinger.ttf"
+
+[sub_resource type="DynamicFont" id=4]
+size = 34
+font_data = SubResource( 3 )
 
 [sub_resource type="DynamicFontData" id=5]
 font_path = "res://assets/fonts/Schrödinger.ttf"
 
 [sub_resource type="DynamicFont" id=6]
-size = 34
+size = 25
 font_data = SubResource( 5 )
 
-[sub_resource type="DynamicFontData" id=9]
-font_path = "res://assets/fonts/Schrödinger.ttf"
-
-[sub_resource type="DynamicFont" id=1]
-size = 25
-font_data = SubResource( 9 )
-
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=7]
 size = 32
 font_data = ExtResource( 9 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=8]
 size = 36
 font_data = ExtResource( 9 )
 
@@ -86,7 +87,7 @@ texture = ExtResource( 10 )
 [node name="ExitButton" type="Button" parent="GUI/ExitRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Salir"
 flat = true
@@ -117,7 +118,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 126.0
 margin_right = -5.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Mejorar Local"
 flat = true
@@ -149,7 +150,7 @@ anchor_bottom = 1.0
 margin_left = 118.0
 margin_right = -2.0
 margin_bottom = -2.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Contratar Empleado"
 flat = true
@@ -190,7 +191,7 @@ margin_left = 38.0
 margin_top = 18.0
 margin_right = 500.0
 margin_bottom = 186.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 7 )
 text = "CONFIRMAR COMPRA
 Dinero actual: $xxxx
 Requerido: -$xxxx
@@ -205,7 +206,7 @@ margin_left = 38.0
 margin_top = 186.0
 margin_right = 246.0
 margin_bottom = 239.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 8 )
 text = "Aceptar"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -216,7 +217,7 @@ margin_left = 294.0
 margin_top = 186.0
 margin_right = 502.0
 margin_bottom = 239.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 8 )
 text = "Cancelar"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -263,7 +264,7 @@ margin_left = -192.0
 margin_top = -76.0
 margin_right = 192.0
 margin_bottom = -4.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 7 )
 text = "CAMBIO REALIZADO!"
 align = 1
 __meta__ = {
@@ -279,11 +280,13 @@ margin_left = -83.0
 margin_top = 1.00001
 margin_right = 83.0
 margin_bottom = 44.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 8 )
 text = "Aceptar"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ShaderTransitionout" parent="GUI" instance=ExtResource( 5 )]
 [connection signal="confirmHire" from="." to="GUI/Confirm" method="_on_ShopMenuManage_confirmHire"]
 [connection signal="confirmUpgrade" from="." to="GUI/Confirm" method="_on_ShopMenuManage_confirmUpgrade"]
 [connection signal="pressed" from="GUI/ExitRect/ExitButton" to="." method="_on_ExitButton_pressed"]
