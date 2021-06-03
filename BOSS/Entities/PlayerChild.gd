@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 onready var animation = $Sprite
+onready var walkAudio = $walk
 export (int) var speed = 400
 var velocity:Vector2 = Vector2.ZERO
 var can_move = true
@@ -33,6 +34,14 @@ func initialize():
 	
 func get_input():
 	velocity = Vector2()
+	if Input.is_action_just_pressed('move_right'):
+		walkAudio.playing= true
+	if Input.is_action_just_pressed("move_left") :
+		walkAudio.playing= true
+	if Input.is_action_just_pressed("move_down") :
+		walkAudio.playing= true
+	if Input.is_action_just_pressed("move_up") :
+		walkAudio.playing= true
 	if Input.is_action_pressed('move_right'):
 		animation.animation = "right"
 		velocity.x += 1
@@ -47,6 +56,8 @@ func get_input():
 		velocity.y -= 1
 	if Input.is_action_just_released("move_down") || Input.is_action_just_released("move_right") || Input.is_action_just_released("move_left") || Input.is_action_just_released("move_up"): 
 		animation.animation = "idle"
+	if animation.animation == "idle":
+		walkAudio.playing= false
 	velocity = velocity.normalized() * speed
 	if Input.is_action_pressed('run'):
 		velocity = velocity * 2

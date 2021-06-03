@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://Entities/Map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Entities/Player.tscn" type="PackedScene" id=2]
@@ -24,6 +24,7 @@
 [ext_resource path="res://miniGames/Collect_money/Coin/coin_1.png" type="Texture" id=22]
 [ext_resource path="res://assets/textures/trees.png" type="Texture" id=23]
 [ext_resource path="res://ShaderTransitionout.tscn" type="PackedScene" id=24]
+[ext_resource path="res://assets/audio/music/loop-texture_C.wav" type="AudioStream" id=25]
 
 [sub_resource type="DynamicFont" id=1]
 size = 25
@@ -201,7 +202,6 @@ points = PoolVector2Array( 440, 72, 0, 72, 0, 0, 440, 0 )
 9/z_index = 0
 
 [sub_resource type="AtlasTexture" id=7]
-flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 220.611, 322.942, 16.7246, 16.2513 )
 
@@ -209,7 +209,6 @@ region = Rect2( 220.611, 322.942, 16.7246, 16.2513 )
 extents = Vector2( 48, 48 )
 
 [sub_resource type="AtlasTexture" id=9]
-flags = 4
 atlas = ExtResource( 12 )
 region = Rect2( 287.954, 26.2028, 135.285, 125.264 )
 
@@ -219,7 +218,6 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 13 )
 
 [sub_resource type="AtlasTexture" id=11]
-flags = 4
 atlas = ExtResource( 12 )
 region = Rect2( 5.52087, -4.96092, 134.153, 177.866 )
 
@@ -227,7 +225,6 @@ region = Rect2( 5.52087, -4.96092, 134.153, 177.866 )
 extents = Vector2( 104, 96 )
 
 [sub_resource type="AtlasTexture" id=13]
-flags = 4
 atlas = ExtResource( 14 )
 region = Rect2( 1298.22, 10.0874, 229.095, 372.595 )
 
@@ -235,22 +232,18 @@ region = Rect2( 1298.22, 10.0874, 229.095, 372.595 )
 extents = Vector2( 40, 72 )
 
 [sub_resource type="AtlasTexture" id=15]
-flags = 4
 atlas = ExtResource( 11 )
 region = Rect2( 320.22, 17.7828, 201.954, 142.949 )
 
 [sub_resource type="AtlasTexture" id=16]
-flags = 4
 atlas = ExtResource( 11 )
 region = Rect2( -0.702637, 221.211, 200.422, 175.369 )
 
 [sub_resource type="AtlasTexture" id=17]
-flags = 4
 atlas = ExtResource( 11 )
 region = Rect2( -0.51741, 402.879, 201.607, 195.146 )
 
 [sub_resource type="AtlasTexture" id=18]
-flags = 4
 atlas = ExtResource( 14 )
 region = Rect2( 220.799, 409.069, 250.523, 390.426 )
 
@@ -270,7 +263,6 @@ outline_color = Color( 0.992157, 0.0352941, 0.0352941, 1 )
 font_data = ExtResource( 18 )
 
 [sub_resource type="AtlasTexture" id=22]
-flags = 4
 atlas = ExtResource( 11 )
 region = Rect2( 0, 17.6072, 281.08, 180.993 )
 
@@ -657,6 +649,10 @@ polygon = PoolVector2Array( -4272, -1288, -4272, -1472, -4032, -1472, -4024, -12
 [node name="CollisionShape2D" type="CollisionShape2D" parent="House/Area2D"]
 position = Vector2( -4144, -1416 )
 shape = SubResource( 23 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 25 )
+autoplay = true
 [connection signal="body_entered" from="Mini_games_areas/Arcanoid/arcanoid" to="Mini_games_areas/Arcanoid/arcanoid" method="_on_arcanoid_body_entered"]
 [connection signal="body_entered" from="Mini_games_areas/dance/Area2D" to="Mini_games_areas/dance/Area2D" method="_on_DanceMinigame_body_entered"]
 [connection signal="body_entered" from="Mini_games_areas/Collect_Money/Area2D_Collect_Money" to="Mini_games_areas/Collect_Money/Area2D_Collect_Money" method="_on_Area2D_Collect_Money_body_entered"]
