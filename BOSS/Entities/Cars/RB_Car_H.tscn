@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/textures/tD+SKW.png" type="Texture" id=1]
 [ext_resource path="res://RB_Car_H.gd" type="Script" id=2]
+[ext_resource path="res://assets/audio/car_crash.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/cityy.png" type="Texture" id=4]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -21,11 +23,24 @@ flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 264.347, 377.263, 16.6999, 25.5012 )
 
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 240, 480, 33, 52 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 265, 396, 43, 56 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 303, 480, 38, 54 )
+
 [node name="RB_Car_H" type="Area2D"]
+position = Vector2( 0, 20.6362 )
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="yellow" type="Sprite" parent="."]
 position = Vector2( 130.583, -67.473 )
@@ -48,4 +63,25 @@ position = Vector2( 127.786, -68.2582 )
 rotation = 1.5708
 scale = Vector2( 7.25039, 9.0005 )
 texture = SubResource( 4 )
+
+[node name="crash" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="orange" type="Sprite" parent="."]
+position = Vector2( 126.992, -61.9086 )
+rotation = 4.71239
+scale = Vector2( 4.27101, 4.78534 )
+texture = SubResource( 5 )
+
+[node name="truck" type="Sprite" parent="."]
+position = Vector2( 130.96, -69.0519 )
+rotation = 4.71239
+scale = Vector2( 3.21498, 4.40157 )
+texture = SubResource( 6 )
+
+[node name="police" type="Sprite" parent="."]
+position = Vector2( 129.845, -73.9171 )
+rotation = 4.71239
+scale = Vector2( 4.1748, 4.82152 )
+texture = SubResource( 7 )
 [connection signal="body_entered" from="." to="." method="_on_RB_Car_H_body_entered"]

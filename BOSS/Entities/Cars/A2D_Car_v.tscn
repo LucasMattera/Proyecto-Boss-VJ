@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/textures/tD+SKW.png" type="Texture" id=1]
 [ext_resource path="res://A2D_Car_v.gd" type="Script" id=2]
+[ext_resource path="res://assets/audio/car_crash.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/cityy.png" type="Texture" id=4]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -21,11 +23,27 @@ flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 291.708, 378.664, 20.45, 28.3612 )
 
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 241.077, 481.362, 30.3251, 50.1531 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 264, 398, 50, 55 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 304.79, 479.369, 33.6842, 51.579 )
+
 [node name="A2D_Car_v" type="Area2D"]
 script = ExtResource( 2 )
 
 [node name="red" type="Sprite" parent="."]
 position = Vector2( 56, 92 )
+rotation = 3.14159
 scale = Vector2( 6.09091, 6.57576 )
 texture = SubResource( 1 )
 
@@ -35,11 +53,31 @@ shape = SubResource( 2 )
 
 [node name="yellow" type="Sprite" parent="."]
 position = Vector2( 62.9325, 93.3381 )
+rotation = 3.14159
 scale = Vector2( -5.85278, 6.66544 )
 texture = SubResource( 3 )
 
 [node name="green" type="Sprite" parent="."]
 position = Vector2( 53.7401, 91.5703 )
+rotation = 3.14159
 scale = Vector2( 5.94975, 6.78312 )
 texture = SubResource( 4 )
+
+[node name="crash" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="orange" type="Sprite" parent="."]
+position = Vector2( 60.2488, 92.3742 )
+scale = Vector2( 3.49845, 3.77187 )
+texture = SubResource( 5 )
+
+[node name="truck" type="Sprite" parent="."]
+position = Vector2( 70.2286, 97.2274 )
+scale = Vector2( 2.62635, 3.42988 )
+texture = SubResource( 6 )
+
+[node name="police" type="Sprite" parent="."]
+position = Vector2( 59.6703, 101.808 )
+scale = Vector2( 3.76415, 3.73138 )
+texture = SubResource( 7 )
 [connection signal="body_entered" from="." to="." method="_on_A2D_Car_v_body_entered"]
