@@ -53,4 +53,3 @@ speed = 100
 [node name="LeftArrow6" parent="." instance=ExtResource( 1 )]
 position = Vector2( 200, -1800 )
 speed = 100
-[connection signal="tree_exited" from="RightArrow6" to="." method="_on_RightArrow6_tree_exited"]
