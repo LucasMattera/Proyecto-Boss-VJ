@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://arcanoid/assets/fonts/advanced_pixel-7.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/textures/BackMain.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/fonts/Schrödinger.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://transition.shader" type="Shader" id=5]
 [ext_resource path="res://ShaderTransitionout.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/audio/music/main_menu/Beautiful City.Wav" type="AudioStream" id=7]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 5 )
@@ -95,6 +96,11 @@ __meta__ = {
 }
 
 [node name="ShaderTransitionout" parent="TextureRect" instance=ExtResource( 6 )]
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -15.0
+autoplay = true
 [connection signal="pressed" from="TextureRect/Instructions" to="." method="_on_Instructions_pressed"]
 [connection signal="pressed" from="TextureRect/Load_Game" to="." method="_on_Load_Game_pressed"]
 [connection signal="pressed" from="TextureRect/New_Game" to="." method="_on_New_Game_pressed"]
