@@ -2,6 +2,7 @@ extends Node
 
 var recaudacion = 0 
 var is_paused = false
+var shops_size = 0
 
 func save_game():
 	var save_game = File.new()

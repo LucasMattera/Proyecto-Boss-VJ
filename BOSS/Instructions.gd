@@ -1,9 +1,8 @@
 extends Node2D
 
-
-onready var volverMain = $VolverMain
-onready var salir = $Salir
-onready var volverInGame = $VolverInGame
+onready var volverMain = $TextureRect/VolverMain
+onready var salir = $TextureRect/Salir
+onready var volverInGame = $TextureRect/VolverInGame
 
 
 # Called when the node enters the scene tree for the first time.

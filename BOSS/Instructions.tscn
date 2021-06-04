@@ -7,36 +7,36 @@
 [ext_resource path="res://ShaderTransitionout.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Instructions.gd" type="Script" id=6]
 
-[sub_resource type="DynamicFont" id=1]
-size = 46
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 1 )
-
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="AtlasTexture" id=1]
 flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( -4, -11, 99, 143 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=2]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 95.2448, 26.621, 160.736, 34.1185 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=3]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( -0.172546, 64.4844, 33.0658, 32.1003 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=4]
 size = 50
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=5]
 size = 50
 outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 46
+outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
@@ -54,79 +54,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ShaderTransitionout" parent="TextureRect" instance=ExtResource( 5 )]
-
-[node name="Label" type="Label" parent="."]
-margin_left = 115.984
-margin_top = 54.6614
-margin_right = 311.984
-margin_bottom = 141.661
-custom_fonts/font = SubResource( 1 )
-text = "MOVIMIENTO"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label3" type="Label" parent="."]
-margin_left = 527.298
-margin_top = 162.97
-margin_right = 769.298
-margin_bottom = 249.97
-custom_fonts/font = SubResource( 1 )
-text = "CORRER"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label4" type="Label" parent="."]
-margin_left = 529.877
-margin_top = 254.516
-margin_right = 771.877
-margin_bottom = 341.516
-custom_fonts/font = SubResource( 1 )
-text = "TRABAJAR"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label5" type="Label" parent="."]
-margin_left = 531.167
-margin_top = 346.492
-margin_right = 773.167
-margin_bottom = 433.492
-custom_fonts/font = SubResource( 1 )
-text = "PAUSA"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label2" type="Label" parent="."]
-margin_left = 649.937
-margin_top = 57.9684
-margin_right = 910.937
-margin_bottom = 154.968
-custom_fonts/font = SubResource( 1 )
-text = "ACCIONES"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite" type="Sprite" parent="TextureRect"]
 position = Vector2( 228.181, 264.227 )
 scale = Vector2( 2.25598, 1.61514 )
-texture = SubResource( 2 )
+texture = SubResource( 1 )
 
-[node name="Sprite2" type="Sprite" parent="."]
+[node name="Sprite2" type="Sprite" parent="TextureRect"]
 position = Vector2( 879.324, 190.812 )
 scale = Vector2( 1.21082, 1.05836 )
-texture = SubResource( 3 )
+texture = SubResource( 2 )
 
-[node name="Sprite3" type="Sprite" parent="."]
+[node name="Sprite3" type="Sprite" parent="TextureRect"]
 position = Vector2( 879.324, 274.479 )
 scale = Vector2( 1.98207, 2.15744 )
-texture = SubResource( 4 )
+texture = SubResource( 3 )
 
-[node name="Key" type="Label" parent="Sprite3"]
+[node name="Key" type="Label" parent="TextureRect/Sprite3"]
 margin_left = -4.09775
 margin_top = -6.81706
 margin_right = 35.9023
@@ -137,12 +80,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sprite4" type="Sprite" parent="."]
+[node name="Sprite4" type="Sprite" parent="TextureRect"]
 position = Vector2( 881.309, 371.043 )
 scale = Vector2( 1.98207, 2.15744 )
-texture = SubResource( 4 )
+texture = SubResource( 3 )
 
-[node name="Key" type="Label" parent="Sprite4"]
+[node name="Key" type="Label" parent="TextureRect/Sprite4"]
 anchor_bottom = 0.038
 margin_left = -4.0
 margin_top = -7.0
@@ -154,40 +97,97 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VolverMain" type="MenuButton" parent="."]
+[node name="VolverMain" type="MenuButton" parent="TextureRect"]
 margin_left = 407.793
 margin_top = 455.648
 margin_right = 662.793
 margin_bottom = 536.648
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 4 )
 text = "VOLVER"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Salir" type="MenuButton" parent="."]
+[node name="Salir" type="MenuButton" parent="TextureRect"]
 visible = false
 margin_left = 698.219
 margin_top = 459.626
 margin_right = 953.219
 margin_bottom = 540.626
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 4 )
 text = "SALIR"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VolverInGame" type="MenuButton" parent="."]
+[node name="VolverInGame" type="MenuButton" parent="TextureRect"]
 visible = false
 margin_left = 68.9597
 margin_top = 457.521
 margin_right = 340.96
 margin_bottom = 550.521
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 5 )
 text = "VOLVER"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="VolverMain" to="." method="_on_MenuButton_pressed"]
-[connection signal="pressed" from="Salir" to="." method="_on_MenuButton_pressed"]
-[connection signal="pressed" from="VolverInGame" to="." method="_on_VolverInGame_pressed"]
+
+[node name="Label2" type="Label" parent="TextureRect"]
+margin_left = 649.937
+margin_top = 57.9684
+margin_right = 910.937
+margin_bottom = 154.968
+custom_fonts/font = SubResource( 6 )
+text = "ACCIONES"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="TextureRect"]
+margin_left = 531.167
+margin_top = 346.492
+margin_right = 773.167
+margin_bottom = 433.492
+custom_fonts/font = SubResource( 6 )
+text = "PAUSA"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="TextureRect"]
+margin_left = 529.877
+margin_top = 254.516
+margin_right = 771.877
+margin_bottom = 341.516
+custom_fonts/font = SubResource( 6 )
+text = "TRABAJAR"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="TextureRect"]
+margin_left = 527.298
+margin_top = 162.97
+margin_right = 769.298
+margin_bottom = 249.97
+custom_fonts/font = SubResource( 6 )
+text = "CORRER"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="TextureRect"]
+margin_left = 115.984
+margin_top = 54.6614
+margin_right = 357.984
+margin_bottom = 141.661
+custom_fonts/font = SubResource( 6 )
+text = "MOVIMIENTO"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShaderTransitionout" parent="TextureRect" instance=ExtResource( 5 )]
+[connection signal="pressed" from="TextureRect/VolverMain" to="." method="_on_MenuButton_pressed"]
+[connection signal="pressed" from="TextureRect/Salir" to="." method="_on_MenuButton_pressed"]
+[connection signal="pressed" from="TextureRect/VolverInGame" to="." method="_on_VolverInGame_pressed"]

@@ -9,11 +9,14 @@ onready var car_spawner_v = $Car_Spawner_V
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var shops_size = 0
 	atropellado.hide()
 	for shop in shops.get_children():
 		shop.initialize(player)
+		shops_size = shops_size + 1
 	print("entre al main")
 	player.initialize()
+	GameServer.shops_size = shops_size
 	print(player.position)
 	#shop.initialize(player)
 	GUI.initialize()

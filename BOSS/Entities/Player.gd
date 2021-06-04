@@ -6,6 +6,7 @@ var can_move = true
 export (int) var zoomInLimit = 9
 export (int) var zoomOutLimit = 1
 export (int) var money = 500
+export (int) var last_earning = 0
 export (String) var player_name = "Player"
 var shops = []
 
@@ -21,6 +22,8 @@ func buy(shop):
 		Player.shops.append(shop_to_add)
 		Player.money -= shop_value
 		print("compraste ")
+		if (self.shops.size() == GameServer.shops_size):
+			get_tree().change_scene("res://Win.tscn")
 	else: 
 		print("no compraste")
 		

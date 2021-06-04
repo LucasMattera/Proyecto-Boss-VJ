@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=50 format=2]
 
 [ext_resource path="res://Entities/Map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Entities/Player.tscn" type="PackedScene" id=2]
@@ -48,6 +48,10 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 } ]
+
+[sub_resource type="DynamicFont" id=24]
+size = 30
+font_data = ExtResource( 13 )
 
 [sub_resource type="ConvexPolygonShape2D" id=5]
 points = PoolVector2Array( 440, 72, 0, 72, 0, 0, 440, 0 )
@@ -202,6 +206,7 @@ points = PoolVector2Array( 440, 72, 0, 72, 0, 0, 440, 0 )
 9/z_index = 0
 
 [sub_resource type="AtlasTexture" id=7]
+flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 220.611, 322.942, 16.7246, 16.2513 )
 
@@ -209,6 +214,7 @@ region = Rect2( 220.611, 322.942, 16.7246, 16.2513 )
 extents = Vector2( 48, 48 )
 
 [sub_resource type="AtlasTexture" id=9]
+flags = 4
 atlas = ExtResource( 12 )
 region = Rect2( 287.954, 26.2028, 135.285, 125.264 )
 
@@ -218,6 +224,7 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 13 )
 
 [sub_resource type="AtlasTexture" id=11]
+flags = 4
 atlas = ExtResource( 12 )
 region = Rect2( 5.52087, -4.96092, 134.153, 177.866 )
 
@@ -225,6 +232,7 @@ region = Rect2( 5.52087, -4.96092, 134.153, 177.866 )
 extents = Vector2( 104, 96 )
 
 [sub_resource type="AtlasTexture" id=13]
+flags = 4
 atlas = ExtResource( 14 )
 region = Rect2( 1298.22, 10.0874, 229.095, 372.595 )
 
@@ -232,18 +240,22 @@ region = Rect2( 1298.22, 10.0874, 229.095, 372.595 )
 extents = Vector2( 40, 72 )
 
 [sub_resource type="AtlasTexture" id=15]
+flags = 4
 atlas = ExtResource( 11 )
 region = Rect2( 320.22, 17.7828, 201.954, 142.949 )
 
 [sub_resource type="AtlasTexture" id=16]
+flags = 4
 atlas = ExtResource( 11 )
 region = Rect2( -0.702637, 221.211, 200.422, 175.369 )
 
 [sub_resource type="AtlasTexture" id=17]
+flags = 4
 atlas = ExtResource( 11 )
 region = Rect2( -0.51741, 402.879, 201.607, 195.146 )
 
 [sub_resource type="AtlasTexture" id=18]
+flags = 4
 atlas = ExtResource( 14 )
 region = Rect2( 220.799, 409.069, 250.523, 390.426 )
 
@@ -263,6 +275,7 @@ outline_color = Color( 0.992157, 0.0352941, 0.0352941, 1 )
 font_data = ExtResource( 18 )
 
 [sub_resource type="AtlasTexture" id=22]
+flags = 4
 atlas = ExtResource( 11 )
 region = Rect2( 0, 17.6072, 281.08, 180.993 )
 
@@ -318,7 +331,7 @@ margin_right = 140.32
 margin_bottom = 4.2
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Shops:"
+text = "Locales:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -331,6 +344,19 @@ frame = 1
 playing = true
 
 [node name="ShaderTransitionout" parent="GUI" instance=ExtResource( 24 )]
+visible = false
+
+[node name="EarningMoney" type="Label" parent="GUI"]
+margin_left = 160.029
+margin_top = 41.9599
+margin_right = 230.029
+margin_bottom = 72.9599
+custom_fonts/font = SubResource( 24 )
+custom_colors/font_color = Color( 0.00392157, 1, 0.101961, 1 )
+text = "+$money"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Background" parent="." instance=ExtResource( 1 )]
 anchor_left = -4.851
@@ -353,7 +379,7 @@ tile_data = PoolIntArray( -851995, 3, 0, -851994, 4, 0, -851993, 4, 0, -851992, 
 [node name="Street_H" type="Node" parent="."]
 
 [node name="spr_street_H" type="Sprite" parent="Street_H"]
-position = Vector2( -400, 125 )
+position = Vector2( -397.275, 125 )
 scale = Vector2( 608, 21.5 )
 texture = SubResource( 7 )
 
@@ -522,8 +548,9 @@ polygon = PoolVector2Array( -461.48, -25.5962, -49.345, -19.3831, -43.132, -583.
 [node name="Shop" parent="Shops" instance=ExtResource( 6 )]
 position = Vector2( -1648, 984 )
 rotation = 3.14159
+value = 5000
 shop_name = "heladeria"
-earnings = 200
+earnings = 150
 
 [node name="Sprite" parent="Shops/Shop" index="0"]
 position = Vector2( 64.0003, 327.499 )
@@ -551,8 +578,9 @@ polygon = PoolVector2Array( 152, -80, 152, 80, 328, 80, 344, 80, 344, -80, 512, 
 [node name="Shop3" parent="Shops" instance=ExtResource( 6 )]
 position = Vector2( -3120, -48 )
 rotation = 3.14159
+value = 10000
 shop_name = "muebleria"
-earnings = 500
+earnings = 200
 
 [node name="Sprite" parent="Shops/Shop3" index="0"]
 position = Vector2( -592.614, 423.785 )

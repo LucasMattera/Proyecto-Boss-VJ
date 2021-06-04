@@ -2,7 +2,7 @@ extends Node2D
 
 var player 
 onready var menu = $Menu
-onready var value = 100
+export (int) var value = 1000
 export (String) var shop_name = "shop"
 export (int) var earnings = 10
 

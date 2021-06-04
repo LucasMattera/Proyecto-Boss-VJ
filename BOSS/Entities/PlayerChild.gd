@@ -3,6 +3,7 @@ extends KinematicBody2D
 onready var animation = $Sprite
 onready var walkAudio = $walk
 export (int) var speed = 400
+export (int) var workMoney = 5
 var velocity:Vector2 = Vector2.ZERO
 var can_move = true
 export (int) var zoomInLimit = 9
@@ -15,7 +16,7 @@ func _ready():
 	# Create a timer node
 	var timer = Timer.new()
 	# Set timer interval
-	timer.set_wait_time(1.5)
+	timer.set_wait_time(10)
 	# Set it as repeat
 	timer.set_one_shot(false)
 	# Connect its timeout signal to the function you want to repeat
@@ -66,7 +67,8 @@ func get_input():
 		get_tree().change_scene("res://Instructions.tscn")
 	if (Input.is_action_just_pressed("work_hard")):
 		print("se trabaja")
-		self.money += 20
+		self.money += workMoney
+		Player.last_earning = workMoney
 		actualizeMoney(self.money)
 		print("ganaste 20 pesos")
 	Player.velocity = velocity
@@ -83,8 +85,10 @@ func _physics_process(delta):
 func recollect_money():
 	print('Ganancia por locales :')
 	print(self.shops.size())
+	var collected_money = Player.money
 	for shop in self.shops:
 		self.money += shop.earnings
+	Player.last_earning = self.money - collected_money
 	Player.money = self.money
 	actualizeMoney(self.money)
 	print('dinero actual: ' )
