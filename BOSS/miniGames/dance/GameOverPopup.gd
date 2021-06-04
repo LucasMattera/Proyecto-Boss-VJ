@@ -9,6 +9,7 @@ func _ready():
 	set_process_input(false)
 
 func game_over():
+	get_tree().paused = true
 	set_process_input(true)
 	popup_centered()
 

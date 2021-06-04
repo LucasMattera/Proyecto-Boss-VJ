@@ -24,11 +24,11 @@ z_index = 1
 [node name="Audio" type="Node" parent="."]
 
 [node name="SFX" type="AudioStreamPlayer" parent="Audio"]
-volume_db = -35.0
+volume_db = -20.0
 script = ExtResource( 7 )
 
 [node name="Music" type="AudioStreamPlayer" parent="Audio"]
-volume_db = -30.0
+volume_db = -20.0
 script = ExtResource( 6 )
 [connection signal="fail" from="." to="GUI" method="_on_DanceMinigame_fail"]
 [connection signal="fail" from="." to="Audio/SFX" method="_on_DanceMinigame_fail"]
