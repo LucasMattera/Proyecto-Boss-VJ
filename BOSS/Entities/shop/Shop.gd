@@ -19,8 +19,6 @@ func _ready():
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("player"):
-		Player.position.y = exit.position.y
-		Player.position.x = exit.position.x 
 		if(Player.has_shop(self.shop_name)):
 			ShopState.initialize(self)	
 			get_tree().change_scene("res://ShopManageMenu.tscn")
@@ -28,4 +26,6 @@ func _on_Area2D_body_entered(body):
 			ShopState.initialize(self)	
 			get_tree().change_scene("res://ShopMenuBuy.tscn")
 	Player.can_move = false
+	Player.position.y = exit.position.y + 100
+	Player.position.x = exit.position.x 
 	GameServer.save_game()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://Entities/Map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Entities/Player.tscn" type="PackedScene" id=2]
@@ -264,6 +264,11 @@ flags = 4
 atlas = ExtResource( 11 )
 region = Rect2( 357.975, 176.933, 161.111, 182.726 )
 
+[sub_resource type="AtlasTexture" id=27]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 201.861, 240.821, 156.038, 167.496 )
+
 [sub_resource type="AtlasTexture" id=19]
 flags = 4
 atlas = ExtResource( 14 )
@@ -350,7 +355,7 @@ __meta__ = {
 position = Vector2( 160, 23 )
 scale = Vector2( 0.375, 0.375 )
 frames = SubResource( 4 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="ShaderTransitionout" parent="GUI" instance=ExtResource( 24 )]
@@ -423,7 +428,7 @@ scale = Vector2( 351.665, 20.4015 )
 texture = SubResource( 8 )
 
 [node name="spr_street_V3" type="Sprite" parent="Street_V"]
-position = Vector2( 978.889, 751.753 )
+position = Vector2( 976.336, 754.306 )
 rotation = 1.5708
 scale = Vector2( 351.665, 23.2804 )
 texture = SubResource( 8 )
@@ -443,21 +448,21 @@ position = Vector2( 576, -56 )
 script = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mini_games_areas/Arcanoid/arcanoid"]
-position = Vector2( -144, -192 )
+position = Vector2( -673.938, -149.578 )
 shape = SubResource( 9 )
 
 [node name="Sprite" type="Sprite" parent="Mini_games_areas/Arcanoid/arcanoid"]
-position = Vector2( -144, -408 )
-scale = Vector2( 5.45185, 5.28 )
+position = Vector2( -645.603, -380.793 )
+scale = Vector2( 11.6591, 4.67868 )
 texture = SubResource( 10 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Mini_games_areas/Arcanoid"]
 position = Vector2( 440, -456 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Mini_games_areas/Arcanoid/StaticBody2D"]
-position = Vector2( -640, 440 )
-scale = Vector2( 1.24132, 1 )
-polygon = PoolVector2Array( 444.688, -120, 448, -296, 584, -296, 580.028, -120, 799.149, -120, 800, -784, 224, -784, 219.122, -120 )
+position = Vector2( -1816.12, 424.931 )
+scale = Vector2( 2.61209, 0.98444 )
+polygon = PoolVector2Array( 444.688, -120, 448, -296, 584, -296, 580.028, -120, 804.269, -112.249, 806.873, -699.662, 205.233, -718.09, 207.837, -116.856 )
 
 [node name="Label" type="Label" parent="Mini_games_areas/Arcanoid"]
 anchor_left = 0.359
@@ -479,10 +484,7 @@ __meta__ = {
 }
 
 [node name="dance" type="Node2D" parent="Mini_games_areas"]
-position = Vector2( -1640, -264 )
-__meta__ = {
-"_edit_group_": true
-}
+position = Vector2( -2246.39, -406.852 )
 
 [node name="Area2D" type="Area2D" parent="Mini_games_areas/dance"]
 position = Vector2( -528, -184 )
@@ -490,27 +492,24 @@ gravity_vec = Vector2( 0, 0 )
 script = ExtResource( 10 )
 
 [node name="Sprite" type="Sprite" parent="Mini_games_areas/dance/Area2D"]
-position = Vector2( 512, -16 )
-scale = Vector2( 6.56716, 3.9774 )
+position = Vector2( 632.987, 126.852 )
+scale = Vector2( 12.8112, 3.9774 )
 texture = SubResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mini_games_areas/dance/Area2D"]
-position = Vector2( 520, 168 )
+position = Vector2( 645.36, 389.566 )
 shape = SubResource( 13 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Mini_games_areas/dance"]
 position = Vector2( -472, -272 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Mini_games_areas/dance/StaticBody2D"]
-position = Vector2( 2136, 432 )
-scale = Vector2( 1, 0.967991 )
+position = Vector2( 3723.7, 566.106 )
+scale = Vector2( 1.87618, 0.967991 )
 polygon = PoolVector2Array( -1816, -16, -2048, -16, -2056, -664, -1272, -656, -1288, -16, -1520, -8, -1520, -320, -1824, -328 )
 
 [node name="Collect_Money" type="Node2D" parent="Mini_games_areas"]
-position = Vector2( -2560, 616 )
-__meta__ = {
-"_edit_group_": true
-}
+position = Vector2( -4341.27, 639.323 )
 
 [node name="Area2D_Collect_Money" type="Area2D" parent="Mini_games_areas/Collect_Money"]
 position = Vector2( -688, 176 )
@@ -561,50 +560,50 @@ position = Vector2( -205.887, 1832.36 )
 polygon = PoolVector2Array( -965.848, 310.418, -968.769, 1610.19, -250.241, 1613.12, -253.161, 1359, 18.4773, 1359, 15.5564, 1601.43, 731.164, 1627.72, 734.085, 298.735 )
 
 [node name="Shop2" parent="Shops" instance=ExtResource( 6 )]
-position = Vector2( -127.89, -87.0754 )
+position = Vector2( 2312.25, 1012.01 )
 shop_name = "cafe"
 earnings = 100
 
 [node name="Sprite" parent="Shops/Shop2" index="0"]
-position = Vector2( -364, -350.792 )
-scale = Vector2( 4.73632, 4.74941 )
+position = Vector2( -378.577, -366.826 )
+scale = Vector2( 5.83864, 3.94872 )
 texture = SubResource( 16 )
 
 [node name="Area2D" parent="Shops/Shop2" index="1"]
 position = Vector2( -8.97949, 0 )
 
 [node name="CollisionShape2D" parent="Shops/Shop2/Area2D" index="0"]
-position = Vector2( -544, -128 )
+position = Vector2( -619.799, -157.154 )
 
 [node name="Exit" parent="Shops/Shop2" index="3"]
-position = Vector2( -641.6, 143.929 )
+position = Vector2( -690.865, 179.117 )
 
 [node name="RigidBody2D" type="StaticBody2D" parent="Shops/Shop2"]
 position = Vector2( -197.548, 110.746 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shops/Shop2/RigidBody2D"]
-position = Vector2( 353.52, -112.76 )
-scale = Vector2( 1.30276, 1.15795 )
+position = Vector2( 519.676, -177.933 )
+scale = Vector2( 1.73743, 0.991716 )
 polygon = PoolVector2Array( -461.48, -25.5962, -49.345, -19.3831, -43.132, -583.738, -768.324, -589.354, -747.282, -24.5606, -627.162, -22.4896, -628.197, -208.882, -461.48, -206.811 )
 
 [node name="Shop" parent="Shops" instance=ExtResource( 6 )]
-position = Vector2( -1648, 984 )
+position = Vector2( -1822.92, 1033.56 )
 rotation = 3.14159
 value = 5000
 shop_name = "heladeria"
 earnings = 150
 
 [node name="Sprite" parent="Shops/Shop" index="0"]
-position = Vector2( 64.0003, 327.499 )
+position = Vector2( 307.431, 385.805 )
 rotation = 3.14159
-scale = Vector2( 4.65137, 3.48989 )
+scale = Vector2( 7.05653, 3.48989 )
 texture = SubResource( 17 )
 
 [node name="Area2D" parent="Shops/Shop" index="1"]
 position = Vector2( 21.6483, -21.6479 )
 
 [node name="CollisionShape2D" parent="Shops/Shop/Area2D" index="0"]
-position = Vector2( 238.722, 120.538 )
+position = Vector2( 550.664, 170.1 )
 
 [node name="Menu" parent="Shops/Shop" index="2"]
 margin_left = 0.0
@@ -614,18 +613,18 @@ margin_bottom = 0.0
 rect_rotation = 180.0
 
 [node name="Exit" parent="Shops/Shop" index="3"]
-position = Vector2( 343.277, -170.091 )
+position = Vector2( 672.209, -159.738 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Shops/Shop"]
 position = Vector2( -145.351, 114.425 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shops/Shop/StaticBody2D"]
-position = Vector2( 142.259, 5.02902 )
-scale = Vector2( 1, 0.877369 )
+position = Vector2( 362.343, 37.0983 )
+scale = Vector2( 1.4377, 0.877369 )
 polygon = PoolVector2Array( 152, -80, 152, 80, 328, 80, 344, 80, 344, -80, 512, -80, 520, 624, -400, 632, -400, -88 )
 
 [node name="Shop3" parent="Shops" instance=ExtResource( 6 )]
-position = Vector2( -3120, -48 )
+position = Vector2( -5099.52, -33.4232 )
 rotation = 3.14159
 value = 10000
 shop_name = "muebleria"
@@ -648,7 +647,7 @@ margin_bottom = 8.523
 rect_rotation = 180.0
 
 [node name="Exit" parent="Shops/Shop3" index="3"]
-position = Vector2( -321.628, -77.3153 )
+position = Vector2( -318.109, -112.504 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Shops/Shop3"]
 position = Vector2( -15.4631, 34.0184 )
@@ -665,23 +664,49 @@ shop_name = "cine"
 earnings = 500
 
 [node name="Sprite" parent="Shops/Shop4" index="0"]
-position = Vector2( -7.90659, 325.523 )
-scale = Vector2( 10.6058, 4.02196 )
+position = Vector2( -33.2308, 327.516 )
+scale = Vector2( 9.0051, 3.26684 )
 texture = SubResource( 26 )
 
 [node name="Area2D" parent="Shops/Shop4" index="1"]
 position = Vector2( -22.1387, 31.627 )
 
 [node name="CollisionShape2D" parent="Shops/Shop4/Area2D" index="0"]
-position = Vector2( -3.16235, 638.863 )
+position = Vector2( 1.9436, 533.862 )
 
 [node name="Exit" parent="Shops/Shop4" index="3"]
-position = Vector2( -104.369, 1050.01 )
+position = Vector2( -102.968, 935.65 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Shops/Shop4"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shops/Shop4/StaticBody2D"]
-polygon = PoolVector2Array( -849.574, 717.443, -419.448, 707.954, -125.319, 711.117, -125.319, 549.82, 108.72, 543.495, 99.2319, 714.28, 810.836, 704.792, 804.511, -25.7887, -855.899, -16.3007, -865.387, 685.816 )
+position = Vector2( 4.16821, -5.73432 )
+scale = Vector2( 0.871426, 0.884776 )
+polygon = PoolVector2Array( -849.574, 717.443, -419.448, 707.954, -125.319, 711.117, -125.319, 549.82, 108.72, 543.495, 99.2319, 714.28, 810.836, 704.792, 782.105, 64.5585, -852.611, 47.2461, -865.387, 685.816 )
+
+[node name="Shop6" parent="Shops" instance=ExtResource( 6 )]
+position = Vector2( 1862.73, -199.19 )
+value = 40000
+shop_name = "boliche"
+earnings = 700
+
+[node name="Sprite" parent="Shops/Shop6" index="0"]
+position = Vector2( 99.1132, -225.483 )
+scale = Vector2( 10.3022, 4.69932 )
+texture = SubResource( 27 )
+
+[node name="CollisionShape2D" parent="Shops/Shop6/Area2D" index="0"]
+position = Vector2( -86.7241, 34.6896 )
+
+[node name="Exit" parent="Shops/Shop6" index="3"]
+position = Vector2( -167.013, 367.365 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Shops/Shop6"]
+position = Vector2( 14.8669, 69.3795 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shops/Shop6/StaticBody2D"]
+position = Vector2( -14.8667, -69.3794 )
+polygon = PoolVector2Array( -704.465, 137.648, -330.312, 157.471, -357.568, -154.736, 120.654, -147.303, 140.476, 125.259, 901.172, 117.826, 898.695, -598.269, 571.62, -610.658, 417.994, -506.589, 284.191, -546.234, 46.3187, -573.491, -132.085, -566.057, -397.214, -558.624, -511.194, -479.333, -739.155, -442.165, -719.332, 112.87 )
 
 [node name="Car_Spawner_H" type="Node" parent="."]
 script = ExtResource( 19 )
@@ -753,7 +778,7 @@ polygon = PoolVector2Array( -4272, -1288, -4272, -1472, -4032, -1472, -4024, -12
 [node name="Area2D" type="Area2D" parent="House"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="House/Area2D"]
-position = Vector2( -4144, -1416 )
+position = Vector2( -4156.84, -1362.82 )
 shape = SubResource( 24 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -773,3 +798,5 @@ autoplay = true
 [editable path="Shops/Shop3"]
 
 [editable path="Shops/Shop4"]
+
+[editable path="Shops/Shop6"]
