@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://Entities/Map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Entities/Player.tscn" type="PackedScene" id=2]
@@ -49,14 +49,14 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="DynamicFont" id=24]
+[sub_resource type="DynamicFont" id=5]
 size = 30
 font_data = ExtResource( 13 )
 
-[sub_resource type="ConvexPolygonShape2D" id=5]
+[sub_resource type="ConvexPolygonShape2D" id=6]
 points = PoolVector2Array( 440, 72, 0, 72, 0, 0, 440, 0 )
 
-[sub_resource type="TileSet" id=6]
+[sub_resource type="TileSet" id=7]
 0/name = "The “Real” macks tileset!.png 0"
 0/texture = ExtResource( 5 )
 0/tex_offset = Vector2( 0, 0 )
@@ -81,14 +81,14 @@ points = PoolVector2Array( 440, 72, 0, 72, 0, 0, 440, 0 )
 1/navigation_offset = Vector2( 0, 0 )
 1/shape_offset = Vector2( 0, 0 )
 1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-1/shape = SubResource( 5 )
+1/shape = SubResource( 6 )
 1/shape_one_way = false
 1/shape_one_way_margin = 1.0
 1/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 5 ),
+"shape": SubResource( 6 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 1/z_index = 0
@@ -205,81 +205,91 @@ points = PoolVector2Array( 440, 72, 0, 72, 0, 0, 440, 0 )
 9/shapes = [  ]
 9/z_index = 0
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=8]
 flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 220.611, 322.942, 16.7246, 16.2513 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 48, 48 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=10]
 flags = 4
 atlas = ExtResource( 12 )
 region = Rect2( 287.954, 26.2028, 135.285, 125.264 )
 
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="DynamicFont" id=11]
 size = 60
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 13 )
 
-[sub_resource type="AtlasTexture" id=11]
+[sub_resource type="AtlasTexture" id=12]
 flags = 4
 atlas = ExtResource( 12 )
 region = Rect2( 5.52087, -4.96092, 134.153, 177.866 )
 
-[sub_resource type="RectangleShape2D" id=12]
+[sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 104, 96 )
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=14]
 flags = 4
 atlas = ExtResource( 14 )
 region = Rect2( 1298.22, 10.0874, 229.095, 372.595 )
 
-[sub_resource type="RectangleShape2D" id=14]
+[sub_resource type="RectangleShape2D" id=15]
 extents = Vector2( 40, 72 )
 
-[sub_resource type="AtlasTexture" id=15]
+[sub_resource type="AtlasTexture" id=25]
 flags = 4
-atlas = ExtResource( 11 )
-region = Rect2( 320.22, 17.7828, 201.954, 142.949 )
+atlas = ExtResource( 14 )
+region = Rect2( 823.656, 413.523, 255.127, 388.965 )
 
 [sub_resource type="AtlasTexture" id=16]
 flags = 4
 atlas = ExtResource( 11 )
-region = Rect2( -0.702637, 221.211, 200.422, 175.369 )
+region = Rect2( 320.22, 17.7828, 201.954, 142.949 )
 
 [sub_resource type="AtlasTexture" id=17]
 flags = 4
 atlas = ExtResource( 11 )
-region = Rect2( -0.51741, 402.879, 201.607, 195.146 )
+region = Rect2( -0.702637, 221.211, 200.422, 175.369 )
 
 [sub_resource type="AtlasTexture" id=18]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 9.146, 408.249, 189.62, 201.472 )
+
+[sub_resource type="AtlasTexture" id=26]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 357.975, 176.933, 161.111, 182.726 )
+
+[sub_resource type="AtlasTexture" id=19]
 flags = 4
 atlas = ExtResource( 14 )
 region = Rect2( 220.799, 409.069, 250.523, 390.426 )
 
-[sub_resource type="DynamicFont" id=19]
+[sub_resource type="DynamicFont" id=20]
 size = 200
 outline_size = 21
 outline_color = Color( 0.917647, 0.0666667, 0.0705882, 1 )
 font_data = ExtResource( 18 )
 
-[sub_resource type="RectangleShape2D" id=20]
+[sub_resource type="RectangleShape2D" id=21]
 extents = Vector2( 624, 448 )
 
-[sub_resource type="DynamicFont" id=21]
+[sub_resource type="DynamicFont" id=22]
 size = 200
 outline_size = 4
 outline_color = Color( 0.992157, 0.0352941, 0.0352941, 1 )
 font_data = ExtResource( 18 )
 
-[sub_resource type="AtlasTexture" id=22]
+[sub_resource type="AtlasTexture" id=23]
 flags = 4
 atlas = ExtResource( 11 )
 region = Rect2( 0, 17.6072, 281.08, 180.993 )
 
-[sub_resource type="RectangleShape2D" id=23]
+[sub_resource type="RectangleShape2D" id=24]
 extents = Vector2( 64, 88 )
 
 [node name="Main" type="Node"]
@@ -340,7 +350,7 @@ __meta__ = {
 position = Vector2( 160, 23 )
 scale = Vector2( 0.375, 0.375 )
 frames = SubResource( 4 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="ShaderTransitionout" parent="GUI" instance=ExtResource( 24 )]
@@ -351,7 +361,7 @@ margin_left = 160.029
 margin_top = 41.9599
 margin_right = 230.029
 margin_bottom = 72.9599
-custom_fonts/font = SubResource( 24 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.00392157, 1, 0.101961, 1 )
 text = "+$money"
 __meta__ = {
@@ -372,7 +382,7 @@ expand = true
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2( 3, 3 )
-tile_set = SubResource( 6 )
+tile_set = SubResource( 7 )
 format = 1
 tile_data = PoolIntArray( -851995, 3, 0, -851994, 4, 0, -851993, 4, 0, -851992, 3, 0, -851991, 4, 0, -851990, 4, 0, -851989, 3, 0, -851988, 3, 0, -851985, 3, 0, -851978, 4, 0, -851975, 7, 0, -851972, 3, 0, -851969, 3, 0, -917503, 4, 0, -917502, 4, 0, -917500, 6, 0, -917497, 3, 0, -917494, 6, 0, -917490, 6, 0, -917484, 8, 0, -917483, 8, 0, -917481, 6, 0, -786459, 5, 0, -786452, 2, 0, -786450, 7, 0, -786447, 2, 0, -786446, 2, 0, -786445, 3, 0, -786444, 6, 0, -786443, 2, 0, -786442, 4, 0, -786441, 2, 0, -786440, 6, 0, -786439, 2, 0, -786438, 4, 0, -786437, 4, 0, -786436, 6, 0, -786435, 2, 0, -786434, 8, 0, -786433, 2, 0, -851968, 4, 0, -851967, 4, 0, -851966, 4, 0, -851965, 2, 0, -851964, 6, 0, -851963, 2, 0, -851962, 3, 0, -851961, 2, 0, -851960, 8, 0, -851955, 8, 0, -851950, 2, 0, -851949, 8, 0, -851948, 9, 0, -851947, 9, 0, -851946, 8, 0, -851945, 2, 0, -720923, 5, 0, -720922, 7, 0, -720921, 4, 0, -720920, 4, 0, -720919, 3, 0, -720917, 2, 0, -720916, 2, 0, -720915, 2, 0, -720912, 3, 0, -720911, 2, 0, -720910, 2, 0, -720909, 6, 0, -720908, 2, 0, -720907, 2, 0, -720906, 2, 0, -720905, 7, 0, -720904, 2, 0, -720903, 2, 0, -720902, 2, 0, -720901, 6, 0, -720900, 2, 0, -720899, 4, 0, -720898, 2, 0, -720897, 8, 0, -786432, 2, 0, -786431, 2, 0, -786430, 2, 0, -786429, 6, 0, -786428, 2, 0, -786427, 4, 0, -786426, 4, 0, -786425, 4, 0, -786424, 6, 0, -786423, 2, 0, -786422, 2, 0, -786421, 8, 0, -786420, 2, 0, -786419, 2, 0, -786418, 3, 0, -786417, 3, 0, -786416, 3, 0, -786415, 2, 0, -786414, 2, 0, -786413, 8, 0, -786412, 9, 0, -786411, 9, 0, -786410, 8, 0, -786409, 6, 0, -655387, 1, 0, -655380, 1, 0, -655373, 1, 0, -655366, 1, 0, -720895, 1, 0, -720888, 1, 0, -720881, 1, 0, -720879, 1, 0 )
 
@@ -381,22 +391,22 @@ tile_data = PoolIntArray( -851995, 3, 0, -851994, 4, 0, -851993, 4, 0, -851992, 
 [node name="spr_street_H" type="Sprite" parent="Street_H"]
 position = Vector2( -397.275, 125 )
 scale = Vector2( 608, 21.5 )
-texture = SubResource( 7 )
+texture = SubResource( 8 )
 
 [node name="spr_street_H2" type="Sprite" parent="Street_H"]
 position = Vector2( -396, 1216 )
 scale = Vector2( 608.5, 22 )
-texture = SubResource( 7 )
+texture = SubResource( 8 )
 
 [node name="spr_street_H4" type="Sprite" parent="Street_H"]
 position = Vector2( -404, 2340 )
 scale = Vector2( 608.5, 23.5 )
-texture = SubResource( 7 )
+texture = SubResource( 8 )
 
 [node name="spr_street_H3" type="Sprite" parent="Street_H"]
 position = Vector2( -376, -980 )
 scale = Vector2( 606, 22.5 )
-texture = SubResource( 7 )
+texture = SubResource( 8 )
 
 [node name="Street_V" type="Node" parent="."]
 
@@ -404,25 +414,25 @@ texture = SubResource( 7 )
 position = Vector2( -3168.08, 744 )
 rotation = 1.5708
 scale = Vector2( 351.665, 19.9791 )
-texture = SubResource( 7 )
+texture = SubResource( 8 )
 
 [node name="spr_street_V2" type="Sprite" parent="Street_V"]
 position = Vector2( -1089.52, 738.748 )
 rotation = 1.5708
 scale = Vector2( 351.665, 20.4015 )
-texture = SubResource( 7 )
+texture = SubResource( 8 )
 
 [node name="spr_street_V3" type="Sprite" parent="Street_V"]
 position = Vector2( 978.889, 751.753 )
 rotation = 1.5708
 scale = Vector2( 351.665, 23.2804 )
-texture = SubResource( 7 )
+texture = SubResource( 8 )
 
 [node name="spr_street_V4" type="Sprite" parent="Street_V"]
 position = Vector2( 2906.36, 745.306 )
 rotation = 1.5708
 scale = Vector2( 350.947, 21.3567 )
-texture = SubResource( 7 )
+texture = SubResource( 8 )
 
 [node name="Mini_games_areas" type="Node" parent="."]
 
@@ -434,12 +444,12 @@ script = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mini_games_areas/Arcanoid/arcanoid"]
 position = Vector2( -144, -192 )
-shape = SubResource( 8 )
+shape = SubResource( 9 )
 
 [node name="Sprite" type="Sprite" parent="Mini_games_areas/Arcanoid/arcanoid"]
 position = Vector2( -144, -408 )
 scale = Vector2( 5.45185, 5.28 )
-texture = SubResource( 9 )
+texture = SubResource( 10 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Mini_games_areas/Arcanoid"]
 position = Vector2( 440, -456 )
@@ -458,7 +468,7 @@ margin_left = -103.616
 margin_top = -16.2
 margin_right = -87.5519
 margin_bottom = -10.2
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 11 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 0.976471, 0.976471, 1 )
 custom_colors/font_color_shadow = Color( 0.776471, 0.854902, 0.0705882, 1 )
@@ -482,11 +492,11 @@ script = ExtResource( 10 )
 [node name="Sprite" type="Sprite" parent="Mini_games_areas/dance/Area2D"]
 position = Vector2( 512, -16 )
 scale = Vector2( 6.56716, 3.9774 )
-texture = SubResource( 11 )
+texture = SubResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mini_games_areas/dance/Area2D"]
 position = Vector2( 520, 168 )
-shape = SubResource( 12 )
+shape = SubResource( 13 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Mini_games_areas/dance"]
 position = Vector2( -472, -272 )
@@ -509,11 +519,11 @@ script = ExtResource( 15 )
 [node name="Sprite" type="Sprite" parent="Mini_games_areas/Collect_Money/Area2D_Collect_Money"]
 position = Vector2( 680, -152 )
 scale = Vector2( 3.66812, 1.63441 )
-texture = SubResource( 13 )
+texture = SubResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mini_games_areas/Collect_Money/Area2D_Collect_Money"]
 position = Vector2( 680, 48 )
-shape = SubResource( 14 )
+shape = SubResource( 15 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Mini_games_areas/Collect_Money"]
 position = Vector2( -512, 152 )
@@ -525,23 +535,55 @@ polygon = PoolVector2Array( -2648, 1040, -2992, 1048, -2984, 352, -2184, 360, -2
 
 [node name="Shops" type="Node" parent="."]
 
+[node name="Shop5" parent="Shops" instance=ExtResource( 6 )]
+position = Vector2( 67.6775, -2809.89 )
+value = 15000
+shop_name = "comida-rapida"
+earnings = 300
+
+[node name="Sprite" parent="Shops/Shop5" index="0"]
+position = Vector2( -109.367, 967.596 )
+scale = Vector2( 6.61431, 3.4043 )
+texture = SubResource( 25 )
+
+[node name="Area2D" parent="Shops/Shop5" index="1"]
+position = Vector2( 5.8418, 8.76245 )
+
+[node name="CollisionShape2D" parent="Shops/Shop5/Area2D" index="0"]
+position = Vector2( -137.28, 1492.55 )
+
+[node name="Exit" parent="Shops/Shop5" index="3"]
+position = Vector2( -205.887, 1832.36 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Shops/Shop5"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shops/Shop5/StaticBody2D"]
+polygon = PoolVector2Array( -965.848, 310.418, -968.769, 1610.19, -250.241, 1613.12, -253.161, 1359, 18.4773, 1359, 15.5564, 1601.43, 731.164, 1627.72, 734.085, 298.735 )
+
 [node name="Shop2" parent="Shops" instance=ExtResource( 6 )]
-position = Vector2( -80, -120 )
+position = Vector2( -127.89, -87.0754 )
 shop_name = "cafe"
 earnings = 100
 
 [node name="Sprite" parent="Shops/Shop2" index="0"]
 position = Vector2( -364, -350.792 )
 scale = Vector2( 4.73632, 4.74941 )
-texture = SubResource( 15 )
+texture = SubResource( 16 )
+
+[node name="Area2D" parent="Shops/Shop2" index="1"]
+position = Vector2( -8.97949, 0 )
 
 [node name="CollisionShape2D" parent="Shops/Shop2/Area2D" index="0"]
 position = Vector2( -544, -128 )
 
+[node name="Exit" parent="Shops/Shop2" index="3"]
+position = Vector2( -641.6, 143.929 )
+
 [node name="RigidBody2D" type="StaticBody2D" parent="Shops/Shop2"]
+position = Vector2( -197.548, 110.746 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shops/Shop2/RigidBody2D"]
-position = Vector2( 144, -8 )
+position = Vector2( 353.52, -112.76 )
 scale = Vector2( 1.30276, 1.15795 )
 polygon = PoolVector2Array( -461.48, -25.5962, -49.345, -19.3831, -43.132, -583.738, -768.324, -589.354, -747.282, -24.5606, -627.162, -22.4896, -628.197, -208.882, -461.48, -206.811 )
 
@@ -556,10 +598,13 @@ earnings = 150
 position = Vector2( 64.0003, 327.499 )
 rotation = 3.14159
 scale = Vector2( 4.65137, 3.48989 )
-texture = SubResource( 16 )
+texture = SubResource( 17 )
+
+[node name="Area2D" parent="Shops/Shop" index="1"]
+position = Vector2( 21.6483, -21.6479 )
 
 [node name="CollisionShape2D" parent="Shops/Shop/Area2D" index="0"]
-position = Vector2( 248, 136.001 )
+position = Vector2( 238.722, 120.538 )
 
 [node name="Menu" parent="Shops/Shop" index="2"]
 margin_left = 0.0
@@ -568,10 +613,14 @@ margin_right = 0.0
 margin_bottom = 0.0
 rect_rotation = 180.0
 
+[node name="Exit" parent="Shops/Shop" index="3"]
+position = Vector2( 343.277, -170.091 )
+
 [node name="StaticBody2D" type="StaticBody2D" parent="Shops/Shop"]
+position = Vector2( -145.351, 114.425 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shops/Shop/StaticBody2D"]
-position = Vector2( 0, 103.991 )
+position = Vector2( 142.259, 5.02902 )
 scale = Vector2( 1, 0.877369 )
 polygon = PoolVector2Array( 152, -80, 152, 80, 328, 80, 344, 80, 344, -80, 512, -80, 520, 624, -400, 632, -400, -88 )
 
@@ -583,10 +632,10 @@ shop_name = "muebleria"
 earnings = 200
 
 [node name="Sprite" parent="Shops/Shop3" index="0"]
-position = Vector2( -592.614, 423.785 )
+position = Vector2( -606.106, 420.787 )
 rotation = 3.14159
-scale = Vector2( 4.73439, 3.38531 )
-texture = SubResource( 17 )
+scale = Vector2( 4.87421, 3.35548 )
+texture = SubResource( 18 )
 
 [node name="CollisionShape2D" parent="Shops/Shop3/Area2D" index="0"]
 position = Vector2( -408, 223.999 )
@@ -598,12 +647,41 @@ margin_right = -524.026
 margin_bottom = 8.523
 rect_rotation = 180.0
 
+[node name="Exit" parent="Shops/Shop3" index="3"]
+position = Vector2( -321.628, -77.3153 )
+
 [node name="StaticBody2D" type="StaticBody2D" parent="Shops/Shop3"]
+position = Vector2( -15.4631, 34.0184 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shops/Shop3/StaticBody2D"]
 position = Vector2( -634.638, 188.582 )
 scale = Vector2( 0.968856, 0.904253 )
 polygon = PoolVector2Array( 152, -80, 152, 80, 328, 80, 344, 80, 344, -80, 512, -80, 520, 624, -400, 632, -400, -88 )
+
+[node name="Shop4" parent="Shops" instance=ExtResource( 6 )]
+position = Vector2( -68.5698, 326.199 )
+value = 20000
+shop_name = "cine"
+earnings = 500
+
+[node name="Sprite" parent="Shops/Shop4" index="0"]
+position = Vector2( -7.90659, 325.523 )
+scale = Vector2( 10.6058, 4.02196 )
+texture = SubResource( 26 )
+
+[node name="Area2D" parent="Shops/Shop4" index="1"]
+position = Vector2( -22.1387, 31.627 )
+
+[node name="CollisionShape2D" parent="Shops/Shop4/Area2D" index="0"]
+position = Vector2( -3.16235, 638.863 )
+
+[node name="Exit" parent="Shops/Shop4" index="3"]
+position = Vector2( -104.369, 1050.01 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Shops/Shop4"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shops/Shop4/StaticBody2D"]
+polygon = PoolVector2Array( -849.574, 717.443, -419.448, 707.954, -125.319, 711.117, -125.319, 549.82, 108.72, 543.495, 99.2319, 714.28, 810.836, 704.792, 804.511, -25.7887, -855.899, -16.3007, -865.387, 685.816 )
 
 [node name="Car_Spawner_H" type="Node" parent="."]
 script = ExtResource( 19 )
@@ -616,14 +694,14 @@ script = ExtResource( 16 )
 [node name="Spr_hospital" type="Sprite" parent="hospital"]
 position = Vector2( 3712, -1675.38 )
 scale = Vector2( 4.89, 2.27372 )
-texture = SubResource( 18 )
+texture = SubResource( 19 )
 
 [node name="Label" type="Label" parent="hospital"]
 margin_left = 3328.0
 margin_top = -2000.0
 margin_right = 4128.0
 margin_bottom = -1792.0
-custom_fonts/font = SubResource( 19 )
+custom_fonts/font = SubResource( 20 )
 text = "Hospital"
 align = 1
 valign = 1
@@ -636,14 +714,14 @@ position = Vector2( 3712, -1608 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hospital/ST_hospital"]
 position = Vector2( 0, -80 )
-shape = SubResource( 20 )
+shape = SubResource( 21 )
 
 [node name="Label" type="Label" parent="."]
 margin_left = 2208.0
 margin_top = -1632.0
 margin_right = 4948.0
 margin_bottom = -736.0
-custom_fonts/font = SubResource( 21 )
+custom_fonts/font = SubResource( 22 )
 text = "FUISTE ATROPELLADO
 
 SERAS ENVIADO AL HOSPITAL"
@@ -665,7 +743,7 @@ player_name = "Gustavo"
 [node name="Spr_house" type="Sprite" parent="House"]
 position = Vector2( -4146.25, -1676 )
 scale = Vector2( 5.65302, 4.46808 )
-texture = SubResource( 22 )
+texture = SubResource( 23 )
 
 [node name="SB_house" type="StaticBody2D" parent="House"]
 
@@ -676,7 +754,7 @@ polygon = PoolVector2Array( -4272, -1288, -4272, -1472, -4032, -1472, -4024, -12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="House/Area2D"]
 position = Vector2( -4144, -1416 )
-shape = SubResource( 23 )
+shape = SubResource( 24 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 25 )
@@ -686,8 +764,12 @@ autoplay = true
 [connection signal="body_entered" from="Mini_games_areas/Collect_Money/Area2D_Collect_Money" to="Mini_games_areas/Collect_Money/Area2D_Collect_Money" method="_on_Area2D_Collect_Money_body_entered"]
 [connection signal="body_entered" from="House/Area2D" to="." method="_on_Area2D_body_entered"]
 
+[editable path="Shops/Shop5"]
+
 [editable path="Shops/Shop2"]
 
 [editable path="Shops/Shop"]
 
 [editable path="Shops/Shop3"]
+
+[editable path="Shops/Shop4"]

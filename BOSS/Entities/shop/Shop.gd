@@ -2,6 +2,7 @@ extends Node2D
 
 var player 
 onready var menu = $Menu
+onready var exit = $Exit
 export (int) var value = 1000
 export (String) var shop_name = "shop"
 export (int) var earnings = 10
@@ -18,6 +19,8 @@ func _ready():
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("player"):
+		Player.position.y = exit.position.y
+		Player.position.x = exit.position.x 
 		if(Player.has_shop(self.shop_name)):
 			ShopState.initialize(self)	
 			get_tree().change_scene("res://ShopManageMenu.tscn")
@@ -25,6 +28,4 @@ func _on_Area2D_body_entered(body):
 			ShopState.initialize(self)	
 			get_tree().change_scene("res://ShopMenuBuy.tscn")
 	Player.can_move = false
-	Player.position.y = self.position.y + 100
-	Player.position.x = self.position.x 
 	GameServer.save_game()

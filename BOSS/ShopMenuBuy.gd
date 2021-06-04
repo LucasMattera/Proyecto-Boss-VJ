@@ -24,7 +24,7 @@ func _on_BuyButton_pressed():
 		emit_signal("not_enough_cash")
 
 func player_have_enough_cash() -> bool:
-	return (ShopState.value < Player.money)
+	return (ShopState.value <= Player.money)
 
 func _on_ExitButton_pressed():
 	get_tree().change_scene("res://Main.tscn")
