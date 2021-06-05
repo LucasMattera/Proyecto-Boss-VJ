@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://miniGames/arcanoid/ball/Ball.tscn" type="PackedScene" id=1]
 [ext_resource path="res://miniGames/arcanoid/borders/borders.tscn" type="PackedScene" id=2]
@@ -7,46 +7,94 @@
 [ext_resource path="res://miniGames/arcanoid/world.gd" type="Script" id=5]
 [ext_resource path="res://miniGames/arcanoid/enviroment/stage_blocks.tscn" type="PackedScene" id=6]
 [ext_resource path="res://miniGames/arcanoid/assets/audio/background.ogg" type="AudioStream" id=7]
-[ext_resource path="res://miniGames/arcanoid/enviroment/background.jpg" type="Texture" id=8]
+[ext_resource path="res://arcanoid/assets/background.jpg" type="Texture" id=8]
+[ext_resource path="res://arcanoid/assets/fichin_background.jpeg" type="Texture" id=9]
+[ext_resource path="res://assets/textures/tumblr_inline_nxf5c2kKsl1svqi9b_540.png" type="Texture" id=10]
+[ext_resource path="res://assets/fonts/Schrödinger.ttf" type="DynamicFontData" id=11]
 
-[sub_resource type="PhysicsMaterial" id=1]
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 52.6939, 7.21053, 295.37, 386.939 )
+
+[sub_resource type="PhysicsMaterial" id=2]
 friction = 0.0
 bounce = 1.0
 
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 10 )
+region = Rect2( 36.342, 96.4713, 25.2016, 32.0128 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 19
+outline_size = 2
+font_data = ExtResource( 11 )
+
 [node name="world" type="Node2D"]
-position = Vector2( 701.631, 31.748 )
+position = Vector2( 404.329, 119.749 )
+scale = Vector2( 0.513909, 0.538557 )
 script = ExtResource( 5 )
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+margin_left = -781.356
+margin_top = -214.22
+margin_right = -741.356
+margin_bottom = -174.22
+rect_scale = Vector2( 53.3655, 38.1426 )
+texture = ExtResource( 9 )
+expand = true
 __meta__ = {
-"_edit_group_": true
+"_edit_use_anchors_": false
 }
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = 1215.95
-margin_top = -234.936
-margin_right = 2345.95
-margin_bottom = 1765.06
-rect_rotation = 90.0
-texture = ExtResource( 8 )
+margin_left = 43.9236
+margin_top = -206.249
+margin_right = 1173.92
+margin_bottom = 1793.75
+rect_scale = Vector2( 0.644707, 0.319068 )
+texture = SubResource( 1 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="enviroment" parent="." instance=ExtResource( 4 )]
+position = Vector2( 228.037, -21.9115 )
+scale = Vector2( 1.39288, 0.792833 )
 
 [node name="borders2" parent="enviroment" instance=ExtResource( 2 )]
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 146, 452 )
+position = Vector2( 410.508, 346.72 )
 
 [node name="Ball" parent="." instance=ExtResource( 1 )]
-position = Vector2( 139.177, 412.312 )
-physics_material_override = SubResource( 1 )
+position = Vector2( 407.929, 312.435 )
+physics_material_override = SubResource( 2 )
 gravity_scale = 0.0
 linear_damp = 0.0
 
 [node name="stage_blocks" parent="." instance=ExtResource( 6 )]
-position = Vector2( 8, 56 )
+position = Vector2( 275.755, 10.2238 )
 
 [node name="background" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
 autoplay = true
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 409.805, 640.794 )
+scale = Vector2( 11.6302, 15.1269 )
+texture = SubResource( 3 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 306.721
+margin_top = 184.023
+margin_right = 562.721
+margin_bottom = 203.023
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "PULSA ENTER PARA EMPEZAR"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

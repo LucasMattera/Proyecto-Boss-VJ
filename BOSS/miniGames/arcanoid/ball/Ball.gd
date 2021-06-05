@@ -9,6 +9,7 @@ onready var hit_s : AudioStreamPlayer = get_node("hit")
 var gameStarted : bool = false
 
 func _input(event):
+	
 	if event.is_action_pressed("start") && not gameStarted:
 		start_s.play()
 		linear_velocity = Vector2(50, -200)

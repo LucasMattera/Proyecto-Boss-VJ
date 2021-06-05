@@ -2,6 +2,7 @@ extends Node2D
 
 onready var player : KinematicBody2D = $Player
 onready var ball : RigidBody2D = $Ball
+onready var label = $Label
 
 # Declare member variables here. Examples:
 # var a = 2
