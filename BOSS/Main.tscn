@@ -24,7 +24,7 @@
 [ext_resource path="res://miniGames/Collect_money/Coin/coin_1.png" type="Texture" id=22]
 [ext_resource path="res://assets/textures/trees.png" type="Texture" id=23]
 [ext_resource path="res://ShaderTransitionout.tscn" type="PackedScene" id=24]
-[ext_resource path="res://assets/audio/music/loop-texture_C.wav" type="AudioStream" id=25]
+[ext_resource path="res://assets/audio/music/street/urban.ogg" type="AudioStream" id=25]
 [ext_resource path="res://assets/textures/free_tileset_version_7.png" type="Texture" id=26]
 
 [sub_resource type="DynamicFont" id=1]
@@ -843,6 +843,7 @@ shape = SubResource( 29 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 25 )
+volume_db = 10.0
 autoplay = true
 [connection signal="body_entered" from="Mini_games_areas/Arcanoid/arcanoid" to="Mini_games_areas/Arcanoid/arcanoid" method="_on_arcanoid_body_entered"]
 [connection signal="body_entered" from="Mini_games_areas/dance/Area2D" to="Mini_games_areas/dance/Area2D" method="_on_DanceMinigame_body_entered"]

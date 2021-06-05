@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Zelda Twilight Princess - Malo Mart [Famitracker VRC6].ogg-f75d32c4a4950a209736a467988e9f9e.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/music/shop/Zelda Twilight Princess - Malo Mart [Famitracker VRC6].ogg"
+dest_files=[ "res://.import/Zelda Twilight Princess - Malo Mart [Famitracker VRC6].ogg-f75d32c4a4950a209736a467988e9f9e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

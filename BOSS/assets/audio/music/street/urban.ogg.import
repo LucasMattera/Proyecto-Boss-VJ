@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/urban.ogg-e7695d799929722408ad4f47dc30618e.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/music/street/urban.ogg"
+dest_files=[ "res://.import/urban.ogg-e7695d799929722408ad4f47dc30618e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

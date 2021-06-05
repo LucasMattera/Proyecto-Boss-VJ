@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://ShopManageMenu.gd" type="Script" id=1]
 [ext_resource path="res://assets/textures/shops/icons/upgrade.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://ConfirmUpgrade.gd" type="Script" id=4]
 [ext_resource path="res://ShaderTransitionout.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/textures/shops/icons/hire.png" type="Texture" id=6]
+[ext_resource path="res://assets/audio/music/main_menu/Buy-Something_.ogg" type="AudioStream" id=7]
 [ext_resource path="res://assets/textures/shops/example.jpg" type="Texture" id=8]
 [ext_resource path="res://assets/fonts/Schrödinger.ttf" type="DynamicFontData" id=9]
 [ext_resource path="res://assets/textures/shops/icons/exit.png" type="Texture" id=10]
@@ -287,6 +288,11 @@ __meta__ = {
 }
 
 [node name="ShaderTransitionout" parent="GUI" instance=ExtResource( 5 )]
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -10.0
+autoplay = true
 [connection signal="confirmHire" from="." to="GUI/Confirm" method="_on_ShopMenuManage_confirmHire"]
 [connection signal="confirmUpgrade" from="." to="GUI/Confirm" method="_on_ShopMenuManage_confirmUpgrade"]
 [connection signal="pressed" from="GUI/ExitRect/ExitButton" to="." method="_on_ExitButton_pressed"]
