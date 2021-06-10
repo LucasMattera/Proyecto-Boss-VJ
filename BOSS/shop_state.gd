@@ -13,14 +13,13 @@ func initialize(shop):
 
 func upgrade_shop():
 	Player.upgrade_shop(self.shop_name)
-	earnings = earningWithNewUpgrade()
+	
 
 func add_employee():
 	Player.add_employee(self.shop_name)
-	earnings = earningWithNewEmployee()
 
-func earningWithNewUpgrade():
-	return earnings + (earnings / 4)
+func earningWithNewUpgrade(earnings_shop):
+	return int(round(earnings_shop + (earnings_shop / 8)))
 
-func earningWithNewEmployee():
-	return earnings + (earnings / 2)
+func earningWithNewEmployee(earnings_shop):
+	return int(round(earnings_shop + (earnings_shop / 10)))

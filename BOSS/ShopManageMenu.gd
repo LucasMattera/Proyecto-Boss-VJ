@@ -13,7 +13,7 @@ func _ready():
 # Creditos: Icono hecho por freepik.com flaticon.com
 func _on_Upgrade_pressed():
 	emit_signal("confirmUpgrade")
-	#ShopState.upgrade_shop()
+	
 
 # Creditos: Icono hecho por freepik.com flaticon.com
 func _on_Hire_pressed():

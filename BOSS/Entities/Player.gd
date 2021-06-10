@@ -34,16 +34,20 @@ func find_shop(shop_name):
 		if shop.shop_name == shop_name:
 			shop_to_return = shop
 	return shop_to_return
+	
+func get_earnings_from(shop_name):
+	var shop_to_return_earnings = find_shop(shop_name)
+	return shop_to_return_earnings.earnings
 		
 func add_employee(shop_name):
 	var shop_to_add = find_shop(shop_name)
 	print("shop name :" , shop_name)
-	#shop_to_add.earnings += shop_to_add.earnings / 2 (Es responsabilidad del shop_state)
+	shop_to_add.earnings = ShopState.earningWithNewEmployee(shop_to_add.earnings)
 
 func upgrade_shop(shop_name):
 	var shop_to_add = find_shop(shop_name)
 	print("shop name :" , shop_name)
-	#shop_to_add.earnings += shop_to_add.earnings / 4 (Es responsabilidad del shop_state)
+	shop_to_add.earnings = ShopState.earningWithNewUpgrade(shop_to_add.earnings)
 
 func has_shop(shop_name):
 	var has_shop = false

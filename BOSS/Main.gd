@@ -32,12 +32,9 @@ func atropellado():
 	atropellado.show()
 	player.position.x = 3500
 	player.position.y = -1250
-	if player.money >= 500:
-		player.money -= 500
-		Player.money -= 500
-	else:
-		player.money = 0
-		Player.money = 0
+	player.money -= 100
+	Player.money -= 100
+	Player.last_earning = -100
 	var t = Timer.new()
 	t.set_wait_time(3)
 	t.set_one_shot(true)

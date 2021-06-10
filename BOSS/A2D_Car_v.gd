@@ -28,7 +28,7 @@ func _ready():
 	randomize()
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
-	pos = rng.randi_range(5, 16)
+	pos = rng.randi_range(5, 6)
 	randomize()
 	var carSprite = RandomNumberGenerator.new()
 	carSprite.randomize()

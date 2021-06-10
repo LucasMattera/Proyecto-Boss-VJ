@@ -37,18 +37,21 @@ func set_label_hire():
 	label.text = "CONFIRMAR EMPLEADO\n"
 	set_label_actual_balance()
 	label.text += "\nGanancia con empleado: $"
-	var res = ShopState.earningWithNewEmployee()
+	var earnings = Player.get_earnings_from(ShopState.shop_name)
+	var res = ShopState.earningWithNewEmployee(earnings)
 	label.text += str(res)
 
 func set_label_upgrade():
 	label.text = "CONFIRMAR MEJORA\n"
 	set_label_actual_balance()
 	label.text += "\nGanancia con mejora: $"
-	var res = ShopState.earningWithNewUpgrade()
+	var earnings = Player.get_earnings_from(ShopState.shop_name)
+	var res = ShopState.earningWithNewUpgrade(earnings)
 	label.text += str(res)
 	
 func set_label_actual_balance():
 	label.text += "Dinero actual: $"
 	label.text += str(Player.money)
+	var earnings = Player.get_earnings_from(ShopState.shop_name)
 	label.text += "\nGanancia actual: $"
-	label.text += str(ShopState.earnings)
+	label.text += str(earnings)
