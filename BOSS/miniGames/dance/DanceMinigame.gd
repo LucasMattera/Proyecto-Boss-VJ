@@ -5,6 +5,7 @@ var arrow_in_the_ring
 onready var life_remaining = 3
 onready var score = 0
 export var score_winner = 10000
+onready var arrow_asserted_points = 1000
 var gui
 var arrow_account = 11
 
@@ -34,13 +35,22 @@ func _input(event):
 		else:
 			lose_life()
 
+func successful_arrow():
+	obtain_points()
+	earn_money()
+
 func obtain_points():
-	score += 1000
+	score += arrow_asserted_points
 	emit_signal("success")
 	emit_signal("player_stats_changed", self)
 	if score >= score_winner:
-		Player.money += 1000
 		win_game()
+
+func earn_money():
+	var amount = 0
+	amount += arrow_asserted_points
+	Player.obtain_money(amount)
+
 
 func lose_life():
 	life_remaining -= 1

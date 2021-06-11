@@ -58,3 +58,7 @@ func has_shop(shop_name):
 		if shop.shop_name == shop_name:
 			has_shop = true
 	return has_shop
+
+func obtain_money(amount):
+	print("Player obtain: $", amount, "in minigame")
+	money += amount
