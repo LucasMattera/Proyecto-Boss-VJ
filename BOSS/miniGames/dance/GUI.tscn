@@ -491,5 +491,3 @@ playing = true
 [connection signal="pressed" from="GameReadyPopup/ColorRect/Begin" to="GameReadyPopup" method="_on_Begin_pressed"]
 [connection signal="pressed" from="GameReadyPopup/ColorRect/Exit" to="GameReadyPopup" method="_on_Exit_pressed"]
 [connection signal="area_entered" from="ScreenLimit" to="." method="_on_ScreenLimit_area_entered"]
-[connection signal="last_arrow" from="ArrowSpawner" to="." method="_on_ArrowSpawner_last_arrow"]
-[connection signal="last_arrow" from="ArrowSpawner" to="GameOverPopup" method="_on_ArrowSpawner_last_arrow"]

@@ -5,11 +5,12 @@ onready var combo = 0
 func _ready():
 	pass # Replace with function body.
 
-func fail():
+func fail(minigame):
 	combo -= 1
 	$ComboSprite.hide()
 	if combo > 0:
 		combo = 0
+	minigame.set_multiplier_combo(combo)
 	match combo:
 		0:
 			$ComboLabel.text = ""
@@ -25,10 +26,11 @@ func fail():
 			$ComboLabel.text = "Más duro que\nla realidad"
 			color = Color(0,0,0,0.7)
 
-func success():
+func success(minigame):
 	combo += 1
 	if combo < 0:
 		combo = 0
+	minigame.set_multiplier_combo(combo)
 	match combo:
 		0:
 			$ComboLabel.text = ""

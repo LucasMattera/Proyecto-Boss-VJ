@@ -59,6 +59,6 @@ func has_shop(shop_name):
 			has_shop = true
 	return has_shop
 
-func obtain_money(amount):
-	print("Player obtain: $", amount, "in minigame")
+func obtain_money(amount: int, reason: String):
+	print("Jugador obtuvo: $", amount, " en ", reason)
 	money += amount

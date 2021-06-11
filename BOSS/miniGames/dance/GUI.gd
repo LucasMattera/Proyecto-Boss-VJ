@@ -8,16 +8,12 @@ onready var game_win = $GameWinPopup
 onready var combo = $Combo
 onready var ring = $Ring
 
-var minigame
 signal arrow_in_ring
 signal arrow_out_of_ring
 signal arrow_out_of_screen
 signal loser_retry
 signal player_exit
 signal last_arrow_out
-
-func set_minigame(minigame):
-	minigame = minigame
 
 func _on_DanceMinigame_player_stats_changed(minigame):
 	score._update(minigame)
@@ -54,12 +50,12 @@ func _on_GameReadyPopup_player_exit():
 func _on_GameOverPopup_exit():
 	emit_signal("player_exit")
 
-func _on_DanceMinigame_fail():
-	combo.fail()
+func _on_DanceMinigame_fail(minigame):
+	combo.fail(minigame)
 
-func _on_DanceMinigame_success():
+func _on_DanceMinigame_success(minigame):
 	ring.success()
-	combo.success()
+	combo.success(minigame)
 
 func _on_ArrowSpawner_last_arrow():
 	emit_signal("last_arrow_out")
