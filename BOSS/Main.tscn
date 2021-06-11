@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://Entities/Map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Entities/Player.tscn" type="PackedScene" id=2]
@@ -56,6 +56,10 @@ font_data = ExtResource( 13 )
 
 [sub_resource type="DynamicFont" id=6]
 size = 18
+font_data = ExtResource( 18 )
+
+[sub_resource type="DynamicFont" id=31]
+outline_size = 4
 font_data = ExtResource( 18 )
 
 [sub_resource type="ConvexPolygonShape2D" id=7]
@@ -423,7 +427,7 @@ __meta__ = {
 position = Vector2( 160, 23 )
 scale = Vector2( 0.375, 0.375 )
 frames = SubResource( 4 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="ShaderTransitionout" parent="GUI" instance=ExtResource( 24 )]
@@ -448,6 +452,18 @@ margin_bottom = 74.0
 custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "-$money"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimerToEarning" type="Label" parent="GUI"]
+margin_left = 576.0
+margin_top = 14.0886
+margin_right = 772.0
+margin_bottom = 49.0886
+custom_fonts/font = SubResource( 31 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Proxima ganancia en: "
 __meta__ = {
 "_edit_use_anchors_": false
 }

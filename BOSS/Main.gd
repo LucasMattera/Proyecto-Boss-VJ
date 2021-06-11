@@ -19,7 +19,7 @@ func _ready():
 	GameServer.shops_size = shops_size
 	print(player.position)
 	#shop.initialize(player)
-	GUI.initialize()
+	GUI.initialize(player)
 	car_spawner_h.initialize()
 	car_spawner_v.initialize()
 	

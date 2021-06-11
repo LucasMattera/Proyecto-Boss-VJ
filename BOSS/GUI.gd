@@ -5,8 +5,20 @@ onready var Canvas_Money = $Money
 onready var Canvas_Shop = $Shops
 onready var earning_money = $EarningMoney
 onready var lose_money = $LoseMoney
+onready var timer_earning = $TimerToEarning
+var player
+var timerEarn
+var counter_earn = 10
 
+func recollect_money_player():
+	self.counter_earn = self.counter_earn -1
+	print(self.counter_earn)
+	if(self.counter_earn == 0):
+		self.player.recollect_money()
+		self.counter_earn = 10
+		
 func _physics_process(delta):
+	timer_earning.set_text("Proximas ganancias de locales en: "+ String(self.counter_earn) +" segundos")
 	var timer = Timer.new()
 	timer.set_wait_time(3)
 	timer.set_one_shot(false)
@@ -28,7 +40,15 @@ func _physics_process(delta):
 	Canvas_Money.set_text("  " + String(Player.money))
 	var shops_names = get_shop_names(Player.shops)
 	Canvas_Shop.set_text("Locales:" + String(shops_names))
-func initialize():
+	
+func initialize(player):
+	timerEarn = Timer.new()
+	self.timerEarn.set_wait_time(1)
+	self.timerEarn.set_one_shot(false)
+	self.timerEarn.connect("timeout", self, "recollect_money_player")
+	add_child(timerEarn)
+	self.timerEarn.start()
+	self.player = player
 	earning_money.hide()
 	lose_money.hide()
 	Canvas_name.set_text(Player.player_name)
