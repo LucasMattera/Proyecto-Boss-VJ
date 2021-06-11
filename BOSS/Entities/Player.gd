@@ -13,7 +13,8 @@ var shops = []
 func buy(shop):
 	var shop_to_add = {} 
 	shop_to_add.shop_name = shop.shop_name
-	#shop_to_add.shop = shop
+	shop_to_add.add_employee_value = shop.add_employee_value
+	shop_to_add.upgrade_value = shop.upgrade_value
 	shop_to_add.earnings = shop.earnings
 	shop_to_add.value = shop.value
 	var shop_name = shop_to_add.shop_name
@@ -43,11 +44,13 @@ func add_employee(shop_name):
 	var shop_to_add = find_shop(shop_name)
 	print("shop name :" , shop_name)
 	shop_to_add.earnings = ShopState.earningWithNewEmployee(shop_to_add.earnings)
+	shop_to_add.add_employee_value = ShopState.earningWithNewEmployee(shop_to_add.earnings) * 2
 
 func upgrade_shop(shop_name):
 	var shop_to_add = find_shop(shop_name)
 	print("shop name :" , shop_name)
 	shop_to_add.earnings = ShopState.earningWithNewUpgrade(shop_to_add.earnings)
+	shop_to_add.upgrade_value = ShopState.earningWithNewUpgrade(shop_to_add.earnings) * 2
 
 func has_shop(shop_name):
 	var has_shop = false

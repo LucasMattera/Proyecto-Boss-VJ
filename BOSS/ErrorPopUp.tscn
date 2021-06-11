@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://CannotBuy.gd" type="Script" id=1]
+[ext_resource path="res://assets/fonts/Schrödinger.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=4]
+size = 46
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 32
+font_data = ExtResource( 2 )
+
+[node name="CannotBuy" type="Popup"]
+pause_mode = 2
+margin_left = 272.0
+margin_top = 188.0
+margin_right = 818.0
+margin_bottom = 498.0
+popup_exclusive = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+color = Color( 0.196078, 0.196078, 0.196078, 1 )
+
+[node name="CannotBuyButton" type="Button" parent="ColorRect/ColorRect"]
+margin_left = 142.0
+margin_top = 186.0
+margin_right = 380.0
+margin_bottom = 271.0
+custom_fonts/font = SubResource( 4 )
+text = "Aceptar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CannotBuyLabel" type="Label" parent="ColorRect/ColorRect"]
+margin_left = 38.0
+margin_top = 18.0
+margin_right = 486.0
+margin_bottom = 186.0
+custom_fonts/font = SubResource( 5 )
+text = "NO PUEDES COMPRARLO
+
+No tienes dinero suficiente."
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="ColorRect/ColorRect/CannotBuyButton" to="." method="_on_CannotBuyButton_pressed"]

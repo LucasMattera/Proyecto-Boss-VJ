@@ -6,6 +6,8 @@ onready var exit = $Exit
 export (int) var value = 1000
 export (String) var shop_name = "shop"
 export (int) var earnings = 10
+export (int) var upgrade_value = 10
+export (int) var add_employee_value = 10
 
 func initialize(player):
 	menu.set_shop_name(shop_name)

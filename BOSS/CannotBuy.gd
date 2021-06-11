@@ -9,7 +9,7 @@ func _on_ShopMenuBuy_not_enough_cash():
 
 func _on_CannotBuyButton_pressed():
 	set_process_input(false)
-	hide()
+	show()
 
 
 func _on_ShopMenuBuy_purchased():

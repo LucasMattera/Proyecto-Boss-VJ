@@ -12,19 +12,6 @@ export (int) var money = 500
 export (String) var player_name = "player 1"
 var shops = []
 
-#func _ready():
-	# Create a timer node
-	#var timer = Timer.new()
-	# Set timer interval
-	#timer.set_wait_time(10)
-	# Set it as repeat
-	#timer.set_one_shot(false)
-	# Connect its timeout signal to the function you want to repeat
-	#timer.connect("timeout", self, "recollect_money")
-	# Add to the tree as child of the current node
-	#add_child(timer)
-	#timer.start()
-
 func initialize():
 	shops = Player.shops
 	money = Player.money

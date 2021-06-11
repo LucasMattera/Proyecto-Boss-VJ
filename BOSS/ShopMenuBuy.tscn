@@ -6,7 +6,7 @@
 [ext_resource path="res://assets/textures/shops/icons/buy.png" type="Texture" id=4]
 [ext_resource path="res://assets/textures/shops/icons/exit.png" type="Texture" id=5]
 [ext_resource path="res://assets/textures/shops/icons/money-icon.png" type="Texture" id=6]
-[ext_resource path="res://CannotBuy.gd" type="Script" id=7]
+[ext_resource path="res://ErrorPopUp.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Purchased.gd" type="Script" id=8]
 [ext_resource path="res://ConfirmBuy.gd" type="Script" id=9]
 [ext_resource path="res://ShaderTransitionout.tscn" type="PackedScene" id=10]
@@ -24,12 +24,12 @@ font_data = ExtResource( 3 )
 size = 52
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=4]
-size = 46
-font_data = ExtResource( 3 )
-
 [sub_resource type="DynamicFont" id=5]
 size = 32
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 46
 font_data = ExtResource( 3 )
 
 [node name="ShopMenuBuy" type="Node2D"]
@@ -165,58 +165,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CannotBuy" type="Popup" parent="GUI"]
-pause_mode = 2
-margin_left = 272.0
-margin_top = 188.0
-margin_right = 818.0
-margin_bottom = 498.0
-popup_exclusive = true
-script = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect" type="ColorRect" parent="GUI/CannotBuy"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect" type="ColorRect" parent="GUI/CannotBuy/ColorRect"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 10.0
-margin_top = 10.0
-margin_right = -10.0
-margin_bottom = -10.0
-color = Color( 0.196078, 0.196078, 0.196078, 1 )
-
-[node name="CannotBuyButton" type="Button" parent="GUI/CannotBuy/ColorRect/ColorRect"]
-margin_left = 142.0
-margin_top = 186.0
-margin_right = 380.0
-margin_bottom = 271.0
-custom_fonts/font = SubResource( 4 )
-text = "Aceptar"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CannotBuyLabel" type="Label" parent="GUI/CannotBuy/ColorRect/ColorRect"]
-margin_left = 38.0
-margin_top = 18.0
-margin_right = 486.0
-margin_bottom = 186.0
-custom_fonts/font = SubResource( 5 )
-text = "NO PUEDES COMPRARLO
-
-No tienes dinero suficiente."
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="CannotBuy" parent="GUI" instance=ExtResource( 7 )]
 
 [node name="Confirm" type="Popup" parent="GUI"]
 pause_mode = 2
@@ -343,11 +292,9 @@ __meta__ = {
 stream = ExtResource( 11 )
 autoplay = true
 [connection signal="confirm" from="." to="GUI/Confirm" method="_on_ShopMenuBuy_confirm"]
-[connection signal="not_enough_cash" from="." to="GUI/CannotBuy" method="_on_ShopMenuBuy_not_enough_cash"]
 [connection signal="purchased" from="." to="GUI/Purchased" method="_on_ShopMenuBuy_purchased"]
 [connection signal="pressed" from="GUI/ExitRect/ExitButton" to="." method="_on_ExitButton_pressed"]
 [connection signal="pressed" from="GUI/BuyRect/BuyButton" to="." method="_on_BuyButton_pressed"]
-[connection signal="pressed" from="GUI/CannotBuy/ColorRect/ColorRect/CannotBuyButton" to="GUI/CannotBuy" method="_on_CannotBuyButton_pressed"]
 [connection signal="purchased" from="GUI/Confirm" to="." method="_on_Confirm_purchased"]
 [connection signal="pressed" from="GUI/Confirm/ColorRect/ColorRect/YesButton" to="GUI/Confirm" method="_on_YesButton_pressed"]
 [connection signal="pressed" from="GUI/Confirm/ColorRect/ColorRect/NoButton" to="GUI/Confirm" method="_on_NoButton_pressed"]
