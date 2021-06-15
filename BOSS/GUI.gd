@@ -28,8 +28,11 @@ func _physics_process(delta):
 	timer.set_wait_time(3)
 	timer.set_one_shot(false)
 	timer.connect("timeout", earning_money, "hide")
-	timer.connect("timeout", lose_money, "hide")
-	add_child(timer)
+	var timer_lose_money = Timer.new()
+	timer_lose_money.set_wait_time(3)
+	timer_lose_money.set_one_shot(false)
+	timer_lose_money.connect("timeout", lose_money, "hide")
+	add_child(timer_lose_money)
 	
 	if(Player.last_earning != 0):
 		if(Player.last_earning > 0):
@@ -39,7 +42,7 @@ func _physics_process(delta):
 		else:
 			lose_money.set_text("+$: " + String(Player.last_earning))
 			lose_money.show()
-			timer.start()
+			timer_lose_money.start()
 		Player.last_earning = 0		
 	Canvas_name.set_text(Player.player_name)
 	Canvas_Money.set_text("  " + String(Player.money))
