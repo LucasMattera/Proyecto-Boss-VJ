@@ -43,12 +43,13 @@ position = Vector2( 0, 20.6362 )
 script = ExtResource( 2 )
 
 [node name="yellow" type="Sprite" parent="."]
-position = Vector2( 130.583, -67.473 )
+position = Vector2( 139.402, -69.9928 )
 rotation = 1.5708
 scale = Vector2( 7.18001, 7.74313 )
 texture = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( 136.575, -57.2891 )
 shape = SubResource( 2 )
 
@@ -59,7 +60,7 @@ scale = Vector2( 7.25621, 8.87351 )
 texture = SubResource( 3 )
 
 [node name="red" type="Sprite" parent="."]
-position = Vector2( 127.786, -68.2582 )
+position = Vector2( 133.083, -72.4961 )
 rotation = 1.5708
 scale = Vector2( 7.25039, 9.0005 )
 texture = SubResource( 4 )
@@ -68,19 +69,19 @@ texture = SubResource( 4 )
 stream = ExtResource( 3 )
 
 [node name="orange" type="Sprite" parent="."]
-position = Vector2( 126.992, -61.9086 )
+position = Vector2( 131.23, -65.087 )
 rotation = 4.71239
 scale = Vector2( 4.27101, 4.78534 )
 texture = SubResource( 5 )
 
 [node name="truck" type="Sprite" parent="."]
-position = Vector2( 130.96, -69.0519 )
+position = Vector2( 128.841, -73.2897 )
 rotation = 4.71239
 scale = Vector2( 3.21498, 4.40157 )
 texture = SubResource( 6 )
 
 [node name="police" type="Sprite" parent="."]
-position = Vector2( 129.845, -73.9171 )
+position = Vector2( 136.202, -72.8576 )
 rotation = 4.71239
 scale = Vector2( 4.1748, 4.82152 )
 texture = SubResource( 7 )

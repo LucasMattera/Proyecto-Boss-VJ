@@ -32,16 +32,16 @@ func get_input():
 		walkAudio.playing= true
 	if Input.is_action_pressed('move_right'):
 		animation.animation = "right"
-		velocity.x += 1
+		velocity.x += 0.5
 	if Input.is_action_pressed('move_left'):
 		animation.animation = "left"
-		velocity.x -= 1
+		velocity.x -= 0.5
 	if Input.is_action_pressed('move_down'):
 		animation.animation = "down"
-		velocity.y += 1
+		velocity.y += 0.5
 	if Input.is_action_pressed('move_up'):
 		animation.animation = "up"
-		velocity.y -= 1
+		velocity.y -= 0.5
 	if Input.is_action_just_released("move_down") || Input.is_action_just_released("move_right") || Input.is_action_just_released("move_left") || Input.is_action_just_released("move_up"): 
 		animation.animation = "idle"
 	if animation.animation == "idle":

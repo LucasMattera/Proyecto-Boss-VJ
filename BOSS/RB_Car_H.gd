@@ -54,7 +54,9 @@ func _physics_process(delta):
 		car3.show()
 	if do_flip :
 		car.flip_h = true
-		car.rotation_degrees = 270
+		if car.rotation_degrees != 90 : 
+			car.rotation_degrees = 90
+		
 		do_flip = false
 	if ! car.flip_h :
 		if position.x < 4400:

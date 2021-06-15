@@ -17,9 +17,8 @@ func _ready():
 
 
 func _on_retry_button_pressed():
-	print("retry")
-	#get_tree().paused=false
-	get_tree().change_scene("res://miniGames/arcanoid/world.tscn")
+	if Player.money >= 1000:
+		get_tree().change_scene("res://miniGames/arcanoid/world.tscn")
 	
 
 

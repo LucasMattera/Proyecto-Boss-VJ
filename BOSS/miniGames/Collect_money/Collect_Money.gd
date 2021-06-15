@@ -3,6 +3,7 @@ onready var moneySpawner = $Money_Spawner
 onready var player = $Player
 onready var exitButton = $ExitButton
 onready var resumeButton = $ResumeButton
+onready var gui = $GUI
 onready var coinIn = $Player/coinIn
 onready var coinOut = $Player/coinUut
 
@@ -12,6 +13,7 @@ func _ready():
 	moneySpawner.initialize()
 	exitButton.hide()
 	resumeButton.hide()
+	gui.initialize(player)
 
 func _physics_process(delta):
 	if Player.money <= 0:
@@ -23,6 +25,7 @@ func _on_Area2D_body_entered(body):
 	print(body.name)
 	if body.is_in_group("coin"):
 		var value = body.get_parent().get_value()
+		gui.last_Earning = value
 		if value > 0:
 			coinIn.playing = true
 		else:

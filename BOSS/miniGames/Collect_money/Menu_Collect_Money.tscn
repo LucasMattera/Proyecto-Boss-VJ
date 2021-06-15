@@ -1,68 +1,120 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=18 format=2]
 
-[ext_resource path="res://miniGames/Collect_money/Coin/coin_2.png" type="Texture" id=1]
-[ext_resource path="res://miniGames/Collect_money/Coin/coin_4.png" type="Texture" id=2]
-[ext_resource path="res://miniGames/Collect_money/Coin/coin_1.png" type="Texture" id=3]
-[ext_resource path="res://miniGames/Collect_money/Coin/coin_3.png" type="Texture" id=4]
+[ext_resource path="res://miniGames/Collect_money/assets_collect_money/descarga.jpg" type="Texture" id=1]
+[ext_resource path="res://miniGames/Collect_money/assets_collect_money/lata.png" type="Texture" id=2]
+[ext_resource path="res://assets/instructions/Keyboard keys (transparent).png" type="Texture" id=3]
 [ext_resource path="res://assets/fonts/Schrödinger.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://assets/textures/player.png" type="Texture" id=6]
 [ext_resource path="res://assets/textures/floor.png" type="Texture" id=7]
 [ext_resource path="res://miniGames/Collect_money/Menu_Collect_Money.gd" type="Script" id=8]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 3 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 2 ) ],
+"frames": [ null, ExtResource( 2 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 size = 40
+outline_size = 4
 font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 25
+outline_size = 2
+outline_color = Color( 0.0156863, 0.0156863, 0.0156863, 1 )
 font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 20
+outline_size = 2
 font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 17
+outline_size = 2
+outline_color = Color( 0.0470588, 0.0470588, 0.0470588, 1 )
+font_data = ExtResource( 5 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 93, 26, 163, 37 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 154, 100, 36, 36 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 28, 34, 33 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 218, 101, 33, 32 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 64, 30, 34, 30 )
 
 [node name="Menu_Collect_Money" type="Node2D"]
 script = ExtResource( 8 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1024.0
+margin_bottom = 592.0
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="coins" type="Node" parent="."]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="coins"]
 position = Vector2( 328, 200 )
-frames = SubResource( 2 )
+scale = Vector2( 0.6, 0.6 )
+frames = SubResource( 1 )
 frame = 1
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="coins"]
 position = Vector2( 480, 200 )
-frames = SubResource( 2 )
+scale = Vector2( 0.7, 0.7 )
+frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="coins"]
 position = Vector2( 624, 200 )
-frames = SubResource( 2 )
+scale = Vector2( 0.8, 0.8 )
+frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="coins"]
 position = Vector2( 744, 200 )
-frames = SubResource( 2 )
-frame = 3
+scale = Vector2( 0.9, 0.9 )
+frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="Label" type="Label" parent="."]
-margin_left = 208.0
-margin_top = -16.0
-margin_right = 876.0
-margin_bottom = 208.0
-custom_fonts/font = SubResource( 1 )
-text = "WELCOME TO COLLECT MONEY "
+margin_left = 192.0
+margin_top = -40.0
+margin_right = 860.0
+margin_bottom = 184.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "BIENVENIDO AL CHINO"
 align = 1
 valign = 1
 __meta__ = {
@@ -75,7 +127,8 @@ margin_top = 288.0
 margin_right = 846.0
 margin_bottom = 360.0
 custom_fonts/font = SubResource( 3 )
-text = "EXIT"
+custom_colors/font_color_disabled = Color( 0.0352941, 0.0352941, 0.0352941, 1 )
+text = "SALIR"
 icon = ExtResource( 6 )
 expand_icon = true
 __meta__ = {
@@ -88,23 +141,70 @@ margin_top = 288.0
 margin_right = 440.0
 margin_bottom = 360.0
 custom_fonts/font = SubResource( 3 )
-text = "START"
+text = "ENTRAR"
 icon = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label2" type="Label" parent="."]
-margin_left = 120.0
-margin_top = 456.0
-margin_right = 1008.0
-margin_bottom = 552.0
+[node name="INSTRUCCIONES" type="Label" parent="."]
+margin_left = 144.0
+margin_top = 400.0
+margin_right = 1032.0
+margin_bottom = 581.0
 custom_fonts/font = SubResource( 4 )
-text = "INSTRUCIONES: 
-- MUEVE EL PERSONAJE HACIA LA IZQUIERDA O DERECHA Y RECOLECTA LAS MONEDAS.
-- ADVERTENCIA: LAS MONEDAS PUEDEN HACER PERDER DINERO"
+custom_colors/font_color = Color( 0.0431373, 0.0431373, 0.0431373, 1 )
+text = "EL SUPERMERCADO TUVO UN ACCIDENTE Y ESTAN CAYENDO CERVEZAS DE LA PLANTA ALTA 
+TRATA DE SALVARLARLAS. 
+
+INSTRUCIONES: 
+- MUEVE EL PERSONAJE HACIA LA IZQUIERDA O DERECHA Y RECOLECTA LAS LATAS
+ DE CERVEZAS QUE VAN CAYENDO. SERAS RECOMPENSADO POR CADA LATA QUE SALVES 
+CON EL CARRITO
+- ADVERTENCIA: ALGUNAS LATAS  PUEDEN HACERTE PERDER DINERO"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="MOVIMIENTOS" type="Label" parent="."]
+margin_left = 8.0
+margin_top = 176.0
+margin_right = 129.0
+margin_bottom = 404.0
+custom_fonts/font = SubResource( 5 )
+text = "MOVMIENTOS :
+
+CORRER :
+
+
+
+IZQUIERDA :
+
+
+
+DERECHA :"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Run" type="Sprite" parent="."]
+position = Vector2( 88, 256 )
+texture = SubResource( 6 )
+
+[node name="left" type="Sprite" parent="."]
+position = Vector2( 32, 336 )
+texture = SubResource( 7 )
+
+[node name="left_2" type="Sprite" parent="."]
+position = Vector2( 88, 336 )
+texture = SubResource( 8 )
+
+[node name="Rigth" type="Sprite" parent="."]
+position = Vector2( 32, 424 )
+texture = SubResource( 9 )
+
+[node name="Rigth_2" type="Sprite" parent="."]
+position = Vector2( 88, 424 )
+texture = SubResource( 10 )
 [connection signal="pressed" from="ExitButton" to="." method="_on_ExitButton_pressed"]
 [connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]

@@ -40,11 +40,11 @@ margin_bottom = 350.0
 [node name="main_tittle" parent="tittleMargin/menu" instance=ExtResource( 2 )]
 anchor_right = 0.0
 margin_right = 978.0
-margin_bottom = 140.0
+margin_bottom = 111.0
 
 [node name="text" parent="tittleMargin/menu/main_tittle" index="0"]
 margin_right = 978.0
-margin_bottom = 140.0
+margin_bottom = 111.0
 alignment = 1
 
 [node name="MyArcanoid" parent="tittleMargin/menu/main_tittle/text" index="0"]
@@ -59,7 +59,7 @@ valign = 1
 [node name="by" parent="tittleMargin/menu/main_tittle/text" index="1"]
 margin_top = 109.0
 margin_right = 978.0
-margin_bottom = 140.0
+margin_bottom = 111.0
 custom_colors/font_color = Color( 0.988235, 0.988235, 0.988235, 1 )
 text = ""
 align = 1
@@ -68,9 +68,9 @@ valign = 1
 [node name="buttonRetry" parent="tittleMargin/menu" instance=ExtResource( 1 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 144.0
+margin_top = 115.0
 margin_right = 978.0
-margin_bottom = 208.0
+margin_bottom = 179.0
 
 [node name="button" parent="tittleMargin/menu/buttonRetry" index="0"]
 margin_left = 457.0
@@ -83,9 +83,9 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 [node name="buttonQuit" parent="tittleMargin/menu" instance=ExtResource( 4 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 212.0
+margin_top = 183.0
 margin_right = 978.0
-margin_bottom = 276.0
+margin_bottom = 247.0
 
 [node name="button" parent="tittleMargin/menu/buttonQuit" index="0"]
 margin_left = 457.0
@@ -97,8 +97,8 @@ custom_colors/font_color = Color( 0.996078, 0.996078, 0.996078, 1 )
 
 [node name="lose" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
-[connection signal="pressed" from="tittleMargin/menu/buttonRetry/button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="tittleMargin/menu/buttonRetry/button" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="tittleMargin/menu/buttonRetry/button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="tittleMargin/menu/buttonQuit/button" to="." method="_on_quit_button_pressed"]
 
 [editable path="tittleMargin/menu/main_tittle"]
