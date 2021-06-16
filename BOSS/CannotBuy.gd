@@ -8,8 +8,7 @@ func _on_ShopMenuBuy_not_enough_cash():
 	popup()
 
 func _on_CannotBuyButton_pressed():
-	set_process_input(false)
-	show()
+	print("ass")
 
 
 func _on_ShopMenuBuy_purchased():

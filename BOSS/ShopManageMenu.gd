@@ -5,6 +5,7 @@ onready var background = $BGContainer/Background
 signal confirmUpgrade
 signal confirmHire
 signal not_enough_cash
+signal CannotBuyButton_pressed
 
 func _ready():
 	shop_name.text = ShopState.shop_name

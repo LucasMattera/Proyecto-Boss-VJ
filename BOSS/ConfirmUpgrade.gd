@@ -3,6 +3,7 @@ extends Popup
 onready var label = $ColorRect/ColorRect/ConfirmLabel
 onready var manage
 signal done
+var money
 
 func _ready():
 	set_process_input(false)
@@ -26,22 +27,34 @@ func _on_ShopMenuManage_confirmUpgrade():
 	popup()
 	set_process_input(true)
 	set_label_upgrade()
+	Player.money -= money
+	Player.last_earning = (money) * (-1)
+
+func _on_ShopMenuManage_CannotBuyButton_pressed():
+	print("pasasdasdasdas")
+	manage = "CannotBuy"
+	popup()
+	set_process_input(true)
+	set_label_hire()
 
 func _on_ShopMenuManage_confirmHire():
 	manage = "Hire"
 	popup()
 	set_process_input(true)
 	set_label_hire()
+	Player.money -= money
+	Player.last_earning = (money) * (-1)
 
 func set_label_hire():
 	var earnings = Player.get_earnings_from(ShopState.shop_name)
 	var res = ShopState.earningWithNewEmployee(earnings)
 	label.text = "CONFIRMAR EMPLEADO\n"
-	label.text = "\nCOSTO: $\n"
+	label.text = "\nCOSTO: $"
 	label.text += str(res * 2)
 	set_label_actual_balance()
 	label.text += "\nGanancia con empleado: $"
 	label.text += str(res)
+	money = res * 2
 
 func set_label_upgrade():
 	var earnings = Player.get_earnings_from(ShopState.shop_name)
@@ -52,6 +65,7 @@ func set_label_upgrade():
 	set_label_actual_balance()
 	label.text += "\nGanancia con mejora: $"
 	label.text += str(res)
+	money = res * 2
 	
 func set_label_actual_balance():
 	label.text += "\nDinero actual: $"
