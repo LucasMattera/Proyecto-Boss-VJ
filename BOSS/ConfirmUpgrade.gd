@@ -28,7 +28,7 @@ func _on_ShopMenuManage_confirmUpgrade():
 	set_process_input(true)
 	set_label_upgrade()
 	Player.money -= money
-	Player.last_earning = (money) * (-1)
+	Player.last_earning -= money
 
 func _on_ShopMenuManage_CannotBuyButton_pressed():
 	print("pasasdasdasdas")
@@ -43,7 +43,7 @@ func _on_ShopMenuManage_confirmHire():
 	set_process_input(true)
 	set_label_hire()
 	Player.money -= money
-	Player.last_earning = (money) * (-1)
+	Player.last_earning -= money
 
 func set_label_hire():
 	var earnings = Player.get_earnings_from(ShopState.shop_name)

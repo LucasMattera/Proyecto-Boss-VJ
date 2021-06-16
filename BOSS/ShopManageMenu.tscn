@@ -162,6 +162,7 @@ __meta__ = {
 
 [node name="Confirm" type="Popup" parent="GUI"]
 pause_mode = 2
+visible = true
 margin_left = 272.0
 margin_top = 188.0
 margin_right = 818.0
@@ -189,10 +190,10 @@ margin_bottom = -10.0
 color = Color( 0.196078, 0.298039, 0.545098, 1 )
 
 [node name="ConfirmLabel" type="Label" parent="GUI/Confirm/ColorRect/ColorRect"]
-margin_left = 38.0
-margin_top = 18.0
-margin_right = 500.0
-margin_bottom = 186.0
+margin_left = 33.804
+margin_top = 21.5966
+margin_right = 495.804
+margin_bottom = 219.597
 custom_fonts/font = SubResource( 7 )
 text = "CONFIRMAR COMPRA
 Dinero actual: $xxxx
@@ -204,10 +205,10 @@ __meta__ = {
 }
 
 [node name="YesButton" type="Button" parent="GUI/Confirm/ColorRect/ColorRect"]
-margin_left = 38.0
-margin_top = 186.0
-margin_right = 246.0
-margin_bottom = 239.0
+margin_left = 33.804
+margin_top = 214.173
+margin_right = 241.804
+margin_bottom = 267.173
 custom_fonts/font = SubResource( 8 )
 text = "Aceptar"
 __meta__ = {
@@ -215,10 +216,10 @@ __meta__ = {
 }
 
 [node name="NoButton" type="Button" parent="GUI/Confirm/ColorRect/ColorRect"]
-margin_left = 294.0
-margin_top = 186.0
-margin_right = 502.0
-margin_bottom = 239.0
+margin_left = 295.199
+margin_top = 213.574
+margin_right = 503.199
+margin_bottom = 266.574
 custom_fonts/font = SubResource( 8 )
 text = "Cancelar"
 __meta__ = {
