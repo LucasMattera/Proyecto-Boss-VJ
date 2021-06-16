@@ -24,23 +24,21 @@ z_index = 1
 [node name="Audio" type="Node" parent="."]
 
 [node name="SFX" type="AudioStreamPlayer" parent="Audio"]
-volume_db = -20.0
 script = ExtResource( 7 )
 
 [node name="Music" type="AudioStreamPlayer" parent="Audio"]
-volume_db = -20.0
 script = ExtResource( 6 )
-[connection signal="fail" from="." to="GUI" method="_on_DanceMinigame_fail"]
 [connection signal="fail" from="." to="Audio/SFX" method="_on_DanceMinigame_fail"]
-[connection signal="game_over" from="." to="GUI" method="_on_DanceMinigame_game_over"]
+[connection signal="fail" from="." to="GUI" method="_on_DanceMinigame_fail"]
 [connection signal="game_over" from="." to="Audio/Music" method="_on_DanceMinigame_game_over"]
+[connection signal="game_over" from="." to="GUI" method="_on_DanceMinigame_game_over"]
 [connection signal="money_earned" from="." to="GUI" method="_on_DanceMinigame_money_earned"]
 [connection signal="player_stats_changed" from="." to="GUI" method="_on_DanceMinigame_player_stats_changed"]
-[connection signal="success" from="." to="GUI" method="_on_DanceMinigame_success"]
 [connection signal="success" from="." to="Audio/SFX" method="_on_DanceMinigame_success"]
-[connection signal="win_game" from="." to="GUI" method="_on_DanceMinigame_win_game"]
-[connection signal="win_game" from="." to="Audio/Music" method="_on_DanceMinigame_win_game"]
+[connection signal="success" from="." to="GUI" method="_on_DanceMinigame_success"]
 [connection signal="win_game" from="." to="Audio/SFX" method="_on_DanceMinigame_win_game"]
+[connection signal="win_game" from="." to="Audio/Music" method="_on_DanceMinigame_win_game"]
+[connection signal="win_game" from="." to="GUI" method="_on_DanceMinigame_win_game"]
 [connection signal="arrow_in_ring" from="GUI" to="." method="_on_GUI_arrow_in_ring"]
 [connection signal="arrow_out_of_ring" from="GUI" to="." method="_on_GUI_arrow_out_of_ring"]
 [connection signal="arrow_out_of_screen" from="GUI" to="." method="_on_GUI_arrow_out_of_screen"]
