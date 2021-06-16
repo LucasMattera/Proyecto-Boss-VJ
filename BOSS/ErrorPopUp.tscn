@@ -3,16 +3,17 @@
 [ext_resource path="res://CannotBuy.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/Schrödinger.ttf" type="DynamicFontData" id=2]
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=1]
 size = 46
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=2]
 size = 32
 font_data = ExtResource( 2 )
 
 [node name="CannotBuy" type="Popup"]
 pause_mode = 2
+visible = true
 margin_left = 272.0
 margin_top = 188.0
 margin_right = 818.0
@@ -44,7 +45,7 @@ margin_left = 142.0
 margin_top = 186.0
 margin_right = 380.0
 margin_bottom = 271.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 1 )
 text = "Aceptar"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -55,7 +56,7 @@ margin_left = 38.0
 margin_top = 18.0
 margin_right = 486.0
 margin_bottom = 186.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 2 )
 text = "NO PUEDES COMPRARLO
 
 No tienes dinero suficiente."

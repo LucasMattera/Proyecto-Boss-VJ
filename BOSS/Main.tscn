@@ -293,7 +293,6 @@ points = PoolVector2Array( 440, 72, 0, 72, 0, 0, 440, 0 )
 9/z_index = 0
 
 [sub_resource type="AtlasTexture" id=12]
-flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 220.611, 322.942, 16.7246, 16.2513 )
 
@@ -301,7 +300,6 @@ region = Rect2( 220.611, 322.942, 16.7246, 16.2513 )
 extents = Vector2( 184, 74.422 )
 
 [sub_resource type="AtlasTexture" id=14]
-flags = 4
 atlas = ExtResource( 12 )
 region = Rect2( 287.954, 26.2028, 135.285, 125.264 )
 
@@ -311,7 +309,6 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 13 )
 
 [sub_resource type="AtlasTexture" id=16]
-flags = 4
 atlas = ExtResource( 12 )
 region = Rect2( 5.52087, -4.96092, 134.153, 177.866 )
 
@@ -319,7 +316,6 @@ region = Rect2( 5.52087, -4.96092, 134.153, 177.866 )
 extents = Vector2( 265.03, 102.714 )
 
 [sub_resource type="AtlasTexture" id=18]
-flags = 4
 atlas = ExtResource( 14 )
 region = Rect2( 1298.22, 10.0874, 229.095, 372.595 )
 
@@ -327,58 +323,50 @@ region = Rect2( 1298.22, 10.0874, 229.095, 372.595 )
 extents = Vector2( 69.27, 103.323 )
 
 [sub_resource type="AtlasTexture" id=20]
-flags = 4
 atlas = ExtResource( 14 )
 region = Rect2( 823.656, 413.523, 255.127, 388.965 )
 
 [sub_resource type="AtlasTexture" id=21]
-flags = 4
 atlas = ExtResource( 11 )
 region = Rect2( 320.22, 17.7828, 201.954, 142.949 )
 
 [sub_resource type="AtlasTexture" id=22]
-flags = 4
 atlas = ExtResource( 11 )
 region = Rect2( -0.702637, 221.211, 200.422, 175.369 )
 
 [sub_resource type="AtlasTexture" id=23]
-flags = 4
 atlas = ExtResource( 11 )
 region = Rect2( 9.146, 408.249, 189.62, 201.472 )
 
 [sub_resource type="AtlasTexture" id=24]
-flags = 4
 atlas = ExtResource( 11 )
 region = Rect2( 357.975, 176.933, 161.111, 182.726 )
 
 [sub_resource type="AtlasTexture" id=25]
-flags = 4
 atlas = ExtResource( 11 )
 region = Rect2( 201.861, 240.821, 156.038, 167.496 )
 
-[sub_resource type="AtlasTexture" id=30]
-flags = 4
+[sub_resource type="AtlasTexture" id=26]
 atlas = ExtResource( 11 )
 region = Rect2( 0, 17.6072, 281.08, 180.993 )
 
-[sub_resource type="RectangleShape2D" id=31]
+[sub_resource type="RectangleShape2D" id=27]
 extents = Vector2( 64, 88 )
 
-[sub_resource type="AtlasTexture" id=26]
-flags = 4
+[sub_resource type="AtlasTexture" id=28]
 atlas = ExtResource( 14 )
 region = Rect2( 220.799, 409.069, 250.523, 390.426 )
 
-[sub_resource type="DynamicFont" id=27]
+[sub_resource type="DynamicFont" id=29]
 size = 200
 outline_size = 21
 outline_color = Color( 0.917647, 0.0666667, 0.0705882, 1 )
 font_data = ExtResource( 18 )
 
-[sub_resource type="RectangleShape2D" id=28]
+[sub_resource type="RectangleShape2D" id=30]
 extents = Vector2( 624, 448 )
 
-[sub_resource type="DynamicFont" id=29]
+[sub_resource type="DynamicFont" id=31]
 size = 200
 outline_size = 4
 outline_color = Color( 0.992157, 0.0352941, 0.0352941, 1 )
@@ -442,6 +430,7 @@ __meta__ = {
 position = Vector2( 160, 23 )
 scale = Vector2( 0.375, 0.375 )
 frames = SubResource( 4 )
+frame = 2
 playing = true
 
 [node name="ShaderTransitionout" parent="GUI" instance=ExtResource( 24 )]
@@ -837,7 +826,7 @@ script = ExtResource( 16 )
 [node name="Spr_house" type="Sprite" parent="House"]
 position = Vector2( -4146.25, -1676 )
 scale = Vector2( 5.65302, 4.46808 )
-texture = SubResource( 30 )
+texture = SubResource( 26 )
 
 [node name="SB_house" type="StaticBody2D" parent="House"]
 
@@ -848,7 +837,7 @@ polygon = PoolVector2Array( -4272, -1288, -4272, -1472, -4032, -1472, -4024, -12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="House/Area2D"]
 position = Vector2( -4156.84, -1362.82 )
-shape = SubResource( 31 )
+shape = SubResource( 27 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 25 )
@@ -860,14 +849,14 @@ autoplay = true
 [node name="Spr_hospital" type="Sprite" parent="hospital"]
 position = Vector2( 3712, -1675.38 )
 scale = Vector2( 4.89, 2.27372 )
-texture = SubResource( 26 )
+texture = SubResource( 28 )
 
 [node name="Label" type="Label" parent="hospital"]
 margin_left = 3328.0
 margin_top = -2000.0
 margin_right = 4128.0
 margin_bottom = -1792.0
-custom_fonts/font = SubResource( 27 )
+custom_fonts/font = SubResource( 29 )
 text = "Hospital"
 align = 1
 valign = 1
@@ -880,7 +869,7 @@ position = Vector2( 3712, -1608 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hospital/ST_hospital"]
 position = Vector2( 0, -80 )
-shape = SubResource( 28 )
+shape = SubResource( 30 )
 
 [node name="ShaderHospital" type="Sprite" parent="."]
 visible = false
@@ -893,7 +882,7 @@ margin_left = 2208.0
 margin_top = -1632.0
 margin_right = 4948.0
 margin_bottom = -736.0
-custom_fonts/font = SubResource( 29 )
+custom_fonts/font = SubResource( 31 )
 text = "FUISTE ATROPELLADO
 
 SERAS ENVIADO AL HOSPITAL"

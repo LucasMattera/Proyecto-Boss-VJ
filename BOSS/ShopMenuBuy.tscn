@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://ShopMenuBuy.gd" type="Script" id=1]
 [ext_resource path="res://assets/textures/shops/example.jpg" type="Texture" id=2]
@@ -21,10 +21,6 @@ size = 56
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 52
-font_data = ExtResource( 3 )
-
-[sub_resource type="DynamicFont" id=5]
 size = 32
 font_data = ExtResource( 3 )
 
@@ -145,27 +141,15 @@ anchor_bottom = 1.0
 margin_right = -5.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Comprar"
 flat = true
 align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BuyLabel" type="Label" parent="GUI/BuyRect"]
-margin_left = 119.0
-margin_right = 397.0
-margin_bottom = 120.0
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Comprar
-Propiedad"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="CannotBuy" parent="GUI" instance=ExtResource( 7 )]
+visible = false
 
 [node name="Confirm" type="Popup" parent="GUI"]
 pause_mode = 2
@@ -200,7 +184,7 @@ margin_left = 38.0
 margin_top = 18.0
 margin_right = 500.0
 margin_bottom = 186.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 3 )
 text = "CONFIRMAR COMPRA
 Dinero actual: $xxxx
 Requerido: -$xxxx
@@ -265,7 +249,7 @@ margin_left = 62.0
 margin_top = 18.0
 margin_right = 702.0
 margin_bottom = 195.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 3 )
 text = "LOCAL ADQUIRIDO!
 
 A partir de ahora puedes administrar
@@ -287,11 +271,13 @@ __meta__ = {
 }
 
 [node name="ShaderTransitionout" parent="GUI" instance=ExtResource( 10 )]
+visible = false
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
 autoplay = true
 [connection signal="confirm" from="." to="GUI/Confirm" method="_on_ShopMenuBuy_confirm"]
+[connection signal="not_enough_cash" from="." to="GUI/CannotBuy" method="_on_ShopMenuBuy_not_enough_cash"]
 [connection signal="purchased" from="." to="GUI/Purchased" method="_on_ShopMenuBuy_purchased"]
 [connection signal="pressed" from="GUI/ExitRect/ExitButton" to="." method="_on_ExitButton_pressed"]
 [connection signal="pressed" from="GUI/BuyRect/BuyButton" to="." method="_on_BuyButton_pressed"]
