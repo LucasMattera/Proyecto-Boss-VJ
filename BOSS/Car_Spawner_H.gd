@@ -35,3 +35,6 @@ func initialize():
 		self.add_child(t)
 		t.start()
 		yield(t, "timeout")
+
+func pauseGenerate():
+	pause_mode= true

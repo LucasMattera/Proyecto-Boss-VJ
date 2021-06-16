@@ -3,8 +3,8 @@ extends Node
 onready var player = $Player
 onready var shops = $Shops
 onready var GUI = $GUI
-onready var atropellado = $Label
-onready var hospital_shader = $ShaderHospital
+onready var atropellado = $GUI/Label
+onready var hospital_shader = $GUI/ShaderHospital
 onready var car_spawner_h = $Car_Spawner_H
 onready var car_spawner_v = $Car_Spawner_V
 
