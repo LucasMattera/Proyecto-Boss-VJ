@@ -25,12 +25,9 @@ func _on_Area2D_body_entered(body):
 	print(body.name)
 	if body.is_in_group("coin"):
 		var value = body.get_parent().get_value()
-		gui.last_Earning = value
-		if value > 0:
-			coinIn.playing = true
-		else:
-			coinOut.playing = true
-		Player.money += value
+		gui.last_Earning = 50
+		coinIn.playing = true
+		Player.money += 50
 		body.get_parent().queue_free()
 	pass # Replace with function body.
 
@@ -48,3 +45,11 @@ func _on_ResumeButton_pressed():
 	get_tree().paused = false
 	exitButton.hide()
 	resumeButton.hide()
+
+
+func _on_flat_body_entered(body):
+	if body.is_in_group("coin"):
+		Player.money -= 50
+		gui.last_Earning = -50
+		coinOut.playing = true
+		body.get_parent().queue_free()

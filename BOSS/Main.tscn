@@ -442,7 +442,7 @@ __meta__ = {
 position = Vector2( 160, 23 )
 scale = Vector2( 0.375, 0.375 )
 frames = SubResource( 4 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="ShaderTransitionout" parent="GUI" instance=ExtResource( 24 )]
@@ -909,7 +909,7 @@ __meta__ = {
 "player",
 ] instance=ExtResource( 2 )]
 position = Vector2( -4144, -1248 )
-player_name = "Gustavo"
+player_name = "Player1"
 [connection signal="body_entered" from="Mini_games_areas/Arcanoid/arcanoid" to="Mini_games_areas/Arcanoid/arcanoid" method="_on_arcanoid_body_entered"]
 [connection signal="body_entered" from="Mini_games_areas/dance/Area2D" to="Mini_games_areas/dance/Area2D" method="_on_DanceMinigame_body_entered"]
 [connection signal="body_entered" from="Mini_games_areas/Collect_Money/Area2D_Collect_Money" to="Mini_games_areas/Collect_Money/Area2D_Collect_Money" method="_on_Area2D_Collect_Money_body_entered"]
