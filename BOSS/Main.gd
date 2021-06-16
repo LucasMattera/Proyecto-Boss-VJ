@@ -4,6 +4,7 @@ onready var player = $Player
 onready var shops = $Shops
 onready var GUI = $GUI
 onready var atropellado = $Label
+onready var hospital_shader = $ShaderHospital
 onready var car_spawner_h = $Car_Spawner_H
 onready var car_spawner_v = $Car_Spawner_V
 
@@ -29,6 +30,7 @@ func _ready():
 func atropellado():
 	player.hide()
 	player.can_move = false
+	hospital_shader.show()
 	atropellado.show()
 	player.position.x = 3500
 	player.position.y = -1250
@@ -43,6 +45,7 @@ func atropellado():
 	yield(t, "timeout")
 	player.show()
 	player.get_parent().atropellado.hide()
+	hospital_shader.hide()
 	player.can_move = true
 
 
