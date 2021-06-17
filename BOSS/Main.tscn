@@ -27,6 +27,7 @@
 [ext_resource path="res://assets/audio/music/street/urban.ogg" type="AudioStream" id=25]
 [ext_resource path="res://assets/textures/free_tileset_version_7.png" type="Texture" id=26]
 [ext_resource path="res://assets/textures/player.png" type="Texture" id=27]
+[ext_resource path="res://assets/textures/fastfood.png" type="Texture" id=28]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
@@ -288,65 +289,61 @@ region = Rect2( 1298.22, 10.0874, 229.095, 372.595 )
 extents = Vector2( 69.27, 103.323 )
 
 [sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 14 )
-region = Rect2( 823.656, 413.523, 255.127, 388.965 )
-
-[sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 11 )
 region = Rect2( 320.22, 17.7828, 201.954, 142.949 )
 
-[sub_resource type="AtlasTexture" id=15]
+[sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 11 )
 region = Rect2( -0.702637, 221.211, 200.422, 175.369 )
 
-[sub_resource type="AtlasTexture" id=16]
+[sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 11 )
 region = Rect2( 9.146, 408.249, 189.62, 201.472 )
 
-[sub_resource type="AtlasTexture" id=17]
+[sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 11 )
 region = Rect2( 357.975, 176.933, 161.111, 182.726 )
 
-[sub_resource type="AtlasTexture" id=18]
+[sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 11 )
 region = Rect2( 201.861, 240.821, 156.038, 167.496 )
 
-[sub_resource type="AtlasTexture" id=19]
+[sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 11 )
 region = Rect2( 0, 17.6072, 281.08, 180.993 )
 
-[sub_resource type="RectangleShape2D" id=20]
+[sub_resource type="RectangleShape2D" id=19]
 extents = Vector2( 64, 88 )
 
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=20]
 atlas = ExtResource( 14 )
 region = Rect2( 220.799, 409.069, 250.523, 390.426 )
 
-[sub_resource type="DynamicFont" id=22]
+[sub_resource type="DynamicFont" id=21]
 size = 200
 outline_size = 21
 outline_color = Color( 0.917647, 0.0666667, 0.0705882, 1 )
 font_data = ExtResource( 18 )
 
-[sub_resource type="RectangleShape2D" id=23]
+[sub_resource type="RectangleShape2D" id=22]
 extents = Vector2( 624, 448 )
+
+[sub_resource type="DynamicFont" id=23]
+size = 25
+outline_size = 4
+font_data = ExtResource( 13 )
+
+[sub_resource type="DynamicFont" id=24]
+size = 25
+outline_size = 4
+font_data = ExtResource( 13 )
 
 [sub_resource type="DynamicFont" id=25]
 size = 25
 outline_size = 4
 font_data = ExtResource( 13 )
 
-[sub_resource type="DynamicFont" id=26]
-size = 25
-outline_size = 4
-font_data = ExtResource( 13 )
-
-[sub_resource type="DynamicFont" id=27]
-size = 25
-outline_size = 4
-font_data = ExtResource( 13 )
-
-[sub_resource type="SpriteFrames" id=28]
+[sub_resource type="SpriteFrames" id=26]
 animations = [ {
 "frames": [ ExtResource( 22 ), ExtResource( 17 ), ExtResource( 20 ), ExtResource( 21 ) ],
 "loop": true,
@@ -354,19 +351,19 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="DynamicFont" id=29]
+[sub_resource type="DynamicFont" id=27]
 size = 30
 font_data = ExtResource( 13 )
 
-[sub_resource type="DynamicFont" id=30]
+[sub_resource type="DynamicFont" id=28]
 size = 18
 font_data = ExtResource( 18 )
 
-[sub_resource type="DynamicFont" id=31]
+[sub_resource type="DynamicFont" id=29]
 outline_size = 4
 font_data = ExtResource( 18 )
 
-[sub_resource type="DynamicFont" id=24]
+[sub_resource type="DynamicFont" id=30]
 size = 200
 outline_size = 4
 outline_color = Color( 0.992157, 0.0352941, 0.0352941, 1 )
@@ -552,15 +549,15 @@ shop_name = "comida-rapida"
 earnings = 300
 
 [node name="Sprite" parent="Shops/Shop5" index="0"]
-position = Vector2( -109.367, 967.596 )
-scale = Vector2( 6.61431, 3.4043 )
-texture = SubResource( 13 )
+position = Vector2( -143.677, 1026.27 )
+scale = Vector2( 3.86441, 3.7029 )
+texture = ExtResource( 28 )
 
 [node name="Area2D" parent="Shops/Shop5" index="1"]
 position = Vector2( 5.8418, 8.76245 )
 
 [node name="CollisionShape2D" parent="Shops/Shop5/Area2D" index="0"]
-position = Vector2( -137.28, 1492.55 )
+position = Vector2( -161.519, 1529.13 )
 
 [node name="Exit" parent="Shops/Shop5" index="3"]
 position = Vector2( -205.887, 1832.36 )
@@ -568,7 +565,7 @@ position = Vector2( -205.887, 1832.36 )
 [node name="StaticBody2D" type="StaticBody2D" parent="Shops/Shop5"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shops/Shop5/StaticBody2D"]
-polygon = PoolVector2Array( -965.848, 310.418, -968.769, 1610.19, -250.241, 1613.12, -253.161, 1359, 18.4773, 1359, 15.5564, 1601.43, 731.164, 1627.72, 734.085, 298.735 )
+polygon = PoolVector2Array( -965.848, 310.418, -968.769, 1610.19, -539.677, 1601.89, -547.677, 1321.89, 228.323, 1321.89, 220.323, 1601.89, 731.164, 1627.72, 734.085, 298.735 )
 
 [node name="Shop2" parent="Shops" instance=ExtResource( 6 )]
 position = Vector2( 2312.25, 1012.01 )
@@ -578,7 +575,7 @@ earnings = 100
 [node name="Sprite" parent="Shops/Shop2" index="0"]
 position = Vector2( -378.577, -366.826 )
 scale = Vector2( 5.83864, 3.94872 )
-texture = SubResource( 14 )
+texture = SubResource( 13 )
 
 [node name="Area2D" parent="Shops/Shop2" index="1"]
 position = Vector2( -8.97949, 0 )
@@ -608,7 +605,7 @@ earnings = 150
 position = Vector2( 307.431, 385.805 )
 rotation = 3.14159
 scale = Vector2( 7.05653, 3.48989 )
-texture = SubResource( 15 )
+texture = SubResource( 14 )
 
 [node name="Area2D" parent="Shops/Shop" index="1"]
 position = Vector2( 21.6483, -21.6479 )
@@ -645,7 +642,7 @@ earnings = 200
 position = Vector2( -606.106, 420.787 )
 rotation = 3.14159
 scale = Vector2( 4.87421, 3.35548 )
-texture = SubResource( 16 )
+texture = SubResource( 15 )
 
 [node name="CollisionShape2D" parent="Shops/Shop3/Area2D" index="0"]
 position = Vector2( -408, 223.999 )
@@ -677,7 +674,7 @@ earnings = 500
 [node name="Sprite" parent="Shops/Shop4" index="0"]
 position = Vector2( -33.2308, 327.516 )
 scale = Vector2( 9.0051, 3.26684 )
-texture = SubResource( 17 )
+texture = SubResource( 16 )
 
 [node name="Area2D" parent="Shops/Shop4" index="1"]
 position = Vector2( -22.1387, 31.627 )
@@ -704,7 +701,7 @@ earnings = 700
 [node name="Sprite" parent="Shops/Shop6" index="0"]
 position = Vector2( 99.1132, -225.483 )
 scale = Vector2( 10.3022, 4.69932 )
-texture = SubResource( 18 )
+texture = SubResource( 17 )
 
 [node name="CollisionShape2D" parent="Shops/Shop6/Area2D" index="0"]
 position = Vector2( -86.7241, 34.6896 )
@@ -724,7 +721,7 @@ polygon = PoolVector2Array( -704.465, 137.648, -330.312, 157.471, -357.568, -154
 [node name="Spr_house" type="Sprite" parent="House"]
 position = Vector2( -4146.25, -1676 )
 scale = Vector2( 5.65302, 4.46808 )
-texture = SubResource( 19 )
+texture = SubResource( 18 )
 
 [node name="SB_house" type="StaticBody2D" parent="House"]
 
@@ -735,7 +732,7 @@ polygon = PoolVector2Array( -4272, -1288, -4272, -1472, -4032, -1472, -4024, -12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="House/Area2D"]
 position = Vector2( -4156.84, -1362.82 )
-shape = SubResource( 20 )
+shape = SubResource( 19 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 25 )
@@ -747,14 +744,14 @@ autoplay = true
 [node name="Spr_hospital" type="Sprite" parent="hospital"]
 position = Vector2( 3712, -1675.38 )
 scale = Vector2( 4.89, 2.27372 )
-texture = SubResource( 21 )
+texture = SubResource( 20 )
 
 [node name="Label" type="Label" parent="hospital"]
 margin_left = 3328.0
 margin_top = -2000.0
 margin_right = 4128.0
 margin_bottom = -1792.0
-custom_fonts/font = SubResource( 22 )
+custom_fonts/font = SubResource( 21 )
 text = "Hospital"
 align = 1
 valign = 1
@@ -767,7 +764,7 @@ position = Vector2( 3712, -1608 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hospital/ST_hospital"]
 position = Vector2( 0, -80 )
-shape = SubResource( 23 )
+shape = SubResource( 22 )
 
 [node name="Player" parent="." groups=[
 "Persist",
@@ -787,7 +784,7 @@ margin_left = 0.944
 margin_top = 1.6
 margin_right = 2.072
 margin_bottom = 1.4
-custom_fonts/font = SubResource( 25 )
+custom_fonts/font = SubResource( 23 )
 custom_colors/font_color = Color( 0.0235294, 0.0235294, 0.0235294, 1 )
 text = "player name"
 align = 1
@@ -803,7 +800,7 @@ anchor_bottom = 0.06
 margin_left = 57.84
 margin_top = -0.200001
 margin_right = 58.208
-custom_fonts/font = SubResource( 26 )
+custom_fonts/font = SubResource( 24 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = " Money"
 align = 1
@@ -820,7 +817,7 @@ margin_left = 140.256
 margin_top = 2.2
 margin_right = 140.32
 margin_bottom = 4.2
-custom_fonts/font = SubResource( 27 )
+custom_fonts/font = SubResource( 25 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Locales:"
 __meta__ = {
@@ -830,7 +827,8 @@ __meta__ = {
 [node name="coin" type="AnimatedSprite" parent="GUI"]
 position = Vector2( 160, 23 )
 scale = Vector2( 0.375, 0.375 )
-frames = SubResource( 28 )
+frames = SubResource( 26 )
+frame = 3
 playing = true
 
 [node name="ShaderTransitionout" parent="GUI" instance=ExtResource( 24 )]
@@ -840,7 +838,7 @@ margin_left = 160.029
 margin_top = 41.9599
 margin_right = 230.029
 margin_bottom = 72.9599
-custom_fonts/font = SubResource( 29 )
+custom_fonts/font = SubResource( 27 )
 custom_colors/font_color = Color( 0.00392157, 1, 0.101961, 1 )
 text = "+$money"
 __meta__ = {
@@ -852,7 +850,7 @@ margin_left = 160.0
 margin_top = 49.0
 margin_right = 246.0
 margin_bottom = 74.0
-custom_fonts/font = SubResource( 30 )
+custom_fonts/font = SubResource( 28 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "-$money"
 __meta__ = {
@@ -864,7 +862,7 @@ margin_left = 576.0
 margin_top = 14.0886
 margin_right = 772.0
 margin_bottom = 49.0886
-custom_fonts/font = SubResource( 31 )
+custom_fonts/font = SubResource( 29 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Proxima ganancia en: "
 __meta__ = {
@@ -883,7 +881,7 @@ margin_top = 56.0
 margin_right = 2788.0
 margin_bottom = 952.0
 rect_scale = Vector2( 0.349923, 0.550106 )
-custom_fonts/font = SubResource( 24 )
+custom_fonts/font = SubResource( 30 )
 text = "FUISTE ATROPELLADO
 
 SERAS ENVIADO AL HOSPITAL"
