@@ -1,0 +1,122 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assets/work.png" type="Texture" id=1]
+[ext_resource path="res://assets/fonts/Schrödinger.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Work_Game.gd" type="Script" id=3]
+[ext_resource path="res://assets/instructions/Keyboard keys (transparent).png" type="Texture" id=4]
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( -0.315582, 66.911, 33.1851, 30.6676 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( -0.669434, 64.4171, 33.4409, 33.4409 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 37
+outline_size = 1
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+outline_size = 1
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
+outline_size = 1
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 40
+outline_size = 2
+font_data = ExtResource( 2 )
+
+[node name="Work_Game" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1022.0
+margin_bottom = 650.0
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="P" type="Sprite" parent="."]
+position = Vector2( 716.102, 373.027 )
+scale = Vector2( 2.00845, 1.78659 )
+texture = SubResource( 6 )
+
+[node name="Y" type="Sprite" parent="."]
+position = Vector2( 831.818, 292.834 )
+scale = Vector2( 2.14553, 1.65266 )
+texture = SubResource( 5 )
+
+[node name="WorkLabel" type="Label" parent="."]
+margin_left = -149.19
+margin_top = 192.521
+margin_right = 1012.81
+margin_bottom = 392.521
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "                      BIENVENIDO A TU TRABAJO
+
+           AQUI PODRAS GANAR PLATA PRESIONANDO  Y
+		
+                   PARA SALIR PRESIONA LA   P"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ContinueWorking" type="MenuButton" parent="."]
+visible = false
+margin_left = 69.8535
+margin_top = 263.65
+margin_right = 469.853
+margin_bottom = 324.65
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "SEGUIR TRABAJANDO"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExitWorking" type="MenuButton" parent="."]
+visible = false
+margin_left = 571.108
+margin_top = 265.71
+margin_right = 959.108
+margin_bottom = 323.71
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+text = "SALIR DEL TRABAJO"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Earnings" type="Label" parent="."]
+margin_left = 232.699
+margin_top = 453.03
+margin_right = 679.699
+margin_bottom = 506.03
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "GANANCIAS ACTUALES : $0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="ContinueWorking" to="." method="_on_ContinueWorking_pressed"]
+[connection signal="pressed" from="ExitWorking" to="." method="_on_ExitWorking_pressed"]

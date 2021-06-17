@@ -52,12 +52,6 @@ func get_input():
 	if (Input.is_action_just_pressed("pause")):
 		GameServer.is_paused = true
 		get_tree().change_scene("res://Instructions.tscn")
-	if (Input.is_action_just_pressed("work_hard")):
-		print("se trabaja")
-		self.money += workMoney
-		Player.last_earning = workMoney
-		actualizeMoney(self.money)
-		print("ganaste 20 pesos")
 	Player.velocity = velocity
 	Player.money = money
 		
