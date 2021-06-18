@@ -1155,7 +1155,6 @@ __meta__ = {
 position = Vector2( 160, 23 )
 scale = Vector2( 0.375, 0.375 )
 frames = SubResource( 34 )
-frame = 3
 playing = true
 
 [node name="ShaderTransitionout" parent="GUI" instance=ExtResource( 24 )]

@@ -11,6 +11,7 @@ export (int) var zoomOutLimit = 1
 export (int) var money = 500
 export (String) var player_name = "player 1"
 var shops = []
+var playingsfx = false
 
 func _ready():
 	Player.connect("coin_picked", self, "obtainCoin")
@@ -32,13 +33,8 @@ func initialize():
 	
 func get_input():
 	velocity = Vector2()
-	if Input.is_action_just_pressed('move_right'):
-		walkAudio.playing= true
-	if Input.is_action_just_pressed("move_left") :
-		walkAudio.playing= true
-	if Input.is_action_just_pressed("move_down") :
-		walkAudio.playing= true
-	if Input.is_action_just_pressed("move_up") :
+	if animation.animation != "idle" && !playingsfx:
+		playingsfx = true
 		walkAudio.playing= true
 	if Input.is_action_pressed('move_right'):
 		animation.animation = "right"
@@ -54,6 +50,7 @@ func get_input():
 		velocity.y -= 0.5
 	if Input.is_action_just_released("move_down") || Input.is_action_just_released("move_right") || Input.is_action_just_released("move_left") || Input.is_action_just_released("move_up"): 
 		animation.animation = "idle"
+		playingsfx = false
 	if animation.animation == "idle":
 		walkAudio.playing= false
 	velocity = velocity.normalized() * speed

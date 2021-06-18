@@ -108,7 +108,7 @@ script = ExtResource( 4 )
 position = Vector2( -20.9954, 145.309 )
 scale = Vector2( 2.81221, 3.08182 )
 animation = "right"
-frame = 2
+frame = 1
 
 [node name="CollisionShape2D" parent="Player" index="1"]
 position = Vector2( -19.307, 150.079 )
