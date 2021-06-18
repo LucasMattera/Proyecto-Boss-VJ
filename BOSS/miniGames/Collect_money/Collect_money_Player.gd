@@ -23,7 +23,7 @@ func _physics_process(delta):
 		cart.position.x =  - 93
 		position.x -= 3 * velocity
 	if Input.is_action_pressed("run"):
-		velocity = 2
+		velocity = 1.5
 	if Input.is_action_just_released("run"):
 		velocity = 1
 	if Input.is_action_just_pressed("pause"):

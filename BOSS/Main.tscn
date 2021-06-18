@@ -272,7 +272,7 @@ atlas = ExtResource( 4 )
 region = Rect2( 220.611, 322.942, 16.7246, 16.2513 )
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 184, 74.422 )
+extents = Vector2( 224, 74.422 )
 
 [sub_resource type="DynamicFont" id=7]
 size = 156
@@ -292,7 +292,7 @@ atlas = ExtResource( 35 )
 region = Rect2( 473.621, 346.569, 272.49, 246.715 )
 
 [sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 69.27, 103.323 )
+extents = Vector2( 145.813, 103.323 )
 
 [sub_resource type="AtlasTexture" id=12]
 flags = 4
@@ -511,14 +511,14 @@ texture = SubResource( 5 )
 position = Vector2( 576, -56 )
 script = ExtResource( 9 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mini_games_areas/Arcanoid/arcanoid"]
-position = Vector2( -624, -160 )
-shape = SubResource( 6 )
-
 [node name="Sprite" type="Sprite" parent="Mini_games_areas/Arcanoid/arcanoid"]
 position = Vector2( -609.86, -369.316 )
 scale = Vector2( 14.7318, 8.79318 )
 texture = ExtResource( 34 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mini_games_areas/Arcanoid/arcanoid"]
+position = Vector2( -624, -160 )
+shape = SubResource( 6 )
 
 [node name="Exit" type="Position2D" parent="Mini_games_areas/Arcanoid/arcanoid"]
 position = Vector2( -704.499, 58.4711 )
@@ -1155,6 +1155,7 @@ __meta__ = {
 position = Vector2( 160, 23 )
 scale = Vector2( 0.375, 0.375 )
 frames = SubResource( 34 )
+frame = 3
 playing = true
 
 [node name="ShaderTransitionout" parent="GUI" instance=ExtResource( 24 )]

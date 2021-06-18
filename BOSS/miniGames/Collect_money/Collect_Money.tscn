@@ -36,7 +36,7 @@ outline_color = Color( 0.996078, 0.996078, 0.996078, 1 )
 font_data = ExtResource( 8 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 65.1521, 59.7029 )
+extents = Vector2( 27.5862, 30.079 )
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 32, 320 )
@@ -108,6 +108,7 @@ script = ExtResource( 4 )
 position = Vector2( -20.9954, 145.309 )
 scale = Vector2( 2.81221, 3.08182 )
 animation = "right"
+frame = 2
 
 [node name="CollisionShape2D" parent="Player" index="1"]
 position = Vector2( -19.307, 150.079 )
@@ -129,7 +130,7 @@ position = Vector2( 78.0103, -394.656 )
 scale = Vector2( 2.82787, 3.2888 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/cart/Area2D"]
-position = Vector2( -53.6488, 102.079 )
+position = Vector2( -27.5862, 112 )
 shape = SubResource( 5 )
 
 [node name="coinIn" type="AudioStreamPlayer2D" parent="Player"]

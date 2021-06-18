@@ -7,13 +7,11 @@ func _physics_process(delta):
 
 func initialize():
 	var visible_rect:Rect2 = get_viewport().get_visible_rect()
-	for i in 60 :
+	while ! get_parent().pause_mode :
 		randomize()
 		var rng = RandomNumberGenerator.new()
 		rng.randomize()
 		var pos = rng.randi_range(0, 1024)
-		print("creo la moneda nro:")
-		print(i)
 		var money_instance = load("res://miniGames/Collect_money/Money.tscn").instance()
 		money_instance.initialize(pos)
 		self.get_parent().add_child(money_instance)

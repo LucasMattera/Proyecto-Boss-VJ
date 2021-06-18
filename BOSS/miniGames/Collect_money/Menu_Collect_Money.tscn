@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://miniGames/Collect_money/assets_collect_money/descarga.jpg" type="Texture" id=1]
 [ext_resource path="res://miniGames/Collect_money/assets_collect_money/lata.png" type="Texture" id=2]
@@ -63,6 +63,11 @@ flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 64, 30, 34, 30 )
 
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( -7.51801, 66, 43, 36 )
+
 [node name="Menu_Collect_Money" type="Node2D"]
 script = ExtResource( 8 )
 
@@ -83,28 +88,24 @@ __meta__ = {
 position = Vector2( 328, 200 )
 scale = Vector2( 0.6, 0.6 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="coins"]
 position = Vector2( 480, 200 )
 scale = Vector2( 0.7, 0.7 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="coins"]
 position = Vector2( 624, 200 )
 scale = Vector2( 0.8, 0.8 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="coins"]
 position = Vector2( 744, 200 )
 scale = Vector2( 0.9, 0.9 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
 
 [node name="Label" type="Label" parent="."]
@@ -161,7 +162,7 @@ INSTRUCIONES:
 - MUEVE EL PERSONAJE HACIA LA IZQUIERDA O DERECHA Y RECOLECTA LAS LATAS
  DE CERVEZAS QUE VAN CAYENDO. SERAS RECOMPENSADO POR CADA LATA QUE SALVES 
 CON EL CARRITO
-- ADVERTENCIA: ALGUNAS LATAS  PUEDEN HACERTE PERDER DINERO"
+- ADVERTENCIA: NO DEJES CAER LAS LATAS AL SUELO, TE CORSTARA DINERO"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -182,7 +183,13 @@ IZQUIERDA :
 
 
 
-DERECHA :"
+DERECHA :
+
+
+
+
+SALIR :
+"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -206,5 +213,21 @@ texture = SubResource( 9 )
 [node name="Rigth_2" type="Sprite" parent="."]
 position = Vector2( 88, 424 )
 texture = SubResource( 10 )
+
+[node name="Exit" type="Sprite" parent="."]
+position = Vector2( 32, 536 )
+texture = SubResource( 11 )
+
+[node name="Label" type="Label" parent="Exit"]
+margin_left = -16.0
+margin_top = -16.0
+margin_right = 24.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "p"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="ExitButton" to="." method="_on_ExitButton_pressed"]
 [connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]

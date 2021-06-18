@@ -19,7 +19,7 @@ func recollect_money_player():
 		
 func _physics_process(delta):
 	var timer = Timer.new()
-	timer.set_wait_time(1)
+	timer.set_wait_time(2)
 	timer.set_one_shot(false)
 	timer.connect("timeout", earning_money, "hide")
 	timer.connect("timeout", lose_money, "hide")
