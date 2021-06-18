@@ -1,0 +1,367 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://assets/fonts/Schrödinger.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://scenes/menu/newGame/Confirm.gd" type="Script" id=2]
+[ext_resource path="res://scenes/menu/newGame/NewPlayer.gd" type="Script" id=3]
+[ext_resource path="res://assets/audio/music/shop/Shop Theme - Ocarina of Time (8-BIT).ogg" type="AudioStream" id=4]
+[ext_resource path="res://assets/textures/tumblr_inline_nxf5c2kKsl1svqi9b_540.png" type="Texture" id=5]
+[ext_resource path="res://assets/fonts/HabanoST.otf" type="DynamicFontData" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 1 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 5 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 5 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ SubResource( 16 ), SubResource( 17 ), SubResource( 16 ), SubResource( 18 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=4]
+size = 43
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 64
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 64
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="DynamicFont" id=9]
+size = 50
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 58
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=19]
+size = 128
+font_data = ExtResource( 6 )
+
+[node name="NewPlayer" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Background" type="ColorRect" parent="UI"]
+anchor_left = -0.000874418
+anchor_right = 0.999126
+anchor_bottom = 1.0
+color = Color( 0.0666667, 0.054902, 0.219608, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="UI/Background"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -231.5
+margin_top = 30.0
+margin_right = 231.5
+margin_bottom = 95.0
+custom_fonts/font = SubResource( 1 )
+text = "NUEVA PARTIDA"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="UI/Background"]
+position = Vector2( 500, 200 )
+scale = Vector2( 3, 3 )
+frames = SubResource( 3 )
+animation = "idle"
+frame = 2
+playing = true
+
+[node name="Description" type="Label" parent="UI/Background"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -443.811
+margin_top = -200.0
+margin_right = 446.189
+margin_bottom = -135.0
+custom_fonts/font = SubResource( 4 )
+text = "Escriba un nombre para su personaje."
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnterName" type="Button" parent="UI/Background"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -359.0
+margin_top = -100.0
+margin_right = -81.0005
+margin_bottom = -29.0
+custom_fonts/font = SubResource( 5 )
+text = "Aceptar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GoBack" type="Button" parent="UI/Background"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 100.0
+margin_top = -100.0
+margin_right = 391.0
+margin_bottom = -29.0
+custom_fonts/font = SubResource( 6 )
+text = "Volver"
+
+[node name="PanelInput" type="PanelContainer" parent="UI/Background"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -260.0
+margin_right = 260.0
+margin_bottom = 80.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Input" type="LineEdit" parent="UI/Background/PanelInput"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 513.0
+margin_bottom = 73.0
+custom_styles/normal = SubResource( 7 )
+custom_fonts/font = SubResource( 9 )
+max_length = 16
+
+[node name="Confirm" type="Popup" parent="UI"]
+pause_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -322.5
+margin_top = -187.0
+margin_right = 322.5
+margin_bottom = 187.0
+popup_exclusive = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Marco" type="ColorRect" parent="UI/Confirm"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="UI/Confirm/Marco"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 30.0
+margin_top = 30.0
+margin_right = -30.0
+margin_bottom = -30.0
+color = Color( 0.0509804, 0.215686, 0.00784314, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="UI/Confirm/Marco/Background"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -262.5
+margin_top = 30.0
+margin_right = 262.5
+margin_bottom = 95.0
+custom_fonts/font = SubResource( 11 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "CONFIRMAR NOMBRE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterName" type="Label" parent="UI/Confirm/Marco/Background"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -144.5
+margin_top = 122.0
+margin_right = 151.5
+margin_bottom = 191.0
+custom_fonts/font = SubResource( 13 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ConfirmCharacterButton" type="Button" parent="UI/Confirm/Marco/Background"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 103.696
+margin_top = 73.0
+margin_right = 248.696
+margin_bottom = 112.0
+custom_fonts/font = SubResource( 15 )
+text = "Aceptar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CancelCharacter" type="Button" parent="UI/Confirm/Marco/Background"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -243.647
+margin_top = 73.4757
+margin_right = -98.6471
+margin_bottom = 112.476
+custom_fonts/font = SubResource( 15 )
+text = "Cancelar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Error" type="Popup" parent="UI"]
+pause_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -322.5
+margin_top = -187.0
+margin_right = 322.5
+margin_bottom = 187.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Marco" type="ColorRect" parent="UI/Error"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="UI/Error/Marco"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 30.0
+margin_top = 30.0
+margin_right = -30.0
+margin_bottom = -30.0
+color = Color( 0.47451, 0.164706, 0.164706, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="UI/Error/Marco/Background"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -262.5
+margin_top = 30.0
+margin_right = 279.5
+margin_bottom = 95.0
+custom_fonts/font = SubResource( 11 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "NOMBRE YA EN USO"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterName" type="Label" parent="UI/Error/Marco/Background"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -288.889
+margin_top = 147.48
+margin_right = 279.111
+margin_bottom = 190.48
+custom_fonts/font = SubResource( 13 )
+text = "Intente con otro nombre."
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ok" type="Button" parent="UI/Error/Marco/Background"]
+margin_left = 220.607
+margin_top = 220.0
+margin_right = 365.607
+margin_bottom = 259.0
+custom_fonts/font = SubResource( 15 )
+text = "Aceptar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NowLoading" type="ColorRect" parent="UI"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0196078, 0, 0.12549, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="UI/NowLoading"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -242.5
+margin_top = -81.5
+margin_right = 242.5
+margin_bottom = 81.5
+custom_fonts/font = SubResource( 19 )
+text = "Cargando..."
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -15.0
+autoplay = true
+
+[node name="NewPlayerTimer" type="Timer" parent="."]
+one_shot = true
+[connection signal="confirm" from="." to="UI/Confirm" method="_on_NewPlayer_confirm"]
+[connection signal="pressed" from="UI/Background/EnterName" to="." method="_on_EnterName_pressed"]
+[connection signal="pressed" from="UI/Background/GoBack" to="." method="_on_Cancel_pressed"]
+[connection signal="pressed" from="UI/Confirm/Marco/Background/ConfirmCharacterButton" to="." method="_on_ConfirmCharacterButton_pressed"]
+[connection signal="pressed" from="UI/Confirm/Marco/Background/CancelCharacter" to="." method="_on_CancelCharacter_pressed"]
+[connection signal="timeout" from="NewPlayerTimer" to="." method="_on_NewPlayerTimer_timeout"]

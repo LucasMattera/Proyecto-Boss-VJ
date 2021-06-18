@@ -9,7 +9,7 @@ var can_move = true
 export (int) var zoomInLimit = 9
 export (int) var zoomOutLimit = 1
 export (int) var money = 500
-export (String) var player_name = "player 1"
+export (String) var player_name
 var shops = []
 
 func _ready():
@@ -25,7 +25,7 @@ func obtainCoin(value):
 func initialize():
 	shops = Player.shops
 	money = Player.money
-	Player.player_name = player_name 
+	player_name = Player.player_name
 	position.x = Player.position.x
 	position.y = Player.position.y
 	animation.animation = "idle"

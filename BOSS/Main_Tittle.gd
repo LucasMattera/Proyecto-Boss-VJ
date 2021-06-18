@@ -31,7 +31,7 @@ func _on_MusicTimer_timeout():
 	music.play()
 
 func _on_ChangeToNewGameTimer_timeout():
-	get_tree().change_scene("res://Main.tscn")
+	get_tree().change_scene("res://scenes/menu/newGame/NewPlayer.tscn")
 
 func _on_ChangeToLoadGameTimer_timeout():
 	var dataLoad = GameServer.load_game()
