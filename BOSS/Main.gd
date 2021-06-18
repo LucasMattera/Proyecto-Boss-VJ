@@ -3,7 +3,8 @@ extends Node
 onready var player = $Player
 onready var shops = $Shops
 onready var GUI = $GUI
-onready var atropellado = $Label
+onready var atropellado = $GUI/Label
+onready var hospital_shader = $GUI/ShaderHospital
 onready var car_spawner_h = $Car_Spawner_H
 onready var car_spawner_v = $Car_Spawner_V
 onready var music = $BGM
@@ -30,6 +31,7 @@ func _ready():
 func atropellado():
 	player.hide()
 	player.can_move = false
+	hospital_shader.show()
 	atropellado.show()
 	player.position.x = 3500
 	player.position.y = -1250
@@ -44,6 +46,7 @@ func atropellado():
 	yield(t, "timeout")
 	player.show()
 	player.get_parent().atropellado.hide()
+	hospital_shader.hide()
 	player.can_move = true
 
 func _on_Area2D_body_entered(body):

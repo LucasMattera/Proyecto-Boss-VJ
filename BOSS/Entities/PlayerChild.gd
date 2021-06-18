@@ -32,16 +32,16 @@ func get_input():
 		walkAudio.playing= true
 	if Input.is_action_pressed('move_right'):
 		animation.animation = "right"
-		velocity.x += 1
+		velocity.x += 0.5
 	if Input.is_action_pressed('move_left'):
 		animation.animation = "left"
-		velocity.x -= 1
+		velocity.x -= 0.5
 	if Input.is_action_pressed('move_down'):
 		animation.animation = "down"
-		velocity.y += 1
+		velocity.y += 0.5
 	if Input.is_action_pressed('move_up'):
 		animation.animation = "up"
-		velocity.y -= 1
+		velocity.y -= 0.5
 	if Input.is_action_just_released("move_down") || Input.is_action_just_released("move_right") || Input.is_action_just_released("move_left") || Input.is_action_just_released("move_up"): 
 		animation.animation = "idle"
 	if animation.animation == "idle":
@@ -52,12 +52,6 @@ func get_input():
 	if (Input.is_action_just_pressed("pause")):
 		GameServer.is_paused = true
 		get_tree().change_scene("res://Instructions.tscn")
-	if (Input.is_action_just_pressed("work_hard")):
-		print("se trabaja")
-		self.money += workMoney
-		Player.last_earning = workMoney
-		actualizeMoney(self.money)
-		print("ganaste 20 pesos")
 	Player.velocity = velocity
 	Player.money = money
 		

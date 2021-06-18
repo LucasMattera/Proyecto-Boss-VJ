@@ -12,7 +12,7 @@ func _ready():
 func get_value():
 	var rngv = RandomNumberGenerator.new()
 	rngv.randomize()
-	var value = rngv.randi_range(-1000, 1000)
+	var value = rngv.randi_range(-400, 400)
 	return value
 	
 func initialize(pos):

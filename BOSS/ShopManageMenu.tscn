@@ -162,10 +162,14 @@ __meta__ = {
 
 [node name="Confirm" type="Popup" parent="GUI"]
 pause_mode = 2
-margin_left = 272.0
-margin_top = 188.0
-margin_right = 818.0
-margin_bottom = 498.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -273.0
+margin_top = -175.0
+margin_right = 273.0
+margin_bottom = 175.0
 popup_exclusive = true
 script = ExtResource( 4 )
 __meta__ = {
@@ -195,6 +199,8 @@ margin_right = 500.0
 margin_bottom = 186.0
 custom_fonts/font = SubResource( 7 )
 text = "CONFIRMAR COMPRA
+
+Costo: $asdfa
 Dinero actual: $xxxx
 Requerido: -$xxxx
 Restante: $xxxx"
@@ -205,9 +211,9 @@ __meta__ = {
 
 [node name="YesButton" type="Button" parent="GUI/Confirm/ColorRect/ColorRect"]
 margin_left = 38.0
-margin_top = 186.0
+margin_top = 250.0
 margin_right = 246.0
-margin_bottom = 239.0
+margin_bottom = 303.0
 custom_fonts/font = SubResource( 8 )
 text = "Aceptar"
 __meta__ = {
@@ -216,9 +222,9 @@ __meta__ = {
 
 [node name="NoButton" type="Button" parent="GUI/Confirm/ColorRect/ColorRect"]
 margin_left = 294.0
-margin_top = 186.0
+margin_top = 250.0
 margin_right = 502.0
-margin_bottom = 239.0
+margin_bottom = 303.0
 custom_fonts/font = SubResource( 8 )
 text = "Cancelar"
 __meta__ = {
@@ -289,6 +295,7 @@ __meta__ = {
 }
 
 [node name="CannotBuy" parent="GUI" instance=ExtResource( 11 )]
+visible = false
 
 [node name="CannotBuyLabel" parent="GUI/CannotBuy/ColorRect/ColorRect" index="1"]
 text = "NO PUEDES REALIZAR
@@ -303,12 +310,13 @@ visible = false
 stream = ExtResource( 7 )
 volume_db = -10.0
 autoplay = true
-[connection signal="confirmHire" from="." to="GUI/Confirm" method="_on_ShopMenuManage_confirmHire"]
-[connection signal="confirmUpgrade" from="." to="GUI/Confirm" method="_on_ShopMenuManage_confirmUpgrade"]
+[connection signal="confirm_hire" from="." to="GUI/Confirm" method="_on_ShopMenuManage_confirm_hire"]
+[connection signal="confirm_upgrade" from="." to="GUI/Confirm" method="_on_ShopMenuManage_confirm_upgrade"]
 [connection signal="pressed" from="GUI/ExitRect/ExitButton" to="." method="_on_ExitButton_pressed"]
 [connection signal="pressed" from="GUI/UpgradeRect/Upgrade" to="." method="_on_Upgrade_pressed"]
 [connection signal="pressed" from="GUI/HireRect/Hire" to="." method="_on_Hire_pressed"]
 [connection signal="done" from="GUI/Confirm" to="GUI/Done" method="_on_Confirm_done"]
+[connection signal="not_enough_cash" from="GUI/Confirm" to="GUI/CannotBuy" method="_on_Confirm_not_enough_cash"]
 [connection signal="pressed" from="GUI/Confirm/ColorRect/ColorRect/YesButton" to="GUI/Confirm" method="_on_YesButton_pressed"]
 [connection signal="pressed" from="GUI/Confirm/ColorRect/ColorRect/NoButton" to="GUI/Confirm" method="_on_NoButton_pressed"]
 [connection signal="pressed" from="GUI/Done/ColorRect/ColorRect/DoneButton" to="GUI/Done" method="_on_DoneButton_pressed"]

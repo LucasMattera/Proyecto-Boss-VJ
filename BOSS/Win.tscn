@@ -61,7 +61,7 @@ margin_top = 321.386
 margin_right = 705.617
 margin_bottom = 395.386
 custom_fonts/font = SubResource( 2 )
-text = "¿QUE QUERES HACER?"
+text = "QUE QUERES HACER?"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -93,5 +93,6 @@ __meta__ = {
 }
 
 [node name="ShaderTransitionout" parent="TextureRect" instance=ExtResource( 4 )]
+visible = false
 [connection signal="pressed" from="TextureRect/ContinuePlaying" to="." method="_on_ContinuePlaying_pressed"]
 [connection signal="pressed" from="TextureRect/NewGame" to="." method="_on_NewGame_pressed"]

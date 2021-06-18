@@ -9,8 +9,12 @@ func _on_ShopMenuBuy_not_enough_cash():
 
 func _on_CannotBuyButton_pressed():
 	set_process_input(false)
-	show()
+	hide()
 
+func _on_ShopMenuManage_not_enough_cash():
+	set_process_input(true)
+	popup()
 
-func _on_ShopMenuBuy_purchased():
-	pass # Replace with function body.
+func _on_Confirm_not_enough_cash():
+	set_process_input(true)
+	popup()

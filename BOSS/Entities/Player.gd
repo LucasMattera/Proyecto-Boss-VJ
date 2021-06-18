@@ -5,7 +5,7 @@ var velocity:Vector2 = Vector2.ZERO
 var can_move = true
 export (int) var zoomInLimit = 9
 export (int) var zoomOutLimit = 1
-export (int) var money = 500
+export (int) var money = 1500
 export (int) var last_earning = 0
 export (String) var player_name = "Player"
 var shops = []
@@ -27,7 +27,7 @@ func buy(shop):
 			get_tree().change_scene("res://Win.tscn")
 	else: 
 		print("no compraste")
-		
+
 func find_shop(shop_name):
 	var shop_to_return
 	print("shops :", shops)
@@ -42,22 +42,27 @@ func get_earnings_from(shop_name):
 		
 func add_employee(shop_name):
 	var shop_to_add = find_shop(shop_name)
-	print("shop name :" , shop_name)
-	shop_to_add.earnings = ShopState.earningWithNewEmployee(shop_to_add.earnings)
-	shop_to_add.add_employee_value = ShopState.earningWithNewEmployee(shop_to_add.earnings) * 2
+	var find = shops.find(shop_to_add)
+	if find > -1:
+		shops[find].earnings = ShopState.earnings
+		shops[find].add_employee_value = ShopState.add_employee_value
 
 func upgrade_shop(shop_name):
 	var shop_to_add = find_shop(shop_name)
-	print("shop name :" , shop_name)
-	shop_to_add.earnings = ShopState.earningWithNewUpgrade(shop_to_add.earnings)
-	shop_to_add.upgrade_value = ShopState.earningWithNewUpgrade(shop_to_add.earnings) * 2
-
+	var find = shops.find(shop_to_add)
+	if find > -1:
+		shops[find].earnings = ShopState.earnings
+		shops[find].upgrade_value = ShopState.upgrade_value
+		
 func has_shop(shop_name):
 	var has_shop = false
 	for shop in Player.shops:
 		if shop.shop_name == shop_name:
 			has_shop = true
 	return has_shop
+
+func discount_money(amount: int):
+	money -= amount
 
 func obtain_money(amount: int, reason: String):
 	print("Jugador obtuvo: $", amount, " en ", reason)
