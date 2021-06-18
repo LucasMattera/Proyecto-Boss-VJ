@@ -8,7 +8,7 @@ onready var hospital_shader = $GUI/ShaderHospital
 onready var car_spawner_h = $Car_Spawner_H
 onready var car_spawner_v = $Car_Spawner_V
 onready var save = $GUI/Save
-onready var music = $BGM
+onready var music = $AudioStreamPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -29,6 +29,7 @@ func _ready():
 	#GameServer.save_game()
 	#var loaded_player = GameServer.load_game()
 
+# warning-ignore:function_conflicts_variable
 func atropellado():
 	player.hide()
 	player.can_move = false
@@ -64,10 +65,20 @@ func hide_save():
 	save.hide()	
 
 func _on_Area2D_body_entered(body):
+	_on_HouseArea2D_body_entered(body)
+	music.stop()
+
+func _on_HouseArea2D_body_entered(body):
 	if body.is_in_group("player"):
 		GameServer.save_game()
 		show_save()
 		print("Game Saved")
 
-func _on_MusicTimer_timeout():
+func _on_InitTimer_timeout():
 	music.play()
+
+
+func _on_FinishTimer_timeout():
+	pass # Replace with function body.
+
+

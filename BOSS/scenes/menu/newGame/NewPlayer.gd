@@ -44,3 +44,7 @@ func _on_NewPlayerTimer_timeout():
 
 func _on_CancelCharacter_pressed():
 	confirmPopup.hide()
+
+
+func _on_InitTimer_timeout():
+	music.play()

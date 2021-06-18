@@ -27,8 +27,16 @@ func player_have_enough_cash() -> bool:
 	return (ShopState.value <= Player.money)
 
 func _on_ExitButton_pressed():
-	get_tree().change_scene("res://Main.tscn")
+	$BGM.stop()
+	$GUI/NowLoading.show()
+	$FinishTimer.start()
 
 func _on_Confirm_purchased():
 	Player.buy(ShopState)
 	emit_signal("purchased")
+
+func _on_InitTimer_timeout():
+	$BGM.play()
+
+func _on_FinishTimer_timeout():
+	get_tree().change_scene("res://Main.tscn")

@@ -3,7 +3,7 @@
 [ext_resource path="res://assets/fonts/Schrödinger.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scenes/menu/newGame/Confirm.gd" type="Script" id=2]
 [ext_resource path="res://scenes/menu/newGame/NewPlayer.gd" type="Script" id=3]
-[ext_resource path="res://assets/audio/music/shop/Shop Theme - Ocarina of Time (8-BIT).ogg" type="AudioStream" id=4]
+[ext_resource path="res://assets/audio/music/main_menu/Buy-Something_.ogg" type="AudioStream" id=4]
 [ext_resource path="res://assets/textures/tumblr_inline_nxf5c2kKsl1svqi9b_540.png" type="Texture" id=5]
 [ext_resource path="res://assets/fonts/HabanoST.otf" type="DynamicFontData" id=6]
 
@@ -353,14 +353,17 @@ text = "Cargando..."
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-volume_db = -15.0
-autoplay = true
 
 [node name="NewPlayerTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="InitTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
 [connection signal="confirm" from="." to="UI/Confirm" method="_on_NewPlayer_confirm"]
 [connection signal="pressed" from="UI/Background/EnterName" to="." method="_on_EnterName_pressed"]
 [connection signal="pressed" from="UI/Background/GoBack" to="." method="_on_Cancel_pressed"]
 [connection signal="pressed" from="UI/Confirm/Marco/Background/ConfirmCharacterButton" to="." method="_on_ConfirmCharacterButton_pressed"]
 [connection signal="pressed" from="UI/Confirm/Marco/Background/CancelCharacter" to="." method="_on_CancelCharacter_pressed"]
 [connection signal="timeout" from="NewPlayerTimer" to="." method="_on_NewPlayerTimer_timeout"]
+[connection signal="timeout" from="InitTimer" to="." method="_on_InitTimer_timeout"]

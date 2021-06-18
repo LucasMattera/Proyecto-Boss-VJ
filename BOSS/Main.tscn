@@ -269,7 +269,6 @@ points = PoolVector2Array( 440, 72, 0, 72, 0, 0, 440, 0 )
 9/z_index = 0
 
 [sub_resource type="AtlasTexture" id=5]
-flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 220.611, 322.942, 16.7246, 16.2513 )
 
@@ -282,7 +281,6 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 13 )
 
 [sub_resource type="AtlasTexture" id=8]
-flags = 4
 atlas = ExtResource( 12 )
 region = Rect2( 5.52087, -4.96092, 134.153, 177.866 )
 
@@ -325,7 +323,6 @@ atlas = ExtResource( 31 )
 region = Rect2( 1522.52, 815.811, 548.834, 481.524 )
 
 [sub_resource type="AtlasTexture" id=18]
-flags = 4
 atlas = ExtResource( 11 )
 region = Rect2( 199.249, 245.712, 160.075, 154.874 )
 
@@ -1069,16 +1066,15 @@ texture = SubResource( 28 )
 position = Vector2( -77.9185, -65.1996 )
 polygon = PoolVector2Array( -4288.78, -1223.74, -4272, -1472, -4032, -1472, -4027.88, -1220.14, -3498.88, -1220.14, -3538.46, -1526.02, -3783.17, -1738.34, -3766.98, -1876.89, -4619.85, -1916.47, -4592.86, -1749.14, -4911.34, -1486.44, -4913.14, -1221.94 )
 
-[node name="Area2D" type="Area2D" parent="House"]
+[node name="HouseArea2D" type="Area2D" parent="House"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House/HouseArea2D"]
 position = Vector2( -4237.93, -1382.26 )
 shape = SubResource( 29 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 25 )
 volume_db = 10.0
-autoplay = true
 
 [node name="hospital" type="Node" parent="."]
 
@@ -1163,11 +1159,9 @@ __meta__ = {
 position = Vector2( 160, 23 )
 scale = Vector2( 0.375, 0.375 )
 frames = SubResource( 34 )
-frame = 1
 playing = true
 
 [node name="ShaderTransitionout" parent="GUI" instance=ExtResource( 24 )]
-visible = false
 margin_left = -1.21021
 margin_right = -1.21021
 
@@ -1245,11 +1239,20 @@ __meta__ = {
 }
 
 [node name="CoinSpawner" parent="." instance=ExtResource( 37 )]
+
+[node name="InitTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="FinishTimer" type="Timer" parent="."]
+one_shot = true
 [connection signal="body_entered" from="Mini_games_areas/Arcanoid/arcanoid" to="Mini_games_areas/Arcanoid/arcanoid" method="_on_arcanoid_body_entered"]
 [connection signal="body_entered" from="Mini_games_areas/dance/Area2D" to="Mini_games_areas/dance/Area2D" method="_on_DanceMinigame_body_entered"]
 [connection signal="body_entered" from="Mini_games_areas/Collect_Money/Area2D_Collect_Money" to="Mini_games_areas/Collect_Money/Area2D_Collect_Money" method="_on_Area2D_Collect_Money_body_entered"]
 [connection signal="body_entered" from="Mini_games_areas/WorkGame/Area2D" to="Mini_games_areas/WorkGame" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="House/Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="House/HouseArea2D" to="." method="_on_HouseArea2D_body_entered"]
+[connection signal="timeout" from="InitTimer" to="." method="_on_InitTimer_timeout"]
+[connection signal="timeout" from="FinishTimer" to="." method="_on_FinishTimer_timeout"]
 
 [editable path="Shops/FastFood"]
 
