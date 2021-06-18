@@ -1,0 +1,77 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://assets/textures/Streets/Coin/coin_2.png" type="Texture" id=1]
+[ext_resource path="res://assets/textures/Streets/Coin/coin_3.png" type="Texture" id=2]
+[ext_resource path="res://assets/textures/Streets/Coin/coin_1.png" type="Texture" id=3]
+[ext_resource path="res://assets/textures/Streets/Coin/coin_4.png" type="Texture" id=4]
+[ext_resource path="res://scenes/street/Coin/Coin.gd" type="Script" id=5]
+[ext_resource path="res://assets/fonts/Schrödinger.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://assets/audio/sfx/money/Coins_Few_00.wav" type="AudioStream" id=7]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 1 ), ExtResource( 2 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=3]
+resource_name = "valueUp"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Value:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -24, -8.5 ), Vector2( -24, -70 ) ]
+}
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 6 )
+
+[node name="Coin" type="Area2D"]
+scale = Vector2( 2, 2 )
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+animation = "idle"
+frame = 1
+playing = true
+
+[node name="ValueObtained" type="Node2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ValueObtained"]
+anims/valueUp = SubResource( 3 )
+
+[node name="Value" type="Label" parent="ValueObtained"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -24.0
+margin_top = -8.5
+margin_right = 24.0
+margin_bottom = 8.5
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.454902, 1, 0, 1 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+[connection signal="body_entered" from="." to="." method="_on_Coin_body_entered"]
+[connection signal="animation_finished" from="ValueObtained/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

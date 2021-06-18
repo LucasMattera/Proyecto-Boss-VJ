@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/street/Coin/PointSpawner/HCoinPointSpawner.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/street/Coin/PointSpawner/VCoinPointSpawner.tscn" type="PackedScene" id=2]
+
+[node name="CoinSpawner" type="Node2D"]
+
+[node name="HCoinSpawner" type="Node2D" parent="."]
+
+[node name="HCoinPointSpawner1" parent="HCoinSpawner" instance=ExtResource( 1 )]
+initialPosition = Vector2( 0, -980 )
+
+[node name="HCoinPointSpawner2" parent="HCoinSpawner" instance=ExtResource( 1 )]
+initialPosition = Vector2( 0, 128 )
+
+[node name="HCoinPointSpawner3" parent="HCoinSpawner" instance=ExtResource( 1 )]
+initialPosition = Vector2( 0, 1220 )
+
+[node name="HCoinPointSpawner4" parent="HCoinSpawner" instance=ExtResource( 1 )]
+initialPosition = Vector2( 0, 2340 )
+
+[node name="VCoinSpawner" type="Node2D" parent="."]
+
+[node name="VCoinPointSpawner1" parent="VCoinSpawner" instance=ExtResource( 2 )]
+initialPosition = Vector2( -3175, 0 )
+pointA = Vector2( 0, -1900 )
+pointB = Vector2( 0, 3500 )
+
+[node name="VCoinPointSpawner2" parent="VCoinSpawner" instance=ExtResource( 2 )]
+initialPosition = Vector2( -1090, 0 )
+pointA = Vector2( 0, -1900 )
+pointB = Vector2( 0, 3500 )
+
+[node name="VCoinPointSpawner3" parent="VCoinSpawner" instance=ExtResource( 2 )]
+initialPosition = Vector2( 975, 0 )
+pointA = Vector2( 0, -1900 )
+pointB = Vector2( 0, 3500 )
+
+[node name="VCoinPointSpawner4" parent="VCoinSpawner" instance=ExtResource( 2 )]
+initialPosition = Vector2( 2900, 0 )
+pointA = Vector2( 0, -1900 )
+pointB = Vector2( 0, 3500 )

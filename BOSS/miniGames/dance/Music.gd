@@ -17,6 +17,6 @@ func _on_DanceMinigame_game_over():
 	set_stream(loser)
 	play()
 
-func _on_DanceMinigame_win_game():
+func _on_DanceMinigame_win_game(_money):
 	set_stream(winner)
 	play()

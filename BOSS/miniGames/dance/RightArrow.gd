@@ -14,7 +14,7 @@ func _process(delta):
 
 func verify_if_is_correct(direction):
 	if direction == "right":
-		danceMinigame.obtain_points()
+		danceMinigame.successful_arrow()
 		_delete()
 	else:
 		danceMinigame.lose_life()

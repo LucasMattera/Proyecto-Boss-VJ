@@ -10,6 +10,7 @@ export (int) var last_earning = 0
 export (String) var player_name = "Player"
 var is_working = false
 var shops = []
+signal coin_picked
 
 func buy(shop):
 	var shop_to_add = {} 
@@ -64,3 +65,8 @@ func has_shop(shop_name):
 
 func discount_money(amount: int):
 	money -= amount
+
+func obtain_money(amount: int, reason: String):
+	print("Jugador obtuvo: $", amount, " en ", reason)
+	last_earning = amount
+	money += amount
