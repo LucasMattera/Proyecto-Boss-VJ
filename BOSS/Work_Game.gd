@@ -7,6 +7,7 @@ onready var work_label = $WorkLabel
 onready var earnings_label = $Earnings
 onready var p_key = $P
 onready var y_key = $Y
+onready var exit = $Exit
 
 var earnings
 
@@ -32,7 +33,7 @@ func get_input():
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("player"):
 		Player.can_move = false
-		Player.position.x = body.position.x -2
+		Player.global_position = exit.global_position
 		Player.is_working = true
 		GameServer.save_game()
 		get_tree().change_scene("res://Work_Game.tscn") # Replace with function body.
@@ -43,6 +44,7 @@ func _on_ExitWorking_pressed():
 	Player.money += earnings
 	Player.last_earning = earnings
 	get_tree().change_scene("res://Main.tscn")
+	
 
 func _on_ContinueWorking_pressed():
 	work_label.show()

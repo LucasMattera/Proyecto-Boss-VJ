@@ -522,6 +522,9 @@ position = Vector2( -609.86, -369.316 )
 scale = Vector2( 14.7318, 8.79318 )
 texture = ExtResource( 34 )
 
+[node name="Exit" type="Position2D" parent="Mini_games_areas/Arcanoid/arcanoid"]
+position = Vector2( -704.499, 58.4711 )
+
 [node name="StaticBody2D" type="StaticBody2D" parent="Mini_games_areas/Arcanoid"]
 position = Vector2( 440, -456 )
 
@@ -566,6 +569,9 @@ texture = SubResource( 9 )
 position = Vector2( 646.39, 366.852 )
 shape = SubResource( 10 )
 
+[node name="Exit" type="Position2D" parent="Mini_games_areas/dance/Area2D"]
+position = Vector2( 609.547, 611.505 )
+
 [node name="StaticBody2D" type="StaticBody2D" parent="Mini_games_areas/dance"]
 position = Vector2( -472, -272 )
 
@@ -589,6 +595,9 @@ texture = SubResource( 51 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mini_games_areas/Collect_Money/Area2D_Collect_Money"]
 position = Vector2( 573.647, 37.8712 )
 shape = SubResource( 12 )
+
+[node name="Exit" type="Position2D" parent="Mini_games_areas/Collect_Money/Area2D_Collect_Money"]
+position = Vector2( 480.426, 298.457 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Mini_games_areas/Collect_Money"]
 position = Vector2( -512, 152 )
@@ -619,6 +628,9 @@ position = Vector2( 1907.37, -1322.26 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mini_games_areas/WorkGame/Area2D"]
 position = Vector2( 71.4109, -34.5537 )
 shape = SubResource( 14 )
+
+[node name="Exit" type="Position2D" parent="Mini_games_areas/WorkGame"]
+position = Vector2( 1949.53, -1139.72 )
 
 [node name="Label" type="Label" parent="."]
 margin_left = 1806.67
@@ -652,7 +664,7 @@ position = Vector2( -187.582, 1477.21 )
 position = Vector2( 42.2065, 28.137 )
 
 [node name="Exit" parent="Shops/FastFood" index="3"]
-position = Vector2( -252.966, 1698.21 )
+position = Vector2( -225.522, 1710.41 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Shops/FastFood"]
 position = Vector2( -234.478, 1336.52 )
@@ -678,7 +690,7 @@ position = Vector2( -363.778, -8.45996 )
 position = Vector2( -245.339, -181.889 )
 
 [node name="Exit" parent="Shops/Cafe" index="3"]
-position = Vector2( -545.668, 0 )
+position = Vector2( -563.964, 3.04956 )
 
 [node name="RigidBody2D" type="StaticBody2D" parent="Shops/Cafe"]
 position = Vector2( -180.628, 106.516 )
@@ -708,7 +720,7 @@ position = Vector2( 260.464, 141.896 )
 position = Vector2( 388.999, 68.4402 )
 
 [node name="Exit" parent="Shops/IceCream" index="3"]
-position = Vector2( 274.071, -1.94312 )
+position = Vector2( 645.105, -19.1996 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Shops/IceCream"]
 position = Vector2( -145.351, 114.425 )
@@ -738,7 +750,7 @@ position = Vector2( 65.6328, 7.72144 )
 position = Vector2( -386.074, 193.036 )
 
 [node name="Exit" parent="Shops/Muebleria" index="3"]
-position = Vector2( -289.555, 54.0496 )
+position = Vector2( -306.813, 36.7922 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Shops/Muebleria"]
 position = Vector2( -15.4631, 34.0184 )
@@ -763,7 +775,7 @@ texture = ExtResource( 32 )
 position = Vector2( -2.68408, 571.777 )
 
 [node name="Exit" parent="Shops/Cinema" index="3"]
-position = Vector2( -13.4219, 700.629 )
+position = Vector2( -13.4219, 709.257 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Shops/Cinema"]
 position = Vector2( 859.008, 585.199 )
@@ -783,6 +795,9 @@ earnings = 700
 position = Vector2( 134.984, -230.779 )
 scale = Vector2( 9.0216, 4.22678 )
 texture = SubResource( 39 )
+
+[node name="Exit" parent="Shops/NightClub" index="3"]
+position = Vector2( -4.31445, 185.517 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Shops/NightClub"]
 position = Vector2( 14.8669, 69.3795 )
@@ -812,7 +827,7 @@ position = Vector2( 613.708, -149.891 )
 position = Vector2( 10.868, -39.8154 )
 
 [node name="Exit" parent="Shops/Electronic" index="3"]
-position = Vector2( 644.855, -13.5238 )
+position = Vector2( 649.17, 16.6766 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Shops/Electronic"]
 
@@ -837,7 +852,7 @@ position = Vector2( 5.57324, -5.5733 )
 position = Vector2( -70.5947, 128.186 )
 
 [node name="Exit" parent="Shops/Farmacy" index="3"]
-position = Vector2( -44.5864, 365.98 )
+position = Vector2( -48.9009, 344.408 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Shops/Farmacy"]
 
@@ -862,7 +877,7 @@ position = Vector2( -105.962, 564.178 )
 position = Vector2( -77.3237, 34.366 )
 
 [node name="Exit" parent="Shops/Meat" index="3"]
-position = Vector2( -143.192, 841.971 )
+position = Vector2( -82.7913, 854.914 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Shops/Meat"]
 
@@ -912,7 +927,7 @@ position = Vector2( 21.2729, -55.8423 )
 position = Vector2( 28.679, 195.771 )
 
 [node name="Exit" parent="Shops/Burger" index="3"]
-position = Vector2( 37.228, 380.259 )
+position = Vector2( -83.5737, 367.316 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Shops/Burger"]
 
@@ -934,7 +949,7 @@ texture = SubResource( 45 )
 position = Vector2( -259.609, 45.235 )
 
 [node name="Exit" parent="Shops/Beer" index="3"]
-position = Vector2( -11.8005, 267.476 )
+position = Vector2( -309.491, 284.734 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Shops/Beer"]
 
@@ -959,7 +974,7 @@ position = Vector2( -11.8413, 151.961 )
 position = Vector2( -199.708, 40.0588 )
 
 [node name="Exit" parent="Shops/Kids" index="3"]
-position = Vector2( -7.89429, 319.71 )
+position = Vector2( -305.584, 367.168 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Shops/Kids"]
 
@@ -981,7 +996,7 @@ texture = SubResource( 48 )
 position = Vector2( 34.7212, 126.483 )
 
 [node name="Exit" parent="Shops/Jewerly" index="3"]
-position = Vector2( 9.92041, 292.649 )
+position = Vector2( 14.2346, 309.906 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Shops/Jewerly"]
 
@@ -1000,11 +1015,16 @@ scale = Vector2( 2.30334, 1.55329 )
 texture = SubResource( 49 )
 
 [node name="CollisionShape2D" parent="Shops/Pizza/Area2D" index="0"]
-position = Vector2( -14.4998, 92.3899 )
+position = Vector2( -1.60571, 84.4863 )
+
+[node name="Exit" parent="Shops/Pizza" index="3"]
+position = Vector2( -3.79321, 377.833 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Shops/Pizza"]
+position = Vector2( 12.9434, -245.918 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shops/Pizza/StaticBody2D"]
+position = Vector2( 11.9856, 243.3 )
 polygon = PoolVector2Array( -661.555, 278.391, -134.935, 278.391, -133.197, -161.328, 77.1033, -166.542, 99.6975, 287.081, 532.464, 280.129, 515.084, 168.896, 412.541, 144.563, 419.493, -298.632, 287.404, -418.555, -350.45, -418.555, -466.897, -279.513, -461.683, 26.3782, -684.149, 43.7583, -675.459, 259.273 )
 
 [node name="Clothes" parent="Shops" instance=ExtResource( 6 )]
@@ -1014,16 +1034,21 @@ shop_name = "clothes"
 earnings = 5000
 
 [node name="Sprite" parent="Shops/Clothes" index="0"]
-position = Vector2( 36.1707, -59.7611 )
+position = Vector2( 36.1702, -80.2218 )
 scale = Vector2( 2.6455, 1.59951 )
 texture = SubResource( 50 )
 
 [node name="CollisionShape2D" parent="Shops/Clothes/Area2D" index="0"]
-position = Vector2( -125.709, 107.668 )
+position = Vector2( -195.859, 107.668 )
+
+[node name="Exit" parent="Shops/Clothes" index="3"]
+position = Vector2( -298.141, 374.137 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Shops/Clothes"]
+position = Vector2( -17.5376, -111.072 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shops/Clothes/StaticBody2D"]
+position = Vector2( 20.4604, 87.688 )
 polygon = PoolVector2Array( -521.478, 298.079, -402.741, 299.641, -394.929, -176.868, -146.519, -179.993, -143.395, 307.453, 623.708, 299.641, 490.91, 252.771, 497.159, 37.1704, 769.003, -9.69922, 731.507, -164.37, 526.843, -187.804, 575.275, -275.295, 369.048, -409.655, -315.25, -403.405, -496.48, -284.668, -476.17, -186.242, -438.674, -173.743, -433.987, 32.4834, -610.53, 41.8574, -608.968, 134.035 )
 
 [node name="House" type="Node" parent="."]
@@ -1132,6 +1157,7 @@ __meta__ = {
 position = Vector2( 160, 23 )
 scale = Vector2( 0.375, 0.375 )
 frames = SubResource( 26 )
+frame = 3
 playing = true
 
 [node name="ShaderTransitionout" parent="GUI" instance=ExtResource( 24 )]
