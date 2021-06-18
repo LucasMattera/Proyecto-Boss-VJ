@@ -1071,6 +1071,7 @@ shape = SubResource( 29 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 25 )
 volume_db = 10.0
+autoplay = true
 
 [node name="hospital" type="Node" parent="."]
 
@@ -1090,7 +1091,7 @@ shape = SubResource( 30 )
 "Persist",
 "player",
 ] instance=ExtResource( 2 )]
-position = Vector2( -4144, -1248 )
+position = Vector2( -4255.95, -1274.86 )
 player_name = "Player1"
 
 [node name="Car_Spawner_V" type="Node" parent="."]
@@ -1154,7 +1155,6 @@ __meta__ = {
 position = Vector2( 160, 23 )
 scale = Vector2( 0.375, 0.375 )
 frames = SubResource( 34 )
-frame = 2
 playing = true
 
 [node name="ShaderTransitionout" parent="GUI" instance=ExtResource( 24 )]

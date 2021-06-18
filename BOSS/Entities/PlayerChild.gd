@@ -13,7 +13,11 @@ export (String) var player_name = "player 1"
 var shops = []
 
 func _ready():
-	Player.connect("coin_picked", self, "actualizeMoney")
+	Player.connect("coin_picked", self, "obtainCoin")
+
+func obtainCoin(value):
+	money += value
+	actualizeMoney(value)
 
 #func _on_Player_coin_picked(amount):
 #	money += amount

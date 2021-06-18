@@ -18,7 +18,7 @@ func _on_Coin_body_entered(body):
 		#Player.obtain_money(value, "Recoleccion en la calle")
 		Player.money += value
 		Player.last_earning = value
-		Player.emit_signal("coin_picked")
+		Player.emit_signal("coin_picked", value)
 		collision.disabled = true
 		sprite.hide()
 		valueLabel.text = "+ $" + str(value)
