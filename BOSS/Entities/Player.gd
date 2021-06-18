@@ -8,6 +8,7 @@ export (int) var zoomOutLimit = 1
 export (int) var money = 1500
 export (int) var last_earning = 0
 export (String) var player_name = "Player"
+var is_working = false
 var shops = []
 
 func buy(shop):
