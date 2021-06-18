@@ -21,10 +21,14 @@ size = 56
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 32
+size = 52
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=4]
+size = 32
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
 size = 46
 font_data = ExtResource( 3 )
 
@@ -199,7 +203,7 @@ margin_left = 38.0
 margin_top = 186.0
 margin_right = 246.0
 margin_bottom = 239.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "Aceptar"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -210,7 +214,7 @@ margin_left = 294.0
 margin_top = 186.0
 margin_right = 502.0
 margin_bottom = 239.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "Cancelar"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -264,7 +268,7 @@ margin_left = 254.0
 margin_top = 190.0
 margin_right = 492.0
 margin_bottom = 275.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "Aceptar"
 __meta__ = {
 "_edit_use_anchors_": false

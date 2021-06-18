@@ -8,6 +8,7 @@ onready var hospital_shader = $GUI/ShaderHospital
 onready var car_spawner_h = $Car_Spawner_H
 onready var car_spawner_v = $Car_Spawner_V
 onready var save = $GUI/Save
+onready var music = $BGM
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -67,3 +68,6 @@ func _on_Area2D_body_entered(body):
 		GameServer.save_game()
 		show_save()
 		print("Game Saved")
+
+func _on_MusicTimer_timeout():
+	music.play()

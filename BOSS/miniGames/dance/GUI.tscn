@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://assets/fonts/Schrödinger.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/textures/peatonal/assert.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://miniGames/dance/Combo.gd" type="Script" id=11]
 [ext_resource path="res://miniGames/dance/ComboLabel.gd" type="Script" id=12]
 [ext_resource path="res://assets/textures/peatonal/Combo.png" type="Texture" id=13]
+[ext_resource path="res://miniGames/dance/MoneyEarned.gd" type="Script" id=14]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -118,6 +119,29 @@ animations = [ {
 "name": "idle",
 "speed": 7.0
 } ]
+
+[sub_resource type="DynamicFont" id=22]
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=23]
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=24]
+resource_name = "up"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Amount:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -50 ) ]
+}
 
 [node name="GUI" type="CanvasLayer"]
 script = ExtResource( 8 )
@@ -243,7 +267,8 @@ margin_bottom = 168.0
 custom_fonts/font = SubResource( 12 )
 text = "GAME OVER
 
-Volver a intentar?"
+Volver a intentar?
+Dinero recaudado: $"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -315,7 +340,8 @@ text = "GAME WIN
 
 Rompiste tarima!
 Estas al nivel 
-del Fichi de Quilmes."
+del Fichi de Quilmes.
+Dinero recaudado: $"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -458,10 +484,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ComboLabel" type="Label" parent="Combo"]
+[node name="ComboDescription" type="Label" parent="Combo"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_fonts/font = SubResource( 17 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 align = 1
 valign = 1
 script = ExtResource( 12 )
@@ -469,16 +497,56 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ComboSprite" type="AnimatedSprite" parent="Combo"]
+[node name="ComboFire" type="AnimatedSprite" parent="Combo"]
 visible = false
-position = Vector2( 92, -25 )
-scale = Vector2( 6, 2 )
+position = Vector2( 107.08, -40.0803 )
+scale = Vector2( 4.36299, 2.94252 )
 frames = SubResource( 21 )
 animation = "idle"
-frame = 1
+frame = 2
 playing = true
-[connection signal="area_entered" from="Ring" to="." method="_on_Ring_area_entered"]
+
+[node name="Multiplier" type="Label" parent="Combo/ComboFire"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -36.0
+margin_top = -23.0
+margin_right = 4.0
+margin_bottom = -9.0
+custom_fonts/font = SubResource( 22 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MoneyEarned" type="Control" parent="."]
+visible = false
+margin_left = 630.0
+margin_top = 400.0
+margin_right = 670.0
+margin_bottom = 440.0
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Amount" type="Label" parent="MoneyEarned"]
+margin_right = 40.0
+margin_bottom = 17.0
+custom_fonts/font = SubResource( 23 )
+custom_colors/font_color = Color( 0.231373, 0.611765, 0.0156863, 1 )
+text = "+ $"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MoneyUp" type="AnimationPlayer" parent="MoneyEarned"]
+anims/up = SubResource( 24 )
 [connection signal="area_entered" from="Ring" to="Ring" method="_on_Ring_area_entered"]
+[connection signal="area_entered" from="Ring" to="." method="_on_Ring_area_entered"]
 [connection signal="area_exited" from="Ring" to="." method="_on_Ring_area_exited"]
 [connection signal="animation_finished" from="Ring/Circle" to="Ring" method="_on_Circle_animation_finished"]
 [connection signal="exit" from="GameOverPopup" to="." method="_on_GameOverPopup_exit"]
@@ -491,5 +559,4 @@ playing = true
 [connection signal="pressed" from="GameReadyPopup/ColorRect/Begin" to="GameReadyPopup" method="_on_Begin_pressed"]
 [connection signal="pressed" from="GameReadyPopup/ColorRect/Exit" to="GameReadyPopup" method="_on_Exit_pressed"]
 [connection signal="area_entered" from="ScreenLimit" to="." method="_on_ScreenLimit_area_entered"]
-[connection signal="last_arrow" from="ArrowSpawner" to="." method="_on_ArrowSpawner_last_arrow"]
-[connection signal="last_arrow" from="ArrowSpawner" to="GameOverPopup" method="_on_ArrowSpawner_last_arrow"]
+[connection signal="animation_finished" from="MoneyEarned/MoneyUp" to="MoneyEarned" method="_on_MoneyUp_animation_finished"]
