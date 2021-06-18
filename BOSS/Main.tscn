@@ -269,6 +269,7 @@ points = PoolVector2Array( 440, 72, 0, 72, 0, 0, 440, 0 )
 9/z_index = 0
 
 [sub_resource type="AtlasTexture" id=5]
+flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 220.611, 322.942, 16.7246, 16.2513 )
 
@@ -281,6 +282,7 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 13 )
 
 [sub_resource type="AtlasTexture" id=8]
+flags = 4
 atlas = ExtResource( 12 )
 region = Rect2( 5.52087, -4.96092, 134.153, 177.866 )
 
@@ -323,6 +325,7 @@ atlas = ExtResource( 31 )
 region = Rect2( 1522.52, 815.811, 548.834, 481.524 )
 
 [sub_resource type="AtlasTexture" id=18]
+flags = 4
 atlas = ExtResource( 11 )
 region = Rect2( 199.249, 245.712, 160.075, 154.874 )
 
