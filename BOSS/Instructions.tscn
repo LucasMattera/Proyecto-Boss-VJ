@@ -75,7 +75,23 @@ margin_top = -6.81706
 margin_right = 35.9023
 margin_bottom = 7.18294
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Y"
+text = "+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite5" type="Sprite" parent="TextureRect"]
+position = Vector2( 950.151, 273.247 )
+scale = Vector2( 1.98207, 2.15744 )
+texture = SubResource( 3 )
+
+[node name="Key" type="Label" parent="TextureRect/Sprite5"]
+margin_left = -2.11649
+margin_top = -6.53159
+margin_right = 37.8836
+margin_bottom = 7.46841
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "-"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -160,7 +176,7 @@ margin_top = 254.516
 margin_right = 771.877
 margin_bottom = 341.516
 custom_fonts/font = SubResource( 6 )
-text = "TRABAJAR"
+text = "ZOOM +/-"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -188,6 +204,7 @@ __meta__ = {
 }
 
 [node name="ShaderTransitionout" parent="TextureRect" instance=ExtResource( 5 )]
+visible = false
 [connection signal="pressed" from="TextureRect/VolverMain" to="." method="_on_MenuButton_pressed"]
 [connection signal="pressed" from="TextureRect/Salir" to="." method="_on_MenuButton_pressed"]
 [connection signal="pressed" from="TextureRect/VolverInGame" to="." method="_on_VolverInGame_pressed"]
