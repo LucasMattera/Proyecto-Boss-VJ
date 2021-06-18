@@ -63,3 +63,7 @@ func has_shop(shop_name):
 
 func discount_money(amount: int):
 	money -= amount
+
+func obtain_money(amount: int, reason: String):
+	print("Jugador obtuvo: $", amount, " en ", reason)
+	money += amount

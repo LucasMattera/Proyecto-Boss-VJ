@@ -877,6 +877,7 @@ __meta__ = {
 [connection signal="body_entered" from="Mini_games_areas/Collect_Money/Area2D_Collect_Money" to="Mini_games_areas/Collect_Money/Area2D_Collect_Money" method="_on_Area2D_Collect_Money_body_entered"]
 [connection signal="body_entered" from="Mini_games_areas/WorkGame/Area2D" to="Mini_games_areas/WorkGame" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="House/Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="timeout" from="BGM/MusicTimer" to="." method="_on_MusicTimer_timeout"]
 
 [editable path="Shops/FastFood"]
 

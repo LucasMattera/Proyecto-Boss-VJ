@@ -1,47 +1,57 @@
 extends ColorRect
 
 onready var combo = 0
+onready var description: Label = $ComboDescription
+onready var multiplier: Label = $ComboFire/Multiplier
+onready var fire: AnimatedSprite = $ComboFire
 
 func _ready():
 	pass # Replace with function body.
 
-func fail():
+func fail(minigame):
 	combo -= 1
-	$ComboSprite.hide()
+	fire.hide()
 	if combo > 0:
 		combo = 0
+	minigame.set_multiplier_combo(combo)
 	match combo:
 		0:
-			$ComboLabel.text = ""
-			$ComboLabel.fail()
+			description.text = ""
+			description.fail()
 			color = Color(0,0,0,0) # Transparent
 		-1:
-			$ComboLabel.text = "Malo"
+			description.text = "Malo"
 			color = Color(0.4,0,0,0.3)
 		-2:
-			$ComboLabel.text = "De madera!"
+			description.text = "De madera!"
 			color = Color(0.7,0,0,0.5)
 		-3:
-			$ComboLabel.text = "Más duro que\nla realidad"
+			description.text = "Más duro que\nla realidad"
 			color = Color(0,0,0,0.7)
 
-func success():
+func success(minigame):
 	combo += 1
 	if combo < 0:
-		combo = 0
+		combo = 1
+	minigame.set_multiplier_combo(combo)
+	multiplier.text = str("X", combo)
 	match combo:
 		0:
-			$ComboLabel.text = ""
-			$ComboLabel.success()
-			color = Color(0,0,0,0) # Transparent
+			pass
 		1:
-			$ComboLabel.text = "Bien piola!"
-			color = Color(0,0.5,1, 0.3)
+			description.text = ""
+			description.success()
+			color = Color(0,0,0,0) # Transparent
 		2:
-			$ComboSprite.show()
+			fire.show()
+			description.text = "Bien piola!"
+			color = Color(0,0.5,1, 0.3)
 		3:
-			$ComboLabel.text = "Excelente!"
-			color = Color(0.5,1,0,0.5)
+			description.show()
 		4:
-			$ComboLabel.text = "Quién te conoce,\nHernán Piquin?"
+			description.text = "Excelente!"
+			color = Color(0.5,1,0,0.5)
+		5:
+			description.text = "Quién te conoce,\nHernán Piquin?"
 			color = Color(1,1,0,0.7)
+			pass

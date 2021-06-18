@@ -4,10 +4,10 @@ func _ready():
 	pass # Replace with function body.
 
 func _on_Ring_body_entered(body):
-	print("body entered")
+	pass
 
 func _on_Ring_area_entered(area):
-	print("area entered")
+	pass
 
 func success():
 	$Circle.play("success")
