@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://arcanoid/assets/fonts/advanced_pixel-7.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/textures/BackMain.png" type="Texture" id=2]
@@ -8,7 +8,6 @@
 [ext_resource path="res://ShaderTransitionout.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/audio/music/main_menu/Acrostics [Finished].wav" type="AudioStream" id=7]
 [ext_resource path="res://Instructions.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Main.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/fonts/HabanoST.otf" type="DynamicFontData" id=10]
 
 [sub_resource type="ShaderMaterial" id=1]
@@ -44,7 +43,6 @@ font_data = ExtResource( 10 )
 
 [node name="Main_Tittle" type="Node2D"]
 script = ExtResource( 3 )
-mainScene = ExtResource( 9 )
 instructions = ExtResource( 8 )
 
 [node name="TextureRect" type="TextureRect" parent="."]

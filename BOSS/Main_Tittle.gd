@@ -5,7 +5,8 @@ onready var music = $BGM
 onready var changeToNewGameTimer = $ChangeToNewGameTimer
 onready var changeToLoadGameTimer = $ChangeToLoadGameTimer
 onready var nowLoading = $TextureRect/NowLoadingScreen
-export var mainScene: PackedScene
+export var newPlayerScene: PackedScene
+export var loadGameScene: PackedScene
 export var instructions: PackedScene
 
 func _ready():
@@ -31,7 +32,7 @@ func _on_MusicTimer_timeout():
 	music.play()
 
 func _on_ChangeToNewGameTimer_timeout():
-	get_tree().change_scene("res://Main.tscn")
+	get_tree().change_scene("res://scenes/menu/newGame/NewPlayer.tscn")
 
 func _on_ChangeToLoadGameTimer_timeout():
 	var dataLoad = GameServer.load_game()

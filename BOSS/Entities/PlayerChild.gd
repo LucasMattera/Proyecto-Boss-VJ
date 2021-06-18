@@ -26,7 +26,7 @@ func obtainCoin(value):
 func initialize():
 	shops = Player.shops
 	money = Player.money
-	Player.player_name = player_name 
+	player_name = Player.player_name 
 	position.x = Player.position.x
 	position.y = Player.position.y
 	animation.animation = "idle"
