@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/street/Coin/PointSpawner/AbstractCoinPointSpawner.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/street/Coin/PointSpawner/HCoinPointSpawner.gd" type="Script" id=2]
+
+[node name="HCoinPointSpawner" instance=ExtResource( 1 )]
+position = Vector2( 0, -0.177095 )
+script = ExtResource( 2 )
+spawnDistance = 500
+pointA = Vector2( -5040, 0 )
+pointB = Vector2( 4500, 0 )
+
+[node name="Segment" parent="." index="0"]
+position = Vector2( -0.0593229, 0.262282 )

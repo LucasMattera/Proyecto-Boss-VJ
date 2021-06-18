@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/Beautiful City.wav-7c694d005fe1d29a0d49383a645443d8.sample"
+path="res://.import/Beautiful City.Wav-72340f17d98ac634a3f65f64e6b26c16.sample"
 
 [deps]
 
-source_file="res://assets/audio/music/main_menu/Beautiful City.wav"
-dest_files=[ "res://.import/Beautiful City.wav-7c694d005fe1d29a0d49383a645443d8.sample" ]
+source_file="res://assets/audio/music/main_menu/Beautiful City.Wav"
+dest_files=[ "res://.import/Beautiful City.Wav-72340f17d98ac634a3f65f64e6b26c16.sample" ]
 
 [params]
 

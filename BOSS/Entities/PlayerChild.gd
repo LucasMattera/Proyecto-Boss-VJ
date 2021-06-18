@@ -12,6 +12,12 @@ export (int) var money = 500
 export (String) var player_name = "player 1"
 var shops = []
 
+func _ready():
+	Player.connect("coin_picked", self, "actualizeMoney")
+
+#func _on_Player_coin_picked(amount):
+#	money += amount
+
 func initialize():
 	shops = Player.shops
 	money = Player.money
@@ -76,7 +82,7 @@ func recollect_money():
 	print(self.money)
 	
 func actualizeMoney(value):
-	#self.money = value	
+	#self.money = value
 	GameServer.save_game()
 	print("guardado")
 

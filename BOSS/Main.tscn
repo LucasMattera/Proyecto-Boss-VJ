@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=2]
+[gd_scene load_steps=77 format=2]
 
 [ext_resource path="res://Entities/Map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Entities/Player.tscn" type="PackedScene" id=2]
@@ -36,6 +36,7 @@
 [ext_resource path="res://assets/arcanoid.png" type="Texture" id=34]
 [ext_resource path="res://assets/tiendas2.png" type="Texture" id=35]
 [ext_resource path="res://assets/restaurant.png" type="Texture" id=36]
+[ext_resource path="res://scenes/street/Coin/CoinSpawner.tscn" type="PackedScene" id=37]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
@@ -267,135 +268,132 @@ points = PoolVector2Array( 440, 72, 0, 72, 0, 0, 440, 0 )
 9/z_index = 0
 
 [sub_resource type="AtlasTexture" id=5]
-flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 220.611, 322.942, 16.7246, 16.2513 )
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 184, 74.422 )
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=7]
 size = 156
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 13 )
 
-[sub_resource type="AtlasTexture" id=9]
-flags = 4
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 12 )
 region = Rect2( 5.52087, -4.96092, 134.153, 177.866 )
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 265.03, 102.714 )
 
-[sub_resource type="AtlasTexture" id=51]
+[sub_resource type="AtlasTexture" id=10]
 flags = 4
 atlas = ExtResource( 35 )
 region = Rect2( 473.621, 346.569, 272.49, 246.715 )
 
-[sub_resource type="RectangleShape2D" id=12]
+[sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 69.27, 103.323 )
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=12]
 flags = 4
 atlas = ExtResource( 30 )
 region = Rect2( 269.91, 29.4984, 84.2867, 99.6456 )
 
-[sub_resource type="RectangleShape2D" id=14]
+[sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 127.901, 103.406 )
 
-[sub_resource type="DynamicFont" id=46]
+[sub_resource type="DynamicFont" id=14]
 size = 136
 font_data = ExtResource( 18 )
 
-[sub_resource type="AtlasTexture" id=37]
+[sub_resource type="AtlasTexture" id=15]
 flags = 4
 atlas = ExtResource( 31 )
 region = Rect2( 2204.51, 1431.62, 533.161, 504.767 )
 
-[sub_resource type="AtlasTexture" id=40]
+[sub_resource type="AtlasTexture" id=16]
 flags = 4
 atlas = ExtResource( 35 )
 region = Rect2( 151.126, 345.505, 286.397, 257.52 )
 
-[sub_resource type="AtlasTexture" id=38]
+[sub_resource type="AtlasTexture" id=17]
 flags = 4
 atlas = ExtResource( 31 )
 region = Rect2( 1522.52, 815.811, 548.834, 481.524 )
 
-[sub_resource type="AtlasTexture" id=39]
-flags = 4
+[sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 11 )
 region = Rect2( 199.249, 245.712, 160.075, 154.874 )
 
-[sub_resource type="AtlasTexture" id=41]
+[sub_resource type="AtlasTexture" id=19]
 flags = 4
 atlas = ExtResource( 35 )
 region = Rect2( 153.674, 617.429, 286.571, 215.835 )
 
-[sub_resource type="AtlasTexture" id=42]
+[sub_resource type="AtlasTexture" id=20]
 flags = 4
 atlas = ExtResource( 35 )
 region = Rect2( 796.383, 365.48, 251.308, 219.993 )
 
-[sub_resource type="AtlasTexture" id=43]
+[sub_resource type="AtlasTexture" id=21]
 flags = 4
 atlas = ExtResource( 35 )
 region = Rect2( 466.483, 79.6455, 283.42, 223.118 )
 
-[sub_resource type="AtlasTexture" id=44]
+[sub_resource type="AtlasTexture" id=22]
 flags = 4
 atlas = ExtResource( 31 )
 region = Rect2( 2227.48, 167.451, 504.62, 436.478 )
 
-[sub_resource type="AtlasTexture" id=45]
+[sub_resource type="AtlasTexture" id=23]
 flags = 4
 atlas = ExtResource( 35 )
 region = Rect2( 797.127, 611.846, 275.722, 226.178 )
 
-[sub_resource type="AtlasTexture" id=47]
+[sub_resource type="AtlasTexture" id=24]
 flags = 4
 atlas = ExtResource( 35 )
 region = Rect2( 799.232, 854.875, 279.771, 265.15 )
 
-[sub_resource type="AtlasTexture" id=48]
+[sub_resource type="AtlasTexture" id=25]
 flags = 4
 atlas = ExtResource( 35 )
 region = Rect2( 482, 831, 283, 243 )
 
-[sub_resource type="AtlasTexture" id=49]
+[sub_resource type="AtlasTexture" id=26]
 flags = 4
 atlas = ExtResource( 31 )
 region = Rect2( 836.885, 1425.49, 566.852, 507.102 )
 
-[sub_resource type="AtlasTexture" id=50]
+[sub_resource type="AtlasTexture" id=27]
 flags = 4
 atlas = ExtResource( 31 )
 region = Rect2( 846.28, 136.714, 533.069, 479.89 )
 
-[sub_resource type="AtlasTexture" id=52]
+[sub_resource type="AtlasTexture" id=28]
 flags = 4
 atlas = ExtResource( 14 )
 region = Rect2( 320.713, 35.5038, 203.2, 143.82 )
 
-[sub_resource type="RectangleShape2D" id=36]
+[sub_resource type="RectangleShape2D" id=29]
 extents = Vector2( 118.931, 86.7712 )
 
-[sub_resource type="RectangleShape2D" id=22]
+[sub_resource type="RectangleShape2D" id=30]
 extents = Vector2( 662.51, 448 )
 
-[sub_resource type="DynamicFont" id=23]
+[sub_resource type="DynamicFont" id=31]
 
-[sub_resource type="DynamicFont" id=24]
+[sub_resource type="DynamicFont" id=32]
 size = 26
 outline_size = 4
 font_data = ExtResource( 13 )
 
-[sub_resource type="DynamicFont" id=25]
+[sub_resource type="DynamicFont" id=33]
 size = 25
 outline_size = 4
 font_data = ExtResource( 13 )
 
-[sub_resource type="SpriteFrames" id=26]
+[sub_resource type="SpriteFrames" id=34]
 animations = [ {
 "frames": [ ExtResource( 22 ), ExtResource( 17 ), ExtResource( 20 ), ExtResource( 21 ) ],
 "loop": true,
@@ -403,25 +401,25 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="DynamicFont" id=27]
+[sub_resource type="DynamicFont" id=35]
 size = 30
 font_data = ExtResource( 13 )
 
-[sub_resource type="DynamicFont" id=28]
+[sub_resource type="DynamicFont" id=36]
 size = 18
 font_data = ExtResource( 18 )
 
-[sub_resource type="DynamicFont" id=29]
+[sub_resource type="DynamicFont" id=37]
 outline_size = 4
 font_data = ExtResource( 18 )
 
-[sub_resource type="DynamicFont" id=30]
+[sub_resource type="DynamicFont" id=38]
 size = 150
 outline_size = 4
 outline_color = Color( 0.992157, 0.0352941, 0.0352941, 1 )
 font_data = ExtResource( 18 )
 
-[sub_resource type="DynamicFont" id=53]
+[sub_resource type="DynamicFont" id=39]
 size = 71
 outline_size = 1
 outline_color = Color( 1, 0.027451, 0.027451, 1 )
@@ -542,7 +540,7 @@ margin_left = -650.447
 margin_top = -190.752
 margin_right = -458.383
 margin_bottom = -87.7523
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 0.976471, 0.976471, 1 )
 custom_colors/font_color_shadow = Color( 0.776471, 0.854902, 0.0705882, 1 )
@@ -563,11 +561,11 @@ script = ExtResource( 10 )
 [node name="Sprite" type="Sprite" parent="Mini_games_areas/dance/Area2D"]
 position = Vector2( 632.987, 126.852 )
 scale = Vector2( 12.8112, 3.9774 )
-texture = SubResource( 9 )
+texture = SubResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mini_games_areas/dance/Area2D"]
 position = Vector2( 646.39, 366.852 )
-shape = SubResource( 10 )
+shape = SubResource( 9 )
 
 [node name="Exit" type="Position2D" parent="Mini_games_areas/dance/Area2D"]
 position = Vector2( 609.547, 611.505 )
@@ -590,11 +588,11 @@ script = ExtResource( 15 )
 [node name="Sprite" type="Sprite" parent="Mini_games_areas/Collect_Money/Area2D_Collect_Money"]
 position = Vector2( 854.721, -111.485 )
 scale = Vector2( 4.65493, 2.35495 )
-texture = SubResource( 51 )
+texture = SubResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mini_games_areas/Collect_Money/Area2D_Collect_Money"]
 position = Vector2( 573.647, 37.8712 )
-shape = SubResource( 12 )
+shape = SubResource( 11 )
 
 [node name="Exit" type="Position2D" parent="Mini_games_areas/Collect_Money/Area2D_Collect_Money"]
 position = Vector2( 480.426, 298.457 )
@@ -613,7 +611,7 @@ script = ExtResource( 28 )
 [node name="Sprite" type="Sprite" parent="Mini_games_areas/WorkGame"]
 position = Vector2( 1977.65, -1985.49 )
 scale = Vector2( 15, 15 )
-texture = SubResource( 13 )
+texture = SubResource( 12 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Mini_games_areas/WorkGame"]
 position = Vector2( 1596.1, -1438.32 )
@@ -627,7 +625,7 @@ position = Vector2( 1907.37, -1322.26 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mini_games_areas/WorkGame/Area2D"]
 position = Vector2( 71.4109, -34.5537 )
-shape = SubResource( 14 )
+shape = SubResource( 13 )
 
 [node name="Exit" type="Position2D" parent="Mini_games_areas/WorkGame"]
 position = Vector2( 1949.53, -1139.72 )
@@ -637,7 +635,7 @@ margin_left = 1806.67
 margin_top = -1617.57
 margin_right = 2164.67
 margin_bottom = -1480.57
-custom_fonts/font = SubResource( 46 )
+custom_fonts/font = SubResource( 14 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "WORK"
 __meta__ = {
@@ -681,7 +679,7 @@ earnings = 100
 [node name="Sprite" parent="Shops/Cafe" index="0"]
 position = Vector2( -355.318, -368.009 )
 scale = Vector2( 2.57033, 1.25016 )
-texture = SubResource( 37 )
+texture = SubResource( 15 )
 
 [node name="Area2D" parent="Shops/Cafe" index="1"]
 position = Vector2( -363.778, -8.45996 )
@@ -711,7 +709,7 @@ earnings = 150
 position = Vector2( 284.923, 412.803 )
 rotation = 3.14159
 scale = Vector2( 5.51335, 2.34568 )
-texture = SubResource( 40 )
+texture = SubResource( 16 )
 
 [node name="Area2D" parent="Shops/IceCream" index="1"]
 position = Vector2( 260.464, 141.896 )
@@ -741,7 +739,7 @@ earnings = 200
 position = Vector2( -559.808, 440.121 )
 rotation = 3.14159
 scale = Vector2( 2.76516, 1.72577 )
-texture = SubResource( 38 )
+texture = SubResource( 17 )
 
 [node name="Area2D" parent="Shops/Muebleria" index="1"]
 position = Vector2( 65.6328, 7.72144 )
@@ -794,7 +792,7 @@ earnings = 700
 [node name="Sprite" parent="Shops/NightClub" index="0"]
 position = Vector2( 134.984, -230.779 )
 scale = Vector2( 9.0216, 4.22678 )
-texture = SubResource( 39 )
+texture = SubResource( 18 )
 
 [node name="Exit" parent="Shops/NightClub" index="3"]
 position = Vector2( -4.31445, 185.517 )
@@ -818,7 +816,7 @@ add_employee_value = 200
 [node name="Sprite" parent="Shops/Electronic" index="0"]
 position = Vector2( 654.542, -380.453 )
 scale = Vector2( 4.19123, 2.77489 )
-texture = SubResource( 41 )
+texture = SubResource( 19 )
 
 [node name="Area2D" parent="Shops/Electronic" index="1"]
 position = Vector2( 613.708, -149.891 )
@@ -843,7 +841,7 @@ earnings = 12500
 [node name="Sprite" parent="Shops/Farmacy" index="0"]
 position = Vector2( -77.7648, -31.3617 )
 scale = Vector2( 4.63961, 2.68235 )
-texture = SubResource( 42 )
+texture = SubResource( 20 )
 
 [node name="Area2D" parent="Shops/Farmacy" index="1"]
 position = Vector2( 5.57324, -5.5733 )
@@ -868,7 +866,7 @@ earnings = 15000
 [node name="Sprite" parent="Shops/Meat" index="0"]
 position = Vector2( -445.328, 491.149 )
 scale = Vector2( 4.88289, 2.47062 )
-texture = SubResource( 43 )
+texture = SubResource( 21 )
 
 [node name="Area2D" parent="Shops/Meat" index="1"]
 position = Vector2( -105.962, 564.178 )
@@ -918,7 +916,7 @@ earnings = 20000
 [node name="Sprite" parent="Shops/Burger" index="0"]
 position = Vector2( 124.627, -5.95505 )
 scale = Vector2( 2.33855, 1.39165 )
-texture = SubResource( 44 )
+texture = SubResource( 22 )
 
 [node name="Area2D" parent="Shops/Burger" index="1"]
 position = Vector2( 21.2729, -55.8423 )
@@ -943,7 +941,7 @@ earnings = 22500
 [node name="Sprite" parent="Shops/Beer" index="0"]
 position = Vector2( 8.85059, -105.221 )
 scale = Vector2( 5.36199, 2.85496 )
-texture = SubResource( 45 )
+texture = SubResource( 23 )
 
 [node name="CollisionShape2D" parent="Shops/Beer/Area2D" index="0"]
 position = Vector2( -259.609, 45.235 )
@@ -965,7 +963,7 @@ earnings = 10000
 [node name="Sprite" parent="Shops/Kids" index="0"]
 position = Vector2( 64.0355, -56.1413 )
 scale = Vector2( 4.78371, 2.54546 )
-texture = SubResource( 47 )
+texture = SubResource( 24 )
 
 [node name="Area2D" parent="Shops/Kids" index="1"]
 position = Vector2( -11.8413, 151.961 )
@@ -990,7 +988,7 @@ earnings = 20000
 [node name="Sprite" parent="Shops/Jewerly" index="0"]
 position = Vector2( 32.2407, -130.204 )
 scale = Vector2( 5.21722, 3.13023 )
-texture = SubResource( 48 )
+texture = SubResource( 25 )
 
 [node name="CollisionShape2D" parent="Shops/Jewerly/Area2D" index="0"]
 position = Vector2( 34.7212, 126.483 )
@@ -1012,7 +1010,7 @@ earnings = 13000
 [node name="Sprite" parent="Shops/Pizza" index="0"]
 position = Vector2( -69.6044, -92.799 )
 scale = Vector2( 2.30334, 1.55329 )
-texture = SubResource( 49 )
+texture = SubResource( 26 )
 
 [node name="CollisionShape2D" parent="Shops/Pizza/Area2D" index="0"]
 position = Vector2( -1.60571, 84.4863 )
@@ -1036,7 +1034,7 @@ earnings = 5000
 [node name="Sprite" parent="Shops/Clothes" index="0"]
 position = Vector2( 36.1702, -80.2218 )
 scale = Vector2( 2.6455, 1.59951 )
-texture = SubResource( 50 )
+texture = SubResource( 27 )
 
 [node name="CollisionShape2D" parent="Shops/Clothes/Area2D" index="0"]
 position = Vector2( -195.859, 107.668 )
@@ -1056,7 +1054,7 @@ polygon = PoolVector2Array( -521.478, 298.079, -402.741, 299.641, -394.929, -176
 [node name="Spr_house" type="Sprite" parent="House"]
 position = Vector2( -4287.46, -1723.37 )
 scale = Vector2( 7.01802, 6.21706 )
-texture = SubResource( 52 )
+texture = SubResource( 28 )
 
 [node name="SB_house" type="StaticBody2D" parent="House"]
 
@@ -1068,12 +1066,11 @@ polygon = PoolVector2Array( -4288.78, -1223.74, -4272, -1472, -4032, -1472, -402
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="House/Area2D"]
 position = Vector2( -4237.93, -1382.26 )
-shape = SubResource( 36 )
+shape = SubResource( 29 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 25 )
 volume_db = 10.0
-autoplay = true
 
 [node name="hospital" type="Node" parent="."]
 
@@ -1087,7 +1084,7 @@ position = Vector2( 3712, -1608 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hospital/ST_hospital"]
 position = Vector2( 125.515, -99.7369 )
-shape = SubResource( 22 )
+shape = SubResource( 30 )
 
 [node name="Player" parent="." groups=[
 "Persist",
@@ -1113,7 +1110,7 @@ margin_left = 0.944
 margin_top = 1.6
 margin_right = 2.072
 margin_bottom = 1.4
-custom_fonts/font = SubResource( 23 )
+custom_fonts/font = SubResource( 31 )
 custom_colors/font_color = Color( 0.0235294, 0.0235294, 0.0235294, 1 )
 text = "player name"
 align = 1
@@ -1129,7 +1126,7 @@ anchor_bottom = 0.06
 margin_left = 57.84
 margin_top = -0.200001
 margin_right = 58.208
-custom_fonts/font = SubResource( 24 )
+custom_fonts/font = SubResource( 32 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = " Money"
 align = 1
@@ -1146,7 +1143,7 @@ margin_left = 140.256
 margin_top = 2.2
 margin_right = 140.32
 margin_bottom = 4.2
-custom_fonts/font = SubResource( 25 )
+custom_fonts/font = SubResource( 33 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Locales:"
 __meta__ = {
@@ -1156,8 +1153,8 @@ __meta__ = {
 [node name="coin" type="AnimatedSprite" parent="GUI"]
 position = Vector2( 160, 23 )
 scale = Vector2( 0.375, 0.375 )
-frames = SubResource( 26 )
-frame = 3
+frames = SubResource( 34 )
+frame = 2
 playing = true
 
 [node name="ShaderTransitionout" parent="GUI" instance=ExtResource( 24 )]
@@ -1169,7 +1166,7 @@ margin_left = 157.107
 margin_top = 34.4933
 margin_right = 227.107
 margin_bottom = 65.4933
-custom_fonts/font = SubResource( 27 )
+custom_fonts/font = SubResource( 35 )
 custom_colors/font_color = Color( 0.00392157, 1, 0.101961, 1 )
 text = "+$money"
 __meta__ = {
@@ -1181,7 +1178,7 @@ margin_left = 130.83
 margin_top = 53.0195
 margin_right = 216.83
 margin_bottom = 78.0195
-custom_fonts/font = SubResource( 28 )
+custom_fonts/font = SubResource( 36 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "-$money"
 __meta__ = {
@@ -1193,7 +1190,7 @@ margin_left = 576.0
 margin_top = 14.0886
 margin_right = 772.0
 margin_bottom = 49.0886
-custom_fonts/font = SubResource( 29 )
+custom_fonts/font = SubResource( 37 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Proxima ganancia en: "
 __meta__ = {
@@ -1212,7 +1209,7 @@ margin_top = 56.0
 margin_right = 2788.0
 margin_bottom = 952.0
 rect_scale = Vector2( 0.349923, 0.550106 )
-custom_fonts/font = SubResource( 30 )
+custom_fonts/font = SubResource( 38 )
 text = "FUISTE ATROPELLADO
 
 SERAS ENVIADO AL HOSPITAL
@@ -1230,17 +1227,18 @@ margin_left = 249.629
 margin_top = 261.906
 margin_right = 844.629
 margin_bottom = 333.906
-custom_fonts/font = SubResource( 53 )
+custom_fonts/font = SubResource( 39 )
 text = "JUEGO GUARDADO"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="CoinSpawner" parent="." instance=ExtResource( 37 )]
 [connection signal="body_entered" from="Mini_games_areas/Arcanoid/arcanoid" to="Mini_games_areas/Arcanoid/arcanoid" method="_on_arcanoid_body_entered"]
 [connection signal="body_entered" from="Mini_games_areas/dance/Area2D" to="Mini_games_areas/dance/Area2D" method="_on_DanceMinigame_body_entered"]
 [connection signal="body_entered" from="Mini_games_areas/Collect_Money/Area2D_Collect_Money" to="Mini_games_areas/Collect_Money/Area2D_Collect_Money" method="_on_Area2D_Collect_Money_body_entered"]
 [connection signal="body_entered" from="Mini_games_areas/WorkGame/Area2D" to="Mini_games_areas/WorkGame" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="House/Area2D" to="." method="_on_Area2D_body_entered"]
-[connection signal="timeout" from="BGM/MusicTimer" to="." method="_on_MusicTimer_timeout"]
 
 [editable path="Shops/FastFood"]
 
