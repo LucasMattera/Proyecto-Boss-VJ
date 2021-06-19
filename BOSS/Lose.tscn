@@ -5,15 +5,15 @@
 [ext_resource path="res://Lose.gd" type="Script" id=3]
 [ext_resource path="res://ShaderTransitionout.tscn" type="PackedScene" id=4]
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=1]
 size = 35
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 size = 65
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=3]
 size = 26
 font_data = ExtResource( 2 )
 
@@ -38,7 +38,7 @@ margin_left = 334.663
 margin_top = 401.637
 margin_right = 692.663
 margin_bottom = 507.637
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 text = "NUEVO JUEGO"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -52,7 +52,7 @@ margin_left = 144.199
 margin_top = 181.426
 margin_right = 873.199
 margin_bottom = 246.426
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "ESTAS EN BANCARROTA"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -64,7 +64,7 @@ margin_left = 353.263
 margin_top = 53.9342
 margin_right = 639.263
 margin_bottom = 118.934
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "PERDISTE"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -76,7 +76,7 @@ margin_left = 239.031
 margin_top = 298.465
 margin_right = 808.031
 margin_bottom = 325.465
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "¡VOLVE A INTENTARLO, QUILMES TE NECESITA!"
 __meta__ = {
 "_edit_use_anchors_": false
