@@ -12,6 +12,10 @@ var is_working = false
 var shops = []
 signal coin_picked
 
+func _ready():
+	position.x = -4143.898
+	position.y = -1187.306
+
 func buy(shop):
 	var shop_to_add = {} 
 	shop_to_add.shop_name = shop.shop_name

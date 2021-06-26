@@ -474,7 +474,7 @@ position = Vector2( -624, -160 )
 shape = SubResource( 6 )
 
 [node name="Exit" type="Position2D" parent="Mini_games_areas/Arcanoid/arcanoid"]
-position = Vector2( -704.499, 58.4711 )
+position = Vector2( -698.486, 54.4084 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Mini_games_areas/Arcanoid"]
 position = Vector2( 440, -456 )
@@ -1043,6 +1043,7 @@ shape = SubResource( 30 )
 "Persist",
 "player",
 ] instance=ExtResource( 2 )]
+position = Vector2( -4143.9, -1187.31 )
 player_name = "Player1"
 
 [node name="Car_Spawner_V" type="Node" parent="."]
