@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/cityy.png" type="Texture" id=1]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 377.448, 413.898, 29.3691, 37.5771 )
+
+[node name="Sprite" type="Sprite"]
+position = Vector2( -3471.45, -1372.54 )
+scale = Vector2( 12.0318, 10.8435 )
+texture = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 1.0
+margin_top = -12.0
+margin_right = 24.0
+margin_bottom = -4.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect"]
+margin_left = 0.857971
+margin_top = 0.679993
+margin_right = 71.858
+margin_bottom = 14.68
+rect_scale = Vector2( 0.3, 0.5 )
+text = "RIVADAVIA"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_left = -3.16525
+margin_top = -13.7169
+margin_right = 19.8347
+margin_bottom = -5.71686
+rect_rotation = 293.2
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect2"]
+margin_left = 0.857971
+margin_top = 0.679993
+margin_right = 71.858
+margin_bottom = 14.68
+rect_scale = Vector2( 0.3, 0.5 )
+text = "RIVADAVIA"
+__meta__ = {
+"_edit_use_anchors_": false
+}
