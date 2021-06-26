@@ -20,7 +20,6 @@ visible = false
 
 [node name="coin" parent="GUI2" index="3"]
 visible = false
-frame = 0
 
 [node name="ShaderTransitionout" parent="GUI2" index="4"]
 visible = false
@@ -67,8 +66,8 @@ script = ExtResource( 6 )
 [connection signal="player_stats_changed" from="." to="GUI" method="_on_DanceMinigame_player_stats_changed"]
 [connection signal="success" from="." to="Audio/SFX" method="_on_DanceMinigame_success"]
 [connection signal="success" from="." to="GUI" method="_on_DanceMinigame_success"]
-[connection signal="win_game" from="." to="Audio/SFX" method="_on_DanceMinigame_win_game"]
 [connection signal="win_game" from="." to="Audio/Music" method="_on_DanceMinigame_win_game"]
+[connection signal="win_game" from="." to="Audio/SFX" method="_on_DanceMinigame_win_game"]
 [connection signal="win_game" from="." to="GUI" method="_on_DanceMinigame_win_game"]
 [connection signal="arrow_in_ring" from="GUI" to="." method="_on_GUI_arrow_in_ring"]
 [connection signal="arrow_out_of_ring" from="GUI" to="." method="_on_GUI_arrow_out_of_ring"]

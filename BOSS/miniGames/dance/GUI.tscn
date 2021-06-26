@@ -64,6 +64,7 @@ animations = [ {
 } ]
 
 [sub_resource type="CircleShape2D" id=9]
+radius = 6.85636
 
 [sub_resource type="DynamicFont" id=10]
 size = 64
@@ -152,8 +153,8 @@ collision_layer = 2147483649
 script = ExtResource( 5 )
 
 [node name="Circle" type="AnimatedSprite" parent="Ring"]
-position = Vector2( 7.62939e-06, 7.62939e-06 )
-scale = Vector2( 4, 4 )
+position = Vector2( 7.421e-06, 0.966887 )
+scale = Vector2( 3.11612, 3.49763 )
 frames = SubResource( 8 )
 animation = "idle"
 playing = true
@@ -503,7 +504,7 @@ position = Vector2( 107.08, -40.0803 )
 scale = Vector2( 4.36299, 2.94252 )
 frames = SubResource( 21 )
 animation = "idle"
-frame = 2
+frame = 1
 playing = true
 
 [node name="Multiplier" type="Label" parent="Combo/ComboFire"]
@@ -545,8 +546,18 @@ __meta__ = {
 
 [node name="MoneyUp" type="AnimationPlayer" parent="MoneyEarned"]
 anims/up = SubResource( 24 )
-[connection signal="area_entered" from="Ring" to="Ring" method="_on_Ring_area_entered"]
+
+[node name="ArrowWay" type="ColorRect" parent="."]
+margin_left = 150.0
+margin_top = -1.0
+margin_right = 249.0
+margin_bottom = 601.0
+color = Color( 0, 0, 0, 0.505882 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="area_entered" from="Ring" to="." method="_on_Ring_area_entered"]
+[connection signal="area_entered" from="Ring" to="Ring" method="_on_Ring_area_entered"]
 [connection signal="area_exited" from="Ring" to="." method="_on_Ring_area_exited"]
 [connection signal="animation_finished" from="Ring/Circle" to="Ring" method="_on_Circle_animation_finished"]
 [connection signal="exit" from="GameOverPopup" to="." method="_on_GameOverPopup_exit"]
