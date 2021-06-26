@@ -241,6 +241,10 @@ __meta__ = {
 [node name="ColorRect" type="ColorRect" parent="GUI/Purchased"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 12.854
+margin_top = -103.374
+margin_right = 43.854
+margin_bottom = -51.3739
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -255,25 +259,26 @@ margin_bottom = -10.0
 color = Color( 0.054902, 0.305882, 0, 1 )
 
 [node name="PurchasedLabel" type="Label" parent="GUI/Purchased/ColorRect/ColorRect"]
-margin_left = 62.0
-margin_top = 18.0
-margin_right = 702.0
-margin_bottom = 195.0
+margin_left = -139.708
+margin_top = 18.1687
+margin_right = 899.292
+margin_bottom = 239.169
 custom_fonts/font = SubResource( 3 )
 text = "LOCAL ADQUIRIDO!
-
-A partir de ahora puedes administrar
-e invertir en este local."
+ A partir de ahora puedes
+ administrar e invertir 
+en este local."
 align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="PurchasedButton" type="Button" parent="GUI/Purchased/ColorRect/ColorRect"]
-margin_left = 254.0
-margin_top = 190.0
-margin_right = 492.0
-margin_bottom = 275.0
+margin_left = 262.313
+margin_top = 244.866
+margin_right = 500.313
+margin_bottom = 329.866
 custom_fonts/font = SubResource( 4 )
 text = "Aceptar"
 __meta__ = {

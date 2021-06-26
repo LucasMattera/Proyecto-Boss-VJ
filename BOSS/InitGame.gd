@@ -16,7 +16,7 @@ func _on_PrincipalMenu_pressed():
 
 func _on_ContinueMenu_pressed():
 	label1.hide()
-	button.hide()
+	button.show()
 	continue_menu.hide()		
 	label2.show()
 	continue_game.show()

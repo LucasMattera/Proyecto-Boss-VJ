@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=2]
+[gd_scene load_steps=62 format=2]
 
 [ext_resource path="res://Entities/Map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Entities/Player.tscn" type="PackedScene" id=2]
@@ -6,7 +6,7 @@
 [ext_resource path="res://assets/textures/roguelikeCity_magenta.png" type="Texture" id=4]
 [ext_resource path="res://assets/textures/The “Real” macks tileset!.png" type="Texture" id=5]
 [ext_resource path="res://Entities/shop/Shop.tscn" type="PackedScene" id=6]
-[ext_resource path="res://GUI.gd" type="Script" id=7]
+[ext_resource path="res://GUI2.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Main.gd" type="Script" id=8]
 [ext_resource path="res://arcanoid.gd" type="Script" id=9]
 [ext_resource path="res://miniGames/street/DanceMinigame.gd" type="Script" id=10]
@@ -16,17 +16,11 @@
 [ext_resource path="res://assets/casas.png" type="Texture" id=14]
 [ext_resource path="res://miniGames/Collect_money/Area2D_Collect_Money.gd" type="Script" id=15]
 [ext_resource path="res://Car_Spawner_V.gd" type="Script" id=16]
-[ext_resource path="res://miniGames/Collect_money/Coin/coin_2.png" type="Texture" id=17]
 [ext_resource path="res://assets/fonts/Schrödinger.ttf" type="DynamicFontData" id=18]
 [ext_resource path="res://Car_Spawner_H.gd" type="Script" id=19]
-[ext_resource path="res://miniGames/Collect_money/Coin/coin_3.png" type="Texture" id=20]
-[ext_resource path="res://miniGames/Collect_money/Coin/coin_4.png" type="Texture" id=21]
-[ext_resource path="res://miniGames/Collect_money/Coin/coin_1.png" type="Texture" id=22]
 [ext_resource path="res://assets/textures/trees.png" type="Texture" id=23]
-[ext_resource path="res://ShaderTransitionout.tscn" type="PackedScene" id=24]
 [ext_resource path="res://assets/audio/music/street/urban.ogg" type="AudioStream" id=25]
 [ext_resource path="res://assets/textures/free_tileset_version_7.png" type="Texture" id=26]
-[ext_resource path="res://assets/textures/player.png" type="Texture" id=27]
 [ext_resource path="res://Work_Game.gd" type="Script" id=28]
 [ext_resource path="res://assets/textures/fastfood.png" type="Texture" id=29]
 [ext_resource path="res://assets/cityy.png" type="Texture" id=30]
@@ -37,7 +31,6 @@
 [ext_resource path="res://assets/tiendas2.png" type="Texture" id=35]
 [ext_resource path="res://assets/restaurant.png" type="Texture" id=36]
 [ext_resource path="res://scenes/street/Coin/CoinSpawner.tscn" type="PackedScene" id=37]
-[ext_resource path="res://assets/fonts/HabanoST.otf" type="DynamicFontData" id=38]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
@@ -269,6 +262,7 @@ points = PoolVector2Array( 440, 72, 0, 72, 0, 0, 440, 0 )
 9/z_index = 0
 
 [sub_resource type="AtlasTexture" id=5]
+flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 220.611, 322.942, 16.7246, 16.2513 )
 
@@ -281,6 +275,7 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 13 )
 
 [sub_resource type="AtlasTexture" id=8]
+flags = 4
 atlas = ExtResource( 12 )
 region = Rect2( 5.52087, -4.96092, 134.153, 177.866 )
 
@@ -323,6 +318,7 @@ atlas = ExtResource( 31 )
 region = Rect2( 1522.52, 815.811, 548.834, 481.524 )
 
 [sub_resource type="AtlasTexture" id=18]
+flags = 4
 atlas = ExtResource( 11 )
 region = Rect2( 199.249, 245.712, 160.075, 154.874 )
 
@@ -381,53 +377,6 @@ extents = Vector2( 118.931, 86.7712 )
 
 [sub_resource type="RectangleShape2D" id=30]
 extents = Vector2( 662.51, 448 )
-
-[sub_resource type="DynamicFont" id=31]
-size = 21
-use_filter = true
-font_data = ExtResource( 38 )
-
-[sub_resource type="DynamicFont" id=32]
-size = 26
-outline_size = 4
-font_data = ExtResource( 13 )
-
-[sub_resource type="DynamicFont" id=33]
-size = 25
-outline_size = 4
-font_data = ExtResource( 13 )
-
-[sub_resource type="SpriteFrames" id=34]
-animations = [ {
-"frames": [ ExtResource( 22 ), ExtResource( 17 ), ExtResource( 20 ), ExtResource( 21 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="DynamicFont" id=35]
-size = 30
-font_data = ExtResource( 13 )
-
-[sub_resource type="DynamicFont" id=36]
-size = 18
-font_data = ExtResource( 18 )
-
-[sub_resource type="DynamicFont" id=37]
-outline_size = 4
-font_data = ExtResource( 18 )
-
-[sub_resource type="DynamicFont" id=38]
-size = 150
-outline_size = 4
-outline_color = Color( 0.992157, 0.0352941, 0.0352941, 1 )
-font_data = ExtResource( 18 )
-
-[sub_resource type="DynamicFont" id=39]
-size = 71
-outline_size = 1
-outline_color = Color( 1, 0.027451, 0.027451, 1 )
-font_data = ExtResource( 18 )
 
 [node name="Main" type="Node"]
 script = ExtResource( 8 )
@@ -1102,141 +1051,7 @@ script = ExtResource( 16 )
 [node name="Car_Spawner_H" type="Node" parent="."]
 script = ExtResource( 19 )
 
-[node name="GUI" type="CanvasLayer" parent="."]
-script = ExtResource( 7 )
-
-[node name="Name" type="Label" parent="GUI"]
-anchor_left = 0.006
-anchor_top = 0.014
-anchor_right = 0.089
-anchor_bottom = 0.066
-margin_left = -0.144
-margin_top = 0.6
-margin_right = 53.864
-margin_bottom = 0.4
-custom_fonts/font = SubResource( 31 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "player name"
-align = 1
-clip_text = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Money" type="Label" parent="GUI"]
-anchor_left = 0.09
-anchor_top = 0.017
-anchor_right = 0.158
-anchor_bottom = 0.06
-margin_left = 57.84
-margin_top = -0.200001
-margin_right = 58.208
-custom_fonts/font = SubResource( 32 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = " Money"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Shops" type="Label" parent="GUI"]
-anchor_left = 0.156
-anchor_top = 0.013
-anchor_right = 0.32
-anchor_bottom = 0.053
-margin_left = 140.256
-margin_top = 2.2
-margin_right = 140.32
-margin_bottom = 4.2
-custom_fonts/font = SubResource( 33 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Locales:"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="coin" type="AnimatedSprite" parent="GUI"]
-position = Vector2( 160, 23 )
-scale = Vector2( 0.375, 0.375 )
-frames = SubResource( 34 )
-playing = true
-
-[node name="ShaderTransitionout" parent="GUI" instance=ExtResource( 24 )]
-margin_left = -1.21021
-margin_right = -1.21021
-
-[node name="EarningMoney" type="Label" parent="GUI"]
-margin_left = 157.107
-margin_top = 34.4933
-margin_right = 227.107
-margin_bottom = 65.4933
-custom_fonts/font = SubResource( 35 )
-custom_colors/font_color = Color( 0.00392157, 1, 0.101961, 1 )
-text = "+$money"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="LoseMoney" type="Label" parent="GUI"]
-margin_left = 130.83
-margin_top = 53.0195
-margin_right = 216.83
-margin_bottom = 78.0195
-custom_fonts/font = SubResource( 36 )
-custom_colors/font_color = Color( 1, 0, 0, 1 )
-text = "-$money"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TimerToEarning" type="Label" parent="GUI"]
-margin_left = 576.0
-margin_top = 14.0886
-margin_right = 772.0
-margin_bottom = 49.0886
-custom_fonts/font = SubResource( 37 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Proxima ganancia en: "
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ShaderHospital" type="Sprite" parent="GUI"]
-visible = false
-position = Vector2( 824, 312 )
-scale = Vector2( 51.1729, 29.1805 )
-texture = ExtResource( 27 )
-
-[node name="Label" type="Label" parent="GUI"]
-visible = false
-margin_left = 48.0
-margin_top = 56.0
-margin_right = 2788.0
-margin_bottom = 952.0
-rect_scale = Vector2( 0.349923, 0.550106 )
-custom_fonts/font = SubResource( 38 )
-text = "FUISTE ATROPELLADO
-
-SERAS ENVIADO AL HOSPITAL
-
-GASTOS MEDICOS : $100"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Save" type="Label" parent="GUI"]
-visible = false
-margin_left = 249.629
-margin_top = 261.906
-margin_right = 844.629
-margin_bottom = 333.906
-custom_fonts/font = SubResource( 39 )
-text = "JUEGO GUARDADO"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="GUI" parent="." instance=ExtResource( 7 )]
 
 [node name="CoinSpawner" parent="." instance=ExtResource( 37 )]
 

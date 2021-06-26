@@ -113,13 +113,84 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ColorRect" type="ColorRect" parent="TextureRect"]
+margin_left = 103.0
+margin_top = 46.0
+margin_right = 367.0
+margin_bottom = 107.0
+color = Color( 0.172549, 0.207843, 0.552941, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="TextureRect"]
+margin_left = 629.0
+margin_top = 48.0
+margin_right = 863.0
+margin_bottom = 109.0
+color = Color( 0.172549, 0.207843, 0.552941, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect3" type="ColorRect" parent="TextureRect"]
+margin_left = 498.0
+margin_top = 154.0
+margin_right = 735.0
+margin_bottom = 215.0
+color = Color( 0.172549, 0.207843, 0.552941, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect4" type="ColorRect" parent="TextureRect"]
+margin_left = 502.0
+margin_top = 246.0
+margin_right = 744.0
+margin_bottom = 307.0
+color = Color( 0.172549, 0.207843, 0.552941, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect5" type="ColorRect" parent="TextureRect"]
+margin_left = 508.0
+margin_top = 334.0
+margin_right = 685.0
+margin_bottom = 395.0
+color = Color( 0.172549, 0.207843, 0.552941, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VolverMainColor" type="ColorRect" parent="TextureRect"]
+margin_left = 379.45
+margin_top = 460.248
+margin_right = 596.45
+margin_bottom = 524.248
+color = Color( 0.337255, 0.435294, 0.666667, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="VolverMain" type="MenuButton" parent="TextureRect"]
-margin_left = 407.793
+margin_left = 361.805
 margin_top = 455.648
-margin_right = 662.793
+margin_right = 616.805
 margin_bottom = 536.648
 custom_fonts/font = SubResource( 4 )
 text = "VOLVER"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SalirColor" type="ColorRect" parent="TextureRect"]
+visible = false
+margin_left = 743.191
+margin_top = 471.057
+margin_right = 914.191
+margin_bottom = 522.057
+color = Color( 0.462745, 0.494118, 0.819608, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -132,6 +203,17 @@ margin_right = 953.219
 margin_bottom = 540.626
 custom_fonts/font = SubResource( 4 )
 text = "SALIR"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VolverInGameColor" type="ColorRect" parent="TextureRect"]
+visible = false
+margin_left = 106.219
+margin_top = 471.626
+margin_right = 308.219
+margin_bottom = 528.626
+color = Color( 0.462745, 0.494118, 0.819608, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

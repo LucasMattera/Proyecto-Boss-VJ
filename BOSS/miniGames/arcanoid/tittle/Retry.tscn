@@ -78,7 +78,12 @@ margin_right = 521.0
 margin_bottom = 64.0
 
 [node name="Label" parent="tittleMargin/menu/buttonRetry/button" index="0"]
+margin_left = 1.85095
+margin_top = 0.360443
+margin_right = 2.85095
+margin_bottom = 0.360443
 custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 
 [node name="buttonQuit" parent="tittleMargin/menu" instance=ExtResource( 4 )]
 anchor_right = 0.0
@@ -93,6 +98,10 @@ margin_right = 521.0
 margin_bottom = 64.0
 
 [node name="Label" parent="tittleMargin/menu/buttonQuit/button" index="0"]
+margin_left = 1.63956
+margin_top = 5.96201
+margin_right = 1.63956
+margin_bottom = -5.03799
 custom_colors/font_color = Color( 0.996078, 0.996078, 0.996078, 1 )
 
 [node name="lose" type="AudioStreamPlayer" parent="."]
