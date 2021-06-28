@@ -13,7 +13,35 @@
 script = ExtResource( 5 )
 scn_game = ExtResource( 3 )
 
-[node name="MoneyGUI" parent="." instance=ExtResource( 8 )]
+[node name="GUI2" parent="." instance=ExtResource( 8 )]
+
+[node name="Shops" parent="GUI2" index="2"]
+visible = false
+
+[node name="coin" parent="GUI2" index="3"]
+visible = false
+frame = 0
+
+[node name="ShaderTransitionout" parent="GUI2" index="4"]
+visible = false
+
+[node name="EarningMoney" parent="GUI2" index="5"]
+text = ""
+
+[node name="LoseMoney" parent="GUI2" index="6"]
+text = ""
+
+[node name="TimerToEarning" parent="GUI2" index="7"]
+visible = false
+
+[node name="Sprite" parent="GUI2" index="11"]
+visible = false
+
+[node name="Sprite2" parent="GUI2" index="12"]
+visible = false
+
+[node name="PauseHint" parent="GUI2" index="13"]
+visible = false
 
 [node name="GUI" parent="." instance=ExtResource( 4 )]
 

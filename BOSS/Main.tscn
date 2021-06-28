@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=2]
+[gd_scene load_steps=63 format=2]
 
 [ext_resource path="res://Entities/Map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Entities/Player.tscn" type="PackedScene" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://assets/casas.png" type="Texture" id=14]
 [ext_resource path="res://miniGames/Collect_money/Area2D_Collect_Money.gd" type="Script" id=15]
 [ext_resource path="res://Car_Spawner_V.gd" type="Script" id=16]
+[ext_resource path="res://StreetName.tscn" type="PackedScene" id=17]
 [ext_resource path="res://assets/fonts/Schrödinger.ttf" type="DynamicFontData" id=18]
 [ext_resource path="res://Car_Spawner_H.gd" type="Script" id=19]
 [ext_resource path="res://assets/textures/trees.png" type="Texture" id=23]
@@ -1062,6 +1063,38 @@ autostart = true
 
 [node name="FinishTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="Streets" type="Node" parent="."]
+
+[node name="AlvAlsina" parent="Streets" instance=ExtResource( 17 )]
+
+[node name="Label" parent="Streets/AlvAlsina/ColorRect" index="0"]
+text = "   Alsina"
+
+[node name="Label" parent="Streets/AlvAlsina/ColorRect2" index="0"]
+text = "  Alvear"
+
+[node name="AlvRiv" parent="Streets" instance=ExtResource( 17 )]
+position = Vector2( -3473.73, -277.519 )
+
+[node name="Label" parent="Streets/AlvRiv/ColorRect" index="0"]
+margin_left = 0.683533
+margin_top = 0.486397
+margin_right = 71.6836
+margin_bottom = 14.4864
+text = " Rivadavia"
+
+[node name="Label" parent="Streets/AlvRiv/ColorRect2" index="0"]
+text = " Alvear"
+
+[node name="AlvAlem" parent="Streets" instance=ExtResource( 17 )]
+position = Vector2( -3492.77, 826.924 )
+
+[node name="Label" parent="Streets/AlvAlem/ColorRect" index="0"]
+text = "   Alem"
+
+[node name="Label" parent="Streets/AlvAlem/ColorRect2" index="0"]
+text = "  Alvear"
 [connection signal="body_entered" from="Mini_games_areas/Arcanoid/arcanoid" to="Mini_games_areas/Arcanoid/arcanoid" method="_on_arcanoid_body_entered"]
 [connection signal="body_entered" from="Mini_games_areas/dance/Area2D" to="Mini_games_areas/dance/Area2D" method="_on_DanceMinigame_body_entered"]
 [connection signal="body_entered" from="Mini_games_areas/Collect_Money/Area2D_Collect_Money" to="Mini_games_areas/Collect_Money/Area2D_Collect_Money" method="_on_Area2D_Collect_Money_body_entered"]
@@ -1101,3 +1134,9 @@ one_shot = true
 [editable path="Shops/Pizza"]
 
 [editable path="Shops/Clothes"]
+
+[editable path="Streets/AlvAlsina"]
+
+[editable path="Streets/AlvRiv"]
+
+[editable path="Streets/AlvAlem"]
