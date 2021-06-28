@@ -13,34 +13,7 @@
 script = ExtResource( 5 )
 scn_game = ExtResource( 3 )
 
-[node name="GUI2" parent="." instance=ExtResource( 8 )]
-
-[node name="Shops" parent="GUI2" index="2"]
-visible = false
-
-[node name="coin" parent="GUI2" index="3"]
-visible = false
-
-[node name="ShaderTransitionout" parent="GUI2" index="4"]
-visible = false
-
-[node name="EarningMoney" parent="GUI2" index="5"]
-text = ""
-
-[node name="LoseMoney" parent="GUI2" index="6"]
-text = ""
-
-[node name="TimerToEarning" parent="GUI2" index="7"]
-visible = false
-
-[node name="Sprite" parent="GUI2" index="11"]
-visible = false
-
-[node name="Sprite2" parent="GUI2" index="12"]
-visible = false
-
-[node name="PauseHint" parent="GUI2" index="13"]
-visible = false
+[node name="MoneyGUI" parent="." instance=ExtResource( 8 )]
 
 [node name="GUI" parent="." instance=ExtResource( 4 )]
 
@@ -58,23 +31,23 @@ script = ExtResource( 7 )
 
 [node name="Music" type="AudioStreamPlayer" parent="Audio"]
 script = ExtResource( 6 )
-[connection signal="fail" from="." to="Audio/SFX" method="_on_DanceMinigame_fail"]
 [connection signal="fail" from="." to="GUI" method="_on_DanceMinigame_fail"]
-[connection signal="game_over" from="." to="Audio/Music" method="_on_DanceMinigame_game_over"]
+[connection signal="fail" from="." to="Audio/SFX" method="_on_DanceMinigame_fail"]
 [connection signal="game_over" from="." to="GUI" method="_on_DanceMinigame_game_over"]
+[connection signal="game_over" from="." to="Audio/Music" method="_on_DanceMinigame_game_over"]
 [connection signal="money_earned" from="." to="GUI" method="_on_DanceMinigame_money_earned"]
 [connection signal="player_stats_changed" from="." to="GUI" method="_on_DanceMinigame_player_stats_changed"]
-[connection signal="success" from="." to="Audio/SFX" method="_on_DanceMinigame_success"]
 [connection signal="success" from="." to="GUI" method="_on_DanceMinigame_success"]
+[connection signal="success" from="." to="Audio/SFX" method="_on_DanceMinigame_success"]
+[connection signal="win_game" from="." to="GUI" method="_on_DanceMinigame_win_game"]
 [connection signal="win_game" from="." to="Audio/Music" method="_on_DanceMinigame_win_game"]
 [connection signal="win_game" from="." to="Audio/SFX" method="_on_DanceMinigame_win_game"]
-[connection signal="win_game" from="." to="GUI" method="_on_DanceMinigame_win_game"]
 [connection signal="arrow_in_ring" from="GUI" to="." method="_on_GUI_arrow_in_ring"]
 [connection signal="arrow_out_of_ring" from="GUI" to="." method="_on_GUI_arrow_out_of_ring"]
 [connection signal="arrow_out_of_screen" from="GUI" to="." method="_on_GUI_arrow_out_of_screen"]
 [connection signal="last_arrow_out" from="GUI" to="." method="_on_GUI_last_arrow_out"]
 [connection signal="loser_retry" from="GUI" to="." method="_on_GUI_loser_retry"]
 [connection signal="player_exit" from="GUI" to="." method="_on_GUI_player_exit"]
+[connection signal="pause" from="Star_Player" to="GUI" method="_on_Star_Player_pause"]
+[connection signal="pause" from="Star_Player" to="Audio/Music" method="_on_Star_Player_pause"]
 [connection signal="finished" from="Audio/SFX" to="." method="_on_SFX_finished"]
-
-[editable path="GUI2"]

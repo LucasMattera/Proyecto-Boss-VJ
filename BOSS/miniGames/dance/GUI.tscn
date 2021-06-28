@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://assets/fonts/Schrödinger.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/textures/peatonal/assert.png" type="Texture" id=2]
@@ -14,6 +14,8 @@
 [ext_resource path="res://miniGames/dance/ComboLabel.gd" type="Script" id=12]
 [ext_resource path="res://assets/textures/peatonal/Combo.png" type="Texture" id=13]
 [ext_resource path="res://miniGames/dance/MoneyEarned.gd" type="Script" id=14]
+[ext_resource path="res://scenes/menu/pause/Pause.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scenes/menu/nowLoading/NowLoading.tscn" type="PackedScene" id=16]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -438,6 +440,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="PausePopup" parent="." instance=ExtResource( 15 )]
+
 [node name="ScreenLimit" type="Area2D" parent="."]
 position = Vector2( 200, 660 )
 
@@ -451,7 +455,7 @@ layer = 0
 margin_left = 473.0
 margin_top = 500.0
 margin_right = 1013.0
-margin_bottom = 575.0
+margin_bottom = 604.0
 color = Color( 0.00392157, 0.0980392, 0.619608, 0.509804 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -464,8 +468,9 @@ margin_right = 513.0
 margin_bottom = 72.0
 custom_fonts/font = SubResource( 16 )
 text = "Izquierda \"A / flecha izquierda\"
-Derecha: \"D / flecha derecha\""
-align = 2
+Derecha: \"D / flecha derecha\"
+Pausa: \"tecla P\""
+align = 1
 valign = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -556,6 +561,10 @@ color = Color( 0, 0, 0, 0.505882 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="NowLoading" parent="." instance=ExtResource( 16 )]
+visible = false
+[connection signal="pause" from="." to="PausePopup" method="_on_GUI_pause"]
 [connection signal="area_entered" from="Ring" to="." method="_on_Ring_area_entered"]
 [connection signal="area_entered" from="Ring" to="Ring" method="_on_Ring_area_entered"]
 [connection signal="area_exited" from="Ring" to="." method="_on_Ring_area_exited"]
@@ -569,5 +578,7 @@ __meta__ = {
 [connection signal="player_exit" from="GameReadyPopup" to="." method="_on_GameReadyPopup_player_exit"]
 [connection signal="pressed" from="GameReadyPopup/ColorRect/Begin" to="GameReadyPopup" method="_on_Begin_pressed"]
 [connection signal="pressed" from="GameReadyPopup/ColorRect/Exit" to="GameReadyPopup" method="_on_Exit_pressed"]
+[connection signal="exit" from="PausePopup" to="NowLoading" method="_on_PausePopup_exit"]
+[connection signal="exit" from="PausePopup" to="." method="_on_PausePopup_exit"]
 [connection signal="area_entered" from="ScreenLimit" to="." method="_on_ScreenLimit_area_entered"]
 [connection signal="animation_finished" from="MoneyEarned/MoneyUp" to="MoneyEarned" method="_on_MoneyUp_animation_finished"]

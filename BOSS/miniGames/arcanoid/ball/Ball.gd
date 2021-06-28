@@ -40,11 +40,6 @@ func _physics_process(delta):
 			get_parent().add_child(retry_scene.instance())
 		else:
 			hit_s.play()
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _on_PauseMenu_exit():
+	linear_velocity = Vector2(0, 0)

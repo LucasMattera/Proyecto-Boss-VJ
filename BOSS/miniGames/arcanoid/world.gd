@@ -22,3 +22,6 @@ func gameOver():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+func _on_PauseMenu_exit():
+	$background.stop()

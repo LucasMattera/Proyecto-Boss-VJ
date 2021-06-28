@@ -81,3 +81,6 @@ func _handle_earnings_and_loses():
 			lose_money.show()
 			timer_lose_money.start()
 		Player.last_earning = 0		
+
+func _on_PauseMenu_exit():
+	$NowLoading.visible = true

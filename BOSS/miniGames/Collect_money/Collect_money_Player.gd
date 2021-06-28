@@ -5,6 +5,7 @@ var velocity = 1
 export (int) var money = 500
 export (String) var player_name = "player 1"
 var shops = []
+signal pause
 
 func initialize():
 	shops = Player.shops
@@ -27,6 +28,6 @@ func _physics_process(delta):
 	if Input.is_action_just_released("run"):
 		velocity = 1
 	if Input.is_action_just_pressed("pause"):
-		self.get_parent().pause()
+		emit_signal("pause")
 	position.y = 350
 	move_and_slide(Vector2.DOWN, Vector2(0,-1))

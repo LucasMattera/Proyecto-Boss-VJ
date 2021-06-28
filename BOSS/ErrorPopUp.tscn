@@ -13,7 +13,6 @@ font_data = ExtResource( 2 )
 
 [node name="CannotBuy" type="Popup"]
 pause_mode = 2
-visible = true
 margin_left = 272.0
 margin_top = 188.0
 margin_right = 818.0

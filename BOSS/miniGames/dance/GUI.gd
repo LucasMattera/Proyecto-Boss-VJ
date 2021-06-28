@@ -15,6 +15,7 @@ signal arrow_out_of_screen
 signal loser_retry
 signal player_exit
 signal last_arrow_out
+signal pause
 
 func _on_DanceMinigame_player_stats_changed(minigame):
 	score._update(minigame)
@@ -67,3 +68,9 @@ func free_arrows():
 
 func _on_DanceMinigame_money_earned(amount):
 	money_earned.earn_money(amount)
+
+func _on_Star_Player_pause():
+	emit_signal("pause")
+
+func _on_PausePopup_exit():
+	emit_signal("player_exit")
