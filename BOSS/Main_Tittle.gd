@@ -4,7 +4,7 @@ onready var music = $BGM
 # Timer que da tiempo a pausar musica entre escenas. Evita clips de audio.
 onready var changeToNewGameTimer = $ChangeToNewGameTimer
 onready var changeToLoadGameTimer = $ChangeToLoadGameTimer
-onready var nowLoading = $TextureRect/NowLoadingScreen
+onready var nowLoading = $CanvasLayer/TextureRect/NowLoadingScreen
 export var newPlayerScene: PackedScene
 export var loadGameScene: PackedScene
 export var instructions: PackedScene
