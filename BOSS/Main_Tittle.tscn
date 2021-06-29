@@ -1,7 +1,7 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://arcanoid/assets/fonts/advanced_pixel-7.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://assets/textures/Menu/MainMenu/main_menu-bg.png" type="Texture" id=2]
+[ext_resource path="res://assets/textures/Menu/MainMenu/main_menu_bg.png" type="Texture" id=2]
 [ext_resource path="res://Main_Tittle.gd" type="Script" id=3]
 [ext_resource path="res://assets/fonts/Schrödinger.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://transition.shader" type="Shader" id=5]
@@ -14,16 +14,6 @@
 shader = ExtResource( 5 )
 shader_param/progress = 1.0
 shader_param/diamondPixelSize = 10.0
-
-[sub_resource type="DynamicFont" id=2]
-size = 60
-outline_size = 2
-outline_color = Color( 0.0313726, 0.054902, 0.368627, 1 )
-font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=3]
-size = 64
-font_data = ExtResource( 10 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 45
@@ -61,14 +51,6 @@ one_shot = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0, 0.00784314, 0.152941, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
 material = SubResource( 1 )
 anchor_right = 1.0
@@ -79,70 +61,41 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BienvenidoA" type="Label" parent="CanvasLayer/TextureRect"]
-margin_left = 376.0
-margin_top = 50.0
-margin_right = 652.0
-margin_bottom = 110.0
-custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "BIENVENIDO A"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="QuilmesPoly" type="Label" parent="CanvasLayer/TextureRect"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -138.0
-margin_top = -204.5
-margin_right = 138.0
-margin_bottom = -122.5
-custom_fonts/font = SubResource( 3 )
-text = "QuilmesPoly"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/TextureRect"]
 margin_left = 361.181
 margin_top = 495.455
 margin_right = 631.181
 margin_bottom = 535.455
-color = Color( 0.164706, 0.258824, 0.380392, 1 )
+color = Color( 0, 0, 0.415686, 0.494118 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ColorRect3" type="ColorRect" parent="CanvasLayer/TextureRect"]
 margin_left = 631.547
-margin_top = 372.546
+margin_top = 406.0
 margin_right = 881.547
-margin_bottom = 412.546
-color = Color( 0.164706, 0.258824, 0.380392, 1 )
+margin_bottom = 446.0
+color = Color( 0, 0, 0.415686, 0.494118 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ColorRect2" type="ColorRect" parent="CanvasLayer/TextureRect"]
 margin_left = 175.908
-margin_top = 374.272
+margin_top = 406.0
 margin_right = 407.908
-margin_bottom = 414.272
-color = Color( 0.164706, 0.258824, 0.380392, 1 )
+margin_bottom = 446.0
+color = Color( 0, 0, 0.415686, 0.494118 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="New_Game" type="Button" parent="CanvasLayer/TextureRect"]
-margin_left = 144.091
-margin_top = 344.636
-margin_right = 442.091
-margin_bottom = 440.636
+margin_left = 145.979
+margin_top = 380.0
+margin_right = 443.979
+margin_bottom = 476.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color_disabled = Color( 0.980392, 0.972549, 0.972549, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
@@ -157,9 +110,9 @@ __meta__ = {
 
 [node name="Load_Game" type="Button" parent="CanvasLayer/TextureRect"]
 margin_left = 610.0
-margin_top = 344.0
+margin_top = 377.979
 margin_right = 908.0
-margin_bottom = 440.0
+margin_bottom = 473.979
 custom_fonts/font = SubResource( 4 )
 text = "CARGAR JUEGO"
 flat = true
