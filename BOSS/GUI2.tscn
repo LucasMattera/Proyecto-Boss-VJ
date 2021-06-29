@@ -45,8 +45,9 @@ outline_size = 4
 font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=9]
-size = 27
+size = 28
 outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 8 )
 
 [sub_resource type="AtlasTexture" id=8]
@@ -85,7 +86,7 @@ script = ExtResource( 2 )
 
 [node name="Info" type="ColorRect" parent="."]
 anchor_right = 1.0
-margin_bottom = 70.0
+margin_bottom = 44.0
 color = Color( 0, 0.0745098, 0.564706, 0.454902 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -176,42 +177,43 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -577.0
-margin_top = -57.6697
-margin_right = -9.0
-margin_bottom = -17.6697
-color = Color( 0, 0.0745098, 0.564706, 0.494118 )
+margin_left = -585.0
+margin_top = -58.0
+margin_right = -40.0
+margin_bottom = -12.0
+color = Color( 0.207843, 0.207843, 0.65098, 0.313726 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ZIndex" type="Node2D" parent="Controls"]
-z_index = 1
 
 [node name="PauseHint" type="Label" parent="Controls/ZIndex"]
-margin_left = 17.327
-margin_top = 1.65167
-margin_right = 562.33
-margin_bottom = 29.6517
+margin_left = 26.7637
+margin_top = 6.0
+margin_right = 519.764
+margin_bottom = 34.0
 custom_fonts/font = SubResource( 9 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "   ESPACIO     Correr      P   Pausa       E  Estadisticas"
+text = "ESPACIO  Correr    P  Pausa     E  Estadisticas"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Key" type="Sprite" parent="Controls"]
-position = Vector2( 446, 17.6697 )
+[node name="Key" type="Sprite" parent="Controls/ZIndex"]
+position = Vector2( 355.218, 23.015 )
+z_index = -1
 z_as_relative = false
 texture = SubResource( 8 )
 
-[node name="Space" type="Sprite" parent="Controls"]
-position = Vector2( 80.802, 17.6697 )
-scale = Vector2( 0.934262, 1 )
+[node name="Space" type="Sprite" parent="Controls/ZIndex"]
+position = Vector2( 59.3309, 22.4975 )
+scale = Vector2( 0.7156, 1 )
+z_index = -1
 texture = SubResource( 10 )
 
-[node name="Key2" type="Sprite" parent="Controls"]
-position = Vector2( 286.435, 17.6697 )
+[node name="Key2" type="Sprite" parent="Controls/ZIndex"]
+position = Vector2( 219.405, 22.7836 )
+z_index = -1
 texture = SubResource( 8 )
 
 [node name="ShaderTransitionout" parent="." instance=ExtResource( 1 )]
@@ -267,6 +269,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ShopsInfoTable" parent="." instance=ExtResource( 5 )]
+visible = false
+
 [node name="NowLoading" type="ColorRect" parent="."]
 visible = false
 anchor_right = 1.0
@@ -277,16 +282,12 @@ __meta__ = {
 }
 
 [node name="LoadingLabel" type="Label" parent="NowLoading"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -242.5
-margin_top = -81.5
-margin_right = 242.5
-margin_bottom = 81.5
+margin_left = 265.468
+margin_top = 207.407
+margin_right = 750.468
+margin_bottom = 370.407
 custom_fonts/font = SubResource( 14 )
 text = "Cargando..."
-
-[node name="ShopsInfoTable" parent="." instance=ExtResource( 5 )]
-visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
