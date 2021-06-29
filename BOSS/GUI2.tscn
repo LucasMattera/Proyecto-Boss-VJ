@@ -4,6 +4,7 @@
 [ext_resource path="res://GUI.gd" type="Script" id=2]
 [ext_resource path="res://assets/fonts/HabanoST.otf" type="DynamicFontData" id=3]
 [ext_resource path="res://transition.shader" type="Shader" id=4]
+[ext_resource path="res://scenes/gui/incomes/ShopsInfoTable.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/instructions/Keyboard keys (transparent).png" type="Texture" id=6]
 [ext_resource path="res://assets/fonts/Schrödinger.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://arcanoid/assets/fonts/advanced_pixel-7.ttf" type="DynamicFontData" id=8]
@@ -23,11 +24,6 @@ size = 26
 outline_size = 4
 font_data = ExtResource( 8 )
 
-[sub_resource type="DynamicFont" id=3]
-size = 25
-outline_size = 4
-font_data = ExtResource( 8 )
-
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
 "frames": [ ExtResource( 13 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 10 ) ],
@@ -36,49 +32,50 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="ShaderMaterial" id=5]
-shader = ExtResource( 4 )
-shader_param/progress = 1.0
-shader_param/diamondPixelSize = 10.0
-
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=5]
 size = 30
 font_data = ExtResource( 8 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=6]
 size = 18
 font_data = ExtResource( 7 )
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=7]
 outline_size = 4
 font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=9]
-size = 150
-outline_size = 4
-outline_color = Color( 0.992157, 0.0352941, 0.0352941, 1 )
-font_data = ExtResource( 7 )
+size = 28
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 8 )
 
-[sub_resource type="DynamicFont" id=10]
-size = 71
-outline_size = 1
-outline_color = Color( 1, 0.027451, 0.027451, 1 )
-font_data = ExtResource( 7 )
-
-[sub_resource type="AtlasTexture" id=11]
+[sub_resource type="AtlasTexture" id=8]
 flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( -1.96526, 67.3804, 35.078, 28.3015 )
 
-[sub_resource type="AtlasTexture" id=12]
+[sub_resource type="AtlasTexture" id=10]
 flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 96.4988, 29.5339, 154.656, 29.0194 )
 
+[sub_resource type="ShaderMaterial" id=11]
+shader = ExtResource( 4 )
+shader_param/progress = 1.0
+shader_param/diamondPixelSize = 10.0
+
+[sub_resource type="DynamicFont" id=12]
+size = 22
+outline_size = 4
+outline_color = Color( 0.992157, 0.0352941, 0.0352941, 1 )
+font_data = ExtResource( 7 )
+
 [sub_resource type="DynamicFont" id=13]
-size = 27
-outline_size = 2
-font_data = ExtResource( 8 )
+size = 71
+outline_size = 1
+outline_color = Color( 1, 0.027451, 0.027451, 1 )
+font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=14]
 size = 128
@@ -87,15 +84,23 @@ font_data = ExtResource( 3 )
 [node name="GUI" type="CanvasLayer"]
 script = ExtResource( 2 )
 
-[node name="Name" type="Label" parent="."]
+[node name="Info" type="ColorRect" parent="."]
+anchor_right = 1.0
+margin_bottom = 44.0
+color = Color( 0, 0.0745098, 0.564706, 0.454902 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="Info"]
 anchor_left = 0.006
 anchor_top = 0.014
 anchor_right = 0.089
 anchor_bottom = 0.066
-margin_left = -0.144
-margin_top = 0.6
-margin_right = 53.864
-margin_bottom = 0.4
+margin_left = -0.108
+margin_top = 8.44
+margin_right = 53.9
+margin_bottom = 33.36
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "player name"
@@ -105,14 +110,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Money" type="Label" parent="."]
+[node name="Money" type="Label" parent="Info"]
 anchor_left = 0.09
 anchor_top = 0.017
 anchor_right = 0.158
 anchor_bottom = 0.06
-margin_left = 57.84
-margin_top = -0.200001
-margin_right = 58.208
+margin_left = 58.38
+margin_top = 9.32
+margin_right = 58.748
+margin_bottom = 34.6
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = " Money"
@@ -121,88 +127,126 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Shops" type="Label" parent="."]
-anchor_left = 0.156
-anchor_top = 0.013
-anchor_right = 0.32
-anchor_bottom = 0.053
-margin_left = 140.256
-margin_top = 2.2
-margin_right = 140.32
-margin_bottom = 4.2
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Locales:"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="coin" type="AnimatedSprite" parent="."]
+[node name="coin" type="AnimatedSprite" parent="Info"]
 position = Vector2( 160, 23 )
 scale = Vector2( 0.375, 0.375 )
 frames = SubResource( 4 )
-frame = 2
+frame = 1
 playing = true
 
-[node name="ShaderTransitionout" parent="." instance=ExtResource( 1 )]
-visible = false
-material = SubResource( 5 )
-margin_left = -1.21021
-margin_right = -1.21021
-
-[node name="EarningMoney" type="Label" parent="."]
+[node name="EarningMoney" type="Label" parent="Info"]
 visible = false
 margin_left = 157.107
 margin_top = 34.4933
 margin_right = 227.107
 margin_bottom = 65.4933
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.00392157, 1, 0.101961, 1 )
 text = "+$money"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LoseMoney" type="Label" parent="."]
+[node name="LoseMoney" type="Label" parent="Info"]
 visible = false
 margin_left = 130.83
 margin_top = 53.0195
 margin_right = 216.83
 margin_bottom = 78.0195
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "-$money"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TimerToEarning" type="Label" parent="."]
+[node name="TimerToEarning" type="Label" parent="Info"]
 margin_left = 576.0
 margin_top = 14.0886
 margin_right = 772.0
 margin_bottom = 49.0886
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Proxima ganancia en: "
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Controls" type="ColorRect" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -585.0
+margin_top = -58.0
+margin_right = -40.0
+margin_bottom = -12.0
+color = Color( 0.207843, 0.207843, 0.65098, 0.313726 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ZIndex" type="Node2D" parent="Controls"]
+
+[node name="PauseHint" type="Label" parent="Controls/ZIndex"]
+margin_left = 26.7637
+margin_top = 6.0
+margin_right = 519.764
+margin_bottom = 34.0
+custom_fonts/font = SubResource( 9 )
+text = "ESPACIO  Correr    P  Pausa     E  Estadisticas"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Key" type="Sprite" parent="Controls/ZIndex"]
+position = Vector2( 355.218, 23.015 )
+z_index = -1
+z_as_relative = false
+texture = SubResource( 8 )
+
+[node name="Space" type="Sprite" parent="Controls/ZIndex"]
+position = Vector2( 59.3309, 22.4975 )
+scale = Vector2( 0.7156, 1 )
+z_index = -1
+texture = SubResource( 10 )
+
+[node name="Key2" type="Sprite" parent="Controls/ZIndex"]
+position = Vector2( 219.405, 22.7836 )
+z_index = -1
+texture = SubResource( 8 )
+
+[node name="ShaderTransitionout" parent="." instance=ExtResource( 1 )]
+visible = false
+material = SubResource( 11 )
+margin_left = -1.21021
+margin_right = -1.21021
+
 [node name="ShaderHospital" type="Sprite" parent="."]
 visible = false
-position = Vector2( 824, 312 )
+position = Vector2( 659.184, 325.454 )
 scale = Vector2( 51.1729, 29.1805 )
+z_index = 1
 texture = ExtResource( 12 )
 
-[node name="Label" type="Label" parent="."]
-visible = false
-margin_left = 48.0
-margin_top = 56.0
-margin_right = 2788.0
-margin_bottom = 952.0
+[node name="ZIndex" type="Node2D" parent="ShaderHospital"]
+position = Vector2( -12.8648, -11.1545 )
+scale = Vector2( 0.1, 0.1 )
+
+[node name="Wasted" type="Label" parent="ShaderHospital/ZIndex"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 49.7989
+margin_top = 45.7054
+margin_right = 346.799
+margin_bottom = 224.705
 rect_scale = Vector2( 0.349923, 0.550106 )
-custom_fonts/font = SubResource( 9 )
-text = "FUISTE ATROPELLADO
+custom_fonts/font = SubResource( 12 )
+text = "Wasted
+
+FUISTE ATROPELLADO
 
 SERAS ENVIADO AL HOSPITAL
 
@@ -219,32 +263,14 @@ margin_left = 249.629
 margin_top = 261.906
 margin_right = 844.629
 margin_bottom = 333.906
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 13 )
 text = "JUEGO GUARDADO"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 911.615, 565.032 )
-texture = SubResource( 11 )
-
-[node name="Sprite2" type="Sprite" parent="."]
-position = Vector2( 710.436, 566.015 )
-scale = Vector2( 0.934262, 1 )
-texture = SubResource( 12 )
-
-[node name="PauseHint" type="Label" parent="."]
-margin_left = 643.068
-margin_top = 550.089
-margin_right = 992.068
-margin_bottom = 578.089
-custom_fonts/font = SubResource( 13 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "   ESPACIO     Correr      P   Pausa"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="ShopsInfoTable" parent="." instance=ExtResource( 5 )]
+visible = false
 
 [node name="NowLoading" type="ColorRect" parent="."]
 visible = false
@@ -256,13 +282,12 @@ __meta__ = {
 }
 
 [node name="LoadingLabel" type="Label" parent="NowLoading"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -242.5
-margin_top = -81.5
-margin_right = 242.5
-margin_bottom = 81.5
+margin_left = 265.468
+margin_top = 207.407
+margin_right = 750.468
+margin_bottom = 370.407
 custom_fonts/font = SubResource( 14 )
 text = "Cargando..."
+__meta__ = {
+"_edit_use_anchors_": false
+}

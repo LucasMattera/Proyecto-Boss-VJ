@@ -8,6 +8,7 @@ export (String) var shop_name = "shop"
 export (int) var earnings = 10
 export (int) var upgrade_value = 10
 export (int) var add_employee_value = 10
+export (String) var location = ""
 signal player_entered_on_shop
 
 func initialize(player):

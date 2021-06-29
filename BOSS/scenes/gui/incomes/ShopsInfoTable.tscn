@@ -1,0 +1,148 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/fonts/HabanoST.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/fonts/Schrödinger.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://scenes/gui/incomes/ShopsInfoTable.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 36
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 48
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 22
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 22
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 22
+font_data = ExtResource( 2 )
+
+[node name="ShopsInfoTable" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Table" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -459.0
+margin_top = -200.0
+margin_right = 435.0
+margin_bottom = 200.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="PanelContainer" parent="Table"]
+self_modulate = Color( 0, 0, 1, 0.627451 )
+margin_right = 894.0
+margin_bottom = 76.0
+
+[node name="Label" type="Label" parent="Table/Title"]
+margin_left = 200.0
+margin_top = 25.0
+margin_right = 480.0
+margin_bottom = 62.0
+custom_fonts/font = SubResource( 1 )
+text = "Mis Tiendas en"
+
+[node name="Label2" type="Label" parent="Table/Title"]
+margin_left = 500.0
+margin_top = 10.0
+margin_right = 631.0
+margin_bottom = 72.0
+custom_fonts/font = SubResource( 5 )
+text = "Quilmes"
+align = 1
+
+[node name="ColumnsInfo" type="PanelContainer" parent="Table"]
+self_modulate = Color( 0, 0, 1, 0.627451 )
+margin_top = 80.0
+margin_right = 894.0
+margin_bottom = 169.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Table/ColumnsInfo"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 887.0
+margin_bottom = 82.0
+
+[node name="1" type="Label" parent="Table/ColumnsInfo/HBoxContainer"]
+margin_top = 26.0
+margin_right = 172.0
+margin_bottom = 49.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 2 )
+text = "Local"
+
+[node name="2" type="Label" parent="Table/ColumnsInfo/HBoxContainer"]
+margin_left = 176.0
+margin_top = 26.0
+margin_right = 349.0
+margin_bottom = 49.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 3 )
+text = "Ganancias"
+
+[node name="3" type="Label" parent="Table/ColumnsInfo/HBoxContainer"]
+margin_left = 353.0
+margin_right = 526.0
+margin_bottom = 75.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 4 )
+text = "Costo de
+Contratar
+empleado"
+
+[node name="4" type="Label" parent="Table/ColumnsInfo/HBoxContainer"]
+margin_left = 530.0
+margin_right = 703.0
+margin_bottom = 75.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 4 )
+text = "Costo de
+Mejorar 
+estructura"
+
+[node name="5" type="Label" parent="Table/ColumnsInfo/HBoxContainer"]
+margin_left = 707.0
+margin_top = 26.0
+margin_right = 880.0
+margin_bottom = 49.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 4 )
+text = "Direccion"
+
+[node name="Rows" type="PanelContainer" parent="Table"]
+self_modulate = Color( 0, 0, 1, 0.627451 )
+margin_top = 173.0
+margin_right = 894.0
+margin_bottom = 400.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Table/Rows"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 887.0
+margin_bottom = 220.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Table/Rows/ScrollContainer"]
+margin_right = 880.0
+margin_bottom = 213.0
+size_flags_horizontal = 3
+size_flags_vertical = 3

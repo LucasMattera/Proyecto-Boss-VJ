@@ -6,6 +6,7 @@ var value
 var earnings # $100
 var upgrade_value # valor inicial $112
 var add_employee_value # 110
+var location
 
 func initialize(shop):
 	self.shop = shop
@@ -14,6 +15,7 @@ func initialize(shop):
 	self.earnings = shop.earnings
 	self.add_employee_value = get_add_employee_value()
 	self.upgrade_value = get_upgrade_value()
+	self.location = shop.location
 
 func upgrade_shop():
 	Player.discount_money(upgrade_value)

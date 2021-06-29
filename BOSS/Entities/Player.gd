@@ -23,6 +23,7 @@ func buy(shop):
 	shop_to_add.upgrade_value = shop.upgrade_value
 	shop_to_add.earnings = shop.earnings
 	shop_to_add.value = shop.value
+	shop_to_add.location = shop.location
 	var shop_name = shop_to_add.shop_name
 	var shop_value = shop_to_add.value
 	if (!Player.has_shop(shop_name) && Player.money >= shop_value):
@@ -59,7 +60,7 @@ func upgrade_shop(shop_name):
 	if find > -1:
 		shops[find].earnings = ShopState.earnings
 		shops[find].upgrade_value = ShopState.upgrade_value
-		
+
 func has_shop(shop_name):
 	var has_shop = false
 	for shop in Player.shops:
