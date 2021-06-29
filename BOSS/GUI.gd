@@ -84,3 +84,6 @@ func _handle_earnings_and_loses():
 
 func _on_PauseMenu_exit():
 	$NowLoading.visible = true
+
+func _on_Player_open_shop_status():
+	$ShopsInfo.show_table()

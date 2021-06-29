@@ -263,7 +263,6 @@ points = PoolVector2Array( 440, 72, 0, 72, 0, 0, 440, 0 )
 9/z_index = 0
 
 [sub_resource type="AtlasTexture" id=5]
-flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 220.611, 322.942, 16.7246, 16.2513 )
 
@@ -276,7 +275,6 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 13 )
 
 [sub_resource type="AtlasTexture" id=8]
-flags = 4
 atlas = ExtResource( 12 )
 region = Rect2( 5.52087, -4.96092, 134.153, 177.866 )
 
@@ -319,7 +317,6 @@ atlas = ExtResource( 31 )
 region = Rect2( 1522.52, 815.811, 548.834, 481.524 )
 
 [sub_resource type="AtlasTexture" id=18]
-flags = 4
 atlas = ExtResource( 11 )
 region = Rect2( 199.249, 245.712, 160.075, 154.874 )
 
@@ -1100,6 +1097,7 @@ text = "  Alvear"
 [connection signal="body_entered" from="Mini_games_areas/Collect_Money/Area2D_Collect_Money" to="Mini_games_areas/Collect_Money/Area2D_Collect_Money" method="_on_Area2D_Collect_Money_body_entered"]
 [connection signal="body_entered" from="Mini_games_areas/WorkGame/Area2D" to="Mini_games_areas/WorkGame" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="House/HouseArea2D" to="." method="_on_HouseArea2D_body_entered"]
+[connection signal="open_shop_status" from="Player" to="GUI" method="_on_Player_open_shop_status"]
 [connection signal="timeout" from="InitTimer" to="." method="_on_InitTimer_timeout"]
 [connection signal="timeout" from="FinishTimer" to="." method="_on_FinishTimer_timeout"]
 

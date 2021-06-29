@@ -12,6 +12,7 @@ export (int) var money = 500
 export (String) var player_name = "player 1"
 var shops = []
 var playingsfx = false
+signal open_shop_status
 
 func _ready():
 	Player.connect("coin_picked", self, "obtainCoin")
@@ -59,6 +60,8 @@ func get_input():
 	if (Input.is_action_just_pressed("pause")):
 		GameServer.is_paused = true
 		get_tree().change_scene("res://Instructions.tscn")
+	if (Input.is_action_just_pressed("shop-status")):
+		emit_signal("open_shop_status")
 	Player.velocity = velocity
 	Player.money = money
 		
