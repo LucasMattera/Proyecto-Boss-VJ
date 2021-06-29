@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=2]
+[gd_scene load_steps=86 format=2]
 
 [ext_resource path="res://Entities/Map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Entities/Player.tscn" type="PackedScene" id=2]
@@ -19,6 +19,9 @@
 [ext_resource path="res://StreetName.tscn" type="PackedScene" id=17]
 [ext_resource path="res://assets/fonts/Schrödinger.ttf" type="DynamicFontData" id=18]
 [ext_resource path="res://Car_Spawner_H.gd" type="Script" id=19]
+[ext_resource path="res://assets/textures/estadio-futbol.png" type="Texture" id=20]
+[ext_resource path="res://Train.gd" type="Script" id=21]
+[ext_resource path="res://assets/textures/tren.png" type="Texture" id=22]
 [ext_resource path="res://assets/textures/trees.png" type="Texture" id=23]
 [ext_resource path="res://assets/audio/music/street/urban.ogg" type="AudioStream" id=25]
 [ext_resource path="res://assets/textures/free_tileset_version_7.png" type="Texture" id=26]
@@ -291,6 +294,10 @@ region = Rect2( 473.621, 346.569, 272.49, 246.715 )
 [sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 145.813, 103.323 )
 
+[sub_resource type="DynamicFont" id=31]
+size = 90
+font_data = ExtResource( 18 )
+
 [sub_resource type="AtlasTexture" id=12]
 flags = 4
 atlas = ExtResource( 30 )
@@ -300,7 +307,15 @@ region = Rect2( 269.91, 29.4984, 84.2867, 99.6456 )
 extents = Vector2( 127.901, 103.406 )
 
 [sub_resource type="DynamicFont" id=14]
-size = 136
+size = 106
+font_data = ExtResource( 18 )
+
+[sub_resource type="DynamicFont" id=45]
+size = 284
+font_data = ExtResource( 18 )
+
+[sub_resource type="DynamicFont" id=46]
+size = 100
 font_data = ExtResource( 18 )
 
 [sub_resource type="AtlasTexture" id=15]
@@ -308,65 +323,117 @@ flags = 4
 atlas = ExtResource( 31 )
 region = Rect2( 2204.51, 1431.62, 533.161, 504.767 )
 
+[sub_resource type="DynamicFont" id=40]
+size = 66
+font_data = ExtResource( 18 )
+
 [sub_resource type="AtlasTexture" id=16]
 flags = 4
 atlas = ExtResource( 35 )
 region = Rect2( 151.126, 345.505, 286.397, 257.52 )
+
+[sub_resource type="DynamicFont" id=38]
+size = 102
+font_data = ExtResource( 18 )
 
 [sub_resource type="AtlasTexture" id=17]
 flags = 4
 atlas = ExtResource( 31 )
 region = Rect2( 1522.52, 815.811, 548.834, 481.524 )
 
+[sub_resource type="DynamicFont" id=36]
+size = 58
+font_data = ExtResource( 18 )
+
 [sub_resource type="AtlasTexture" id=18]
 flags = 4
 atlas = ExtResource( 11 )
 region = Rect2( 199.249, 245.712, 160.075, 154.874 )
+
+[sub_resource type="DynamicFont" id=32]
+size = 96
+font_data = ExtResource( 18 )
 
 [sub_resource type="AtlasTexture" id=19]
 flags = 4
 atlas = ExtResource( 35 )
 region = Rect2( 153.674, 617.429, 286.571, 215.835 )
 
+[sub_resource type="DynamicFont" id=39]
+size = 64
+font_data = ExtResource( 18 )
+
 [sub_resource type="AtlasTexture" id=20]
 flags = 4
 atlas = ExtResource( 35 )
 region = Rect2( 796.383, 365.48, 251.308, 219.993 )
+
+[sub_resource type="DynamicFont" id=44]
+size = 73
+font_data = ExtResource( 18 )
 
 [sub_resource type="AtlasTexture" id=21]
 flags = 4
 atlas = ExtResource( 35 )
 region = Rect2( 466.483, 79.6455, 283.42, 223.118 )
 
+[sub_resource type="DynamicFont" id=33]
+size = 68
+font_data = ExtResource( 18 )
+
 [sub_resource type="AtlasTexture" id=22]
 flags = 4
 atlas = ExtResource( 31 )
 region = Rect2( 2227.48, 167.451, 504.62, 436.478 )
+
+[sub_resource type="DynamicFont" id=42]
+size = 52
+font_data = ExtResource( 18 )
 
 [sub_resource type="AtlasTexture" id=23]
 flags = 4
 atlas = ExtResource( 35 )
 region = Rect2( 797.127, 611.846, 275.722, 226.178 )
 
+[sub_resource type="DynamicFont" id=41]
+size = 70
+font_data = ExtResource( 18 )
+
 [sub_resource type="AtlasTexture" id=24]
 flags = 4
 atlas = ExtResource( 35 )
 region = Rect2( 799.232, 854.875, 279.771, 265.15 )
+
+[sub_resource type="DynamicFont" id=37]
+size = 72
+font_data = ExtResource( 18 )
 
 [sub_resource type="AtlasTexture" id=25]
 flags = 4
 atlas = ExtResource( 35 )
 region = Rect2( 482, 831, 283, 243 )
 
+[sub_resource type="DynamicFont" id=34]
+size = 108
+font_data = ExtResource( 18 )
+
 [sub_resource type="AtlasTexture" id=26]
 flags = 4
 atlas = ExtResource( 31 )
 region = Rect2( 836.885, 1425.49, 566.852, 507.102 )
 
+[sub_resource type="DynamicFont" id=35]
+size = 76
+font_data = ExtResource( 18 )
+
 [sub_resource type="AtlasTexture" id=27]
 flags = 4
 atlas = ExtResource( 31 )
 region = Rect2( 846.28, 136.714, 533.069, 479.89 )
+
+[sub_resource type="DynamicFont" id=43]
+size = 52
+font_data = ExtResource( 18 )
 
 [sub_resource type="AtlasTexture" id=28]
 flags = 4
@@ -379,6 +446,26 @@ extents = Vector2( 118.931, 86.7712 )
 [sub_resource type="RectangleShape2D" id=30]
 extents = Vector2( 662.51, 448 )
 
+[sub_resource type="AtlasTexture" id=47]
+flags = 4
+atlas = ExtResource( 22 )
+region = Rect2( 141.092, 189.722, 486.876, 96.361 )
+
+[sub_resource type="AtlasTexture" id=48]
+flags = 4
+atlas = ExtResource( 22 )
+region = Rect2( 590.555, 290.253, 388.769, 261.263 )
+
+[sub_resource type="AtlasTexture" id=49]
+flags = 4
+atlas = ExtResource( 22 )
+region = Rect2( 167.84, 308.277, 375.092, 288.094 )
+
+[sub_resource type="AtlasTexture" id=50]
+flags = 4
+atlas = ExtResource( 22 )
+region = Rect2( 179.366, 636.222, 383.055, 131.961 )
+
 [node name="Main" type="Node"]
 script = ExtResource( 8 )
 
@@ -387,9 +474,9 @@ anchor_left = -4.851
 anchor_top = -3.691
 anchor_right = 4.4
 anchor_bottom = 5.952
-margin_left = -240.576
+margin_left = -248.166
 margin_top = -497.4
-margin_right = 110.4
+margin_right = 102.81
 margin_bottom = -5651.2
 texture = ExtResource( 3 )
 expand = true
@@ -434,7 +521,7 @@ texture = SubResource( 5 )
 [node name="Street_V" type="Node" parent="."]
 
 [node name="spr_street_V" type="Sprite" parent="Street_V"]
-position = Vector2( -3169.47, 744 )
+position = Vector2( -3168.65, 744 )
 rotation = 1.5708
 scale = Vector2( 351.665, 19.9791 )
 texture = SubResource( 5 )
@@ -551,6 +638,24 @@ shape = SubResource( 11 )
 [node name="Exit" type="Position2D" parent="Mini_games_areas/Collect_Money/Area2D_Collect_Money"]
 position = Vector2( 480.426, 298.457 )
 
+[node name="ColorRect" type="ColorRect" parent="Mini_games_areas/Collect_Money/Area2D_Collect_Money"]
+margin_left = 800.0
+margin_top = -326.0
+margin_right = 1415.0
+margin_bottom = -205.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Mini_games_areas/Collect_Money/Area2D_Collect_Money/ColorRect"]
+margin_right = 598.0
+margin_bottom = 111.0
+custom_fonts/font = SubResource( 31 )
+custom_colors/font_color = Color( 0.12549, 1, 0, 1 )
+text = "ARGENCHINO"
+align = 1
+valign = 1
+
 [node name="StaticBody2D" type="StaticBody2D" parent="Mini_games_areas/Collect_Money"]
 position = Vector2( -512, 152 )
 
@@ -581,20 +686,30 @@ position = Vector2( 1907.37, -1322.26 )
 position = Vector2( 71.4109, -34.5537 )
 shape = SubResource( 13 )
 
-[node name="Exit" type="Position2D" parent="Mini_games_areas/WorkGame"]
-position = Vector2( 1949.53, -1139.72 )
-
-[node name="Label" type="Label" parent="."]
-margin_left = 1806.67
-margin_top = -1617.57
-margin_right = 2164.67
-margin_bottom = -1480.57
-custom_fonts/font = SubResource( 14 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "WORK"
+[node name="ColorRect" type="ColorRect" parent="Mini_games_areas/WorkGame/Area2D"]
+margin_left = -160.339
+margin_top = -292.031
+margin_right = 316.661
+margin_bottom = -160.031
+color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Label" type="Label" parent="Mini_games_areas/WorkGame/Area2D/ColorRect"]
+margin_left = 23.0878
+margin_top = 9.85791
+margin_right = 484.088
+margin_bottom = 146.858
+custom_fonts/font = SubResource( 14 )
+custom_colors/font_color = Color( 0.470588, 0.4, 0.4, 1 )
+text = "CO-WORK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="Position2D" parent="Mini_games_areas/WorkGame"]
+position = Vector2( 1949.53, -1139.72 )
 
 [node name="Shops" type="Node" parent="."]
 
@@ -614,6 +729,63 @@ position = Vector2( -187.582, 1477.21 )
 
 [node name="CollisionShape2D" parent="Shops/FastFood/Area2D" index="0"]
 position = Vector2( 42.2065, 28.137 )
+
+[node name="ColorRect" type="ColorRect" parent="Shops/FastFood/Area2D/CollisionShape2D" index="0"]
+margin_left = -313.0
+margin_top = -539.0
+margin_right = 90.0
+margin_bottom = -290.0
+color = Color( 0.964706, 0.188235, 0.137255, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Shops/FastFood/Area2D/CollisionShape2D/ColorRect"]
+margin_right = 407.0
+margin_bottom = 259.0
+custom_fonts/font = SubResource( 45 )
+custom_colors/font_color = Color( 1, 1, 0, 1 )
+text = "MC"
+align = 1
+valign = 1
+
+[node name="ColorRect2" type="ColorRect" parent="Shops/FastFood/Area2D/CollisionShape2D" index="1"]
+margin_left = 321.0
+margin_top = -382.0
+margin_right = 492.0
+margin_bottom = -274.0
+color = Color( 0.964706, 0.188235, 0.137255, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Shops/FastFood/Area2D/CollisionShape2D/ColorRect2"]
+margin_right = 176.0
+margin_bottom = 111.0
+custom_fonts/font = SubResource( 46 )
+custom_colors/font_color = Color( 1, 0.968627, 0, 1 )
+text = "MC"
+align = 1
+valign = 1
+
+[node name="ColorRect3" type="ColorRect" parent="Shops/FastFood/Area2D/CollisionShape2D" index="2"]
+margin_left = -719.117
+margin_top = -382.85
+margin_right = -548.117
+margin_bottom = -274.85
+color = Color( 0.964706, 0.188235, 0.137255, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Shops/FastFood/Area2D/CollisionShape2D/ColorRect3"]
+margin_right = 176.0
+margin_bottom = 111.0
+custom_fonts/font = SubResource( 46 )
+custom_colors/font_color = Color( 1, 0.968627, 0, 1 )
+text = "MC"
+align = 1
+valign = 1
 
 [node name="Exit" parent="Shops/FastFood" index="3"]
 position = Vector2( -225.522, 1710.41 )
@@ -640,6 +812,24 @@ position = Vector2( -363.778, -8.45996 )
 
 [node name="CollisionShape2D" parent="Shops/Cafe/Area2D" index="0"]
 position = Vector2( -245.339, -181.889 )
+
+[node name="ColorRect" type="ColorRect" parent="Shops/Cafe/Area2D" index="1"]
+margin_left = -234.0
+margin_top = -558.0
+margin_right = 289.0
+margin_bottom = -484.0
+color = Color( 0.351562, 0.169156, 0.0401361, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Shops/Cafe/Area2D/ColorRect"]
+margin_right = 504.0
+margin_bottom = 64.0
+custom_fonts/font = SubResource( 40 )
+text = "CAFETERIA"
+align = 1
+valign = 1
 
 [node name="Exit" parent="Shops/Cafe" index="3"]
 position = Vector2( -563.964, 3.04956 )
@@ -670,6 +860,28 @@ position = Vector2( 260.464, 141.896 )
 
 [node name="CollisionShape2D" parent="Shops/IceCream/Area2D" index="0"]
 position = Vector2( 388.999, 68.4402 )
+
+[node name="ColorRect" type="ColorRect" parent="Shops/IceCream/Area2D" index="1"]
+margin_left = -718.0
+margin_top = 423.0
+margin_right = 197.0
+margin_bottom = 518.0
+color = Color( 0.560784, 0.54902, 0.933333, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Shops/IceCream/Area2D/ColorRect"]
+margin_left = 904.886
+margin_top = 90.491
+margin_right = 1808.89
+margin_bottom = 193.491
+rect_rotation = 180.0
+custom_fonts/font = SubResource( 38 )
+custom_colors/font_color = Color( 1, 0.972549, 0, 1 )
+text = "GRIDO"
+align = 1
+valign = 1
 
 [node name="Exit" parent="Shops/IceCream" index="3"]
 position = Vector2( 645.105, -19.1996 )
@@ -726,6 +938,24 @@ texture = ExtResource( 32 )
 [node name="CollisionShape2D" parent="Shops/Cinema/Area2D" index="0"]
 position = Vector2( -2.68408, 571.777 )
 
+[node name="ColorRect" type="ColorRect" parent="Shops/Cinema/Area2D" index="1"]
+margin_left = -311.0
+margin_top = 289.0
+margin_right = 315.0
+margin_bottom = 350.0
+color = Color( 0.701961, 0.184314, 0.184314, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Shops/Cinema/Area2D/ColorRect"]
+margin_right = 631.0
+margin_bottom = 53.0
+custom_fonts/font = SubResource( 36 )
+text = "SHOWCASE"
+align = 1
+valign = 1
+
 [node name="Exit" parent="Shops/Cinema" index="3"]
 position = Vector2( -13.4219, 709.257 )
 
@@ -747,6 +977,24 @@ earnings = 700
 position = Vector2( 134.984, -230.779 )
 scale = Vector2( 9.0216, 4.22678 )
 texture = SubResource( 18 )
+
+[node name="ColorRect" type="ColorRect" parent="Shops/NightClub/Area2D" index="1"]
+margin_left = -326.37
+margin_top = -395.522
+margin_right = 232.63
+margin_bottom = -205.522
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Shops/NightClub/Area2D/ColorRect"]
+margin_right = 562.0
+margin_bottom = 186.0
+custom_fonts/font = SubResource( 32 )
+text = "EL BOSQUE"
+align = 1
+valign = 1
 
 [node name="Exit" parent="Shops/NightClub" index="3"]
 position = Vector2( -4.31445, 185.517 )
@@ -778,6 +1026,25 @@ position = Vector2( 613.708, -149.891 )
 [node name="CollisionShape2D" parent="Shops/Electronic/Area2D" index="0"]
 position = Vector2( 10.868, -39.8154 )
 
+[node name="ColorRect" type="ColorRect" parent="Shops/Electronic/Area2D" index="1"]
+margin_left = -164.0
+margin_top = -496.0
+margin_right = 261.0
+margin_bottom = -420.0
+color = Color( 0.321569, 0.294118, 0.294118, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Shops/Electronic/Area2D/ColorRect"]
+margin_right = 418.0
+margin_bottom = 76.0
+custom_fonts/font = SubResource( 39 )
+custom_colors/font_color = Color( 1, 0.537255, 0, 1 )
+text = "AUDILEM"
+align = 1
+valign = 1
+
 [node name="Exit" parent="Shops/Electronic" index="3"]
 position = Vector2( 649.17, 16.6766 )
 
@@ -803,6 +1070,24 @@ position = Vector2( 5.57324, -5.5733 )
 [node name="CollisionShape2D" parent="Shops/Farmacy/Area2D" index="0"]
 position = Vector2( -70.5947, 128.186 )
 
+[node name="ColorRect" type="ColorRect" parent="Shops/Farmacy/Area2D" index="1"]
+margin_left = -454.0
+margin_top = -287.0
+margin_right = 314.0
+margin_bottom = -211.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Shops/Farmacy/Area2D/ColorRect"]
+margin_right = 783.0
+margin_bottom = 79.0
+custom_fonts/font = SubResource( 44 )
+custom_colors/font_color = Color( 1, 0.513726, 0, 1 )
+text = "FARMACIA"
+align = 1
+valign = 1
+
 [node name="Exit" parent="Shops/Farmacy" index="3"]
 position = Vector2( -48.9009, 344.408 )
 
@@ -827,6 +1112,24 @@ position = Vector2( -105.962, 564.178 )
 
 [node name="CollisionShape2D" parent="Shops/Meat/Area2D" index="0"]
 position = Vector2( -77.3237, 34.366 )
+
+[node name="ColorRect" type="ColorRect" parent="Shops/Meat/Area2D" index="1"]
+margin_left = -597.0
+margin_top = -319.0
+margin_right = -129.0
+margin_bottom = -237.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Shops/Meat/Area2D/ColorRect"]
+margin_right = 470.0
+margin_bottom = 80.0
+custom_fonts/font = SubResource( 33 )
+custom_colors/font_color = Color( 0.521569, 0.121569, 0.121569, 1 )
+text = "CARNICERIA"
+align = 1
+valign = 1
 
 [node name="Exit" parent="Shops/Meat" index="3"]
 position = Vector2( -82.7913, 854.914 )
@@ -878,6 +1181,24 @@ position = Vector2( 21.2729, -55.8423 )
 [node name="CollisionShape2D" parent="Shops/Burger/Area2D" index="0"]
 position = Vector2( 28.679, 195.771 )
 
+[node name="ColorRect" type="ColorRect" parent="Shops/Burger/Area2D" index="1"]
+margin_left = -1.0
+margin_top = -194.0
+margin_right = 461.0
+margin_bottom = -132.0
+color = Color( 0.831373, 0.0588235, 0.156863, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Shops/Burger/Area2D/ColorRect"]
+margin_right = 460.0
+margin_bottom = 60.0
+custom_fonts/font = SubResource( 42 )
+text = "PEREZ H"
+align = 1
+valign = 1
+
 [node name="Exit" parent="Shops/Burger" index="3"]
 position = Vector2( -83.5737, 367.316 )
 
@@ -899,6 +1220,24 @@ texture = SubResource( 23 )
 
 [node name="CollisionShape2D" parent="Shops/Beer/Area2D" index="0"]
 position = Vector2( -259.609, 45.235 )
+
+[node name="ColorRect" type="ColorRect" parent="Shops/Beer/Area2D" index="1"]
+margin_left = -334.0
+margin_top = -381.0
+margin_right = 333.0
+margin_bottom = -310.0
+color = Color( 0.0901961, 0.294118, 0.0588235, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Shops/Beer/Area2D/ColorRect"]
+margin_right = 695.0
+margin_bottom = 78.0
+custom_fonts/font = SubResource( 41 )
+text = "ANTARES"
+align = 1
+valign = 1
 
 [node name="Exit" parent="Shops/Beer" index="3"]
 position = Vector2( -309.491, 284.734 )
@@ -925,6 +1264,25 @@ position = Vector2( -11.8413, 151.961 )
 [node name="CollisionShape2D" parent="Shops/Kids/Area2D" index="0"]
 position = Vector2( -199.708, 40.0588 )
 
+[node name="ColorRect" type="ColorRect" parent="Shops/Kids/Area2D" index="1"]
+margin_left = -407.0
+margin_top = -439.0
+margin_right = 225.0
+margin_bottom = -351.0
+color = Color( 1, 0.423529, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Shops/Kids/Area2D/ColorRect"]
+margin_right = 629.0
+margin_bottom = 73.0
+custom_fonts/font = SubResource( 37 )
+custom_colors/font_color = Color( 0, 1, 0.109804, 1 )
+text = "CITY KIDS"
+align = 1
+valign = 1
+
 [node name="Exit" parent="Shops/Kids" index="3"]
 position = Vector2( -305.584, 367.168 )
 
@@ -947,6 +1305,24 @@ texture = SubResource( 25 )
 [node name="CollisionShape2D" parent="Shops/Jewerly/Area2D" index="0"]
 position = Vector2( 34.7212, 126.483 )
 
+[node name="ColorRect" type="ColorRect" parent="Shops/Jewerly/Area2D" index="1"]
+margin_left = -367.0
+margin_top = -486.0
+margin_right = 468.0
+margin_bottom = -351.0
+color = Color( 0.560784, 0.556863, 0.160784, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Shops/Jewerly/Area2D/ColorRect"]
+margin_right = 836.0
+margin_bottom = 145.0
+custom_fonts/font = SubResource( 34 )
+text = "JOYERIA"
+align = 1
+valign = 1
+
 [node name="Exit" parent="Shops/Jewerly" index="3"]
 position = Vector2( 14.2346, 309.906 )
 
@@ -968,6 +1344,24 @@ texture = SubResource( 26 )
 
 [node name="CollisionShape2D" parent="Shops/Pizza/Area2D" index="0"]
 position = Vector2( -1.60571, 84.4863 )
+
+[node name="ColorRect" type="ColorRect" parent="Shops/Pizza/Area2D" index="1"]
+margin_left = -320.0
+margin_top = -345.0
+margin_right = 278.0
+margin_bottom = -276.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Shops/Pizza/Area2D/ColorRect"]
+margin_right = 596.0
+margin_bottom = 70.0
+custom_fonts/font = SubResource( 35 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "LOS BLANCOS"
+align = 1
+valign = 1
 
 [node name="Exit" parent="Shops/Pizza" index="3"]
 position = Vector2( -3.79321, 377.833 )
@@ -992,6 +1386,24 @@ texture = SubResource( 27 )
 
 [node name="CollisionShape2D" parent="Shops/Clothes/Area2D" index="0"]
 position = Vector2( -195.859, 107.668 )
+
+[node name="ColorRect" type="ColorRect" parent="Shops/Clothes/Area2D" index="1"]
+margin_left = -419.0
+margin_top = -277.0
+margin_right = 467.0
+margin_bottom = -218.0
+color = Color( 0.5, 0.386892, 0.498286, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Shops/Clothes/Area2D/ColorRect"]
+margin_right = 878.0
+margin_bottom = 63.0
+custom_fonts/font = SubResource( 43 )
+text = "ROPA"
+align = 1
+valign = 1
 
 [node name="Exit" parent="Shops/Clothes" index="3"]
 position = Vector2( -298.141, 374.137 )
@@ -1078,11 +1490,11 @@ text = "  Alvear"
 position = Vector2( -3473.73, -277.519 )
 
 [node name="Label" parent="Streets/AlvRiv/ColorRect" index="0"]
-margin_left = 0.683533
+margin_left = 0.548401
 margin_top = 0.486397
-margin_right = 71.6836
+margin_right = 71.5485
 margin_bottom = 14.4864
-text = " Rivadavia"
+text = "  Rivadavia"
 
 [node name="Label" parent="Streets/AlvRiv/ColorRect2" index="0"]
 text = " Alvear"
@@ -1095,6 +1507,222 @@ text = "   Alem"
 
 [node name="Label" parent="Streets/AlvAlem/ColorRect2" index="0"]
 text = "  Alvear"
+
+[node name="AlvGaribaldi" parent="Streets" instance=ExtResource( 17 )]
+position = Vector2( -3429.52, 1957.07 )
+
+[node name="Label" parent="Streets/AlvGaribaldi/ColorRect" index="0"]
+text = " Garibaldi"
+
+[node name="Label" parent="Streets/AlvGaribaldi/ColorRect2" index="0"]
+text = "  Alvear"
+
+[node name="BrownGaribaldi" parent="Streets" instance=ExtResource( 17 )]
+position = Vector2( -1396.16, 1922.53 )
+
+[node name="Label" parent="Streets/BrownGaribaldi/ColorRect" index="0"]
+text = "  Garibaldi"
+
+[node name="Label" parent="Streets/BrownGaribaldi/ColorRect2" index="0"]
+text = "   Brown"
+
+[node name="BrownAlem" parent="Streets" instance=ExtResource( 17 )]
+position = Vector2( -1352.4, 823.208 )
+
+[node name="Label" parent="Streets/BrownAlem/ColorRect" index="0"]
+text = "    Alem"
+
+[node name="Label" parent="Streets/BrownAlem/ColorRect2" index="0"]
+text = "   Brown"
+
+[node name="BrownRiv" parent="Streets" instance=ExtResource( 17 )]
+position = Vector2( -1328.21, -245.226 )
+
+[node name="Label" parent="Streets/BrownRiv/ColorRect" index="0"]
+text = "  Rivadavia"
+
+[node name="Label" parent="Streets/BrownRiv/ColorRect2" index="0"]
+text = "  Brown"
+
+[node name="BrownAlsina" parent="Streets" instance=ExtResource( 17 )]
+position = Vector2( -1347.68, -1353.06 )
+
+[node name="Label" parent="Streets/BrownAlsina/ColorRect" index="0"]
+text = "   Alsina"
+
+[node name="Label" parent="Streets/BrownAlsina/ColorRect2" index="0"]
+text = "  Brown"
+
+[node name="LavAlsina" parent="Streets" instance=ExtResource( 17 )]
+position = Vector2( 698.704, -1339.57 )
+
+[node name="Label" parent="Streets/LavAlsina/ColorRect" index="0"]
+text = "  Alsina"
+
+[node name="Label" parent="Streets/LavAlsina/ColorRect2" index="0"]
+text = "  Lavalle"
+
+[node name="LavRiv" parent="Streets" instance=ExtResource( 17 )]
+position = Vector2( 665.739, -255.829 )
+
+[node name="Label" parent="Streets/LavRiv/ColorRect" index="0"]
+text = "  Rivadavia"
+
+[node name="Label" parent="Streets/LavRiv/ColorRect2" index="0"]
+text = "  Lavalle"
+
+[node name="LavAlem" parent="Streets" instance=ExtResource( 17 )]
+position = Vector2( 734.486, 873.296 )
+
+[node name="Label" parent="Streets/LavAlem/ColorRect" index="0"]
+text = "        Alem"
+
+[node name="Label" parent="Streets/LavAlem/ColorRect2" index="0"]
+text = "  Lavalle"
+
+[node name="LavGaribaldi" parent="Streets" instance=ExtResource( 17 )]
+position = Vector2( 687.169, 1956.57 )
+
+[node name="Label" parent="Streets/LavGaribaldi/ColorRect" index="0"]
+text = "  Garibaldi"
+
+[node name="Label" parent="Streets/LavGaribaldi/ColorRect2" index="0"]
+text = "  Lavalle"
+
+[node name="MorenoGari" parent="Streets" instance=ExtResource( 17 )]
+position = Vector2( 2609.12, 1965.02 )
+
+[node name="Label" parent="Streets/MorenoGari/ColorRect" index="0"]
+text = " Garibaldi"
+
+[node name="Label" parent="Streets/MorenoGari/ColorRect2" index="0"]
+text = "  Moreno"
+
+[node name="MorenoAlem" parent="Streets" instance=ExtResource( 17 )]
+position = Vector2( 2642.92, 837.191 )
+
+[node name="Label" parent="Streets/MorenoAlem/ColorRect" index="0"]
+text = "  Alem"
+
+[node name="Label" parent="Streets/MorenoAlem/ColorRect2" index="0"]
+text = "  Moreno"
+
+[node name="MorenoRiv" parent="Streets" instance=ExtResource( 17 )]
+position = Vector2( 2638.69, -256.844 )
+
+[node name="Label" parent="Streets/MorenoRiv/ColorRect" index="0"]
+text = "  Rivadavia"
+
+[node name="Label" parent="Streets/MorenoRiv/ColorRect2" index="0"]
+text = "  Moreno"
+
+[node name="MorenoAlsina" parent="Streets" instance=ExtResource( 17 )]
+position = Vector2( 2651.36, -1376.22 )
+
+[node name="Label" parent="Streets/MorenoAlsina/ColorRect" index="0"]
+text = "  Alsina"
+
+[node name="Label" parent="Streets/MorenoAlsina/ColorRect2" index="0"]
+text = "  Moreno"
+
+[node name="World" type="Node" parent="."]
+
+[node name="Stadium" type="Sprite" parent="World"]
+position = Vector2( -132.323, 684.96 )
+scale = Vector2( 2.6039, 1.58701 )
+texture = ExtResource( 20 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="World/Stadium"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/Stadium/StaticBody2D"]
+position = Vector2( 10.4253, -1.20538 )
+scale = Vector2( 0.908736, 0.918347 )
+polygon = PoolVector2Array( -270.147, -98.2243, -270.176, -98.2223, -293.794, -26.783, -292.503, 31.4075, -281.525, 85.2063, -227.93, 164.258, -160.128, 209.273, -73.6006, 222.448, 85.5179, 222.021, 123.992, 218.056, 170.929, 199.492, 205.354, 177.433, 239.625, 146.462, 274.447, 99.4795, 295.11, 17.1343, 291.236, -42.1541, 270.573, -106.932, 228.685, -158.165, 195.668, -187.082, 120.118, -221.117, -111.699, -220.02, -202.101, -181.592, -240.876, -141.237, -270.195, -98.197 )
+
+[node name="Train" type="Node" parent="World"]
+
+[node name="via" type="Sprite" parent="World/Train"]
+position = Vector2( -4467.36, -2966.44 )
+scale = Vector2( 2.34119, 1.74263 )
+texture = SubResource( 47 )
+
+[node name="via2" type="Sprite" parent="World/Train"]
+position = Vector2( -3383.96, -2970.26 )
+scale = Vector2( 2.34119, 1.74263 )
+texture = SubResource( 47 )
+
+[node name="via3" type="Sprite" parent="World/Train"]
+position = Vector2( -2303.11, -2972.8 )
+scale = Vector2( 2.34119, 1.74263 )
+texture = SubResource( 47 )
+
+[node name="via4" type="Sprite" parent="World/Train"]
+position = Vector2( -1226.09, -2974.08 )
+scale = Vector2( 2.34119, 1.74263 )
+texture = SubResource( 47 )
+
+[node name="via5" type="Sprite" parent="World/Train"]
+position = Vector2( -141.42, -2976.62 )
+scale = Vector2( 2.34119, 1.74263 )
+texture = SubResource( 47 )
+
+[node name="via6" type="Sprite" parent="World/Train"]
+position = Vector2( 940.7, -2977.9 )
+scale = Vector2( 2.34119, 1.74263 )
+texture = SubResource( 47 )
+
+[node name="via7" type="Sprite" parent="World/Train"]
+position = Vector2( 2027.91, -2980.44 )
+scale = Vector2( 2.34119, 1.74263 )
+texture = SubResource( 47 )
+
+[node name="via8" type="Sprite" parent="World/Train"]
+position = Vector2( 3102.39, -2980.44 )
+scale = Vector2( 2.34119, 1.74263 )
+texture = SubResource( 47 )
+
+[node name="via9" type="Sprite" parent="World/Train"]
+position = Vector2( 4171.78, -2984.26 )
+scale = Vector2( 2.34119, 1.74263 )
+texture = SubResource( 47 )
+
+[node name="Banquito" type="Sprite" parent="World/Train"]
+position = Vector2( -4436.14, -2865.54 )
+texture = SubResource( 48 )
+
+[node name="Banquito2" type="Sprite" parent="World/Train"]
+position = Vector2( -4113.11, -2866.45 )
+texture = SubResource( 48 )
+
+[node name="Banquito3" type="Sprite" parent="World/Train"]
+position = Vector2( -1687.18, -2840.15 )
+texture = SubResource( 48 )
+
+[node name="Banquito4" type="Sprite" parent="World/Train"]
+position = Vector2( -1367.37, -2839.9 )
+texture = SubResource( 48 )
+
+[node name="Banquito5" type="Sprite" parent="World/Train"]
+position = Vector2( 1748.19, -2840.82 )
+texture = SubResource( 48 )
+
+[node name="Banquito6" type="Sprite" parent="World/Train"]
+position = Vector2( 2069.17, -2841.2 )
+texture = SubResource( 48 )
+
+[node name="Entrada" type="Sprite" parent="World/Train"]
+position = Vector2( -5243.48, -2840.29 )
+texture = SubResource( 49 )
+
+[node name="Entrada2" type="Sprite" parent="World/Train"]
+position = Vector2( 4603.28, -2820.79 )
+texture = SubResource( 49 )
+
+[node name="Train" type="Sprite" parent="World/Train"]
+position = Vector2( 4337.46, -3083.47 )
+scale = Vector2( 2.17962, 2.44981 )
+texture = SubResource( 50 )
+script = ExtResource( 21 )
 [connection signal="body_entered" from="Mini_games_areas/Arcanoid/arcanoid" to="Mini_games_areas/Arcanoid/arcanoid" method="_on_arcanoid_body_entered"]
 [connection signal="body_entered" from="Mini_games_areas/dance/Area2D" to="Mini_games_areas/dance/Area2D" method="_on_DanceMinigame_body_entered"]
 [connection signal="body_entered" from="Mini_games_areas/Collect_Money/Area2D_Collect_Money" to="Mini_games_areas/Collect_Money/Area2D_Collect_Money" method="_on_Area2D_Collect_Money_body_entered"]
@@ -1140,3 +1768,29 @@ text = "  Alvear"
 [editable path="Streets/AlvRiv"]
 
 [editable path="Streets/AlvAlem"]
+
+[editable path="Streets/AlvGaribaldi"]
+
+[editable path="Streets/BrownGaribaldi"]
+
+[editable path="Streets/BrownAlem"]
+
+[editable path="Streets/BrownRiv"]
+
+[editable path="Streets/BrownAlsina"]
+
+[editable path="Streets/LavAlsina"]
+
+[editable path="Streets/LavRiv"]
+
+[editable path="Streets/LavAlem"]
+
+[editable path="Streets/LavGaribaldi"]
+
+[editable path="Streets/MorenoGari"]
+
+[editable path="Streets/MorenoAlem"]
+
+[editable path="Streets/MorenoRiv"]
+
+[editable path="Streets/MorenoAlsina"]

@@ -13,10 +13,10 @@ scale = Vector2( 12.0318, 10.8435 )
 texture = SubResource( 1 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = 1.0
-margin_top = -12.0
-margin_right = 24.0
-margin_bottom = -4.0
+margin_left = -22.3047
+margin_top = -11.8404
+margin_right = 0.695312
+margin_bottom = -3.84039
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -34,11 +34,11 @@ __meta__ = {
 }
 
 [node name="ColorRect2" type="ColorRect" parent="."]
-margin_left = -3.16525
-margin_top = -13.7169
-margin_right = 19.8347
-margin_bottom = -5.71686
-rect_rotation = 293.2
+margin_left = -3.80374
+margin_top = -13.0696
+margin_right = 19.1962
+margin_bottom = -5.06952
+rect_rotation = 270.0
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
