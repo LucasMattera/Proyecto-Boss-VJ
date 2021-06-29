@@ -6,20 +6,14 @@ export (int) var do_flip = false
 
 var pos
 var Selected_car
-onready var carY = $yellow
-onready var carG = $green
-onready var carR = $red
 onready var car1 = $orange
 onready var car2 = $truck
 onready var car3 = $police
 onready var crashAudio = $crash
-onready var list_sprite_car = [carY, carG, carR, car1, car2, car3]
+onready var list_sprite_car = [ car1, car2, car3]
 var car 
 
 func _ready():
-	carG.hide()
-	carY.hide()
-	carR.hide()
 	car1.hide()
 	car2.hide()
 	car3.hide()
@@ -32,7 +26,7 @@ func _ready():
 	randomize()
 	var carSprite = RandomNumberGenerator.new()
 	carSprite.randomize()
-	Selected_car = carSprite.randi_range(0, 5)
+	Selected_car = carSprite.randi_range(0, 2)
 	car = list_sprite_car[Selected_car]
 func initialize(positiony, positionX, flip):
 	position.y = positiony
@@ -40,12 +34,6 @@ func initialize(positiony, positionX, flip):
 	do_flip = flip
 	
 func _physics_process(delta):
-	if Selected_car == 0 && ! carY.visible:
-		carY.show()
-	if Selected_car == 1 && ! carG.visible:
-		carG.show()
-	if Selected_car == 2 && ! carR.visible :
-		carR.show()
 	if Selected_car == 3 && ! car1.visible :
 		car1.show()
 	if Selected_car == 4 && ! car2.visible :

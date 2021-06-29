@@ -39,6 +39,7 @@ atlas = ExtResource( 4 )
 region = Rect2( 304.79, 479.369, 33.6842, 51.579 )
 
 [node name="A2D_Car_v" type="Area2D"]
+show_behind_parent = true
 script = ExtResource( 2 )
 
 [node name="red" type="Sprite" parent="."]
