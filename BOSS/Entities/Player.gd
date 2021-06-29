@@ -5,7 +5,7 @@ var velocity:Vector2 = Vector2.ZERO
 var can_move = true
 export (int) var zoomInLimit = 9
 export (int) var zoomOutLimit = 1
-export (int) var money = 150000
+export (int) var money = 1500
 export (int) var last_earning = 0
 export (String) var player_name = "Player"
 var is_working = false
@@ -23,12 +23,12 @@ func buy(shop):
 	shop_to_add.upgrade_value = shop.upgrade_value
 	shop_to_add.earnings = shop.earnings
 	shop_to_add.value = shop.value
+	shop_to_add.location = shop.location
 	var shop_name = shop_to_add.shop_name
 	var shop_value = shop_to_add.value
 	if (!Player.has_shop(shop_name) && Player.money >= shop_value):
 		Player.shops.append(shop_to_add)
 		Player.money -= shop_value
-		ShopsInfo.update_shops(shop)
 		print("compraste ")
 		if (self.shops.size() == GameServer.shops_size):
 			get_tree().change_scene("res://Win.tscn")
@@ -53,7 +53,6 @@ func add_employee(shop_name):
 	if find > -1:
 		shops[find].earnings = ShopState.earnings
 		shops[find].add_employee_value = ShopState.add_employee_value
-		ShopsInfo.update_shops(shops[find])
 
 func upgrade_shop(shop_name):
 	var shop_to_add = find_shop(shop_name)
@@ -61,7 +60,6 @@ func upgrade_shop(shop_name):
 	if find > -1:
 		shops[find].earnings = ShopState.earnings
 		shops[find].upgrade_value = ShopState.upgrade_value
-		ShopsInfo.update_shops(shops[find])
 
 func has_shop(shop_name):
 	var has_shop = false

@@ -3,7 +3,7 @@ extends Node
 onready var player = $Player
 onready var shops = $Shops
 onready var GUI = $GUI
-onready var atropellado = $GUI/Label
+onready var wasted = $GUI/ShaderHospital/ZIndex/Wasted
 onready var hospital_shader = $GUI/ShaderHospital
 onready var car_spawner_h = $Car_Spawner_H
 onready var car_spawner_v = $Car_Spawner_V
@@ -13,7 +13,7 @@ onready var music = $AudioStreamPlayer
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var shops_size = 0
-	atropellado.hide()
+	wasted.hide()
 	for shop in shops.get_children():
 		shop.initialize(player)
 		shops_size = shops_size + 1
@@ -21,20 +21,15 @@ func _ready():
 	player.initialize()
 	GameServer.shops_size = shops_size
 	print(player.position)
-	#shop.initialize(player)
 	GUI.initialize(player)
 	car_spawner_h.initialize()
 	car_spawner_v.initialize()
-	
-	#GameServer.save_game()
-	#var loaded_player = GameServer.load_game()
 
-# warning-ignore:function_conflicts_variable
 func atropellado():
 	player.hide()
 	player.can_move = false
 	hospital_shader.show()
-	atropellado.show()
+	wasted.show()
 	player.position.x = 3500
 	player.position.y = -1250
 	player.money -= 100
@@ -47,7 +42,7 @@ func atropellado():
 	t.start()
 	yield(t, "timeout")
 	player.show()
-	player.get_parent().atropellado.hide()
+	player.get_parent().wasted.hide()
 	hospital_shader.hide()
 	player.can_move = true
 
@@ -62,7 +57,7 @@ func show_save():
 	timer.start()
 
 func hide_save():
-	save.hide()	
+	save.hide()
 
 func _on_Area2D_body_entered(body):
 	_on_HouseArea2D_body_entered(body)
@@ -77,8 +72,5 @@ func _on_HouseArea2D_body_entered(body):
 func _on_InitTimer_timeout():
 	music.play()
 
-
 func _on_FinishTimer_timeout():
 	pass # Replace with function body.
-
-

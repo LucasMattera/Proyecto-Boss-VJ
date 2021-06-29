@@ -1,11 +1,10 @@
 extends Node
 
-onready var Canvas_name = $Name
-onready var Canvas_Money = $Money
-onready var Canvas_Shop = $Shops
-onready var earning_money = $EarningMoney
-onready var lose_money = $LoseMoney
-onready var timer_earning = $TimerToEarning
+onready var Canvas_name = $Info/Name
+onready var Canvas_Money = $Info/Money
+onready var earning_money = $Info/EarningMoney
+onready var lose_money = $Info/LoseMoney
+onready var timer_earning = $Info/TimerToEarning
 var player
 var timerEarn
 var counter_earn = 10
@@ -26,7 +25,6 @@ func _physics_process(delta):
 	Canvas_name.set_text(Player.player_name)
 	Canvas_Money.set_text("  " + String(Player.money))
 	var shops_names = get_shop_names(Player.shops)
-	Canvas_Shop.set_text("Locales:" + String(shops_names))
 	
 func initialize(player):
 	timerEarn = Timer.new()
@@ -40,7 +38,6 @@ func initialize(player):
 	lose_money.hide()
 	Canvas_name.set_text(Player.player_name)
 	Canvas_Money.set_text("$ " + String(Player.money))
-	Canvas_Shop.set_text("Locales:" + String(Player.shops))
 	
 func get_shop_names(shops):
 	var shops_names = []
@@ -80,10 +77,10 @@ func _handle_earnings_and_loses():
 			lose_money.set_text("+$: " + String(Player.last_earning))
 			lose_money.show()
 			timer_lose_money.start()
-		Player.last_earning = 0		
+		Player.last_earning = 0
 
 func _on_PauseMenu_exit():
 	$NowLoading.visible = true
 
 func _on_Player_open_shop_status():
-	$ShopsInfo.show_table()
+	$ShopsInfoTable.show_hide_table()
