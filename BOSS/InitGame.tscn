@@ -1,31 +1,17 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/fonts/Schrödinger.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://InitGame.gd" type="Script" id=3]
-[ext_resource path="res://assets/instructions/Keyboard keys (transparent).png" type="Texture" id=4]
 
-[sub_resource type="AtlasTexture" id=1]
-flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( -0.634537, 65.7357, 33.5318, 31.6337 )
+[sub_resource type="DynamicFont" id=1]
+size = 24
+font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 26
+size = 27
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 27
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=4]
-size = 27
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=5]
-size = 27
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=6]
 size = 27
 font_data = ExtResource( 2 )
 
@@ -38,32 +24,22 @@ margin_right = 1025.0
 margin_bottom = 596.416
 color = Color( 0.054902, 0.054902, 0.160784, 1 )
 
-[node name="Sprite" type="Sprite" parent="Backgrond"]
-visible = false
-position = Vector2( 941.78, 175.002 )
-scale = Vector2( 1.47175, 1.58589 )
-texture = SubResource( 1 )
-__meta__ = {
-"_editor_description_": ""
-}
-
-[node name="Label" type="Label" parent="Backgrond/Sprite"]
-margin_left = -2.8266
-margin_top = -7.67925
-margin_right = 37.1734
-margin_bottom = 6.32075
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "P"
+[node name="ColorRect" type="ColorRect" parent="Backgrond"]
+margin_left = 32.0
+margin_top = 32.5844
+margin_right = 984.0
+margin_bottom = 482.584
+color = Color( 0.145098, 0.176471, 0.290196, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="Backgrond"]
-margin_left = -94.0888
-margin_top = 35.4174
-margin_right = 1114.92
-margin_bottom = 452.417
-custom_fonts/font = SubResource( 2 )
+[node name="Label" type="Label" parent="Backgrond/ColorRect"]
+margin_left = -114.862
+margin_top = 19.6972
+margin_right = 1094.15
+margin_bottom = 436.697
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "¿ESTAS LISTO PARA INICIAR LA AVENTURA EN QUILMESPOLY?
 
@@ -85,54 +61,32 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label2" type="Label" parent="Backgrond"]
-visible = false
-margin_left = 32.6841
-margin_top = 162.311
-margin_right = 980.684
-margin_bottom = 376.311
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "RECORDA QUE PODES PONER PAUSA PRESIONANDO LA TECLA     
-
-TAMBIEN PUEDES UTILIZAR LA PAUSA EN ALGUNOS MINIJUEGOS.
-
-PARA VER LAS INSTRUCCIONES TIENES QUE IR A PAUSA -> INSTRUCCIONES
-
-MUCHA SUERTE"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = 81.0
-margin_top = 483.0
-margin_right = 444.0
-margin_bottom = 529.0
+margin_left = 88.0
+margin_top = 512.0
+margin_right = 451.0
+margin_bottom = 558.0
 color = Color( 0.803922, 0.803922, 0.803922, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ColorRect2" type="ColorRect" parent="."]
-margin_left = 685.0
-margin_top = 484.0
-margin_right = 872.0
-margin_bottom = 533.0
+margin_left = 704.0
+margin_top = 512.0
+margin_right = 891.0
+margin_bottom = 561.0
 color = Color( 0.768627, 0.768627, 0.768627, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Continue" type="MenuButton" parent="."]
-visible = false
-margin_left = 703.0
-margin_top = 494.379
-margin_right = 848.0
-margin_bottom = 528.379
-custom_fonts/font = SubResource( 4 )
+margin_left = 728.0
+margin_top = 520.0
+margin_right = 873.0
+margin_bottom = 554.0
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color_disabled = Color( 0.321569, 0.278431, 0.278431, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0.317647, 0.266667, 0.266667, 1 )
@@ -143,11 +97,11 @@ __meta__ = {
 }
 
 [node name="PrincipalMenu" type="MenuButton" parent="."]
-margin_left = 83.5652
-margin_top = 490.873
-margin_right = 445.565
-margin_bottom = 524.873
-custom_fonts/font = SubResource( 5 )
+margin_left = 96.0
+margin_top = 520.0
+margin_right = 458.0
+margin_bottom = 554.0
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color_disabled = Color( 0.505882, 0.470588, 0.470588, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0.364706, 0.313726, 0.313726, 1 )
@@ -156,21 +110,5 @@ text = "VOLVER AL MENU PRINCIPAL"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="ContinueMenu" type="MenuButton" parent="."]
-margin_left = 703.985
-margin_top = 494.231
-margin_right = 848.985
-margin_bottom = 528.231
-custom_fonts/font = SubResource( 6 )
-custom_colors/font_color_disabled = Color( 0.360784, 0.317647, 0.317647, 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_hover = Color( 0.423529, 0.356863, 0.356863, 1 )
-custom_colors/font_color_pressed = Color( 0.403922, 0.337255, 0.337255, 1 )
-text = "CONTINUAR"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 [connection signal="pressed" from="Continue" to="." method="_on_Continue_pressed"]
 [connection signal="pressed" from="PrincipalMenu" to="." method="_on_PrincipalMenu_pressed"]
-[connection signal="pressed" from="ContinueMenu" to="." method="_on_ContinueMenu_pressed"]

@@ -59,7 +59,7 @@ func get_input():
 	if Input.is_action_pressed('run'):
 		velocity = velocity * 2
 	if (Input.is_action_just_pressed("pause")):
-		position.x = Player.position.x
+		Player.global_position = global_position
 		GameServer.is_paused = true
 		get_tree().change_scene("res://Instructions.tscn")
 	if (Input.is_action_just_pressed("shop-status")):

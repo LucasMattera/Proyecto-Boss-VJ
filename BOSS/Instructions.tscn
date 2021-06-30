@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/fonts/Schrödinger.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/instructions/keys-arrow-wsad-mouse.png" type="Texture" id=2]
@@ -10,7 +10,7 @@
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( -4, -11, 99, 143 )
+region = Rect2( 0.620361, 0.0963001, 94.3796, 129.104 )
 
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
@@ -21,6 +21,12 @@ region = Rect2( 95.2448, 26.621, 160.736, 34.1185 )
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( -0.172546, 64.4844, 33.0658, 32.1003 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 38
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 50
@@ -58,6 +64,7 @@ __meta__ = {
 position = Vector2( 228.181, 264.227 )
 scale = Vector2( 2.25598, 1.61514 )
 texture = SubResource( 1 )
+region_rect = Rect2( 0.620361, 6.79507, 96.5405, 136.608 )
 
 [node name="Sprite2" type="Sprite" parent="TextureRect"]
 position = Vector2( 879.324, 190.812 )
@@ -113,6 +120,40 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Sprite7" type="Sprite" parent="TextureRect"]
+position = Vector2( 950.733, 371.043 )
+scale = Vector2( 1.98207, 2.15744 )
+texture = SubResource( 3 )
+
+[node name="Key" type="Label" parent="TextureRect/Sprite7"]
+anchor_bottom = 0.038
+margin_left = -9.83768
+margin_top = -6.46368
+margin_right = 35.1623
+margin_bottom = 7.53632
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Esc"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite6" type="Sprite" parent="TextureRect"]
+position = Vector2( 880.152, 438.732 )
+scale = Vector2( 1.98207, 2.15744 )
+texture = SubResource( 3 )
+
+[node name="Key" type="Label" parent="TextureRect/Sprite6"]
+anchor_bottom = 0.038
+margin_left = -4.0
+margin_top = -7.0
+margin_right = 41.0
+margin_bottom = 7.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "E"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ColorRect" type="ColorRect" parent="TextureRect"]
 margin_left = 103.0
 margin_top = 46.0
@@ -163,21 +204,42 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ColorRect6" type="ColorRect" parent="TextureRect"]
+margin_left = 509.157
+margin_top = 410.945
+margin_right = 686.157
+margin_bottom = 471.945
+color = Color( 0.172549, 0.207843, 0.552941, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="TextureRect/ColorRect6"]
+margin_right = 176.0
+margin_bottom = 61.0
+custom_fonts/font = SubResource( 7 )
+text = "LOCALES"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="VolverMainColor" type="ColorRect" parent="TextureRect"]
-margin_left = 379.45
-margin_top = 460.248
-margin_right = 596.45
-margin_bottom = 524.248
+margin_left = 389.285
+margin_top = 493.803
+margin_right = 606.285
+margin_bottom = 557.803
 color = Color( 0.337255, 0.435294, 0.666667, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VolverMain" type="MenuButton" parent="TextureRect"]
-margin_left = 361.805
-margin_top = 455.648
-margin_right = 616.805
-margin_bottom = 536.648
+margin_left = 373.376
+margin_top = 488.046
+margin_right = 628.376
+margin_bottom = 569.046
 custom_fonts/font = SubResource( 4 )
 text = "VOLVER"
 __meta__ = {
