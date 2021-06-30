@@ -32,6 +32,8 @@ func get_input():
 		
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("player"):
+		if(Player.actual == 1):
+			Player.next_objetive()
 		Player.can_move = false
 		Player.global_position = exit.global_position
 		Player.is_working = true

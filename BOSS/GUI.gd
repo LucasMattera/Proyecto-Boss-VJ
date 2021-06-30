@@ -5,6 +5,7 @@ onready var Canvas_Money = $Info/Money
 onready var earning_money = $Info/EarningMoney
 onready var lose_money = $Info/LoseMoney
 onready var timer_earning = $Info/TimerToEarning
+onready var objetive = $Objetive/Label
 var player
 var timerEarn
 var counter_earn = 10
@@ -25,6 +26,8 @@ func _physics_process(delta):
 	Canvas_name.set_text(Player.player_name)
 	Canvas_Money.set_text("  " + String(Player.money))
 	var shops_names = get_shop_names(Player.shops)
+	objetive.text = 'Objetivo: ' + String(Player.actual_objetive())
+	
 	
 func initialize(player):
 	timerEarn = Timer.new()

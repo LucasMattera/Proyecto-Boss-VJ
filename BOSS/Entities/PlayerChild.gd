@@ -13,7 +13,7 @@ export (String) var player_name = "player 1"
 var shops = []
 var playingsfx = false
 signal open_shop_status
-
+var actual
 func _ready():
 	Player.connect("coin_picked", self, "obtainCoin")
 
@@ -25,9 +25,10 @@ func obtainCoin(value):
 #	money += amount
 
 func initialize():
+	actual = Player.actual
 	shops = Player.shops
 	money = Player.money
-	player_name = Player.player_name 
+	player_name = Player.player_name
 	position.x = Player.position.x
 	position.y = Player.position.y
 	animation.animation = "idle"
@@ -58,6 +59,7 @@ func get_input():
 	if Input.is_action_pressed('run'):
 		velocity = velocity * 2
 	if (Input.is_action_just_pressed("pause")):
+		position.x = Player.position.x
 		GameServer.is_paused = true
 		get_tree().change_scene("res://Instructions.tscn")
 	if (Input.is_action_just_pressed("shop-status")):
@@ -98,6 +100,7 @@ func save():
 		"pos_y" : position.y,
 		"money": money,
 		"player_name": player_name,
-		"shops": shops
+		"shops": shops,
+		"actual": actual
 	}
 	return save_dict

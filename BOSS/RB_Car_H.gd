@@ -10,7 +10,7 @@ onready var car1 = $orange
 onready var car2 = $truck
 onready var car3 = $police
 onready var crashAudio = $crash
-onready var list_sprite_car = [ car1, car2, car3]
+onready var list_sprite_car = [car1, car2, car3]
 var car 
 
 func _ready():
@@ -34,11 +34,11 @@ func initialize(positiony, positionX, flip):
 	do_flip = flip
 	
 func _physics_process(delta):
-	if Selected_car == 3 && ! car1.visible :
+	if Selected_car == 0 && ! car1.visible :
 		car1.show()
-	if Selected_car == 4 && ! car2.visible :
+	if Selected_car == 1 && ! car2.visible :
 		car2.show()
-	if Selected_car == 5 && ! car3.visible :
+	if Selected_car == 2 && ! car3.visible :
 		car3.show()
 	if do_flip :
 		car.flip_h = true

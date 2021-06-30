@@ -38,3 +38,5 @@ func _on_MenuButton_pressed():
 
 func _on_VolverInGame_pressed():
 	get_tree().change_scene("res://Main.tscn")
+	GameServer.is_paused = false
+	

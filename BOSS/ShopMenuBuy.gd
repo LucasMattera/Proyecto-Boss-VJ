@@ -19,6 +19,8 @@ func _ready():
 
 func _on_BuyButton_pressed():
 	if player_have_enough_cash():
+		if(Player.actual == 3):
+			Player.next_objetive()
 		emit_signal("confirm")
 	else:
 		emit_signal("not_enough_cash")

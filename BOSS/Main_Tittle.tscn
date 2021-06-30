@@ -15,19 +15,19 @@ shader = ExtResource( 5 )
 shader_param/progress = 1.0
 shader_param/diamondPixelSize = 10.0
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=2]
 size = 45
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=3]
 size = 34
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=4]
 size = 128
 font_data = ExtResource( 10 )
 
@@ -96,7 +96,7 @@ margin_left = 145.979
 margin_top = 380.0
 margin_right = 443.979
 margin_bottom = 476.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color_disabled = Color( 0.980392, 0.972549, 0.972549, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
@@ -113,7 +113,7 @@ margin_left = 610.0
 margin_top = 377.979
 margin_right = 908.0
 margin_bottom = 473.979
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 2 )
 text = "CARGAR JUEGO"
 flat = true
 expand_icon = true
@@ -123,7 +123,7 @@ margin_left = 375.011
 margin_top = 496.708
 margin_right = 621.011
 margin_bottom = 537.708
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 3 )
 text = "INSTRUCCIONES"
 flat = true
 
@@ -145,7 +145,7 @@ margin_left = -242.5
 margin_top = -81.5
 margin_right = 242.5
 margin_bottom = 81.5
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 4 )
 text = "Cargando..."
 align = 1
 [connection signal="timeout" from="BGM/MusicTimer" to="." method="_on_MusicTimer_timeout"]

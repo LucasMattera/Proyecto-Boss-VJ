@@ -154,7 +154,6 @@ __meta__ = {
 }
 
 [node name="CannotBuy" parent="GUI" instance=ExtResource( 7 )]
-visible = false
 
 [node name="Confirm" type="Popup" parent="GUI"]
 pause_mode = 2

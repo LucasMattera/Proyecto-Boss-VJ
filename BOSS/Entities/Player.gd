@@ -5,16 +5,34 @@ var velocity:Vector2 = Vector2.ZERO
 var can_move = true
 export (int) var zoomInLimit = 9
 export (int) var zoomOutLimit = 1
-export (int) var money = 1500
+export (int) var money = 2000
 export (int) var last_earning = 0
 export (String) var player_name = "Player"
 var is_working = false
 var shops = []
 signal coin_picked
+var objetives = {
+	1: 'Ir a trabajar',
+	2: 'Ir a bailar al club',
+	3: 'Comprar la cafeteria',
+	4: 'Salva las birras en el Argenchino',
+	5: 'Adquirir todos los locales'
+}
+var actual = 1
 
 func _ready():
 	position.x = -4143.898
 	position.y = -1187.306
+	
+func actual():
+	return actual
+	
+func actual_objetive():
+	return objetives[int(actual)]
+	
+func next_objetive():
+	if(actual != 5):
+		actual += 1
 
 func buy(shop):
 	var shop_to_add = {} 

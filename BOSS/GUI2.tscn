@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://ShaderTransitionout.tscn" type="PackedScene" id=1]
 [ext_resource path="res://GUI.gd" type="Script" id=2]
@@ -24,7 +24,7 @@ size = 26
 outline_size = 4
 font_data = ExtResource( 8 )
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ ExtResource( 13 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 10 ) ],
 "loop": true,
@@ -32,19 +32,19 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=4]
 size = 30
 font_data = ExtResource( 8 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=5]
 size = 18
 font_data = ExtResource( 7 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=6]
 outline_size = 4
 font_data = ExtResource( 7 )
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=7]
 size = 28
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
@@ -55,31 +55,35 @@ flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( -1.96526, 67.3804, 35.078, 28.3015 )
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=9]
 flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 96.4988, 29.5339, 154.656, 29.0194 )
 
-[sub_resource type="ShaderMaterial" id=11]
+[sub_resource type="ShaderMaterial" id=10]
 shader = ExtResource( 4 )
 shader_param/progress = 1.0
 shader_param/diamondPixelSize = 10.0
 
-[sub_resource type="DynamicFont" id=12]
+[sub_resource type="DynamicFont" id=11]
 size = 22
 outline_size = 4
 outline_color = Color( 0.992157, 0.0352941, 0.0352941, 1 )
 font_data = ExtResource( 7 )
 
-[sub_resource type="DynamicFont" id=13]
+[sub_resource type="DynamicFont" id=12]
 size = 71
 outline_size = 1
 outline_color = Color( 1, 0.027451, 0.027451, 1 )
 font_data = ExtResource( 7 )
 
-[sub_resource type="DynamicFont" id=14]
+[sub_resource type="DynamicFont" id=13]
 size = 128
 font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 18
+font_data = ExtResource( 7 )
 
 [node name="GUI" type="CanvasLayer"]
 script = ExtResource( 2 )
@@ -130,8 +134,8 @@ __meta__ = {
 [node name="coin" type="AnimatedSprite" parent="Info"]
 position = Vector2( 160, 23 )
 scale = Vector2( 0.375, 0.375 )
-frames = SubResource( 4 )
-frame = 1
+frames = SubResource( 3 )
+frame = 3
 playing = true
 
 [node name="EarningMoney" type="Label" parent="Info"]
@@ -140,7 +144,7 @@ margin_left = 157.107
 margin_top = 34.4933
 margin_right = 227.107
 margin_bottom = 65.4933
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.00392157, 1, 0.101961, 1 )
 text = "+$money"
 __meta__ = {
@@ -153,7 +157,7 @@ margin_left = 130.83
 margin_top = 53.0195
 margin_right = 216.83
 margin_bottom = 78.0195
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "-$money"
 __meta__ = {
@@ -165,7 +169,7 @@ margin_left = 576.0
 margin_top = 14.0886
 margin_right = 772.0
 margin_bottom = 49.0886
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Proxima ganancia en: "
 __meta__ = {
@@ -193,7 +197,7 @@ margin_left = 26.7637
 margin_top = 6.0
 margin_right = 519.764
 margin_bottom = 34.0
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 7 )
 text = "ESPACIO  Correr    P  Pausa     E  Estadisticas"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -209,7 +213,7 @@ texture = SubResource( 8 )
 position = Vector2( 59.3309, 22.4975 )
 scale = Vector2( 0.7156, 1 )
 z_index = -1
-texture = SubResource( 10 )
+texture = SubResource( 9 )
 
 [node name="Key2" type="Sprite" parent="Controls/ZIndex"]
 position = Vector2( 219.405, 22.7836 )
@@ -218,7 +222,7 @@ texture = SubResource( 8 )
 
 [node name="ShaderTransitionout" parent="." instance=ExtResource( 1 )]
 visible = false
-material = SubResource( 11 )
+material = SubResource( 10 )
 margin_left = -1.21021
 margin_right = -1.21021
 
@@ -243,7 +247,7 @@ margin_top = 45.7054
 margin_right = 346.799
 margin_bottom = 224.705
 rect_scale = Vector2( 0.349923, 0.550106 )
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 11 )
 text = "Wasted
 
 FUISTE ATROPELLADO
@@ -263,7 +267,7 @@ margin_left = 249.629
 margin_top = 261.906
 margin_right = 844.629
 margin_bottom = 333.906
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 12 )
 text = "JUEGO GUARDADO"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -286,8 +290,25 @@ margin_left = 265.468
 margin_top = 207.407
 margin_right = 750.468
 margin_bottom = 370.407
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 13 )
 text = "Cargando..."
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Objetive" type="ColorRect" parent="."]
+margin_left = 12.0
+margin_top = 549.0
+margin_right = 425.0
+margin_bottom = 585.0
+color = Color( 0.984314, 0.172549, 0.0156863, 0.470588 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Objetive"]
+margin_right = 411.0
+margin_bottom = 31.0
+custom_fonts/font = SubResource( 14 )
+text = "OBJETIVO : "
+valign = 1

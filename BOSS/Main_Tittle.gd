@@ -36,6 +36,7 @@ func _on_ChangeToNewGameTimer_timeout():
 
 func _on_ChangeToLoadGameTimer_timeout():
 	var dataLoad = GameServer.load_game()
+	Player.actual = dataLoad.actual
 	Player.money = dataLoad.money
 	Player.player_name = dataLoad.player_name
 	Player.shops = dataLoad.shops
