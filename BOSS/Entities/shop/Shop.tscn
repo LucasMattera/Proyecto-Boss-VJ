@@ -32,12 +32,4 @@ margin_right = -624.026
 margin_bottom = -367.477
 
 [node name="Exit" type="Position2D" parent="."]
-
-[node name="Welcome" type="ColorRect" parent="."]
-margin_right = 199.0
-margin_bottom = 48.0
-color = Color( 0.0117647, 0.0235294, 0.968627, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
