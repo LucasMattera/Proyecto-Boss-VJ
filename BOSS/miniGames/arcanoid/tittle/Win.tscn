@@ -1,0 +1,117 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://arcanoid/assets/fonts/advanced_pixel-7.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://miniGames/arcanoid/assets/audio/lose.ogg" type="AudioStream" id=2]
+[ext_resource path="res://miniGames/arcanoid/tittle/Retry.gd" type="Script" id=3]
+[ext_resource path="res://miniGames/arcanoid/tittle/buttonRetry.tscn" type="PackedScene" id=4]
+[ext_resource path="res://miniGames/arcanoid/tittle/main_tittle.tscn" type="PackedScene" id=5]
+[ext_resource path="res://miniGames/arcanoid/tittle/buttonQuit.tscn" type="PackedScene" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 1 )
+
+[node name="Win" type="Node"]
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0666667, 0.0941176, 0.247059, 0.647059 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="tittleMargin" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 6.0
+margin_top = 150.0
+margin_right = -40.0
+margin_bottom = -100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="menu" type="VBoxContainer" parent="tittleMargin"]
+margin_right = 978.0
+margin_bottom = 350.0
+
+[node name="main_tittle" parent="tittleMargin/menu" instance=ExtResource( 5 )]
+anchor_right = 0.0
+margin_right = 978.0
+margin_bottom = 111.0
+
+[node name="text" parent="tittleMargin/menu/main_tittle" index="0"]
+margin_right = 978.0
+margin_bottom = 111.0
+alignment = 1
+
+[node name="MyArcanoid" parent="tittleMargin/menu/main_tittle/text" index="0"]
+margin_right = 978.0
+margin_bottom = 105.0
+custom_fonts/font = SubResource( 1 )
+text = "GANASTE 
+Acabas de ganar $ 10000"
+align = 1
+valign = 1
+
+[node name="by" parent="tittleMargin/menu/main_tittle/text" index="1"]
+margin_top = 109.0
+margin_right = 978.0
+margin_bottom = 111.0
+custom_colors/font_color = Color( 0.988235, 0.988235, 0.988235, 1 )
+text = ""
+align = 1
+valign = 1
+
+[node name="buttonRetry" parent="tittleMargin/menu" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 115.0
+margin_right = 978.0
+margin_bottom = 179.0
+
+[node name="button" parent="tittleMargin/menu/buttonRetry" index="0"]
+margin_left = 457.0
+margin_right = 521.0
+margin_bottom = 64.0
+
+[node name="Label" parent="tittleMargin/menu/buttonRetry/button" index="0"]
+margin_left = 1.85095
+margin_top = 0.360443
+margin_right = 2.85095
+margin_bottom = 0.360443
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+
+[node name="buttonQuit" parent="tittleMargin/menu" instance=ExtResource( 6 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 183.0
+margin_right = 978.0
+margin_bottom = 247.0
+
+[node name="button" parent="tittleMargin/menu/buttonQuit" index="0"]
+margin_left = 457.0
+margin_right = 521.0
+margin_bottom = 64.0
+
+[node name="Label" parent="tittleMargin/menu/buttonQuit/button" index="0"]
+margin_left = 1.63956
+margin_top = 5.96201
+margin_right = 1.63956
+margin_bottom = -5.03799
+custom_colors/font_color = Color( 0.996078, 0.996078, 0.996078, 1 )
+
+[node name="lose" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+[connection signal="pressed" from="tittleMargin/menu/buttonRetry/button" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="tittleMargin/menu/buttonRetry/button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="tittleMargin/menu/buttonQuit/button" to="." method="_on_quit_button_pressed"]
+
+[editable path="tittleMargin/menu/main_tittle"]
+
+[editable path="tittleMargin/menu/buttonRetry"]
+
+[editable path="tittleMargin/menu/buttonQuit"]

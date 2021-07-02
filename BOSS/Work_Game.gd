@@ -20,7 +20,7 @@ func _physics_process(delta):
 func get_input():
 	if(Player.is_working):
 		if (Input.is_action_just_pressed("work_hard")):
-			earnings += 5
+			earnings += 25
 			earnings_label.set_text("GANANCIAS ACTUALES : $" + String(earnings))
 		if (Input.is_action_just_pressed("pause")):
 			work_label.hide()

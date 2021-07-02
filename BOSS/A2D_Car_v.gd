@@ -57,7 +57,7 @@ func _physics_process(delta):
 		car.flip_v = true
 		do_flip = false
 	if ! car.flip_v :
-		if position.y < 3600:
+		if position.y < 3300:
 			position.y += pos
 		else:
 			queue_free()

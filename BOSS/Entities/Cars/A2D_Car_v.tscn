@@ -24,17 +24,14 @@ atlas = ExtResource( 1 )
 region = Rect2( 291.708, 378.664, 20.45, 28.3612 )
 
 [sub_resource type="AtlasTexture" id=5]
-flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 241.077, 481.362, 30.3251, 50.1531 )
 
 [sub_resource type="AtlasTexture" id=6]
-flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 264, 398, 50, 55 )
 
 [sub_resource type="AtlasTexture" id=7]
-flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 304.79, 479.369, 33.6842, 51.579 )
 

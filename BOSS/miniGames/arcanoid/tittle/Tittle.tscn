@@ -158,7 +158,7 @@ custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "AVISO: ACABAS DE ENTRAR Y SE ESTA DISPUTANDO UN TORNEO 
 DEL CLASICO ARKANOID.
-PARA GANAR DEBERAS COMPLETAR EL NIVEL Y GANAR $1000.  
+PARA GANAR DEBERAS COMPLETAR EL NIVEL Y GANAR $10000.  
 EN CASO DE PERDER O ABANDONAR; PERDERAS $1000."
 __meta__ = {
 "_edit_use_anchors_": false

@@ -39,26 +39,8 @@ script = ExtResource( 5 )
 
 [node name="GUI" parent="." instance=ExtResource( 12 )]
 
-[node name="Shops" parent="GUI" index="2"]
-visible = false
-
-[node name="coin" parent="GUI" index="3"]
-visible = false
-
-[node name="EarningMoney" parent="GUI" index="5"]
-visible = false
-
-[node name="LoseMoney" parent="GUI" index="6"]
-visible = false
-
-[node name="Sprite" parent="GUI" index="11"]
-visible = false
-
-[node name="Sprite2" parent="GUI" index="12"]
-visible = false
-
-[node name="PauseHint" parent="GUI" index="13"]
-visible = false
+[node name="coin" parent="GUI/Info" index="2"]
+frame = 1
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 margin_left = -781.356
@@ -125,11 +107,10 @@ __meta__ = {
 }
 
 [node name="PauseMenu" parent="." instance=ExtResource( 13 )]
-visible = false
 [connection signal="pause" from="Player" to="PauseMenu" method="_on_Player_pause"]
 [connection signal="exit" from="PauseMenu" to="GUI" method="_on_PauseMenu_exit"]
-[connection signal="exit" from="PauseMenu" to="." method="_on_PauseMenu_exit"]
 [connection signal="exit" from="PauseMenu" to="Player" method="_on_PauseMenu_exit"]
+[connection signal="exit" from="PauseMenu" to="." method="_on_PauseMenu_exit"]
 [connection signal="exit" from="PauseMenu" to="Ball" method="_on_PauseMenu_exit"]
 
 [editable path="GUI"]

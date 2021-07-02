@@ -1,5 +1,5 @@
 extends Node
-var YposList = [ -1920, 3600 ]
+var YposList = [ -1920, 3300 ]
 var Xposlist = [-1248, 832, -3328, 2752]
 
 export (PackedScene) var car_h_scene

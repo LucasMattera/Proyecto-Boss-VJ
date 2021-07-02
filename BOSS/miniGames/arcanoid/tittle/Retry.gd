@@ -6,6 +6,7 @@ extends Node
 onready var retry = $tittleMargin/menu/buttonRetry/button
 onready var retry_label = $tittleMargin/menu/buttonRetry/button/Label
 onready var lose_s : AudioStreamPlayer = get_node("lose")
+onready var text = $tittleMargin/menu/main_tittle/text/MyArcanoid
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
