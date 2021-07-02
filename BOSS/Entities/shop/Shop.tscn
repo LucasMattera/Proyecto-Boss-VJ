@@ -10,10 +10,13 @@ extents = Vector2( 294.545, 48.8203 )
 [node name="Shop" type="Node2D"]
 position = Vector2( 138.843, 16.6612 )
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 shop_name = "Shop1"
+
+[node name="ColorRect" type="Polygon2D" parent="."]
+position = Vector2( -42.8056, -39.0012 )
+scale = Vector2( 1.37991, 1.16992 )
+color = Color( 0.0196078, 0.0980392, 0.952941, 0.764706 )
+polygon = PoolVector2Array( -295.699, 53.2858, -394.256, 272.104, 381.911, 273.009, 301.442, 53.2858 )
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 7.44315, 8.468 )
